@@ -1,20 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
 
-:root {
-  --font-poppins: 'Poppins', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-inter), sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #ffffff;
   color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #1D4ED8;
+  color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
