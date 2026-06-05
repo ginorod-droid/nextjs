@@ -1,239 +1,167 @@
 "use client";
-
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function useFadeUp() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-  return ref;
-}
+const B = "#1D4ED8";   // electric blue
+const K = "#0a0a0a";   // near black
+const W = "#ffffff";   // white
+const P = "'Poppins', sans-serif";
+const I = "'Inter', sans-serif";
 
-function FadeUp({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
+function FadeUp({ children, delay = 0, style = {} }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    el.style.transitionDelay = `${delay}s`;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const el = ref.current; if (!el) return;
+    el.style.cssText += `opacity:0;transform:translateY(24px);transition:opacity .6s ease ${delay}s,transform .6s ease ${delay}s`;
+    const ob = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.style.opacity = "1"; el.style.transform = "none"; ob.disconnect(); } }, { threshold: 0.08 });
+    ob.observe(el); return () => ob.disconnect();
   }, [delay]);
-  return (
-    <div ref={ref} className={`fade-up ${className}`}>
-      {children}
-    </div>
-  );
+  return <div ref={ref} style={style}>{children}</div>;
 }
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const fn = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", fn);
+    return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  return (
-    <main className="font-[var(--font-inter)] bg-white text-[#0a0a0a]">
+  const eyebrow = (text: string, light = false) => (
+    <p style={{ fontFamily: P, fontWeight: 700, fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase" as const, color: light ? "rgba(255,255,255,0.5)" : B, marginBottom: 16 }}>
+      {text}
+    </p>
+  );
 
-      {/* ── NAVBAR ── */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white border-b border-gray-200 shadow-sm" : "bg-white"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-          <a href="/">
-            <Image
-              src="/acoma-horizontal.png"
-              alt="Acoma Capital Partners"
-              width={180}
-              height={36}
-              className="h-9 w-auto object-contain"
-            />
+  const heading = (text: string, light = false, size = "clamp(32px,4vw,52px)") => (
+    <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: size, lineHeight: 1.05, color: light ? W : K, marginBottom: 20 }}
+      dangerouslySetInnerHTML={{ __html: text }} />
+  );
+
+  return (
+    <main style={{ fontFamily: I, background: W, color: K }}>
+
+      {/* ── BRAND STRIPE ── */}
+      <div style={{ height: 3, background: B, position: "fixed", top: 0, left: 0, right: 0, zIndex: 200 }} />
+
+      {/* ── NAV ── */}
+      <nav style={{
+        position: "fixed", top: 3, left: 0, right: 0, zIndex: 100,
+        background: scrolled ? "rgba(255,255,255,0.97)" : W,
+        borderBottom: `1px solid ${scrolled ? "#e5e7eb" : "transparent"}`,
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        transition: "all .3s",
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 76 }}>
+          <a href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+            <Image src="/acoma-icon.png" alt="Acoma" width={36} height={36} style={{ height: 36, width: "auto" }} />
+            <span style={{ fontFamily: P, fontWeight: 800, fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase", color: K }}>Acoma Capital</span>
           </a>
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#opportunities" className="text-sm text-gray-600 hover:text-[#1D4ED8] transition-colors tracking-wide">Opportunities</a>
-            <a href="#services" className="text-sm text-gray-600 hover:text-[#1D4ED8] transition-colors tracking-wide">Services</a>
-            <a href="#about" className="text-sm text-gray-600 hover:text-[#1D4ED8] transition-colors tracking-wide">About</a>
-            <a
-              href="#contact"
-              className="bg-[#1D4ED8] text-white text-sm font-semibold px-5 py-2.5 hover:bg-[#1a44c2] transition-colors tracking-wide"
-            >
+          <div style={{ display: "flex", alignItems: "center", gap: 40 }}>
+            {[["#opportunities","Opportunities"],["#services","Services"],["#about","About"]].map(([h,l]) => (
+              <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "#666", textDecoration: "none" }}>{l}</a>
+            ))}
+            <a href="#contact" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", background: B, color: W, padding: "12px 24px", textDecoration: "none" }}>
               Get in Touch
             </a>
           </div>
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-0.5 bg-gray-700 mb-1.5" />
-            <div className="w-6 h-0.5 bg-gray-700 mb-1.5" />
-            <div className="w-6 h-0.5 bg-gray-700" />
-          </button>
         </div>
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
-            <a href="#opportunities" className="text-sm text-gray-700" onClick={() => setMenuOpen(false)}>Opportunities</a>
-            <a href="#services" className="text-sm text-gray-700" onClick={() => setMenuOpen(false)}>Services</a>
-            <a href="#about" className="text-sm text-gray-700" onClick={() => setMenuOpen(false)}>About</a>
-            <a href="#contact" className="text-sm font-semibold text-[#1D4ED8]" onClick={() => setMenuOpen(false)}>Get in Touch</a>
-          </div>
-        )}
       </nav>
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero.jpeg"
-            alt="Acoma Capital Partners"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/55" />
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", background: K, overflow: "hidden", paddingTop: 79 }}>
+        {/* Background image */}
+        <div style={{ position: "absolute", inset: 0 }}>
+          <Image src="/hero.jpeg" alt="" fill style={{ objectFit: "cover", objectPosition: "center 25%", opacity: 0.5 }} priority />
         </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-20">
+        {/* Blue vertical accent line */}
+        <div style={{ position: "absolute", left: 40, top: "20%", bottom: "20%", width: 2, background: B, opacity: 0.7 }} />
+
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "80px 40px 100px", width: "100%" }}>
           <FadeUp>
-            <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.2em] uppercase mb-5">
-              Colorado Commercial Real Estate
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: B, marginBottom: 32 }}>
+              Colorado · Commercial Real Estate · Capital Solutions
             </p>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <h1
-              className="font-[var(--font-poppins)] font-black text-white leading-[1.05] mb-6"
-              style={{ fontSize: "clamp(44px, 7vw, 88px)" }}
-            >
-              Capital That Moves.<br />
-              Deals That Close.
+            <h1 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(56px,9vw,110px)", lineHeight: 0.95, color: W, marginBottom: 48, letterSpacing: "-0.02em" }}>
+              Capital<br />
+              <span style={{ color: W, WebkitTextStroke: `1px rgba(255,255,255,0.3)`, WebkitTextFillColor: "transparent" }}>That</span>{" "}
+              Moves.<br />
+              Deals{" "}
+              <span style={{ color: B }}>That</span><br />
+              Close.
             </h1>
           </FadeUp>
           <FadeUp delay={0.2}>
-            <p className="text-white/70 text-lg leading-relaxed max-w-xl mb-10">
-              Acoma Capital Partners structures commercial real estate acquisitions, investment sales, and hard money financing for operators and investors across Colorado.
+            <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.6)", maxWidth: 480, marginBottom: 52 }}>
+              Real estate acquisitions, investment sales, and hard money financing for operators and investors across Colorado.
             </p>
           </FadeUp>
           <FadeUp delay={0.3}>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#opportunities"
-                className="bg-[#1D4ED8] text-white font-bold text-sm tracking-widest uppercase px-8 py-4 hover:bg-[#1a44c2] transition-colors"
-              >
-                View Opportunities
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a href="#opportunities" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: B, color: W, padding: "18px 40px", textDecoration: "none" }}>
+                View Opportunities →
               </a>
-              <a
-                href="#contact"
-                className="border border-white/50 text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 hover:border-white transition-colors"
-              >
+              <a href="#contact" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "18px 40px", textDecoration: "none" }}>
                 Get in Touch
               </a>
             </div>
           </FadeUp>
         </div>
-      </section>
 
-      {/* ── STATS BAR ── */}
-      <section className="border-y border-gray-200 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {[
-              { num: "$10M+", label: "Transactions Facilitated" },
-              { num: "15+", label: "Years Experience" },
-              { num: "Colorado", label: "Based & Focused" },
-              { num: "2", label: "Active Listings" },
-            ].map((s, i) => (
-              <FadeUp key={i} delay={i * 0.1} className="border-r border-gray-200 last:border-r-0 px-8 py-8 text-center">
-                <div
-                  className="font-[var(--font-poppins)] font-black text-[#1D4ED8] mb-1"
-                  style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}
-                >
-                  {s.num}
-                </div>
-                <div className="text-xs text-gray-500 tracking-widest uppercase">
-                  {s.label}
-                </div>
-              </FadeUp>
-            ))}
-          </div>
+        {/* Bottom scroll hint */}
+        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.3)" }} />
+          <span style={{ fontFamily: P, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>Scroll</span>
         </div>
       </section>
 
-      {/* ── CRE SERVICES ── */}
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      {/* ── STATS ── */}
+      <section style={{ background: W, borderBottom: "1px solid #f0f0f0" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+          {[["$10M+","Transactions Facilitated"],["15+","Years Experience"],["Colorado","Based & Focused"],["2","Active Listings"]].map(([n,l],i) => (
+            <FadeUp key={i} delay={i*0.08}>
+              <div style={{ padding: "56px 24px", textAlign: "center", borderRight: i<3?"1px solid #f0f0f0":"none" }}>
+                <div style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,3.5vw,52px)", color: B, marginBottom: 8, letterSpacing: "-0.02em" }}>{n}</div>
+                <div style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "#aaa" }}>{l}</div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SERVICES ── */}
+      <section id="services" style={{ padding: "120px 0", background: W }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
+            {/* Image with overlay accent */}
             <FadeUp>
-              <div className="relative h-[480px] overflow-hidden">
-                <Image
-                  src="/services.jpeg"
-                  alt="Real estate advisory"
-                  fill
-                  className="object-cover"
-                />
+              <div style={{ position: "relative" }}>
+                <div style={{ position: "relative", height: 560, overflow: "hidden" }}>
+                  <Image src="/services.jpeg" alt="CRE Services" fill style={{ objectFit: "cover" }} />
+                </div>
+                {/* Blue accent corner */}
+                <div style={{ position: "absolute", top: -16, left: -16, width: 80, height: 80, border: `2px solid ${B}`, zIndex: -1 }} />
+                <div style={{ position: "absolute", bottom: -16, right: -16, width: 80, height: 80, background: B, zIndex: -1 }} />
               </div>
             </FadeUp>
             <div>
               <FadeUp>
-                <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.2em] uppercase mb-4">What We Do</p>
-                <h2
-                  className="font-[var(--font-poppins)] font-black text-[#0a0a0a] leading-tight mb-6"
-                  style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
-                >
-                  We help you find the right places to buy — and know when it&apos;s time to sell.
-                </h2>
-                <p className="text-gray-500 leading-relaxed mb-10">
+                {eyebrow("What We Do")}
+                {heading("We help you find the right places to buy — and know when it's time to sell.")}
+                <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 44 }}>
                   So your money works harder. Acoma handles commercial acquisitions, investment sales, and deal structuring for clients who need a team that understands both the asset and the capital side.
                 </p>
               </FadeUp>
-              <div className="flex flex-col gap-3">
-                {[
-                  "Commercial Acquisitions",
-                  "Investment Sales",
-                  "Site Selection",
-                  "Development Opportunities",
-                  "Portfolio Strategy",
-                ].map((s, i) => (
-                  <FadeUp key={i} delay={i * 0.08}>
-                    <div className="border-l-4 border-[#1D4ED8] pl-4 py-2 bg-gray-50 text-sm font-semibold text-gray-700 tracking-wide">
-                      {s}
+              <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {["Commercial Acquisitions","Investment Sales","Site Selection","Development Opportunities","Portfolio Strategy"].map((s,i) => (
+                  <FadeUp key={i} delay={i*0.06}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 0", borderBottom: "1px solid #f0f0f0" }}>
+                      <div style={{ width: 6, height: 6, background: B, flexShrink: 0 }} />
+                      <span style={{ fontFamily: P, fontWeight: 600, fontSize: 14, color: K, letterSpacing: "0.02em" }}>{s}</span>
                     </div>
                   </FadeUp>
                 ))}
@@ -243,89 +171,88 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CURRENT OPPORTUNITIES ── */}
-      <section id="opportunities" className="py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* ── OPPORTUNITIES ── */}
+      <section id="opportunities" style={{ padding: "120px 0", background: "#fafafa", borderTop: "1px solid #f0f0f0" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
           <FadeUp>
-            <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.2em] uppercase mb-4">Current Listings</p>
-            <h2
-              className="font-[var(--font-poppins)] font-black text-[#0a0a0a] leading-tight mb-4"
-              style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
-            >
-              Two active opportunities — available now.
-            </h2>
-            <p className="text-gray-500 mb-12 max-w-xl">
-              Commercial land in Pueblo and a licensed cannabis operation in Denver. Both are ready for qualified buyers.
-            </p>
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 72, flexWrap: "wrap", gap: 24 }}>
+              <div>
+                {eyebrow("Current Listings")}
+                {heading("Two active opportunities<br/>available now.")}
+              </div>
+              <p style={{ fontFamily: I, fontSize: 16, color: "#888", maxWidth: 320, lineHeight: 1.7 }}>
+                Commercial land in Pueblo and a licensed cannabis operation in Denver.
+              </p>
+            </div>
           </FadeUp>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
 
-            {/* Card 1 — Rev Elders */}
+            {/* Card 1 */}
             <FadeUp delay={0.1}>
-              <div className="bg-white border border-gray-200 flex flex-col h-full hover:-translate-y-1 transition-transform duration-200">
-                <div className="bg-[#0a0a0a] px-8 py-7">
-                  <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.15em] uppercase mb-3">Commercial Land · Pueblo, CO</p>
-                  <h3 className="font-[var(--font-poppins)] font-black text-white text-2xl leading-tight mb-2">
+              <div style={{ background: W, border: "1px solid #eee", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.08)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}>
+                <div style={{ background: K, padding: "40px 40px 32px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
+                    <div style={{ width: 24, height: 2, background: B }} />
+                    <span style={{ fontFamily: P, fontWeight: 700, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: B }}>Commercial Land · Pueblo, CO</span>
+                  </div>
+                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: W, lineHeight: 1.1, marginBottom: 12 }}>
                     10-Acre Parcel<br />I-25 Exit 104
                   </h3>
-                  <p className="text-gray-400 text-sm">Pinon Ridge Commercial Center · Pueblo, Colorado</p>
+                  <p style={{ fontFamily: I, fontSize: 13, color: "rgba(255,255,255,0.4)", letterSpacing: "0.04em" }}>Pinon Ridge Commercial Center · Pueblo, Colorado</p>
                 </div>
-                <div className="px-8 py-7 flex flex-col gap-5 flex-1">
+                <div style={{ padding: "36px 40px 40px", display: "flex", flexDirection: "column", gap: 24, flex: 1 }}>
                   <div>
-                    <p className="text-gray-400 text-xs tracking-widest uppercase mb-1">Asking Price</p>
-                    <p className="font-[var(--font-poppins)] font-black text-[#1D4ED8] text-4xl">$2,500,000</p>
+                    <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#bbb", marginBottom: 8 }}>Asking Price</p>
+                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: B, lineHeight: 1, letterSpacing: "-0.02em" }}>$2,500,000</p>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {["10 Acres", "B-3 Zoning", "I-25 Access", "$250K/Acre"].map((t) => (
-                      <span key={t} className="text-xs font-semibold tracking-wide text-gray-600 bg-gray-100 px-3 py-1.5">{t}</span>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {["10 Acres","B-3 Zoning","I-25 Access","$250K/Acre"].map(t => (
+                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "#555", background: "#f5f5f5", padding: "6px 12px" }}>{t}</span>
                     ))}
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
                     Adjacent to TravelCenters of America and Love&apos;s Travel Stop. Direct interstate access, B-3 zoning, no rezoning required. $114M CDOT interchange upgrade underway.
                   </p>
-                  <div className="mt-auto">
-                    <a
-                      href="/rev-elders"
-                      className="inline-block bg-[#1D4ED8] text-white text-xs font-bold tracking-widest uppercase px-6 py-3 hover:bg-[#1a44c2] transition-colors"
-                    >
-                      View Listing →
-                    </a>
-                  </div>
+                  <a href="/rev-elders" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: B, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
+                    View Listing →
+                  </a>
                 </div>
               </div>
             </FadeUp>
 
-            {/* Card 2 — LetsBlaze */}
-            <FadeUp delay={0.2}>
-              <div className="bg-white border border-gray-200 flex flex-col h-full hover:-translate-y-1 transition-transform duration-200">
-                <div className="bg-[#0a0a0a] px-8 py-7">
-                  <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.15em] uppercase mb-3">Business Sale · Denver, CO</p>
-                  <h3 className="font-[var(--font-poppins)] font-black text-white text-2xl leading-tight mb-2">
+            {/* Card 2 */}
+            <FadeUp delay={0.18}>
+              <div style={{ background: W, border: "1px solid #eee", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.08)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}>
+                <div style={{ background: K, padding: "40px 40px 32px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
+                    <div style={{ width: 24, height: 2, background: B }} />
+                    <span style={{ fontFamily: P, fontWeight: 700, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: B }}>Business Sale · Denver, CO</span>
+                  </div>
+                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: W, lineHeight: 1.1, marginBottom: 12 }}>
                     Let&apos;s Blaze Medical<br />Dispensary
                   </h3>
-                  <p className="text-gray-400 text-sm">120 S. Kalamath St. · Baker District, Denver, CO</p>
+                  <p style={{ fontFamily: I, fontSize: 13, color: "rgba(255,255,255,0.4)", letterSpacing: "0.04em" }}>120 S. Kalamath St. · Baker District, Denver, CO</p>
                 </div>
-                <div className="px-8 py-7 flex flex-col gap-5 flex-1">
+                <div style={{ padding: "36px 40px 40px", display: "flex", flexDirection: "column", gap: 24, flex: 1 }}>
                   <div>
-                    <p className="text-gray-400 text-xs tracking-widest uppercase mb-1">Asking Price</p>
-                    <p className="font-[var(--font-poppins)] font-black text-[#1D4ED8] text-4xl">$595,000</p>
+                    <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#bbb", marginBottom: 8 }}>Asking Price</p>
+                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: B, lineHeight: 1, letterSpacing: "-0.02em" }}>$595,000</p>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {["Active Medical License", "Social Equity Designee", "Zero Violations", "800 Sq Ft"].map((t) => (
-                      <span key={t} className="text-xs font-semibold tracking-wide text-gray-600 bg-gray-100 px-3 py-1.5">{t}</span>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {["Medical License","Social Equity","Zero Violations","800 Sq Ft"].map(t => (
+                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "#555", background: "#f5f5f5", padding: "6px 12px" }}>{t}</span>
                     ))}
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
                     Active, revenue-generating medical dispensary in Denver&apos;s Baker District. Denver has stopped issuing new retail cannabis licenses — making this asset genuinely irreplaceable.
                   </p>
-                  <div className="mt-auto">
-                    <a
-                      href="/letsblaze"
-                      className="inline-block bg-[#1D4ED8] text-white text-xs font-bold tracking-widest uppercase px-6 py-3 hover:bg-[#1a44c2] transition-colors"
-                    >
-                      View Listing →
-                    </a>
-                  </div>
+                  <a href="/letsblaze" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: B, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
+                    View Listing →
+                  </a>
                 </div>
               </div>
             </FadeUp>
@@ -334,162 +261,141 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── HARD MONEY LOANS ── */}
-      <section id="hardmoney" className="py-24 bg-[#0a0a0a]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <FadeUp>
-                <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.2em] uppercase mb-4">Capital Services</p>
-                <h2
-                  className="font-[var(--font-poppins)] font-black text-white leading-tight mb-6"
-                  style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
-                >
-                  Need money fast to close a deal?
-                </h2>
-                <p className="text-gray-400 leading-relaxed mb-4">
-                  Hard money loans are short-term loans backed by the property itself — not your credit score. They cost more, but they move quick when the bank says no or takes too long.
-                </p>
-                <p className="text-gray-500 leading-relaxed mb-10">
-                  We work with operators and investors across Colorado who need capital that moves at the speed of a deal — not the speed of a committee.
-                </p>
-                <a
-                  href="mailto:ginorod@acomacapitalpartners.com"
-                  className="inline-block bg-[#1D4ED8] text-white font-bold text-sm tracking-widest uppercase px-8 py-4 hover:bg-[#1a44c2] transition-colors"
-                >
-                  Discuss Your Loan
-                </a>
-              </FadeUp>
-            </div>
-            <FadeUp delay={0.15}>
-              <div className="relative h-[400px] overflow-hidden">
-                <Image
-                  src="/hardmoney.jpeg"
-                  alt="CRE Hard Money Loans"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+      {/* ── HARD MONEY ── */}
+      <section id="hardmoney" style={{ padding: "120px 0", background: K }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
+          <div>
+            <FadeUp>
+              {eyebrow("Capital Services")}
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(36px,5vw,64px)", lineHeight: 1.0, color: W, marginBottom: 32, letterSpacing: "-0.02em" }}>
+                Need money fast<br />to close a deal?
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", marginBottom: 20 }}>
+                Hard money loans are short-term loans backed by the property itself — not your credit score. They cost more, but they move quick when the bank says no or takes too long.
+              </p>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.35)", marginBottom: 52 }}>
+                Capital that moves at the speed of a deal — not the speed of a committee.
+              </p>
+              <a href="mailto:ginorod@acomacapitalpartners.com" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: B, color: W, padding: "18px 40px", textDecoration: "none" }}>
+                Discuss Your Loan →
+              </a>
             </FadeUp>
           </div>
+          <FadeUp delay={0.15}>
+            <div style={{ position: "relative" }}>
+              <div style={{ position: "relative", height: 460, overflow: "hidden" }}>
+                <Image src="/hardmoney.jpeg" alt="Hard Money Loans" fill style={{ objectFit: "cover" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(29,78,216,0.15) 0%, transparent 60%)" }} />
+              </div>
+              {/* Blue accent */}
+              <div style={{ position: "absolute", bottom: -3, left: 0, right: 0, height: 3, background: B }} />
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="about" style={{ padding: "120px 0", background: W }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
+          <FadeUp>
+            <div style={{ position: "relative" }}>
+              <div style={{ position: "relative", height: 580, overflow: "hidden" }}>
+                <Image src="/about.jpeg" alt="Denver Colorado" fill style={{ objectFit: "cover", objectPosition: "center 35%" }} />
+              </div>
+              <div style={{ position: "absolute", bottom: -3, left: 0, right: 0, height: 3, background: B }} />
+            </div>
+          </FadeUp>
+          <div>
             <FadeUp>
-              <div className="relative h-[500px] overflow-hidden">
-                <Image
-                  src="/about.jpeg"
-                  alt="Denver, Colorado"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
+              {eyebrow("About Acoma")}
+              {heading("Acoma Capital Partners")}
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 24 }}>
+                A Colorado-based real estate brokerage specializing in both traditional and alternative financing solutions. Founded by Gino Rodrigues, who brings over 15 years of experience in banking and real estate.
+              </p>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#888", marginBottom: 56 }}>
+                We&apos;ve successfully facilitated over $10 million in transactions — from conventional acquisitions to complex alternative financing structures.
+              </p>
             </FadeUp>
-            <div>
-              <FadeUp>
-                <p className="text-[#1D4ED8] text-xs font-bold tracking-[0.2em] uppercase mb-4">About</p>
-                <h2
-                  className="font-[var(--font-poppins)] font-black text-[#0a0a0a] leading-tight mb-6"
-                  style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
-                >
-                  Acoma Capital Partners
-                </h2>
-                <p className="text-gray-500 leading-relaxed mb-5">
-                  Acoma Capital Partners is a Colorado-based real estate brokerage specializing in both traditional and alternative financing solutions. Founded by Gino Rodrigues, who brings over 15 years of experience in banking and real estate, our team understands the complexities of today&apos;s market and the unique challenges investors face.
-                </p>
-                <p className="text-gray-500 leading-relaxed mb-10">
-                  Together with our Director of Operations, we&apos;ve successfully facilitated over $10 million in transactions, helping clients navigate everything from conventional deals to complex alternative financing structures.
-                </p>
-              </FadeUp>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { num: "$10M+", label: "Transactions Facilitated" },
-                  { num: "15+", label: "Years in Banking & Real Estate" },
-                ].map((s, i) => (
-                  <FadeUp key={i} delay={i * 0.1}>
-                    <div className="border-l-4 border-[#1D4ED8] pl-5">
-                      <div className="font-[var(--font-poppins)] font-black text-[#1D4ED8] text-3xl mb-1">{s.num}</div>
-                      <div className="text-xs text-gray-500 leading-snug">{s.label}</div>
-                    </div>
-                  </FadeUp>
-                ))}
-              </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+              {[["$10M+","Transactions Facilitated"],["15+","Years Experience"]].map(([n,l],i) => (
+                <FadeUp key={i} delay={i*0.1}>
+                  <div>
+                    <div style={{ width: 32, height: 3, background: B, marginBottom: 16 }} />
+                    <div style={{ fontFamily: P, fontWeight: 900, fontSize: 40, color: K, letterSpacing: "-0.02em", marginBottom: 8 }}>{n}</div>
+                    <div style={{ fontFamily: I, fontSize: 13, color: "#999", lineHeight: 1.5 }}>{l}</div>
+                  </div>
+                </FadeUp>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" className="py-24 bg-[#1D4ED8]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <FadeUp>
-            <p className="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-4">Contact</p>
-            <h2
-              className="font-[var(--font-poppins)] font-black text-white leading-tight mb-5"
-              style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
-            >
-              Let&apos;s talk about your deal.
-            </h2>
-            <p className="text-white/70 text-lg max-w-lg mx-auto mb-10">
-              Whether you&apos;re acquiring, selling, or need capital to close — reach out directly. No intake form between you and the conversation.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="tel:7207244185"
-                className="bg-white text-[#1D4ED8] font-bold text-sm tracking-widest uppercase px-8 py-4 hover:bg-gray-100 transition-colors"
-              >
-                (720) 724-4185
-              </a>
-              <a
-                href="mailto:ginorod@acomacapitalpartners.com"
-                className="border-2 border-white text-white font-bold text-sm tracking-widest uppercase px-8 py-4 hover:bg-white hover:text-[#1D4ED8] transition-colors"
-              >
-                Send an Email
-              </a>
-            </div>
-            <p className="text-white/50 text-sm mt-8">
-              Gino Rodrigues · Acoma Capital Partners · Denver, Colorado
-            </p>
-          </FadeUp>
+      <section id="contact" style={{ padding: "120px 0", background: B }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
+            <FadeUp>
+              {eyebrow("Let's Work Together")}
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(36px,5vw,64px)", lineHeight: 1.0, color: W, marginBottom: 24, letterSpacing: "-0.02em" }}>
+                Let&apos;s talk<br />about your deal.
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.7)", marginBottom: 52 }}>
+                Whether you&apos;re acquiring, selling, or need capital to close — reach out directly. No intake form between you and the conversation.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <a href="tel:7207244185" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: W, color: B, padding: "18px 36px", textDecoration: "none", display: "inline-block", alignSelf: "flex-start" }}>
+                  (720) 724-4185 →
+                </a>
+                <a href="mailto:ginorod@acomacapitalpartners.com" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "1.5px solid rgba(255,255,255,0.4)", color: W, padding: "18px 36px", textDecoration: "none", display: "inline-block", alignSelf: "flex-start" }}>
+                  Send an Email →
+                </a>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.15}>
+              <div style={{ borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: 80 }}>
+                <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: 20 }}>Direct Contact</p>
+                <p style={{ fontFamily: P, fontWeight: 700, fontSize: 22, color: W, marginBottom: 8 }}>Gino Rodrigues</p>
+                <p style={{ fontFamily: I, fontSize: 15, color: "rgba(255,255,255,0.6)", marginBottom: 4 }}>Founder, Acoma Capital Partners</p>
+                <p style={{ fontFamily: I, fontSize: 15, color: "rgba(255,255,255,0.6)", marginBottom: 4 }}>Denver, Colorado</p>
+                <div style={{ height: 1, background: "rgba(255,255,255,0.1)", margin: "28px 0" }} />
+                <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: 12 }}>Currently Offering</p>
+                <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
+                  10-Acre Commercial Parcel · Pueblo, CO<br />
+                  Let&apos;s Blaze Medical Dispensary · Denver, CO<br />
+                  CRE Hard Money Loans · Colorado
+                </p>
+              </div>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/acoma-icon.png"
-                alt="Acoma Capital Partners"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
-              />
-              <span className="font-[var(--font-poppins)] font-bold text-sm tracking-widest uppercase text-[#0a0a0a]">
-                Acoma Capital Partners
-              </span>
+      <footer style={{ background: W, borderTop: "1px solid #eee", padding: "52px 0 36px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 40, flexWrap: "wrap", gap: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <Image src="/acoma-icon.png" alt="Acoma" width={40} height={40} style={{ height: 40, width: "auto" }} />
+              <div>
+                <p style={{ fontFamily: P, fontWeight: 800, fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: K }}>Acoma Capital Partners</p>
+                <p style={{ fontFamily: I, fontSize: 12, color: "#aaa", marginTop: 2 }}>Denver, Colorado</p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <a href="#opportunities" className="text-sm text-gray-500 hover:text-[#1D4ED8] transition-colors">Opportunities</a>
-              <a href="#services" className="text-sm text-gray-500 hover:text-[#1D4ED8] transition-colors">Services</a>
-              <a href="#about" className="text-sm text-gray-500 hover:text-[#1D4ED8] transition-colors">About</a>
-              <a href="#contact" className="text-sm text-gray-500 hover:text-[#1D4ED8] transition-colors">Contact</a>
+            <div style={{ display: "flex", gap: 36, flexWrap: "wrap" }}>
+              {[["#opportunities","Opportunities"],["#services","Services"],["#about","About"],["#contact","Contact"]].map(([h,l]) => (
+                <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.06em", color: "#999", textDecoration: "none" }}>{l}</a>
+              ))}
             </div>
-            <div className="text-sm text-gray-500 text-center md:text-right">
-              <a href="tel:7207244185" className="hover:text-[#1D4ED8] transition-colors">(720) 724-4185</a>
-              <span className="mx-2">·</span>
-              <a href="mailto:ginorod@acomacapitalpartners.com" className="hover:text-[#1D4ED8] transition-colors">ginorod@acomacapitalpartners.com</a>
+            <div style={{ textAlign: "right" }}>
+              <a href="tel:7207244185" style={{ fontFamily: P, fontWeight: 600, fontSize: 13, color: K, textDecoration: "none", display: "block", marginBottom: 4 }}>(720) 724-4185</a>
+              <a href="mailto:ginorod@acomacapitalpartners.com" style={{ fontFamily: I, fontSize: 12, color: "#888", textDecoration: "none" }}>ginorod@acomacapitalpartners.com</a>
             </div>
           </div>
-          <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-gray-400">© 2026 Acoma Capital Partners, Inc. · Denver, Colorado</p>
-            <p className="text-xs text-gray-400 text-center md:text-right max-w-xl">
-              This website is for informational purposes only and does not constitute an offer to sell or solicitation to buy any security or real property interest. All figures are believed to be accurate but not guaranteed.
+          <div style={{ borderTop: "1px solid #f0f0f0", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+            <p style={{ fontFamily: I, fontSize: 12, color: "#bbb" }}>© 2026 Acoma Capital Partners, Inc.</p>
+            <p style={{ fontFamily: I, fontSize: 11, color: "#ccc", maxWidth: 560, textAlign: "right" }}>
+              For informational purposes only. Not an offer to sell or solicitation to buy. All figures believed accurate but not guaranteed.
             </p>
           </div>
         </div>
