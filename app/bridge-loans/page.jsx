@@ -143,35 +143,22 @@ export default function BridgeLoans() {
           <p className="b-muted-white">We&apos;ll be in touch same day. No obligation — just a fast answer on whether we can fund your deal.</p>
 
           <div className="b-form-card">
-            <form action={EMAIL} method="post" encType="text/plain">
-              <div className="b-form-grid">
-                <div>
-                  <label htmlFor="b-name">Full Name *</label>
-                  <input type="text" id="b-name" name="Full Name" placeholder="Your full name" required />
-                </div>
-                <div>
-                  <label htmlFor="b-email">Email *</label>
-                  <input type="email" id="b-email" name="Email" placeholder="your@email.com" required />
-                </div>
-                <div>
-                  <label htmlFor="b-phone">Phone</label>
-                  <input type="tel" id="b-phone" name="Phone" placeholder="(___) ___-____" />
-                </div>
-                <div>
-                  <label htmlFor="b-amount">Requested Loan Amount *</label>
-                  <input type="text" id="b-amount" name="Loan Amount" placeholder="e.g. $500,000" required />
-                </div>
-                <div className="b-form-full">
-                  <label htmlFor="b-ptype">Property Type</label>
-                  <input type="text" id="b-ptype" name="Property Type" placeholder="Residential, Commercial, etc." />
-                </div>
-              </div>
-              <button type="submit" className="b-form-submit">Submit — Get Pre-Qualified</button>
-              <p className="b-form-note">No spam. Ever. Or reach Gino directly: &nbsp;
-                <a href="tel:7207244185" className="b-text-link-yellow">(720) 724-4185</a> &nbsp;·&nbsp;
-                <a href={EMAIL} className="b-text-link-yellow">ginorod@acomacapitalpartners.com</a>
-              </p>
-            </form>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform?embedded=true"
+              width="100%"
+              height="1400"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              style={{ display: "block" }}
+            >
+              Loading…
+            </iframe>
+            <p className="b-form-note" style={{ marginTop: 24 }}>
+              Or reach Gino directly: &nbsp;
+              <a href="tel:7207244185" className="b-text-link-yellow">(720) 724-4185</a> &nbsp;·&nbsp;
+              <a href={EMAIL} className="b-text-link-yellow">ginorod@acomacapitalpartners.com</a>
+            </p>
           </div>
         </div>
       </section>
@@ -334,16 +321,7 @@ const styles = `
 .b-chip { background:#fff; border:1px solid #e4e8f0; border-left:4px solid #F6D200; padding:16px 20px; font-size:14px; font-weight:700; color:#202A54; }
 
 /* FORM */
-.b-form-card { background:#fff; border:1px solid rgba(255,255,255,0.1); border-top:5px solid #F6D200; padding:52px 56px; margin-top:52px; }
-.b-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-@media(max-width:680px){ .b-form-grid{grid-template-columns:1fr;} }
-.b-form-full { grid-column:1/-1; }
-.b-form-card label { display:block; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#202A54; margin-bottom:8px; }
-.b-form-card input { display:block; width:100%; background:#f4f6f9; border:1px solid #dde1eb; border-bottom:3px solid #c8cdd8; color:#202A54; font-family:'Poppins',sans-serif; font-size:15px; padding:14px 18px; outline:none; transition:border-color .2s; }
-.b-form-card input:focus { border-color:#1179EC; border-bottom-color:#1179EC; }
-.b-form-card input::placeholder { color:#bbb; }
-.b-form-submit { display:block; width:100%; margin-top:32px; padding:18px; background:#F6D200; color:#202A54; font-family:'Poppins',sans-serif; font-size:13px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; transition:opacity .2s; }
-.b-form-submit:hover { opacity:0.85; }
+.b-form-card { background:#fff; border:1px solid rgba(255,255,255,0.1); border-top:5px solid #F6D200; padding:40px 40px 32px; margin-top:52px; overflow:hidden; }
 .b-form-note { font-size:12px; color:#999; margin-top:16px; line-height:1.7; max-width:none; margin-bottom:0; }
 .b-text-link-yellow { color:#F6D200; text-decoration:none; font-weight:600; }
 .b-text-link-yellow:hover { text-decoration:underline; }
