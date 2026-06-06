@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Acoma Capital Partners | Colorado Commercial Real Estate",
+  title: "Acoma Capital Partners | Real Estate Acquisitions & Investment Sales",
   description:
-    "Acoma Capital Partners structures commercial real estate acquisitions, investment sales, and hard money financing for operators and investors across Colorado.",
+    "Real estate acquisitions, investment sales, and hard money financing for operators and investors across the Nation.",
 };
 
 export default function RootLayout({
