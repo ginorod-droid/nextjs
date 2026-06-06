@@ -132,26 +132,6 @@ export default function LetsBlaze() {
         </div>
       </section>
 
-      {/* ── FOUR OPPORTUNITIES ── */}
-      <section className="l-section l-section-off">
-        <div className="l-wrap">
-          <p className="l-section-label">02 / Four Reasons This Is Different</p>
-          <div className="l-rule" />
-          <h2>What Makes This Acquisition Stand Apart.</h2>
-          <p>Most cannabis acquisitions come with baggage — compliance issues, weak locations, or licenses under scrutiny. This one doesn&apos;t.</p>
-
-          <div className="l-opp-grid">
-            {opportunities.map((item, i) => (
-              <div key={i} className="l-opp-card">
-                <div className="l-opp-num">0{i+1}</div>
-                <div className="l-opp-title">{item.title}</div>
-                <p className="l-opp-desc">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── MID-PAGE CTA ── */}
       <section className="l-section l-section-navy">
         <div className="l-wrap">
@@ -176,6 +156,26 @@ export default function LetsBlaze() {
               <span className="l-triple-title">Send a Message</span>
               <span className="l-triple-body">ginorod@acomacapitalpartners.com</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOUR OPPORTUNITIES ── */}
+      <section className="l-section l-section-off">
+        <div className="l-wrap">
+          <p className="l-section-label">02 / Four Reasons This Is Different</p>
+          <div className="l-rule" />
+          <h2>What Makes This Acquisition Stand Apart.</h2>
+          <p>Most cannabis acquisitions come with baggage — compliance issues, weak locations, or licenses under scrutiny. This one doesn&apos;t.</p>
+
+          <div className="l-opp-grid">
+            {opportunities.map((item, i) => (
+              <div key={i} className="l-opp-card">
+                <div className="l-opp-num">0{i+1}</div>
+                <div className="l-opp-title">{item.title}</div>
+                <p className="l-opp-desc">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
