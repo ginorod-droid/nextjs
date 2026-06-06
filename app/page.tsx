@@ -24,6 +24,7 @@ function FadeUp({ children, delay = 0, style = {} }: { children: React.ReactNode
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
@@ -33,6 +34,30 @@ export default function Home() {
 
   return (
     <main style={{ fontFamily: I, background: W, color: K }}>
+      <style>{`
+        .hp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+        .hp-listings { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .hp-triple { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
+        .hp-hardmoney { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; margin-top: 8px; }
+        .hp-about { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+        .hp-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+        .hp-nav-links { display: flex; gap: 36px; align-items: center; }
+        .hp-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hp-mobile-menu { display: none; }
+        @media (max-width: 768px) {
+          .hp-two-col { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .hp-listings { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .hp-triple { grid-template-columns: 1fr !important; }
+          .hp-hardmoney { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .hp-about { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .hp-contact { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .hp-nav-links { display: none; }
+          .hp-hamburger { display: block; }
+          .hp-mobile-menu { display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: #202A54; border-top: 1px solid rgba(255,255,255,0.1); padding: 8px 0; z-index: 99; }
+          .hp-mobile-menu a { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); text-decoration: none; padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+          .hp-mobile-menu a:last-child { border-bottom: none; color: #F6D200; }
+        }
+      `}</style>
 
       {/* ── 4-COLOR BRAND STRIPE ── */}
       <div style={{ height: 5, display: "flex", position: "fixed", top: 0, left: 0, right: 0, zIndex: 200 }}>
@@ -50,24 +75,39 @@ export default function Home() {
         backdropFilter: scrolled ? "blur(12px)" : "none",
         transition: "all .3s",
       }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 76 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 76, position: "relative" }}>
           <a href="/" style={{ textDecoration: "none" }}>
             <span style={{ fontFamily: P, fontWeight: 800, fontSize: 17, letterSpacing: "0.06em", textTransform: "uppercase", color: W }}>
               ACOMA <span style={{ color: YELLOW }}>CAPITAL</span> PARTNERS
             </span>
           </a>
-          <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
+          <div className="hp-nav-links">
             {[["#opportunities","Listings"],["#services","Services"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
-            <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true"
-              target="_blank" rel="noopener"
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
               style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "12px 24px", textDecoration: "none" }}>
               Book a Call
             </a>
           </div>
+          <button className="hp-hamburger" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round">
+              {mobileMenu ? <><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></> : <><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></>}
+            </svg>
+          </button>
         </div>
+        {mobileMenu && (
+          <div className="hp-mobile-menu">
+            <a href="#opportunities" onClick={() => setMobileMenu(false)}>Listings</a>
+            <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
+            <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
+            <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
+            <a href="/pueblo-parcel" onClick={() => setMobileMenu(false)}>Pueblo Parcel</a>
+            <a href="/letsblaze" onClick={() => setMobileMenu(false)}>Let&apos;s Blaze</a>
+            <a href="/bridge-loans" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
+          </div>
+        )}
       </nav>
 
       {/* ── HERO ── */}
@@ -133,12 +173,22 @@ export default function Home() {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
+          @-webkit-keyframes ticker {
+            0% { -webkit-transform: translateX(0); }
+            100% { -webkit-transform: translateX(-50%); }
+          }
           .ticker-track {
             display: flex;
+            flex-wrap: nowrap;
             width: max-content;
+            min-width: 200%;
             animation: ticker 30s linear infinite;
+            -webkit-animation: ticker 30s linear infinite;
+            will-change: transform;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
           }
-          .ticker-track:hover { animation-play-state: paused; }
+          .ticker-track:hover { animation-play-state: paused; -webkit-animation-play-state: paused; }
         `}</style>
         <div className="ticker-track">
           {[...Array(2)].map((_,set) => (
@@ -170,7 +220,7 @@ export default function Home() {
       {/* ── SERVICES ── */}
       <section id="services" style={{ padding: "120px 0", background: W }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "start" }}>
+          <div className="hp-two-col">
 
             {/* Image side + CTA block */}
             <FadeUp>
@@ -241,7 +291,7 @@ export default function Home() {
               </p>
             </div>
           </FadeUp>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+          <div className="hp-listings">
 
             {/* Card 1 — Pueblo */}
             <FadeUp delay={0.1}>
@@ -330,7 +380,7 @@ export default function Home() {
               Three ways to connect — choose what works for you.
             </p>
           </FadeUp>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 3 }}>
+          <div className="hp-triple">
             {([
               { href: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true", bg: GREEN, titleColor: W, bodyColor: "rgba(255,255,255,0.75)", labelColor: "rgba(255,255,255,0.55)", icon: "📅", micro: "Schedule", title: "Book a Call", body: "Get on the calendar with Gino directly. No middlemen.", external: true },
               { href: "https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform", bg: YELLOW, titleColor: NAVY, bodyColor: "rgba(32,42,84,0.65)", labelColor: "rgba(32,42,84,0.5)", icon: "📋", micro: "Buyers", title: "Buyer Questionnaire", body: "Tell us what you're looking for and we'll match you to the right opportunity.", external: true },
@@ -366,7 +416,7 @@ export default function Home() {
           </FadeUp>
 
           {/* Two-col: text left, image right — with generous gap */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 120, alignItems: "center", marginTop: 8 }}>
+          <div className="hp-hardmoney">
             <FadeUp>
               <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(36px,5vw,68px)", lineHeight: 1.0, color: W, marginBottom: 36, letterSpacing: "-0.02em" }}>
                 Bridge Loans for Operators Who Move Fast.
@@ -404,7 +454,8 @@ export default function Home() {
 
       {/* ── ABOUT ── */}
       <section id="about" style={{ padding: "120px 0", background: W }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div className="hp-about">
           <FadeUp>
             <div style={{ position: "relative" }}>
               <div style={{ position: "relative", height: 580, overflow: "hidden" }}>
@@ -436,7 +487,7 @@ export default function Home() {
       {/* ── CONTACT ── */}
       <section id="contact" style={{ padding: "120px 0", background: NAVY }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
+          <div className="hp-contact">
             <FadeUp>
               <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: 16 }}>Let&apos;s Work Together</p>
               <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(36px,5vw,64px)", lineHeight: 1.0, color: W, marginBottom: 24, letterSpacing: "-0.02em" }}>

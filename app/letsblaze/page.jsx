@@ -55,11 +55,26 @@ export default function LetsBlaze() {
         <div className="l-wrap l-nav-row">
           <a href="/" className="l-logo">ACOMA <span>CAPITAL PARTNERS</span></a>
           <div className="l-nav-links">
+            <a href="/">Home</a>
             <a href="/#opportunities">All Listings</a>
-            <a href="#the-asset">The Asset</a>
+            <a href="/pueblo-parcel">Pueblo Parcel</a>
+            <a href="/bridge-loans">Bridge Loans</a>
             <a href="#contact">Contact</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="l-nav-cta">Book a Call</a>
           </div>
+          <label htmlFor="l-menu-toggle" className="l-hamburger" aria-label="Menu">
+            <span /><span /><span />
+          </label>
+        </div>
+        <input type="checkbox" id="l-menu-toggle" className="l-menu-toggle" />
+        <div className="l-mobile-nav">
+          <a href="/">Home</a>
+          <a href="/#opportunities">All Listings</a>
+          <a href="/pueblo-parcel">Pueblo Parcel</a>
+          <a href="/bridge-loans">Bridge Loans</a>
+          <a href="#the-asset">The Asset</a>
+          <a href="#contact">Contact</a>
+          <a href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
         </div>
       </nav>
 
@@ -299,6 +314,13 @@ const styles = `
 .l-nav-links a { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .2s; }
 .l-nav-links a:hover { color:#fff; }
 .l-nav-cta { background:#F6D200 !important; color:#202A54 !important; padding:10px 22px !important; font-weight:900 !important; }
+.l-menu-toggle { display:none; }
+.l-hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; }
+.l-hamburger span { display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
+.l-mobile-nav { display:none; flex-direction:column; background:#202A54; border-top:1px solid rgba(255,255,255,0.1); }
+.l-mobile-nav a { font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; padding:16px 24px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.l-mobile-nav a:last-child { border-bottom:none; color:#F6D200; }
+.l-menu-toggle:checked ~ .l-mobile-nav { display:flex; }
 
 /* HERO */
 .l-hero { background:#202A54; padding:130px 0 110px; }
@@ -417,6 +439,7 @@ const styles = `
 @media(max-width:768px){
   .l-wrap { padding:0 20px; }
   .l-nav-links { display:none; }
+  .l-hamburger { display:flex; }
   .l-hero { padding:80px 0 64px; }
   .l-h1 { font-size:48px; }
   .l-statsbar { flex-wrap:wrap; }

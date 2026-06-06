@@ -18,14 +18,10 @@ const infraItems = [
 ]
 
 const uses = [
-  'Quick-service or fast casual restaurant',
-  'Convenience retail or fuel canopy',
-  'Extended-stay or limited-service hotel',
-  'Truck service center or fleet maintenance',
-  'Commercial storage or logistics use',
-  'Multi-tenant retail strip',
-  'EV fleet charging station',
-  'Drive-through or service-based retail',
+  'Quick-service or fast casual restaurant','Convenience retail or fuel canopy',
+  'Extended-stay or limited-service hotel','Truck service center or fleet maintenance',
+  'Commercial storage or logistics use','Multi-tenant retail strip',
+  'EV fleet charging station','Drive-through or service-based retail',
 ]
 
 export default function PuebloParcel() {
@@ -33,12 +29,9 @@ export default function PuebloParcel() {
     <div id="pp2">
       <style dangerouslySetInnerHTML={{ __html: styles }} />
 
-      {/* ── 4-COLOR STRIPE ── */}
       <div className="p-colorbar">
-        <span style={{background:'#2C9143'}} />
-        <span style={{background:'#202A54'}} />
-        <span style={{background:'#1179EC'}} />
-        <span style={{background:'#F6D200'}} />
+        <span style={{background:'#2C9143'}} /><span style={{background:'#202A54'}} />
+        <span style={{background:'#1179EC'}} /><span style={{background:'#F6D200'}} />
       </div>
 
       {/* ── NAV ── */}
@@ -46,11 +39,25 @@ export default function PuebloParcel() {
         <div className="p-wrap p-nav-row">
           <a href="/" className="p-logo">ACOMA <span>CAPITAL PARTNERS</span></a>
           <div className="p-nav-links">
+            <a href="/">Home</a>
+            <a href="/#opportunities">All Listings</a>
             <a href="/#services">Services</a>
-            <a href="#project-info">The Property</a>
             <a href="#contact">Contact</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="p-nav-cta">Book a Call</a>
           </div>
+          <label htmlFor="p-menu-toggle" className="p-hamburger" aria-label="Menu">
+            <span /><span /><span />
+          </label>
+        </div>
+        <input type="checkbox" id="p-menu-toggle" className="p-menu-toggle" />
+        <div className="p-mobile-nav">
+          <a href="/">Home</a>
+          <a href="/#opportunities">All Listings</a>
+          <a href="/letsblaze">Let&apos;s Blaze Dispensary</a>
+          <a href="/bridge-loans">Bridge Loans</a>
+          <a href="#project-info">The Property</a>
+          <a href="#contact">Contact</a>
+          <a href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
         </div>
       </nav>
 
@@ -58,14 +65,8 @@ export default function PuebloParcel() {
       <section className="p-hero">
         <div className="p-wrap">
           <p className="p-eyebrow">Commercial Land · Pueblo, Colorado · I-25 Exit 104</p>
-          <h1 className="p-h1">
-            10 Acres.<br />
-            Land <span className="p-yellow">That</span><br />
-            Performs.
-          </h1>
-          <p className="p-hero-sub">
-            Adjacent to TA TravelCenters &amp; Love&apos;s Travel Stop &nbsp;·&nbsp; B-3 Zoning &nbsp;·&nbsp; $114M CDOT Interchange Underway
-          </p>
+          <h1 className="p-h1">10 Acres.<br />Land <span className="p-yellow">That</span><br />Performs.</h1>
+          <p className="p-hero-sub">Adjacent to TA TravelCenters &amp; Love&apos;s Travel Stop &nbsp;·&nbsp; B-3 Zoning &nbsp;·&nbsp; $114M CDOT Interchange Underway</p>
           <div className="p-cta-row">
             <a href="#project-info" className="p-btn-yellow">View Property Details</a>
             <a href={EMAIL} className="p-btn-ghost-white">Request Package</a>
@@ -76,10 +77,7 @@ export default function PuebloParcel() {
       {/* ── STATS BAR ── */}
       <div className="p-statsbar">
         {[['10','Acres'],['$2.5M','Asking Price'],['$250K','Per Acre'],['B-3','Zoning'],['I-25','Exit 104']].map(([n,l])=>(
-          <div key={l} className="p-stat">
-            <span className="p-stat-n">{n}</span>
-            <span className="p-stat-l">{l}</span>
-          </div>
+          <div key={l} className="p-stat"><span className="p-stat-n">{n}</span><span className="p-stat-l">{l}</span></div>
         ))}
       </div>
 
@@ -92,28 +90,17 @@ export default function PuebloParcel() {
           <p>This 10-acre parcel sits at one of Pueblo&apos;s most active commercial intersections — I-25 Exit 104 on the city&apos;s north end, directly adjacent to two major national travel center operators <strong>that together draw tens of thousands of visitors per month.</strong></p>
           <p>The surrounding corridor is no longer speculative. TravelCenters of America opened its Pueblo location at 1275 Drew Dix Parkway in December 2025, and Love&apos;s Travel Stop has operated at this exit for years. Both run 24 hours and serve commercial trucking, motorists, and regional traffic moving between Denver, Colorado Springs, and Pueblo&apos;s growing industrial base.</p>
           <p>At $250,000 per acre, this parcel is priced below comparable commercial land on the same corridor. The infrastructure is in place. The traffic is already there.</p>
-
           <div className="p-location-card">
             <div className="p-loc-header">
               <span className="p-loc-tag">Property Location</span>
               <div className="p-loc-address">I-25 Exit 104 · Drew Dix Parkway · Pueblo, CO 81008</div>
             </div>
             <div className="p-loc-body">
-              <div className="p-loc-neighbor">
-                <strong>TA TravelCenters — Pueblo</strong>
-                1275 Drew Dix Pkwy &nbsp;·&nbsp; Opened December 2025
-              </div>
-              <div className="p-loc-neighbor">
-                <strong>Love&apos;s Travel Stop #226</strong>
-                6470 N. Elizabeth St. &nbsp;·&nbsp; Open 24 Hours
-              </div>
-              <div className="p-loc-neighbor">
-                <strong>Regional Position</strong>
-                45 min south of Colorado Springs &nbsp;·&nbsp; 100 miles from Denver &nbsp;·&nbsp; Pinon Ridge Commercial Center &nbsp;·&nbsp; B-3 Zoning
-              </div>
+              <div className="p-loc-neighbor"><strong>TA TravelCenters — Pueblo</strong>1275 Drew Dix Pkwy &nbsp;·&nbsp; Opened December 2025</div>
+              <div className="p-loc-neighbor"><strong>Love&apos;s Travel Stop #226</strong>6470 N. Elizabeth St. &nbsp;·&nbsp; Open 24 Hours</div>
+              <div className="p-loc-neighbor"><strong>Regional Position</strong>45 min south of Colorado Springs &nbsp;·&nbsp; 100 miles from Denver &nbsp;·&nbsp; B-3 Zoning</div>
             </div>
           </div>
-
           <div className="p-cta-row" style={{marginTop:'48px'}}>
             <a href={EMAIL} className="p-btn-green">Request the Property Package</a>
           </div>
@@ -127,7 +114,6 @@ export default function PuebloParcel() {
           <div className="p-rule p-rule-yellow" />
           <h2 className="p-white">Two National Operators. Already There.</h2>
           <p className="p-muted-white">Both facilities are operational, open 24 hours, and generating consistent daily traffic directly past this parcel.</p>
-
           <div className="p-tenant-grid">
             <div className="p-tenant-card">
               <div className="p-tenant-name">TravelCenters of America — Pueblo</div>
@@ -141,7 +127,7 @@ export default function PuebloParcel() {
         </div>
       </section>
 
-      {/* ── LOCATION & INFRASTRUCTURE ── */}
+      {/* ── INFRASTRUCTURE ── */}
       <section className="p-section">
         <div className="p-wrap">
           <p className="p-section-label">03 / Location &amp; Infrastructure</p>
@@ -150,45 +136,26 @@ export default function PuebloParcel() {
           <p>I-25 Exit 104 is the primary northern gateway into Pueblo — the natural stop for long-haul trucking, regional commuters, and travelers along the Front Range. One of the highest commercial traffic concentrations in southern Colorado.</p>
           <p>CDOT is executing a <strong>$114 million reconstruction</strong> of the I-25/US 50B interchange. Scheduled completion: <strong>summer 2027</strong>. Access flow and interchange capacity across the entire northern Pueblo corridor will materially improve.</p>
           <p>Pinon Ridge Commercial Center is zoned <strong>B-3</strong> within Pueblo city limits — broad commercial entitlement already in place.</p>
-
           <div className="p-infra-grid">
             {infraItems.map((item) => (
               <div key={item.title} className="p-infra-item">
                 <div className="p-infra-icon">{item.icon}</div>
-                <div>
-                  <div className="p-infra-title">{item.title}</div>
-                  <div className="p-infra-desc">{item.desc}</div>
-                </div>
+                <div><div className="p-infra-title">{item.title}</div><div className="p-infra-desc">{item.desc}</div></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── MID-PAGE CTA ── */}
+      {/* ── MID CTA ── */}
       <section className="p-section p-section-navy">
         <div className="p-wrap">
           <h2 className="p-white">Interested in This Property?</h2>
           <p className="p-muted-white">Parcel maps, zoning documentation, and site access available immediately for qualified buyers.</p>
           <div className="p-triple-cta">
-            <a href={CAL} target="_blank" rel="noreferrer" className="p-triple-card p-card-green">
-              <span className="p-triple-icon">📅</span>
-              <span className="p-triple-micro">Schedule</span>
-              <span className="p-triple-title">Book a Call</span>
-              <span className="p-triple-body">Get on the calendar with Gino directly. No middlemen.</span>
-            </a>
-            <a href={FORM} target="_blank" rel="noreferrer" className="p-triple-card p-card-yellow">
-              <span className="p-triple-icon">📋</span>
-              <span className="p-triple-micro">Buyers</span>
-              <span className="p-triple-title">Buyer Questionnaire</span>
-              <span className="p-triple-body">Tell us what you&apos;re looking for and we&apos;ll match you to the right opportunity.</span>
-            </a>
-            <a href={EMAIL} className="p-triple-card p-card-blue">
-              <span className="p-triple-icon">✉️</span>
-              <span className="p-triple-micro">Direct</span>
-              <span className="p-triple-title">Send a Message</span>
-              <span className="p-triple-body">ginorod@acomacapitalpartners.com</span>
-            </a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="p-triple-card p-card-green"><span className="p-triple-icon">📅</span><span className="p-triple-micro">Schedule</span><span className="p-triple-title">Book a Call</span><span className="p-triple-body">Get on the calendar with Gino directly.</span></a>
+            <a href={FORM} target="_blank" rel="noreferrer" className="p-triple-card p-card-yellow"><span className="p-triple-icon">📋</span><span className="p-triple-micro">Buyers</span><span className="p-triple-title">Buyer Questionnaire</span><span className="p-triple-body">Tell us what you&apos;re looking for.</span></a>
+            <a href={EMAIL} className="p-triple-card p-card-blue"><span className="p-triple-icon">✉️</span><span className="p-triple-micro">Direct</span><span className="p-triple-title">Send a Message</span><span className="p-triple-body">ginorod@acomacapitalpartners.com</span></a>
           </div>
         </div>
       </section>
@@ -200,9 +167,7 @@ export default function PuebloParcel() {
           <div className="p-rule p-rule-yellow" />
           <h2 className="p-white">A Site That Fits Multiple Programs.</h2>
           <p className="p-muted-white">B-3 zoning, direct interstate exposure, and established anchor traffic support a wide range of development scenarios.</p>
-          <div className="p-uses-grid">
-            {uses.map(u => <div key={u} className="p-use-chip">{u}</div>)}
-          </div>
+          <div className="p-uses-grid">{uses.map(u => <div key={u} className="p-use-chip">{u}</div>)}</div>
         </div>
       </section>
 
@@ -212,22 +177,12 @@ export default function PuebloParcel() {
           <p className="p-section-label">05 / Deal Summary</p>
           <div className="p-rule" />
           <h2>Straightforward Acquisition. Ready to Close.</h2>
-          <p>The parcel is offered at $2,500,000 — $250,000 per acre. It sits in an already-zoned commercial district, adjacent to two operating national tenants, with direct interstate access and active infrastructure investment in the surrounding corridor.</p>
-          <p>This is not a land banking play or a speculative bet on future zoning. The commercial use case is established. The question for the buyer is timing and program fit.</p>
-
+          <p>The parcel is offered at $2,500,000 — $250,000 per acre. Zoned, adjacent to operating national tenants, with direct interstate access and active infrastructure investment in the surrounding corridor.</p>
+          <p>This is not a land banking play. The commercial use case is established. The question for the buyer is timing and program fit.</p>
           <div className="p-deal-grid">
-            <div className="p-deal-cell">
-              <span className="p-deal-n">10</span>
-              <span className="p-deal-l">Total Acres</span>
-            </div>
-            <div className="p-deal-cell p-deal-highlight">
-              <span className="p-deal-n">$2.5M</span>
-              <span className="p-deal-l">Asking Price</span>
-            </div>
-            <div className="p-deal-cell">
-              <span className="p-deal-n">$250K</span>
-              <span className="p-deal-l">Per Acre</span>
-            </div>
+            <div className="p-deal-cell"><span className="p-deal-n">10</span><span className="p-deal-l">Total Acres</span></div>
+            <div className="p-deal-cell p-deal-highlight"><span className="p-deal-n">$2.5M</span><span className="p-deal-l">Asking Price</span></div>
+            <div className="p-deal-cell"><span className="p-deal-n">$250K</span><span className="p-deal-l">Per Acre</span></div>
           </div>
         </div>
       </section>
@@ -239,68 +194,36 @@ export default function PuebloParcel() {
           <div className="p-rule p-rule-yellow" />
           <h2 className="p-white">Request The Property Package.</h2>
           <p className="p-muted-white">Parcel maps, zoning documentation, and site access for qualified buyers available immediately. No intake form — direct contact only.</p>
-
           <div className="p-triple-cta">
-            <a href={CAL} target="_blank" rel="noreferrer" className="p-triple-card p-card-green">
-              <span className="p-triple-icon">📅</span>
-              <span className="p-triple-micro">Schedule</span>
-              <span className="p-triple-title">Book a Call</span>
-              <span className="p-triple-body">Get on the calendar with Gino directly. No middlemen.</span>
-            </a>
-            <a href={FORM} target="_blank" rel="noreferrer" className="p-triple-card p-card-yellow">
-              <span className="p-triple-icon">📋</span>
-              <span className="p-triple-micro">Buyers</span>
-              <span className="p-triple-title">Buyer Questionnaire</span>
-              <span className="p-triple-body">Tell us what you&apos;re looking for and we&apos;ll match you to the right opportunity.</span>
-            </a>
-            <a href={EMAIL} className="p-triple-card p-card-blue">
-              <span className="p-triple-icon">✉️</span>
-              <span className="p-triple-micro">Direct</span>
-              <span className="p-triple-title">Send a Message</span>
-              <span className="p-triple-body">ginorod@acomacapitalpartners.com</span>
-            </a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="p-triple-card p-card-green"><span className="p-triple-icon">📅</span><span className="p-triple-micro">Schedule</span><span className="p-triple-title">Book a Call</span><span className="p-triple-body">Get on the calendar with Gino directly.</span></a>
+            <a href={FORM} target="_blank" rel="noreferrer" className="p-triple-card p-card-yellow"><span className="p-triple-icon">📋</span><span className="p-triple-micro">Buyers</span><span className="p-triple-title">Buyer Questionnaire</span><span className="p-triple-body">Tell us what you&apos;re looking for.</span></a>
+            <a href={EMAIL} className="p-triple-card p-card-blue"><span className="p-triple-icon">✉️</span><span className="p-triple-micro">Direct</span><span className="p-triple-title">Send a Message</span><span className="p-triple-body">ginorod@acomacapitalpartners.com</span></a>
           </div>
-
-          <p className="p-contact-phone">
-            <a href="tel:7207244185">(720) 724-4185</a>
-            &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners
-          </p>
+          <p className="p-contact-phone"><a href="tel:7207244185">(720) 724-4185</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>
         </div>
       </section>
 
-      {/* ── DISCLAIMER ── */}
-      <div className="p-disclaimer">
-        <div className="p-wrap">
-          <p>This document is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or real property interest. All figures are based on information believed to be reliable but are not guaranteed. Prospective buyers should conduct their own independent due diligence. Acoma Capital Partners, Inc. is not a licensed real estate brokerage.</p>
-        </div>
-      </div>
+      <div className="p-disclaimer"><div className="p-wrap"><p>This document is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or real property interest. All figures are based on information believed to be reliable but are not guaranteed. Prospective buyers should conduct their own independent due diligence. Acoma Capital Partners, Inc. is not a licensed real estate brokerage.</p></div></div>
 
-      {/* ── FOOTER ── */}
       <div className="p-colorbar">
-        <span style={{background:'#2C9143'}} />
-        <span style={{background:'#202A54'}} />
-        <span style={{background:'#1179EC'}} />
-        <span style={{background:'#F6D200'}} />
+        <span style={{background:'#2C9143'}} /><span style={{background:'#202A54'}} />
+        <span style={{background:'#1179EC'}} /><span style={{background:'#F6D200'}} />
       </div>
       <footer className="p-footer">
         <div className="p-wrap p-footer-row">
           <div>
             <div className="p-footer-logo">ACOMA <span>CAPITAL</span> PARTNERS</div>
-            <div className="p-footer-info">
-              (720) 724-4185 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br />
-              <a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a>
-            </div>
+            <div className="p-footer-info">(720) 724-4185 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br /><a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a></div>
           </div>
           <div className="p-footer-links">
             <a href="/">Home</a>
+            <a href="/letsblaze">Let&apos;s Blaze Dispensary</a>
+            <a href="/bridge-loans">Bridge Loans</a>
             <a href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
             <a href={FORM} target="_blank" rel="noreferrer">Buyer Questionnaire</a>
-            <a href={EMAIL}>Contact Gino</a>
           </div>
         </div>
-        <div className="p-footer-bottom">
-          <div className="p-wrap">© 2026 Acoma Capital Partners, Inc.</div>
-        </div>
+        <div className="p-footer-bottom"><div className="p-wrap">© 2026 Acoma Capital Partners, Inc.</div></div>
       </footer>
     </div>
   )
@@ -314,7 +237,6 @@ const styles = `
 #pp2 h1,#pp2 h2,#pp2 h3,#pp2 h4,#pp2 p,#pp2 ul,#pp2 ol,#pp2 li,#pp2 figure { margin:0; padding:0; }
 .p-wrap { max-width:1200px; margin:0 auto; padding:0 40px; }
 
-/* 4-COLOR BAR */
 .p-colorbar { height:6px; display:flex; }
 .p-colorbar span { flex:1; }
 
@@ -328,38 +250,45 @@ const styles = `
 .p-nav-links a:hover { color:#fff; }
 .p-nav-cta { background:#F6D200 !important; color:#202A54 !important; padding:10px 22px !important; font-weight:900 !important; }
 
+/* HAMBURGER */
+.p-menu-toggle { display:none; }
+.p-hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; }
+.p-hamburger span { display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
+.p-mobile-nav { display:none; flex-direction:column; background:#202A54; border-top:1px solid rgba(255,255,255,0.1); }
+.p-mobile-nav a { font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; padding:16px 24px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.p-mobile-nav a:last-child { border-bottom:none; color:#F6D200; }
+.p-menu-toggle:checked ~ .p-mobile-nav { display:flex; }
+
 /* HERO */
 .p-hero { background:#202A54; padding:130px 0 110px; }
 .p-eyebrow { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:32px; display:block; }
-.p-h1 { font-size:clamp(64px,10vw,128px); font-weight:900; line-height:0.88; letter-spacing:-0.04em; color:#fff; text-transform:uppercase; margin-bottom:40px; }
+.p-h1 { font-size:clamp(60px,9vw,120px); font-weight:900; line-height:0.88; letter-spacing:-0.04em; color:#fff; text-transform:uppercase; margin-bottom:36px; }
 .p-yellow { color:#F6D200; }
-.p-green  { color:#2C9143; }
-.p-blue   { color:#1179EC; }
 .p-white  { color:#fff !important; }
-.p-hero-sub { font-size:16px; color:rgba(255,255,255,0.55); max-width:700px; line-height:1.75; margin-bottom:56px; font-weight:500; letter-spacing:0.02em; }
+.p-hero-sub { font-size:16px; color:rgba(255,255,255,0.6); max-width:600px; line-height:1.7; margin-bottom:52px; font-weight:500; letter-spacing:0.02em; }
 .p-cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
 
 /* STATS BAR */
-.p-statsbar { background:#111827; display:flex; }
-.p-stat { flex:1; padding:32px 20px; text-align:center; border-right:1px solid rgba(255,255,255,0.06); }
+.p-statsbar { background:#111827; display:flex; flex-wrap:wrap; }
+.p-stat { flex:1; min-width:20%; padding:28px 20px; text-align:center; border-right:1px solid rgba(255,255,255,0.06); }
 .p-stat:last-child { border-right:none; }
 .p-stat:nth-child(1) { border-top:4px solid #2C9143; }
 .p-stat:nth-child(2) { border-top:4px solid #F6D200; }
 .p-stat:nth-child(3) { border-top:4px solid #1179EC; }
 .p-stat:nth-child(4) { border-top:4px solid #2C9143; }
 .p-stat:nth-child(5) { border-top:4px solid #F6D200; }
-.p-stat-n { display:block; font-size:30px; font-weight:900; color:#fff; letter-spacing:-0.02em; }
-.p-stat-l { display:block; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:6px; }
+.p-stat-n { display:block; font-size:28px; font-weight:900; color:#fff; letter-spacing:-0.02em; }
+.p-stat-l { display:block; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:5px; }
 
 /* BUTTONS */
-.p-btn-green { display:inline-block; padding:17px 40px; background:#2C9143; color:#fff; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
+.p-btn-green { display:inline-block; padding:16px 36px; background:#2C9143; color:#fff; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
 .p-btn-green:hover { opacity:0.85; }
-.p-btn-yellow { display:inline-block; padding:17px 40px; background:#F6D200; color:#202A54; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
+.p-btn-yellow { display:inline-block; padding:16px 36px; background:#F6D200; color:#202A54; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
 .p-btn-yellow:hover { opacity:0.85; }
-.p-btn-ghost-white { display:inline-block; padding:15px 40px; border:2px solid rgba(255,255,255,0.3); color:#fff; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:border-color .2s; }
+.p-btn-ghost-white { display:inline-block; padding:14px 36px; border:2px solid rgba(255,255,255,0.3); color:#fff; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:border-color .2s; }
 .p-btn-ghost-white:hover { border-color:#fff; }
 
-/* SECTIONS — full width, no forced columns */
+/* SECTIONS */
 .p-section { padding:112px 0; border-top:1px solid #e8ecf0; }
 .p-section-navy { background:#202A54; border-top:none; }
 .p-section-green { background:#2C9143; border-top:none; }
@@ -375,42 +304,36 @@ const styles = `
 #pp2 p:last-child { margin-bottom:0; }
 .p-muted-white { color:rgba(255,255,255,0.65) !important; max-width:760px; }
 
-/* LOCATION CARD — full width strip */
-.p-location-card { background:#111827; border-top:5px solid #F6D200; margin-top:56px; padding:0; }
+/* LOCATION CARD */
+.p-location-card { background:#111827; border-top:5px solid #F6D200; margin-top:56px; }
 .p-loc-header { padding:40px 48px 32px; border-bottom:1px solid rgba(255,255,255,0.08); }
 .p-loc-tag { font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#F6D200; display:block; margin-bottom:12px; }
-.p-loc-address { font-size:24px; font-weight:900; color:#fff; line-height:1.2; letter-spacing:-0.01em; }
-.p-loc-body { display:grid; grid-template-columns:repeat(3,1fr); gap:0; }
+.p-loc-address { font-size:24px; font-weight:900; color:#fff; line-height:1.2; }
+.p-loc-body { display:grid; grid-template-columns:repeat(3,1fr); }
 .p-loc-neighbor { padding:32px 48px; border-right:1px solid rgba(255,255,255,0.06); font-size:14px; color:rgba(255,255,255,0.6); line-height:1.7; }
 .p-loc-neighbor:last-child { border-right:none; }
 .p-loc-neighbor strong { color:#fff; display:block; font-weight:700; font-size:13px; letter-spacing:0.04em; margin-bottom:6px; }
-@media(max-width:720px){ .p-loc-body{grid-template-columns:1fr;} .p-loc-neighbor{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);} .p-loc-neighbor:last-child{border-bottom:none;} }
 
 /* TENANT CARDS */
 .p-tenant-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:52px; }
-@media(max-width:680px){ .p-tenant-grid{grid-template-columns:1fr;} }
-.p-tenant-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-top:4px solid #F6D200; padding:36px 32px; }
-.p-tenant-name { font-size:11px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#F6D200; margin-bottom:16px; }
-.p-tenant-body { font-size:15px; color:rgba(255,255,255,0.78) !important; line-height:1.8; margin:0; max-width:none; }
+.p-tenant-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-top:4px solid #F6D200; padding:32px 28px; }
+.p-tenant-name { font-size:11px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#F6D200; margin-bottom:14px; }
+.p-tenant-body { font-size:15px; color:rgba(255,255,255,0.8) !important; line-height:1.8; margin:0; max-width:none; }
 .p-tenant-body strong { color:#fff !important; font-weight:700; }
 
-/* INFRA GRID — 2 wide cards per row */
+/* INFRA GRID */
 .p-infra-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:56px; }
-@media(max-width:680px){ .p-infra-grid{grid-template-columns:1fr;} }
-.p-infra-item { display:flex; gap:24px; align-items:flex-start; background:#f4f6f9; border-left:4px solid #2C9143; padding:28px 32px; }
-.p-infra-icon { flex-shrink:0; width:52px; height:52px; background:#202A54; color:#F6D200; display:flex; align-items:center; justify-content:center; font-size:22px; }
-.p-infra-title { font-size:12px; font-weight:900; letter-spacing:0.08em; text-transform:uppercase; color:#202A54; margin-bottom:6px; }
-.p-infra-desc { font-size:14px; color:#555; line-height:1.65; }
+.p-infra-item { display:flex; gap:20px; align-items:flex-start; background:#f4f6f9; border-left:4px solid #2C9143; padding:28px 32px; }
+.p-infra-icon { flex-shrink:0; width:48px; height:48px; background:#202A54; color:#F6D200; display:flex; align-items:center; justify-content:center; font-size:20px; }
+.p-infra-title { font-size:12px; font-weight:900; letter-spacing:0.08em; text-transform:uppercase; color:#202A54; margin-bottom:5px; }
+.p-infra-desc { font-size:13px; color:#666; line-height:1.6; }
 
 /* USES */
 .p-uses-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:48px; }
-@media(max-width:800px){ .p-uses-grid{grid-template-columns:1fr 1fr;} }
-@media(max-width:480px){ .p-uses-grid{grid-template-columns:1fr;} }
-.p-use-chip { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.12); border-left:4px solid #F6D200; padding:18px 20px; font-size:14px; font-weight:600; color:#fff; line-height:1.45; }
+.p-use-chip { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.12); border-left:4px solid #F6D200; padding:18px 20px; font-size:14px; font-weight:600; color:#fff; line-height:1.4; }
 
-/* DEAL SUMMARY */
+/* DEAL GRID */
 .p-deal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; background:#e4e8f0; margin-top:56px; }
-@media(max-width:520px){ .p-deal-grid{grid-template-columns:1fr;} }
 .p-deal-cell { background:#fff; padding:60px 40px; text-align:center; }
 .p-deal-n { display:block; font-size:60px; font-weight:900; color:#202A54; letter-spacing:-0.03em; line-height:1; }
 .p-deal-l { display:block; font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#aaa; margin-top:10px; }
@@ -420,7 +343,6 @@ const styles = `
 
 /* TRIPLE CTA */
 .p-triple-cta { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-top:56px; }
-@media(max-width:700px){ .p-triple-cta{grid-template-columns:1fr;} }
 .p-triple-card { display:flex; flex-direction:column; align-items:center; gap:12px; padding:52px 40px; text-decoration:none; text-align:center; transition:filter .2s; }
 .p-triple-card:hover { filter:brightness(1.07); }
 .p-card-green  { background:#2C9143; }
@@ -437,10 +359,8 @@ const styles = `
 .p-card-green .p-triple-body, .p-card-blue .p-triple-body { color:rgba(255,255,255,0.75); }
 .p-card-yellow .p-triple-body { color:rgba(32,42,84,0.65); }
 
-/* CONTACT PHONE */
 .p-contact-phone { margin-top:36px; font-size:14px; color:rgba(255,255,255,0.4); }
 .p-contact-phone a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:700; }
-.p-contact-phone a:hover { color:#F6D200; }
 
 /* DISCLAIMER */
 .p-disclaimer { padding:36px 0; background:#f5f5f2; border-top:1px solid #e8ecf0; }
@@ -449,31 +369,39 @@ const styles = `
 /* FOOTER */
 .p-footer { background:#202A54; padding:56px 0 0; }
 .p-footer-row { display:grid; grid-template-columns:1fr 1fr; gap:40px; padding-bottom:48px; }
-@media(max-width:560px){ .p-footer-row{grid-template-columns:1fr;} }
 .p-footer-logo { font-size:14px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px; }
 .p-footer-logo span { color:#F6D200; }
 .p-footer-info { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.9; }
 .p-footer-info a { color:rgba(255,255,255,0.6); text-decoration:none; }
-.p-footer-info a:hover { color:#F6D200; }
 .p-footer-links { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
-@media(max-width:560px){ .p-footer-links{align-items:flex-start;} }
-@media(max-width:768px){
-  .p-wrap { padding:0 20px; }
-  .p-nav-links { display:none; }
-  .p-hero { padding:80px 0 64px; }
-  .p-h1 { font-size:52px; }
-  .p-statsbar { flex-wrap:wrap; }
-  .p-stat { min-width:50%; flex:none; border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
-  .p-section { padding:72px 0; }
-  .p-loc-header { padding:28px 24px 20px; }
-  .p-loc-address { font-size:18px; }
-  .p-deal-cell { padding:40px 20px; }
-  .p-deal-n { font-size:40px; }
-  .p-triple-card { padding:36px 24px; }
-  .p-footer-row { padding-bottom:32px; }
-}
 .p-footer-links a { font-size:13px; color:rgba(255,255,255,0.4); text-decoration:none; font-weight:600; transition:color .2s; }
 .p-footer-links a:hover { color:#F6D200; }
 .p-footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding:22px 0; }
 .p-footer-bottom div { font-size:12px; color:rgba(255,255,255,0.2); }
+
+/* MOBILE */
+@media(max-width:768px){
+  .p-wrap { padding:0 20px; }
+  .p-nav-links { display:none; }
+  .p-hamburger { display:flex; }
+  .p-hero { padding:80px 0 64px; }
+  .p-h1 { font-size:52px; }
+  .p-stat { min-width:50%; flex:none; border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .p-section { padding:72px 0; }
+  .p-loc-body { grid-template-columns:1fr; }
+  .p-loc-neighbor { border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .p-loc-neighbor:last-child { border-bottom:none; }
+  .p-loc-header { padding:28px 24px 20px; }
+  .p-loc-address { font-size:18px; }
+  .p-tenant-grid { grid-template-columns:1fr; }
+  .p-infra-grid { grid-template-columns:1fr; }
+  .p-uses-grid { grid-template-columns:1fr 1fr; }
+  .p-deal-grid { grid-template-columns:1fr; }
+  .p-deal-cell { padding:40px 20px; }
+  .p-deal-n { font-size:44px; }
+  .p-triple-cta { grid-template-columns:1fr; }
+  .p-triple-card { padding:36px 24px; }
+  .p-footer-row { grid-template-columns:1fr; padding-bottom:32px; }
+  .p-footer-links { align-items:flex-start; }
+}
 `

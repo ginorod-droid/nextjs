@@ -27,11 +27,25 @@ export default function BridgeLoans() {
         <div className="b-wrap b-nav-row">
           <a href="/" className="b-logo">ACOMA <span>CAPITAL PARTNERS</span></a>
           <div className="b-nav-links">
-            <a href="/pueblo-parcel">Properties</a>
+            <a href="/">Home</a>
+            <a href="/pueblo-parcel">Pueblo Parcel</a>
+            <a href="/letsblaze">Let&apos;s Blaze</a>
             <a href="#qualify">Pre-Qualify</a>
-            <a href={EMAIL}>Contact</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="b-nav-cta">Book a Call</a>
           </div>
+          <label htmlFor="b-menu-toggle" className="b-hamburger" aria-label="Menu">
+            <span /><span /><span />
+          </label>
+        </div>
+        <input type="checkbox" id="b-menu-toggle" className="b-menu-toggle" />
+        <div className="b-mobile-nav">
+          <a href="/">Home</a>
+          <a href="/pueblo-parcel">Pueblo Parcel</a>
+          <a href="/letsblaze">Let&apos;s Blaze Dispensary</a>
+          <a href="#qualify">Pre-Qualify</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href={EMAIL}>Contact</a>
+          <a href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
         </div>
       </nav>
 
@@ -252,6 +266,13 @@ const styles = `
 .b-nav-links a { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .2s; }
 .b-nav-links a:hover { color:#fff; }
 .b-nav-cta { background:#F6D200 !important; color:#202A54 !important; padding:10px 22px !important; font-weight:900 !important; }
+.b-menu-toggle { display:none; }
+.b-hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; }
+.b-hamburger span { display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
+.b-mobile-nav { display:none; flex-direction:column; background:#202A54; border-top:1px solid rgba(255,255,255,0.1); }
+.b-mobile-nav a { font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; padding:16px 24px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.b-mobile-nav a:last-child { border-bottom:none; color:#F6D200; }
+.b-menu-toggle:checked ~ .b-mobile-nav { display:flex; }
 
 /* HERO */
 .b-hero { background:#202A54; position:relative; overflow:hidden; padding:130px 0 110px; }
@@ -354,6 +375,7 @@ const styles = `
 @media(max-width:768px){
   .b-wrap { padding:0 20px; }
   .b-nav-links { display:none; }
+  .b-hamburger { display:flex; }
   .b-hero { padding:80px 0 64px; }
   .b-h1 { font-size:52px; }
   .b-hero-ghost { display:none; }
