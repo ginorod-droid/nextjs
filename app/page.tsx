@@ -332,41 +332,51 @@ export default function Home() {
       </section>
 
       {/* ── HARD MONEY ── */}
-      <section id="hardmoney" style={{ padding: "120px 0", background: GREEN }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}>
-          <div>
+      <section id="hardmoney" style={{ background: GREEN, padding: "120px 0" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+
+          {/* Section label */}
+          <FadeUp>
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
+              03 / Capital Services
+            </p>
+          </FadeUp>
+
+          {/* Two-col: text left, image right — with generous gap */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 120, alignItems: "center", marginTop: 8 }}>
             <FadeUp>
-              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
-                03 / Capital Services
-              </p>
-              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(36px,5vw,64px)", lineHeight: 1.0, color: W, marginBottom: 32, letterSpacing: "-0.02em" }}>
-                Need money fast<br />to close a deal?
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(36px,5vw,68px)", lineHeight: 1.0, color: W, marginBottom: 36, letterSpacing: "-0.02em" }}>
+                Bridge Loans for Operators Who Move Fast.
               </h2>
-              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.8)", marginBottom: 20 }}>
-                Hard money loans are short-term loans backed by the property itself — not your credit score. They cost more, but they move quick when the bank says no or takes too long.
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.85, color: "rgba(255,255,255,0.82)", marginBottom: 20 }}>
+                Hard money loans backed by the property — not your credit score. When the bank takes too long, we close in 5 days. $100K to $20M. Approved in 24 hours.
               </p>
-              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", marginBottom: 52 }}>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.85, color: "rgba(255,255,255,0.55)", marginBottom: 48 }}>
                 Capital that moves at the speed of a deal — not the speed of a committee.
               </p>
-              <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-                <a href="tel:7207244185" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
-                  (720) 724-4185
+              <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 24 }}>
+                <a href="/bridge-loans" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
+                  Explore Bridge Loans →
                 </a>
-                <a href="/bridge-loans" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.4)", color: W, padding: "18px 40px", textDecoration: "none" }}>
-                  Discuss Your Loan →
+                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.4)", color: W, padding: "18px 40px", textDecoration: "none" }}>
+                  Book a Call →
                 </a>
+              </div>
+              <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.4)", marginBottom: 0 }}>
+                Call directly: <a href="tel:7207244185" style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontWeight: 600 }}>(720) 724-4185</a>
+              </p>
+            </FadeUp>
+
+            <FadeUp delay={0.15}>
+              <div style={{ position: "relative" }}>
+                <div style={{ position: "relative", height: 540, overflow: "hidden" }}>
+                  <Image src="/hardmoney.jpeg" alt="Bridge Loans" fill style={{ objectFit: "cover" }} />
+                </div>
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 5, background: YELLOW }} />
               </div>
             </FadeUp>
           </div>
-          <FadeUp delay={0.15}>
-            <div style={{ position: "relative" }}>
-              <div style={{ position: "relative", height: 460, overflow: "hidden" }}>
-                <Image src="/hardmoney.jpeg" alt="Hard Money Loans" fill style={{ objectFit: "cover" }} />
-              </div>
-              <div style={{ position: "absolute", bottom: -3, left: 0, right: 0, height: 4, background: YELLOW }} />
-            </div>
-          </FadeUp>
         </div>
       </section>
 
@@ -391,22 +401,12 @@ export default function Home() {
                 Acoma Capital Partners
               </h2>
               <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 24 }}>
-                A real estate brokerage specializing in both traditional and alternative financing solutions. Founded by Gino Rodrigues, who brings over 15 years of experience in banking and real estate.
+                Acoma Capital Partners is a Colorado-based commercial real estate and business brokerage firm. We help business owners, investors, and operators buy, sell, finance, and optimize commercial assets and businesses.
               </p>
               <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#888", marginBottom: 56 }}>
-                We&apos;ve successfully facilitated over $10 million in transactions — from conventional acquisitions to complex alternative financing structures.
+                With extensive experience in commercial real estate, cannabis industry transactions, capital solutions, and business intelligence, our team focuses on helping clients identify opportunities, reduce risk, and make better business decisions.
               </p>
             </FadeUp>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-              {([["$10M+","Transactions Facilitated", GREEN],["15+","Years in Banking & Real Estate", BLUE]] as [string,string,string][]).map(([n,l,c],i) => (
-                <FadeUp key={i} delay={i*0.1}>
-                  <div style={{ padding: 24, background: "#f4f6f9", borderTop: `4px solid ${c}` }}>
-                    <div style={{ fontFamily: P, fontWeight: 900, fontSize: 40, color: NAVY, letterSpacing: "-0.02em", marginBottom: 8 }}>{n}</div>
-                    <div style={{ fontFamily: I, fontSize: 13, color: "#999", lineHeight: 1.5 }}>{l}</div>
-                  </div>
-                </FadeUp>
-              ))}
-            </div>
           </div>
         </div>
       </section>
