@@ -165,6 +165,34 @@ export default function PuebloParcel() {
         </div>
       </section>
 
+      {/* ── MID-PAGE CTA ── */}
+      <section className="p-section p-section-navy">
+        <div className="p-wrap">
+          <h2 className="p-white">Interested in This Property?</h2>
+          <p className="p-muted-white">Parcel maps, zoning documentation, and site access available immediately for qualified buyers.</p>
+          <div className="p-triple-cta">
+            <a href={CAL} target="_blank" rel="noreferrer" className="p-triple-card p-card-green">
+              <span className="p-triple-icon">📅</span>
+              <span className="p-triple-micro">Schedule</span>
+              <span className="p-triple-title">Book a Call</span>
+              <span className="p-triple-body">Get on the calendar with Gino directly. No middlemen.</span>
+            </a>
+            <a href={FORM} target="_blank" rel="noreferrer" className="p-triple-card p-card-yellow">
+              <span className="p-triple-icon">📋</span>
+              <span className="p-triple-micro">Buyers</span>
+              <span className="p-triple-title">Buyer Questionnaire</span>
+              <span className="p-triple-body">Tell us what you&apos;re looking for and we&apos;ll match you to the right opportunity.</span>
+            </a>
+            <a href={EMAIL} className="p-triple-card p-card-blue">
+              <span className="p-triple-icon">✉️</span>
+              <span className="p-triple-micro">Direct</span>
+              <span className="p-triple-title">Send a Message</span>
+              <span className="p-triple-body">ginorod@acomacapitalpartners.com</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── POTENTIAL USES ── */}
       <section className="p-section p-section-green">
         <div className="p-wrap">
