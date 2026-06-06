@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   const eyebrow = (text: string, light = false) => (
-    <p style={{ fontFamily: P, fontWeight: 700, fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase" as const, color: light ? "rgba(255,255,255,0.5)" : B, marginBottom: 16 }}>
+    <p style={{ fontFamily: P, fontWeight: 700, fontSize: 14, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: light ? W : W, marginBottom: 16 }}>
       {text}
     </p>
   );
@@ -56,8 +56,7 @@ export default function Home() {
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 76 }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            <Image src="/acoma-icon.png" alt="Acoma" width={36} height={36} style={{ height: 36, width: "auto" }} />
-            <span style={{ fontFamily: P, fontWeight: 800, fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase", color: K }}>Acoma Capital</span>
+            <Image src="/acoma-horizontal.png" alt="Acoma Capital Partners" width={200} height={40} style={{ height: 36, width: "auto" }} />
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: 40 }}>
             {[["#opportunities","Opportunities"],["#services","Services"],["#about","About"]].map(([h,l]) => (
@@ -88,7 +87,7 @@ export default function Home() {
           <FadeUp delay={0.1}>
             <h1 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(56px,9vw,110px)", lineHeight: 0.95, color: W, marginBottom: 48, letterSpacing: "-0.02em" }}>
               Capital<br />
-              <span style={{ color: W, WebkitTextStroke: `1px rgba(255,255,255,0.3)`, WebkitTextFillColor: "transparent" }}>That</span>{" "}
+              <span style={{ color: "transparent", WebkitTextStroke: `2px rgba(255,255,255,0.55)` } as React.CSSProperties}>That</span>{" "}
               Moves.<br />
               Deals{" "}
               <span style={{ color: B }}>That</span><br />
@@ -367,6 +366,29 @@ export default function Home() {
                 </p>
               </div>
             </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA BAND ── */}
+      <section style={{ background: B, padding: "72px 0", borderTop: `4px solid ${K}` }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 32 }}>
+          <div>
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 14, letterSpacing: "0.18em", textTransform: "uppercase", color: W, marginBottom: 12 }}>Ready to Move?</p>
+            <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(28px,3.5vw,44px)", color: W, lineHeight: 1.05, letterSpacing: "-0.02em", marginBottom: 0 }}>
+              Let&apos;s talk about your deal.
+            </h2>
+          </div>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="tel:7207244185" style={{ fontFamily: P, fontWeight: 800, fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", background: W, color: B, padding: "18px 36px", textDecoration: "none" }}>
+              (720) 724-4185
+            </a>
+            <a href="/bridge-loans" style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "18px 36px", textDecoration: "none" }}>
+              Bridge Loans →
+            </a>
+            <a href="/pueblo-parcel" style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "18px 36px", textDecoration: "none" }}>
+              Pueblo Parcel →
+            </a>
           </div>
         </div>
       </section>
