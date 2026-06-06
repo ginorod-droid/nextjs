@@ -283,7 +283,7 @@ const styles = `
 
 #pp2 { font-family:'Poppins',sans-serif; background:#fff; color:#202A54; font-size:16px; line-height:1.6; }
 #pp2 *,#pp2 *::before,#pp2 *::after { box-sizing:border-box; margin:0; padding:0; }
-.p-wrap { max-width:1100px; margin:0 auto; padding:0 80px; }
+.p-wrap { max-width:1200px; margin:0 auto; padding:0 40px; }
 
 /* 4-COLOR BAR */
 .p-colorbar { height:6px; display:flex; }
