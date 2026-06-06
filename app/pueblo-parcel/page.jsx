@@ -282,7 +282,8 @@ const styles = `
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
 #pp2 { font-family:'Poppins',sans-serif; background:#fff; color:#202A54; font-size:16px; line-height:1.6; }
-#pp2 *,#pp2 *::before,#pp2 *::after { box-sizing:border-box; margin:0; padding:0; }
+#pp2 *,#pp2 *::before,#pp2 *::after { box-sizing:border-box; }
+#pp2 h1,#pp2 h2,#pp2 h3,#pp2 h4,#pp2 p,#pp2 ul,#pp2 ol,#pp2 li,#pp2 figure { margin:0; padding:0; }
 .p-wrap { max-width:1200px; margin:0 auto; padding:0 40px; }
 
 /* 4-COLOR BAR */
