@@ -187,7 +187,7 @@ export default function Home() {
           </FadeUp>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
 
-            {/* Card 1 */}
+            {/* Card 1 — Pueblo Parcel */}
             <FadeUp delay={0.1}>
               <div style={{ background: W, border: "1px solid #eee", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.08)"; }}
@@ -215,14 +215,14 @@ export default function Home() {
                   <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
                     Adjacent to TravelCenters of America and Love&apos;s Travel Stop. Direct interstate access, B-3 zoning, no rezoning required. $114M CDOT interchange upgrade underway.
                   </p>
-                  <a href="/rev-elders" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: B, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
+                  <a href="/pueblo-parcel" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: B, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
                     View Listing →
                   </a>
                 </div>
               </div>
             </FadeUp>
 
-            {/* Card 2 */}
+            {/* Card 2 — Let's Blaze */}
             <FadeUp delay={0.18}>
               <div style={{ background: W, border: "1px solid #eee", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.08)"; }}
@@ -276,7 +276,7 @@ export default function Home() {
               <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.35)", marginBottom: 52 }}>
                 Capital that moves at the speed of a deal — not the speed of a committee.
               </p>
-              <a href="mailto:ginorod@acomacapitalpartners.com" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: B, color: W, padding: "18px 40px", textDecoration: "none" }}>
+              <a href="/bridge-loans" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: B, color: W, padding: "18px 40px", textDecoration: "none" }}>
                 Discuss Your Loan →
               </a>
             </FadeUp>
@@ -361,9 +361,9 @@ export default function Home() {
                 <div style={{ height: 1, background: "rgba(255,255,255,0.1)", margin: "28px 0" }} />
                 <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: 12 }}>Currently Offering</p>
                 <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-                  10-Acre Commercial Parcel · Pueblo, CO<br />
+                  <a href="/pueblo-parcel" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>10-Acre Commercial Parcel · Pueblo, CO</a><br />
                   Let&apos;s Blaze Medical Dispensary · Denver, CO<br />
-                  CRE Hard Money Loans · Colorado
+                  <a href="/bridge-loans" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>CRE Hard Money Loans · Colorado</a>
                 </p>
               </div>
             </FadeUp>
