@@ -1,25 +1,40 @@
 // app/letsblaze/page.jsx
 
 export const metadata = {
-  title: "Let's Blaze Medical Dispensary | Business Sale | Denver, CO | Acoma Capital Partners",
-  description: "Active medical dispensary for sale in Denver's Baker District. $595,000. Social equity designee, zero violations, active medical license. Denver has stopped issuing new retail cannabis licenses.",
+  title: "Let's Blaze Medical Dispensary | Acquisition Opportunity | Denver, CO | Acoma Capital Partners",
+  description: "Rare acquisition opportunity — active medical dispensary in Denver's Baker District. Restricted licensing area. No new cannabis stores permitted in the neighborhood. Contact Acoma Capital Partners for deal parameters.",
 }
 
 const CAL  = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true'
 const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
 const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
-const credentials = [
-  { icon: '🏥', title: 'Active Medical License', desc: 'Fully licensed and operational. Revenue-generating from day one of ownership.' },
-  { icon: '⚖️', title: 'Social Equity Designee', desc: 'A protected license classification that carries significant regulatory and competitive advantages in Colorado.' },
-  { icon: '✅', title: 'Zero Violations', desc: 'Clean compliance record. No regulatory issues, no pending actions, no surprises.' },
-  { icon: '📍', title: 'Prime Baker District Location', desc: '120 S. Kalamath St. — established foot traffic, walkable neighborhood, strong local customer base.' },
+const trophyAssets = [
+  { icon: '📋', title: 'Active Medical License', desc: 'Fully licensed and current with the State of Colorado. Transferable to a qualified buyer.' },
+  { icon: '⚖️', title: 'Social Equity Designee', desc: 'Colorado Social Equity status adds strategic and regulatory value that cannot be replicated with a new license application.' },
+  { icon: '✅', title: 'Zero MED Violations', desc: 'Clean compliance record with the Marijuana Enforcement Division. No disciplinary actions, no pending matters.' },
+  { icon: '📁', title: 'Clean Disciplinary Record', desc: 'No regulatory incidents on file. The license transfers with a spotless history — a rare find in the Denver market.' },
+  { icon: '👥', title: 'Existing Customer Base', desc: 'Established patient relationships and brand presence in the Baker District neighborhood.' },
+  { icon: '📍', title: 'Prime Baker District Location', desc: '120 S. Kalamath St. — high foot traffic corridor, dense residential demand, established cannabis retail neighborhood.' },
 ]
 
-const whyItMatters = [
-  { stat: '0', label: 'New Retail Cannabis Licenses', detail: 'Denver has halted issuance of new retail cannabis licenses — this asset cannot be replicated.' },
-  { stat: '800', label: 'Square Feet', detail: 'Efficient, fully built-out retail floor plan with all required fixtures and compliance infrastructure in place.' },
-  { stat: '$595K', label: 'Asking Price', detail: 'Priced for a qualified operator or investor ready to step into an active, licensed operation.' },
+const opportunities = [
+  {
+    title: 'A License You Cannot Buy New',
+    desc: 'The Baker District is a restricted licensing area. No new cannabis retail stores are permitted to open in this neighborhood. The only way in is through an existing license — and this is one of them.',
+  },
+  {
+    title: 'The Baker District Advantage',
+    desc: 'One of Denver\'s most established cannabis retail corridors. Dense residential population, strong foot traffic, and a customer base already accustomed to shopping the neighborhood.',
+  },
+  {
+    title: 'Spotless Regulatory Standing',
+    desc: 'Zero MED violations. Clean disciplinary record. No pending regulatory matters. The license transfers with a history any buyer would want — and most can\'t find.',
+  },
+  {
+    title: 'Stability Backed by Social Equity',
+    desc: 'Colorado Social Equity Designee status is a protected classification that adds strategic value and regulatory advantages that a standard license simply does not carry.',
+  },
 ]
 
 export default function LetsBlaze() {
@@ -51,19 +66,19 @@ export default function LetsBlaze() {
       {/* ── HERO ── */}
       <section className="l-hero">
         <div className="l-wrap">
-          <p className="l-eyebrow">Business Sale · Baker District, Denver, CO</p>
+          <p className="l-eyebrow">Confidential · Business Sale · Baker District, Denver, CO</p>
           <h1 className="l-h1">
-            A License<br />
+            Own a Rare,<br />
+            Fully-Licensed<br />
             <span className="l-yellow">Denver</span><br />
-            Won&apos;t Issue<br />
-            Again.
+            Dispensary.
           </h1>
           <p className="l-hero-sub">
-            Let&apos;s Blaze Medical Dispensary &nbsp;·&nbsp; 120 S. Kalamath St. &nbsp;·&nbsp; Active. Licensed. Revenue-generating.
+            Active medical dispensary in a restricted licensing area of Denver&apos;s Baker District. No new cannabis stores are permitted to open in this neighborhood. The license is the asset.
           </p>
           <div className="l-cta-row">
-            <a href="#the-asset" className="l-btn-yellow">View the Asset</a>
-            <a href={EMAIL} className="l-btn-ghost-white">Request Details</a>
+            <a href="#contact" className="l-btn-yellow">Request Deal Parameters</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="l-btn-ghost-white">Schedule a Confidential Call</a>
           </div>
         </div>
       </section>
@@ -71,11 +86,11 @@ export default function LetsBlaze() {
       {/* ── STATS BAR ── */}
       <div className="l-statsbar">
         {[
-          ['$595,000','Asking Price'],
-          ['800 SF','Retail Space'],
-          ['Medical','Active License'],
-          ['0','New Licenses Issued'],
           ['Baker','District, Denver'],
+          ['Medical','Active License'],
+          ['Social Equity','Designee'],
+          ['Zero','MED Violations'],
+          ['Call for','Pricing'],
         ].map(([n,l]) => (
           <div key={l} className="l-stat">
             <span className="l-stat-n">{n}</span>
@@ -89,10 +104,10 @@ export default function LetsBlaze() {
         <div className="l-wrap">
           <p className="l-section-label">01 / The Opportunity</p>
           <div className="l-rule" />
-          <h2>An Irreplaceable Asset in a Market That Closed the Door.</h2>
-          <p>Denver stopped issuing new retail cannabis licenses. That decision didn&apos;t just freeze the market — it made every existing active license a finite commodity. There are no more coming. What exists is what exists.</p>
-          <p>Let&apos;s Blaze Medical Dispensary holds an active medical license with a clean compliance record, social equity designee status, and an established retail presence in Denver&apos;s Baker District. The operation is running today. Revenue is being generated today. The next owner steps into an active business — not a buildout, not a licensing process, not a waiting period.</p>
-          <p>At $595,000, this is priced for a buyer who understands what it means that Denver has stopped issuing new licenses. The scarcity is real. The opportunity is now.</p>
+          <h2>A License the Baker District Will Not Issue Again.</h2>
+          <p>Let&apos;s Blaze Medical Dispensary holds an active medical license with a clean compliance record and Social Equity Designee status, located at 120 S. Kalamath St. in Denver&apos;s Baker District.</p>
+          <p>The Baker District is a restricted licensing area. Denver has placed strict limits on where new cannabis retail operations can be established — and this neighborhood is closed to new entrants. The only way to operate a cannabis store in Baker is to acquire an existing license. This is one of them.</p>
+          <p>The license, the location, and the regulatory standing are the value here. Pricing and deal parameters are available to qualified buyers upon submission of the buyer questionnaire.</p>
 
           <div className="l-location-card">
             <div className="l-loc-header">
@@ -106,55 +121,31 @@ export default function LetsBlaze() {
               </div>
               <div className="l-loc-item">
                 <strong>Designation</strong>
-                Social Equity Designee
+                Colorado Social Equity Designee
               </div>
               <div className="l-loc-item">
-                <strong>Compliance Record</strong>
-                Zero Violations — Clean History
+                <strong>MED Record</strong>
+                Zero Violations · Clean History
               </div>
             </div>
           </div>
-
-          <div className="l-cta-row" style={{marginTop:'48px'}}>
-            <a href={EMAIL} className="l-btn-green">Request the Deal Package</a>
-          </div>
         </div>
       </section>
 
-      {/* ── WHY IT MATTERS ── */}
-      <section className="l-section l-section-navy">
-        <div className="l-wrap">
-          <p className="l-section-label l-label-yellow">02 / Why This Asset Is Different</p>
-          <div className="l-rule l-rule-yellow" />
-          <h2 className="l-white">Denver Closed the Door. <span className="l-yellow">This Is What&apos;s Left.</span></h2>
-          <p className="l-muted-white">Most markets still allow new cannabis licenses to be issued. Denver does not. That single fact changes the entire calculus for buyers.</p>
-
-          <div className="l-why-grid">
-            {whyItMatters.map((item) => (
-              <div key={item.label} className="l-why-card">
-                <div className="l-why-stat">{item.stat}</div>
-                <div className="l-why-label">{item.label}</div>
-                <p className="l-why-detail">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CREDENTIALS ── */}
+      {/* ── FOUR OPPORTUNITIES ── */}
       <section className="l-section l-section-off">
         <div className="l-wrap">
-          <p className="l-section-label">03 / The Asset</p>
+          <p className="l-section-label">02 / Four Reasons This Is Different</p>
           <div className="l-rule" />
-          <h2>What You&apos;re Acquiring.</h2>
-          <p>This is not a shell or a startup. Every item below is already in place — licensed, compliant, and operational.</p>
+          <h2>What Makes This Acquisition Stand Apart.</h2>
+          <p>Most cannabis acquisitions come with baggage — compliance issues, weak locations, or licenses under scrutiny. This one doesn&apos;t.</p>
 
-          <div className="l-cred-grid">
-            {credentials.map((item) => (
-              <div key={item.title} className="l-cred-card">
-                <div className="l-cred-icon">{item.icon}</div>
-                <div className="l-cred-title">{item.title}</div>
-                <p className="l-cred-desc">{item.desc}</p>
+          <div className="l-opp-grid">
+            {opportunities.map((item, i) => (
+              <div key={i} className="l-opp-card">
+                <div className="l-opp-num">0{i+1}</div>
+                <div className="l-opp-title">{item.title}</div>
+                <p className="l-opp-desc">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -164,20 +155,20 @@ export default function LetsBlaze() {
       {/* ── MID-PAGE CTA ── */}
       <section className="l-section l-section-navy">
         <div className="l-wrap">
-          <h2 className="l-white">Interested in This Opportunity?</h2>
-          <p className="l-muted-white">Qualified buyers only. Deal package including financials and license documentation available upon request.</p>
+          <h2 className="l-white">Deal Parameters Available to Qualified Buyers.</h2>
+          <p className="l-muted-white">Submit the buyer questionnaire to receive pricing, financials, and full deal documentation. All inquiries handled confidentially through Acoma Capital Partners.</p>
           <div className="l-triple-cta">
-            <a href={CAL} target="_blank" rel="noreferrer" className="l-triple-card l-card-green">
-              <span className="l-triple-icon">📅</span>
-              <span className="l-triple-micro">Schedule</span>
-              <span className="l-triple-title">Book a Call</span>
-              <span className="l-triple-body">Get on the calendar with Gino directly. No middlemen.</span>
-            </a>
             <a href={FORM} target="_blank" rel="noreferrer" className="l-triple-card l-card-yellow">
               <span className="l-triple-icon">📋</span>
-              <span className="l-triple-micro">Buyers</span>
-              <span className="l-triple-title">Buyer Questionnaire</span>
-              <span className="l-triple-body">Tell us about yourself and your acquisition criteria.</span>
+              <span className="l-triple-micro">Start Here</span>
+              <span className="l-triple-title">Submit Questionnaire</span>
+              <span className="l-triple-body">Complete the buyer form to receive pricing and deal parameters.</span>
+            </a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="l-triple-card l-card-green">
+              <span className="l-triple-icon">📅</span>
+              <span className="l-triple-micro">Confidential</span>
+              <span className="l-triple-title">Schedule a Call</span>
+              <span className="l-triple-body">Speak directly with Gino at Acoma Capital Partners.</span>
             </a>
             <a href={EMAIL} className="l-triple-card l-card-blue">
               <span className="l-triple-icon">✉️</span>
@@ -189,27 +180,24 @@ export default function LetsBlaze() {
         </div>
       </section>
 
-      {/* ── DEAL SUMMARY ── */}
+      {/* ── SIX TROPHY ASSETS ── */}
       <section className="l-section">
         <div className="l-wrap">
-          <p className="l-section-label">04 / Deal Summary</p>
+          <p className="l-section-label">03 / The Asset</p>
           <div className="l-rule" />
-          <h2>The Numbers. The Reality.</h2>
-          <p>Active medical dispensary. Social equity license. Clean record. Baker District location. The business is running and the license is irreplaceable. The only question is whether the buyer recognizes the window.</p>
+          <h2>Six Reasons This Is a Trophy Acquisition.</h2>
+          <p>Every item below is verified, transferable, and already in place. This is not a startup — it is an established licensed operation with a clean record and a protected market position.</p>
 
-          <div className="l-deal-grid">
-            <div className="l-deal-cell">
-              <span className="l-deal-n">$595K</span>
-              <span className="l-deal-l">Asking Price</span>
-            </div>
-            <div className="l-deal-cell l-deal-highlight">
-              <span className="l-deal-n">0</span>
-              <span className="l-deal-l">New Licenses Available</span>
-            </div>
-            <div className="l-deal-cell">
-              <span className="l-deal-n">800 SF</span>
-              <span className="l-deal-l">Built-Out Retail Space</span>
-            </div>
+          <div className="l-cred-grid">
+            {trophyAssets.map((item) => (
+              <div key={item.title} className="l-cred-card">
+                <div className="l-cred-icon">{item.icon}</div>
+                <div>
+                  <div className="l-cred-title">{item.title}</div>
+                  <p className="l-cred-desc">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -217,23 +205,23 @@ export default function LetsBlaze() {
       {/* ── CONTACT ── */}
       <section className="l-section l-section-navy" id="contact">
         <div className="l-wrap">
-          <p className="l-section-label l-label-yellow">05 / Contact</p>
+          <p className="l-section-label l-label-yellow">04 / Contact</p>
           <div className="l-rule l-rule-yellow" />
           <h2 className="l-white">Request the Deal Package.</h2>
-          <p className="l-muted-white">Financials, license documentation, and compliance records available for qualified buyers. Reach out directly — no intake form between you and Gino.</p>
+          <p className="l-muted-white">Pricing, financials, license documentation, and deal parameters are provided to qualified buyers after questionnaire submission. All inquiries are handled confidentially through Acoma Capital Partners.</p>
 
           <div className="l-triple-cta">
-            <a href={CAL} target="_blank" rel="noreferrer" className="l-triple-card l-card-green">
-              <span className="l-triple-icon">📅</span>
-              <span className="l-triple-micro">Schedule</span>
-              <span className="l-triple-title">Book a Call</span>
-              <span className="l-triple-body">Get on the calendar with Gino directly.</span>
-            </a>
             <a href={FORM} target="_blank" rel="noreferrer" className="l-triple-card l-card-yellow">
               <span className="l-triple-icon">📋</span>
-              <span className="l-triple-micro">Buyers</span>
+              <span className="l-triple-micro">Start Here</span>
               <span className="l-triple-title">Buyer Questionnaire</span>
-              <span className="l-triple-body">Tell us what you&apos;re looking for.</span>
+              <span className="l-triple-body">Submit to receive pricing and full deal parameters.</span>
+            </a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="l-triple-card l-card-green">
+              <span className="l-triple-icon">📅</span>
+              <span className="l-triple-micro">Confidential</span>
+              <span className="l-triple-title">Schedule a Call</span>
+              <span className="l-triple-body">Get on the calendar with Gino directly.</span>
             </a>
             <a href={EMAIL} className="l-triple-card l-card-blue">
               <span className="l-triple-icon">✉️</span>
@@ -253,7 +241,7 @@ export default function LetsBlaze() {
       {/* ── DISCLAIMER ── */}
       <div className="l-disclaimer">
         <div className="l-wrap">
-          <p>This page is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or business interest. All figures are based on information believed to be reliable but are not guaranteed. Prospective buyers should conduct their own independent due diligence including review of all licenses, financial records, and regulatory standing. Acoma Capital Partners, Inc. is not a licensed cannabis operator.</p>
+          <p>This page is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or business interest. All information is based on sources believed to be reliable but is not guaranteed. Prospective buyers should conduct their own independent due diligence including review of all licenses, financial records, lease terms, and regulatory standing prior to any transaction. Acoma Capital Partners, Inc. is not a licensed cannabis operator. Pricing and deal terms available to qualified buyers upon request.</p>
         </div>
       </div>
 
@@ -283,7 +271,7 @@ export default function LetsBlaze() {
           </div>
         </div>
         <div className="l-footer-bottom">
-          <div className="l-wrap">© 2026 Acoma Capital Partners, Inc.</div>
+          <div className="l-wrap">© 2026 Acoma Capital Partners, Inc. · All inquiries handled confidentially.</div>
         </div>
       </footer>
     </div>
@@ -314,13 +302,13 @@ const styles = `
 
 /* HERO */
 .l-hero { background:#202A54; padding:130px 0 110px; }
-.l-eyebrow { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:32px; display:block; }
-.l-h1 { font-size:clamp(64px,10vw,128px); font-weight:900; line-height:0.88; letter-spacing:-0.04em; color:#fff; text-transform:uppercase; margin-bottom:40px; }
+.l-eyebrow { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:32px; display:block; }
+.l-h1 { font-size:clamp(52px,8vw,108px); font-weight:900; line-height:0.9; letter-spacing:-0.04em; color:#fff; text-transform:uppercase; margin-bottom:40px; }
 .l-yellow { color:#F6D200; }
 .l-green  { color:#2C9143; }
 .l-blue   { color:#1179EC; }
 .l-white  { color:#fff !important; }
-.l-hero-sub { font-size:16px; color:rgba(255,255,255,0.55); max-width:680px; line-height:1.75; margin-bottom:52px; font-weight:500; letter-spacing:0.02em; }
+.l-hero-sub { font-size:17px; color:rgba(255,255,255,0.6); max-width:640px; line-height:1.8; margin-bottom:52px; font-weight:400; }
 .l-cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
 
 /* STATS BAR */
@@ -328,11 +316,11 @@ const styles = `
 .l-stat { flex:1; padding:32px 20px; text-align:center; border-right:1px solid rgba(255,255,255,0.06); }
 .l-stat:last-child { border-right:none; }
 .l-stat:nth-child(1) { border-top:4px solid #2C9143; }
-.l-stat:nth-child(2) { border-top:4px solid #F6D200; }
-.l-stat:nth-child(3) { border-top:4px solid #1179EC; }
+.l-stat:nth-child(2) { border-top:4px solid #1179EC; }
+.l-stat:nth-child(3) { border-top:4px solid #F6D200; }
 .l-stat:nth-child(4) { border-top:4px solid #2C9143; }
 .l-stat:nth-child(5) { border-top:4px solid #F6D200; }
-.l-stat-n { display:block; font-size:26px; font-weight:900; color:#fff; letter-spacing:-0.02em; }
+.l-stat-n { display:block; font-size:22px; font-weight:900; color:#fff; letter-spacing:-0.01em; }
 .l-stat-l { display:block; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:6px; }
 
 /* BUTTONS */
@@ -370,13 +358,13 @@ const styles = `
 .l-loc-item strong { color:#fff; display:block; font-weight:700; font-size:13px; letter-spacing:0.04em; margin-bottom:6px; }
 @media(max-width:720px){ .l-loc-body{grid-template-columns:1fr;} .l-loc-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);} .l-loc-item:last-child{border-bottom:none;} }
 
-/* WHY GRID */
-.l-why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:56px; }
-@media(max-width:680px){ .l-why-grid{grid-template-columns:1fr;} }
-.l-why-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-top:4px solid #F6D200; padding:40px 32px; }
-.l-why-stat { font-size:56px; font-weight:900; color:#F6D200; letter-spacing:-0.03em; line-height:1; margin-bottom:8px; }
-.l-why-label { font-size:11px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px; }
-.l-why-detail { font-size:14px; color:rgba(255,255,255,0.65) !important; line-height:1.75; margin:0; max-width:none; }
+/* OPPORTUNITY GRID */
+.l-opp-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:56px; }
+@media(max-width:680px){ .l-opp-grid{grid-template-columns:1fr;} }
+.l-opp-card { background:#fff; border:1px solid #e4e8f0; border-top:4px solid #202A54; padding:40px 36px; }
+.l-opp-num { font-size:48px; font-weight:900; color:#e8ecf0; letter-spacing:-0.04em; line-height:1; margin-bottom:12px; }
+.l-opp-title { font-size:13px; font-weight:900; letter-spacing:0.06em; text-transform:uppercase; color:#202A54; margin-bottom:14px; }
+.l-opp-desc { font-size:15px; color:#555; line-height:1.8; margin:0; max-width:none; }
 
 /* CREDENTIALS GRID */
 .l-cred-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:56px; }
@@ -384,17 +372,7 @@ const styles = `
 .l-cred-card { background:#fff; border:1px solid #e4e8f0; border-left:4px solid #2C9143; padding:36px 32px; display:flex; gap:24px; align-items:flex-start; }
 .l-cred-icon { font-size:28px; flex-shrink:0; line-height:1; margin-top:4px; }
 .l-cred-title { font-size:12px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:#202A54; margin-bottom:8px; }
-.l-cred-desc { font-size:14px; color:#555; line-height:1.7; margin:0; max-width:none; }
-
-/* DEAL GRID */
-.l-deal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; background:#e4e8f0; margin-top:56px; }
-@media(max-width:520px){ .l-deal-grid{grid-template-columns:1fr;} }
-.l-deal-cell { background:#fff; padding:60px 40px; text-align:center; }
-.l-deal-n { display:block; font-size:56px; font-weight:900; color:#202A54; letter-spacing:-0.03em; line-height:1; }
-.l-deal-l { display:block; font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#aaa; margin-top:10px; }
-.l-deal-highlight { background:#202A54; }
-.l-deal-highlight .l-deal-n { color:#F6D200; }
-.l-deal-highlight .l-deal-l { color:rgba(255,255,255,0.35); }
+.l-cred-desc { font-size:14px; color:#555; line-height:1.75; margin:0; max-width:none; }
 
 /* TRIPLE CTA */
 .l-triple-cta { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-top:52px; }
