@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* ── TICKER ── */}
-      <div style={{ background: NAVY, borderTop: `3px solid ${YELLOW}`, overflow: "hidden", padding: "18px 0" }}>
+      <div style={{ background: NAVY, borderTop: `3px solid ${YELLOW}`, borderBottom: `3px solid ${YELLOW}`, overflow: "hidden", padding: "22px 0" }}>
         <style>{`
           @keyframes ticker {
             0% { transform: translateX(0); }
@@ -156,7 +156,7 @@ export default function Home() {
                 { text: "Direct Lender Brokerage", color: GREEN },
               ].map((item, i) => (
                 <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 0 }}>
-                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", whiteSpace: "nowrap", padding: "0 32px" }}>
+                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)", whiteSpace: "nowrap", padding: "0 48px" }}>
                     {item.text}
                   </span>
                   <span style={{ color: item.color, fontSize: 16, flexShrink: 0 }}>·</span>
@@ -166,25 +166,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      {/* ── STATS ── */}
-      <section style={{ background: NAVY }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 2 }}>
-          {([
-            ["$10M+","Transactions Facilitated", GREEN],
-            ["15+","Years Experience", YELLOW],
-            ["Nation","Wide Coverage", BLUE],
-            ["CRE","Sales & Capital", GREEN],
-          ] as [string,string,string][]).map(([n,l,c],i) => (
-            <FadeUp key={i} delay={i*0.08}>
-              <div style={{ padding: "56px 24px", textAlign: "center", background: "rgba(255,255,255,0.04)", borderTop: `4px solid ${c}` }}>
-                <div style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,3.5vw,52px)", color: W, marginBottom: 10, letterSpacing: "-0.02em" }}>{n}</div>
-                <div style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>{l}</div>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
 
       {/* ── SERVICES ── */}
       <section id="services" style={{ padding: "120px 0", background: W }}>
