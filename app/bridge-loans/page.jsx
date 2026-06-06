@@ -143,18 +143,18 @@ export default function BridgeLoans() {
           <p className="b-muted-white">We&apos;ll be in touch same day. No obligation — just a fast answer on whether we can fund your deal.</p>
 
           <div className="b-form-card">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform?embedded=true"
-              width="100%"
-              height="1400"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              style={{ display: "block" }}
+            <p className="b-section-label b-label-yellow" style={{marginBottom:'20px'}}>CRE Hard Money Loan Questionnaire</p>
+            <p style={{fontSize:16,color:'rgba(255,255,255,0.7)',lineHeight:1.8,marginBottom:32,maxWidth:'none'}}>Answer a few quick questions about your deal — property type, loan amount, exit strategy, and timeline. We'll review and get back to you same day.</p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd-6p6hfHzJ9N5C1WfTlHuk1rozF6Lt2Lqn9xsv8SNnY1HLEQ/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="b-btn-yellow"
+              style={{display:'inline-block',fontSize:13}}
             >
-              Loading…
-            </iframe>
-            <p className="b-form-note" style={{ marginTop: 24 }}>
+              Fill Out the Questionnaire →
+            </a>
+            <p className="b-form-note" style={{marginTop:28}}>
               Or reach Gino directly: &nbsp;
               <a href="tel:7207244185" className="b-text-link-yellow">(720) 724-4185</a> &nbsp;·&nbsp;
               <a href={EMAIL} className="b-text-link-yellow">ginorod@acomacapitalpartners.com</a>
@@ -321,7 +321,7 @@ const styles = `
 .b-chip { background:#fff; border:1px solid #e4e8f0; border-left:4px solid #F6D200; padding:16px 20px; font-size:14px; font-weight:700; color:#202A54; }
 
 /* FORM */
-.b-form-card { background:#fff; border:1px solid rgba(255,255,255,0.1); border-top:5px solid #F6D200; padding:40px 40px 32px; margin-top:52px; overflow:hidden; }
+.b-form-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-top:5px solid #F6D200; padding:52px 56px; margin-top:52px; }
 .b-form-note { font-size:12px; color:#999; margin-top:16px; line-height:1.7; max-width:none; margin-bottom:0; }
 .b-text-link-yellow { color:#F6D200; text-decoration:none; font-weight:600; }
 .b-text-link-yellow:hover { text-decoration:underline; }
