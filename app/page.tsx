@@ -250,7 +250,7 @@ export default function Home() {
                   <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
                     Active, revenue-generating medical dispensary in Denver&apos;s Baker District. Denver has stopped issuing new retail cannabis licenses — making this asset genuinely irreplaceable.
                   </p>
-                  <a href="/letsblaze" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: B, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
+                  <a href="https://premiumadvisoryservice.com" target="_blank" rel="noreferrer" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: B, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
                     View Listing →
                   </a>
                 </div>
