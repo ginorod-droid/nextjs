@@ -126,6 +126,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TICKER ── */}
+      <div style={{ background: NAVY, borderTop: `3px solid ${YELLOW}`, overflow: "hidden", padding: "18px 0" }}>
+        <style>{`
+          @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: ticker 30s linear infinite;
+          }
+          .ticker-track:hover { animation-play-state: paused; }
+        `}</style>
+        <div className="ticker-track">
+          {[...Array(2)].map((_,set) => (
+            <div key={set} style={{ display: "flex", alignItems: "center", gap: 0 }}>
+              {[
+                { text: "Commercial Acquisitions", color: GREEN },
+                { text: "Investment Sales", color: YELLOW },
+                { text: "Business Opportunity Sales", color: BLUE },
+                { text: "Hard Money Financing", color: GREEN },
+                { text: "Baker District · Denver, CO", color: YELLOW },
+                { text: "Pueblo, CO · I-25 Exit 104", color: BLUE },
+                { text: "Nationwide", color: GREEN },
+                { text: "Cannabis Industry Transactions", color: YELLOW },
+                { text: "Capital Solutions", color: BLUE },
+                { text: "Direct Lender Brokerage", color: GREEN },
+              ].map((item, i) => (
+                <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 0 }}>
+                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", whiteSpace: "nowrap", padding: "0 32px" }}>
+                    {item.text}
+                  </span>
+                  <span style={{ color: item.color, fontSize: 16, flexShrink: 0 }}>·</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* ── STATS ── */}
       <section style={{ background: NAVY }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 2 }}>
