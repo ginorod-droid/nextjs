@@ -414,6 +414,22 @@ const styles = `
 .l-footer-info a:hover { color:#F6D200; }
 .l-footer-links { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
 @media(max-width:560px){ .l-footer-links{align-items:flex-start;} }
+@media(max-width:768px){
+  .l-wrap { padding:0 20px; }
+  .l-nav-links { display:none; }
+  .l-hero { padding:80px 0 64px; }
+  .l-h1 { font-size:48px; }
+  .l-statsbar { flex-wrap:wrap; }
+  .l-stat { min-width:50%; flex:none; border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .l-section { padding:72px 0; }
+  .l-loc-header { padding:28px 24px 20px; }
+  .l-loc-address { font-size:18px; }
+  .l-why-grid { grid-template-columns:1fr; }
+  .l-deal-cell { padding:40px 20px; }
+  .l-deal-n { font-size:44px; }
+  .l-triple-card { padding:36px 24px; }
+  .l-footer-row { padding-bottom:32px; }
+}
 .l-footer-links a { font-size:13px; color:rgba(255,255,255,0.4); text-decoration:none; font-weight:600; transition:color .2s; }
 .l-footer-links a:hover { color:#F6D200; }
 .l-footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding:22px 0; }

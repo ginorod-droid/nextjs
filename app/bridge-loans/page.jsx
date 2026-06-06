@@ -351,6 +351,21 @@ const styles = `
 .b-footer-info a:hover { color:#F6D200; }
 .b-footer-links { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
 @media(max-width:560px){ .b-footer-links{align-items:flex-start;} }
+@media(max-width:768px){
+  .b-wrap { padding:0 20px; }
+  .b-nav-links { display:none; }
+  .b-hero { padding:80px 0 64px; }
+  .b-h1 { font-size:52px; }
+  .b-hero-ghost { display:none; }
+  .b-statsbar { flex-wrap:wrap; }
+  .b-stat { min-width:50%; flex:none; border-right:none; border-bottom:1px solid rgba(255,255,255,0.15); }
+  .b-section { padding:72px 0; }
+  .b-quote { padding:32px 28px; }
+  .b-form-card { padding:32px 24px; }
+  .b-triple-card { padding:36px 24px; }
+  .b-footer-row { padding-bottom:32px; }
+  .b-triple-cta { grid-template-columns:1fr; }
+}
 .b-footer-links a { font-size:13px; color:rgba(255,255,255,0.4); text-decoration:none; font-weight:600; transition:color .2s; }
 .b-footer-links a:hover { color:#F6D200; }
 .b-footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding:22px 0; }

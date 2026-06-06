@@ -457,6 +457,21 @@ const styles = `
 .p-footer-info a:hover { color:#F6D200; }
 .p-footer-links { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
 @media(max-width:560px){ .p-footer-links{align-items:flex-start;} }
+@media(max-width:768px){
+  .p-wrap { padding:0 20px; }
+  .p-nav-links { display:none; }
+  .p-hero { padding:80px 0 64px; }
+  .p-h1 { font-size:52px; }
+  .p-statsbar { flex-wrap:wrap; }
+  .p-stat { min-width:50%; flex:none; border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .p-section { padding:72px 0; }
+  .p-loc-header { padding:28px 24px 20px; }
+  .p-loc-address { font-size:18px; }
+  .p-deal-cell { padding:40px 20px; }
+  .p-deal-n { font-size:40px; }
+  .p-triple-card { padding:36px 24px; }
+  .p-footer-row { padding-bottom:32px; }
+}
 .p-footer-links a { font-size:13px; color:rgba(255,255,255,0.4); text-decoration:none; font-weight:600; transition:color .2s; }
 .p-footer-links a:hover { color:#F6D200; }
 .p-footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding:22px 0; }
