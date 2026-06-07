@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main style={{ fontFamily: I, background: W, color: K }}>
+    <main style={{ fontFamily: I, background: W, color: K, overflowX: "hidden" }}>
       <style>{`
         .hp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
         .hp-listings { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -167,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* ── TICKER ── */}
-      <div style={{ background: NAVY, borderTop: `3px solid ${YELLOW}`, borderBottom: `3px solid ${YELLOW}`, overflow: "hidden", padding: "22px 0" }}>
+      <div style={{ background: NAVY, borderTop: `3px solid ${YELLOW}`, borderBottom: `3px solid ${YELLOW}`, overflow: "hidden", padding: "22px 0", position: "relative", maxWidth: "100%" }}>
         <style>{`
           @keyframes ticker {
             0% { transform: translateX(0); }
@@ -481,6 +481,7 @@ export default function Home() {
               </p>
             </FadeUp>
           </div>
+          </div>{/* closes hp-about */}
         </div>
       </section>
 

@@ -317,7 +317,7 @@ const styles = `
 .l-menu-toggle { display:none; }
 .l-hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; }
 .l-hamburger span { display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
-.l-mobile-nav { display:none; flex-direction:column; background:#202A54; border-top:1px solid rgba(255,255,255,0.1); }
+.l-mobile-nav { display:none; flex-direction:column; background:#202A54; border-top:1px solid rgba(255,255,255,0.1); position:absolute; top:100%; left:0; right:0; z-index:200; }
 .l-mobile-nav a { font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; padding:16px 24px; border-bottom:1px solid rgba(255,255,255,0.06); }
 .l-mobile-nav a:last-child { border-bottom:none; color:#F6D200; }
 .l-menu-toggle:checked ~ .l-mobile-nav { display:flex; }
