@@ -564,7 +564,7 @@ export default function Home() {
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
             <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.2)" }}>© 2026 Acoma Capital Partners, Inc.</p>
             <p style={{ fontFamily: I, fontSize: 11, color: "rgba(255,255,255,0.15)", maxWidth: 560, textAlign: "right" }}>
-              For informational purposes only. Not an offer to sell or solicitation to buy. All figures believed accurate but not guaranteed.
+              For informational purposes only. Not an offer to sell or solicitation to buy. All figures believed accurate but not guaranteed. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724
             </p>
           </div>
         </div>
