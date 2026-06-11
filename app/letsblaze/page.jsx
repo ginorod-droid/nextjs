@@ -256,7 +256,7 @@ export default function LetsBlaze() {
       {/* ── DISCLAIMER ── */}
       <div className="l-disclaimer">
         <div className="l-wrap">
-          <p>This page is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or business interest. All information is based on sources believed to be reliable but is not guaranteed. Prospective buyers should conduct their own independent due diligence including review of all licenses, financial records, lease terms, and regulatory standing prior to any transaction. Acoma Capital Partners, Inc. is not a licensed cannabis operator. Pricing and deal terms available to qualified buyers upon request.</p>
+          <p>The business opportunities presented on this page are official listings offered pursuant to Acoma Capital Partners, Inc.’s Colorado real estate license. This is not a solicitation. All business opportunity sales are conducted in compliance with applicable Colorado real estate statutes and regulations governing the sale of business opportunities. All information is drawn from sources believed to be reliable and is provided without warranty. Prospective buyers are responsible for conducting independent due diligence, including review of all applicable licenses, financial records, lease terms, and regulatory standing prior to entering any transaction. This business opportunity sale is not an invitation to invest in any security or investment contract. Acoma Capital Partners, Inc. is not a licensed cannabis operator. Pricing and deal terms are available to qualified buyers upon request. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724</p>
         </div>
       </div>
 
