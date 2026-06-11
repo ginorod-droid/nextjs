@@ -563,8 +563,8 @@ export default function Home() {
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
             <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.2)" }}>© 2026 Acoma Capital Partners, Inc.</p>
-            <p style={{ fontFamily: I, fontSize: 11, color: "rgba(255,255,255,0.15)", maxWidth: 560, textAlign: "right" }}>
-              For informational purposes only. Not an offer to sell or solicitation to buy. All figures believed accurate but not guaranteed. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724
+            <p style={{ fontFamily: I, fontSize: 11, color: "rgba(255,255,255,0.25)", maxWidth: 900, textAlign: "left", lineHeight: 1.7 }}>
+              The business opportunities presented on this page are official listings offered pursuant to Acoma Capital Partners, Inc.’s Colorado real estate license. This is not a solicitation. All business opportunity sales are conducted in compliance with applicable Colorado real estate statutes and regulations governing the sale of business opportunities. All information is drawn from sources believed to be reliable and is provided without warranty. Prospective buyers are responsible for conducting independent due diligence, including review of all applicable licenses, financial records, lease terms, and regulatory standing prior to entering any transaction. This business opportunity sale is not an invitation to invest in any security or investment contract. Pricing and deal terms are available to qualified buyers upon request. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724
             </p>
           </div>
         </div>
