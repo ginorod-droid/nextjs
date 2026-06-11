@@ -203,7 +203,7 @@ export default function PuebloParcel() {
         </div>
       </section>
 
-      <div className="p-disclaimer"><div className="p-wrap"><p>This document is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or real property interest. All figures are based on information believed to be reliable but are not guaranteed. Prospective buyers should conduct their own independent due diligence. Acoma Capital Partners, Inc. is not a licensed real estate brokerage.</p></div></div>
+      <div className="p-disclaimer"><div className="p-wrap"><p>This document is provided for informational purposes only and does not constitute an offer to sell or a solicitation to buy any security or real property interest. All figures are based on information believed to be reliable but are not guaranteed. Prospective buyers should conduct their own independent due diligence, including review of all applicable records and regulatory standing prior to entering any transaction. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724</p></div></div>
 
       <div className="p-colorbar">
         <span style={{background:'#2C9143'}} /><span style={{background:'#202A54'}} />
