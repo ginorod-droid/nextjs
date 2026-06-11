@@ -210,7 +210,7 @@ export default function BridgeLoans() {
       {/* ── DISCLAIMER ── */}
       <div className="b-disclaimer">
         <div className="b-wrap">
-          <p>This page is for informational purposes only and does not constitute a commitment to lend. All loan applications are subject to underwriting review, approval, and applicable regulations. Acoma Capital Partners, Inc. operates as a direct lender brokerage and is not a licensed bank or federally regulated financial institution.</p>
+          <p>This page is for informational purposes only and does not constitute a commitment to lend. All loan applications are subject to underwriting review, approval, and applicable regulations. Acoma Capital Partners, Inc. operates as a direct lender brokerage and is not a licensed bank or federally regulated financial institution. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724</p>
         </div>
       </div>
 
