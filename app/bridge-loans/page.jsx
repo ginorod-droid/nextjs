@@ -170,7 +170,7 @@ export default function BridgeLoans() {
             </a>
             <p className="b-form-note" style={{marginTop:28}}>
               Or reach Gino directly: &nbsp;
-              <a href="tel:7207244185" className="b-text-link-yellow">(720) 724-4185</a> &nbsp;·&nbsp;
+              <a href="tel:7207721327" className="b-text-link-yellow">(720) 772-1327</a> &nbsp;·&nbsp;
               <a href={EMAIL} className="b-text-link-yellow">ginorod@acomacapitalpartners.com</a>
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function BridgeLoans() {
 
           <div className="b-contact-grid">
             {[
-              ['📞 Direct Line','720-724-4185','tel:7207244185'],
+              ['📞 Direct Line','720-772-1327','tel:7207721327'],
               ['✉️ Email','ginorod@acomacapitalpartners.com',EMAIL],
               ['🌐 Website','www.acomacapitalpartners.com','https://www.acomacapitalpartners.com'],
             ].map(([t,v,h])=>(
@@ -226,7 +226,7 @@ export default function BridgeLoans() {
           <div>
             <div className="b-footer-logo">ACOMA <span>CAPITAL</span> PARTNERS</div>
             <div className="b-footer-info">
-              (720) 724-4185 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br />
+              (720) 772-1327 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br />
               <a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a>
             </div>
           </div>
