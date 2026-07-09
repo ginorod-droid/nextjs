@@ -247,7 +247,7 @@ export default function LetsBlaze() {
           </div>
 
           <p className="l-contact-phone">
-            <a href="tel:7207244185">(720) 724-4185</a>
+            <a href="tel:7207721327">(720) 772-1327</a>
             &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners
           </p>
         </div>
@@ -273,7 +273,7 @@ export default function LetsBlaze() {
             <div className="l-footer-logo">ACOMA <span>CAPITAL</span> PARTNERS</div>
             <div className="l-footer-sub">Listed by Acoma Capital Partners</div>
             <div className="l-footer-info">
-              (720) 724-4185 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br />
+              (720) 772-1327 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br />
               <a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a>
             </div>
           </div>
