@@ -436,7 +436,7 @@ export default function Home() {
                 </a>
               </div>
               <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.4)", marginBottom: 0 }}>
-                Call directly: <a href="tel:7207244185" style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontWeight: 600 }}>(720) 724-4185</a>
+                Call directly: <a href="tel:7207721327" style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontWeight: 600 }}>(720) 772-1327</a>
               </p>
             </FadeUp>
 
@@ -506,9 +506,9 @@ export default function Home() {
                   style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: GREEN, color: W, padding: "18px 36px", textDecoration: "none" }}>
                   Buyer Questionnaire →
                 </a>
-                <a href="tel:7207244185"
+                <a href="tel:7207721327"
                   style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "1.5px solid rgba(255,255,255,0.3)", color: W, padding: "18px 36px", textDecoration: "none" }}>
-                  (720) 724-4185
+                  (720) 772-1327
                 </a>
                 <a href="mailto:ginorod@acomacapitalpartners.com"
                   style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "1.5px solid rgba(255,255,255,0.3)", color: W, padding: "18px 36px", textDecoration: "none" }}>
@@ -557,7 +557,7 @@ export default function Home() {
               ))}
             </div>
             <div style={{ textAlign: "right" }}>
-              <a href="tel:7207244185" style={{ fontFamily: P, fontWeight: 600, fontSize: 13, color: "rgba(255,255,255,0.65)", textDecoration: "none", display: "block", marginBottom: 4 }}>(720) 724-4185</a>
+              <a href="tel:7207721327" style={{ fontFamily: P, fontWeight: 600, fontSize: 13, color: "rgba(255,255,255,0.65)", textDecoration: "none", display: "block", marginBottom: 4 }}>(720) 772-1327</a>
               <a href="mailto:ginorod@acomacapitalpartners.com" style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>ginorod@acomacapitalpartners.com</a>
             </div>
           </div>
