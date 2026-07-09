@@ -199,7 +199,7 @@ export default function PuebloParcel() {
             <a href={FORM} target="_blank" rel="noreferrer" className="p-triple-card p-card-yellow"><span className="p-triple-icon">📋</span><span className="p-triple-micro">Buyers</span><span className="p-triple-title">Buyer Questionnaire</span><span className="p-triple-body">Tell us what you&apos;re looking for.</span></a>
             <a href={EMAIL} className="p-triple-card p-card-blue"><span className="p-triple-icon">✉️</span><span className="p-triple-micro">Direct</span><span className="p-triple-title">Send a Message</span><span className="p-triple-body">ginorod@acomacapitalpartners.com</span></a>
           </div>
-          <p className="p-contact-phone"><a href="tel:7207244185">(720) 724-4185</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>
+          <p className="p-contact-phone"><a href="tel:7207721327">(720) 772-1327</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>
         </div>
       </section>
 
@@ -213,7 +213,7 @@ export default function PuebloParcel() {
         <div className="p-wrap p-footer-row">
           <div>
             <div className="p-footer-logo">ACOMA <span>CAPITAL</span> PARTNERS</div>
-            <div className="p-footer-info">(720) 724-4185 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br /><a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a></div>
+            <div className="p-footer-info">(720) 772-1327 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br /><a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a></div>
           </div>
           <div className="p-footer-links">
             <a href="/">Home</a>
