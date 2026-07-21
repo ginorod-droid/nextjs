@@ -1,41 +1,13 @@
 // app/letsblaze/page.jsx
 
 export const metadata = {
-  title: "Let's Blaze Medical Dispensary | Medical License for Sale | Denver, CO | Acoma Capital Partners",
+  title: "You Found the Location. Do You Have the License? | Denver Medical Dispensary License | Acoma Capital Partners",
   description: "Rare opportunity — an active, transferable medical dispensary license in Denver's Baker District. Restricted licensing area. No new cannabis stores permitted in the neighborhood. Contact Acoma Capital Partners for deal parameters.",
 }
 
 const CAL  = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true'
 const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
 const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
-
-const trophyAssets = [
-  { icon: '📋', title: 'Active Medical License', desc: 'Fully licensed and current with the State of Colorado. Transferable to a qualified buyer.' },
-  { icon: '⚖️', title: 'Social Equity Designee', desc: 'Colorado Social Equity status adds strategic and regulatory value that cannot be replicated with a new license application.' },
-  { icon: '✅', title: 'Zero MED Violations', desc: 'Clean compliance record with the Marijuana Enforcement Division. No disciplinary actions, no pending matters.' },
-  { icon: '📁', title: 'Clean Disciplinary Record', desc: 'No regulatory incidents on file. The license transfers with a spotless history — a rare find in the Denver market.' },
-  { icon: '👥', title: 'Transferable Entity and SOPs', desc: 'The licensed Colorado entity and standard operating procedures transfer with the license, turnkey for a qualified buyer.' },
-  { icon: '📍', title: 'Baker District, Restricted Area', desc: '120 S. Kalamath St. — the Denver neighborhood where the license currently sits. Denver issues no new cannabis licenses here.' },
-]
-
-const opportunities = [
-  {
-    title: 'A License You Cannot Buy New',
-    desc: 'The Baker District is a restricted licensing area. No new cannabis retail stores are permitted to open in this neighborhood. The only way in is through an existing license — and this is one of them.',
-  },
-  {
-    title: 'The Baker District Advantage',
-    desc: 'One of Denver\'s most established cannabis retail corridors. A restricted licensing area, where acquiring the existing license is the only way to operate here.',
-  },
-  {
-    title: 'Spotless Regulatory Standing',
-    desc: 'Zero MED violations. Clean disciplinary record. No pending regulatory matters. The license transfers with a history any buyer would want — and most can\'t find.',
-  },
-  {
-    title: 'Stability Backed by Social Equity',
-    desc: 'Colorado Social Equity Designee status is a protected classification that adds strategic value and regulatory advantages that a standard license simply does not carry.',
-  },
-]
 
 export default function LetsBlaze() {
   return (
@@ -81,15 +53,13 @@ export default function LetsBlaze() {
       {/* ── HERO ── */}
       <section className="l-hero">
         <div className="l-wrap">
-          <p className="l-eyebrow">Confidential · License Transfer · Baker District, Denver, CO</p>
+          <p className="l-eyebrow">Confidential · Denver Medical Dispensary License · Acoma Cannabis Division</p>
           <h1 className="l-h1">
-            Own a Rare,<br />
-            Fully-Licensed<br />
-            <span className="l-yellow">Denver</span><br />
-            Dispensary License.
+            You Found the Location.<br />
+            Do You Have the <span className="l-yellow">License?</span>
           </h1>
           <p className="l-hero-sub">
-            An active, transferable medical dispensary license in a restricted licensing area of Denver&apos;s Baker District. No new cannabis stores are permitted to open in this neighborhood. The license is the asset.
+            You&apos;ve locked down the location — the corner with the right traffic count, the Denver building already zoned for retail that clears the spacing rules, the lease terms that finally pencil out. Now you need a license to put inside it.
           </p>
           <div className="l-cta-row">
             <a href="#contact" className="l-btn-yellow">Request Deal Parameters</a>
@@ -98,13 +68,13 @@ export default function LetsBlaze() {
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
+      {/* ── FACTS ── */}
       <div className="l-statsbar">
         {[
-          ['Baker','District, Denver'],
-          ['Medical','Active License'],
-          ['Social Equity','Designee'],
-          ['Zero','MED Violations'],
+          ['Denver','Medical License'],
+          ['Active','Good Standing'],
+          ['Zero','Compliance Violations'],
+          ['Turnkey','Entity and SOPs'],
           ['Call for','Pricing'],
         ].map(([n,l]) => (
           <div key={l} className="l-stat">
@@ -114,106 +84,63 @@ export default function LetsBlaze() {
         ))}
       </div>
 
-      {/* ── THE OPPORTUNITY ── */}
+      {/* ── THE TIMELINE PROBLEM ── */}
       <section className="l-section" id="the-asset">
         <div className="l-wrap">
-          <p className="l-section-label">01 / The Opportunity</p>
+          <p className="l-section-label">01 / The Timeline Problem</p>
           <div className="l-rule" />
-          <h2>A License the Baker District Will Not Issue Again.</h2>
-          <p>Let&apos;s Blaze Medical Dispensary holds an active medical license with a clean compliance record and Social Equity Designee status, located at 120 S. Kalamath St. in Denver&apos;s Baker District.</p>
-          <p>The Baker District is a restricted licensing area. Denver has placed strict limits on where new cannabis retail operations can be established — and this neighborhood is closed to new entrants. The only way to operate a cannabis store in Baker is to acquire an existing license. This is one of them.</p>
-          <p>The license, the location, and the regulatory standing are the value here. Pricing and deal parameters are available to qualified buyers upon submission of the buyer questionnaire.</p>
-
-          <div className="l-location-card">
-            <div className="l-loc-header">
-              <span className="l-loc-tag">Property Details</span>
-              <div className="l-loc-address">120 S. Kalamath St. · Baker District · Denver, CO 80223</div>
-            </div>
-            <div className="l-loc-body">
-              <div className="l-loc-item">
-                <strong>License Type</strong>
-                Active Medical Dispensary License
-              </div>
-              <div className="l-loc-item">
-                <strong>Designation</strong>
-                Colorado Social Equity Designee
-              </div>
-              <div className="l-loc-item">
-                <strong>MED Record</strong>
-                Zero Violations · Clean History
-              </div>
-            </div>
-          </div>
+          <h2>A Location Waits. A License Does Not.</h2>
+          <p>That&apos;s when the timeline problem starts. A location will wait for you for a few weeks, maybe a couple of months if the landlord likes the deal. A license won&apos;t materialize on that schedule.</p>
+          <p>In Denver, medical marijuana licensing runs through the city&apos;s Department of Excise and Licenses on top of the state, and the number of Denver-approved locations comes with its own zoning, spacing, and land-use constraints. New permits move at the pace of a regulatory body, not a lease clock.</p>
+          <p>So the location you fought for sits empty, the rent clock runs, and eventually someone with a Denver license already in hand takes the space out from under you.</p>
         </div>
       </section>
 
-      {/* ── MID-PAGE CTA ── */}
-      <section className="l-section l-section-navy">
-        <div className="l-wrap">
-          <h2 className="l-white">Deal Parameters Available to Qualified Buyers.</h2>
-          <p className="l-muted-white">Submit the buyer questionnaire to receive pricing, financials, and full deal documentation. All inquiries handled confidentially through Acoma Capital Partners.</p>
-          <div className="l-triple-cta">
-            <a href={FORM} target="_blank" rel="noreferrer" className="l-triple-card l-card-yellow">
-              <span className="l-triple-icon">📋</span>
-              <span className="l-triple-micro">Start Here</span>
-              <span className="l-triple-title">Submit Questionnaire</span>
-              <span className="l-triple-body">Complete the buyer form to receive pricing and deal parameters.</span>
-            </a>
-            <a href={CAL} target="_blank" rel="noreferrer" className="l-triple-card l-card-green">
-              <span className="l-triple-icon">📅</span>
-              <span className="l-triple-micro">Confidential</span>
-              <span className="l-triple-title">Schedule a Call</span>
-              <span className="l-triple-body">Speak directly with Gino at Acoma Capital Partners.</span>
-            </a>
-            <a href={EMAIL} className="l-triple-card l-card-blue">
-              <span className="l-triple-icon">✉️</span>
-              <span className="l-triple-micro">Direct</span>
-              <span className="l-triple-title">Send a Message</span>
-              <span className="l-triple-body">ginorod@acomacapitalpartners.com</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOUR OPPORTUNITIES ── */}
-      <section className="l-section l-section-off">
-        <div className="l-wrap">
-          <p className="l-section-label">02 / Four Reasons This Is Different</p>
-          <div className="l-rule" />
-          <h2>What Makes This Acquisition Stand Apart.</h2>
-          <p>Most cannabis acquisitions come with baggage — compliance issues, weak locations, or licenses under scrutiny. This one doesn&apos;t.</p>
-
-          <div className="l-opp-grid">
-            {opportunities.map((item, i) => (
-              <div key={i} className="l-opp-card">
-                <div className="l-opp-num">0{i+1}</div>
-                <div className="l-opp-title">{item.title}</div>
-                <p className="l-opp-desc">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SIX TROPHY ASSETS ── */}
+      {/* ── THE WAY OUT ── */}
       <section className="l-section">
         <div className="l-wrap">
-          <p className="l-section-label">03 / The Asset</p>
+          <p className="l-section-label">02 / The Way Out</p>
           <div className="l-rule" />
-          <h2>Six Reasons This Is a Trophy Acquisition.</h2>
-          <p>Every item below is verified, transferable, and already in place. This is not a startup application — it is an existing, transferable license with a clean record and a protected market position.</p>
+          <h2>An Existing License, Already in Good Standing.</h2>
+          <p>The way out of that math is usually an existing Denver license — one that&apos;s already issued, already in good standing, and transferable. That&apos;s a narrower market than most operators realize, because the licenses worth buying rarely make it to a public listing.</p>
+        </div>
+      </section>
 
-          <div className="l-cred-grid">
-            {trophyAssets.map((item) => (
-              <div key={item.title} className="l-cred-card">
-                <div className="l-cred-icon">{item.icon}</div>
-                <div>
-                  <div className="l-cred-title">{item.title}</div>
-                  <p className="l-cred-desc">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+      {/* ── THE LICENSE ── */}
+      <section className="l-section">
+        <div className="l-wrap">
+          <p className="l-section-label">03 / The License</p>
+          <div className="l-rule" />
+          <h2>What a Clean License Actually Looks Like.</h2>
+          <p>We have one right now that&apos;s worth understanding — less as a sales pitch than as a picture of what clean actually looks like when you&apos;re evaluating an acquisition.</p>
+          <p>It&apos;s a Denver medical dispensary license, active and in good standing. No compliance violations on the record, no citations, no open corrective actions — nothing a regulator has flagged and nothing waiting to surface in diligence.</p>
+          <p>The operational side is turnkey: the entity, the standard operating procedures, and the compliance framework transfer as a working unit, not as a pile of documents you&apos;d have to rebuild. That distinction matters more than the price, because a license with a violation history costs you time and standing long after the closing.</p>
+        </div>
+      </section>
+
+      {/* ── ON PRICE ── */}
+      <section className="l-section l-section-navy">
+        <div className="l-wrap">
+          <p className="l-section-label">04 / On Price</p>
+          <div className="l-rule" />
+          <h2 className="l-white">Priced to Move. Timing Is the Real Value.</h2>
+          <p className="l-muted-white">On price: it&apos;s set to move. But the number isn&apos;t the reason to act, and it shouldn&apos;t read like the reason. A well-priced license that&apos;s still available in ninety days is a different, harder conversation — because by then the operator with the location has usually either found another path or walked away.</p>
+          <p className="l-muted-white">The value here is the alignment: a clean license, ready to transfer, available in the same window you still control your space. That alignment is what disappears first.</p>
+          <div className="l-cta-row">
+            <a href={FORM} target="_blank" rel="noreferrer" className="l-btn-yellow">Submit Buyer Questionnaire</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="l-btn-ghost-white">Schedule a Confidential Call</a>
           </div>
+        </div>
+      </section>
+
+      {/* ── HOW WE WORK ── */}
+      <section className="l-section">
+        <div className="l-wrap">
+          <p className="l-section-label">05 / How We Work</p>
+          <div className="l-rule" />
+          <h2>How Acoma Runs a Transfer.</h2>
+          <p>At Acoma&apos;s cannabis division, this is the part of the market we work in — matching licensed, compliant operations with operators who have everything except the permit. We run these transfers the way any disciplined commercial transaction should run: quiet diligence, real numbers, and a clear read on whether the deal actually fits before anyone signs anything.</p>
+          <p>If you&apos;re holding a location and waiting on a license that may not come in time, it&apos;s worth a conversation before the timing closes on you. I&apos;m glad to walk through what a clean transfer looks like — and whether this one, or the next one, fits what you&apos;re building.</p>
         </div>
       </section>
 
