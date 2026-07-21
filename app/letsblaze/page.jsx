@@ -1,8 +1,8 @@
 // app/letsblaze/page.jsx
 
 export const metadata = {
-  title: "Let's Blaze Medical Dispensary | Acquisition Opportunity | Denver, CO | Acoma Capital Partners",
-  description: "Rare acquisition opportunity — active medical dispensary in Denver's Baker District. Restricted licensing area. No new cannabis stores permitted in the neighborhood. Contact Acoma Capital Partners for deal parameters.",
+  title: "Let's Blaze Medical Dispensary | Medical License for Sale | Denver, CO | Acoma Capital Partners",
+  description: "Rare opportunity — an active, transferable medical dispensary license in Denver's Baker District. Restricted licensing area. No new cannabis stores permitted in the neighborhood. Contact Acoma Capital Partners for deal parameters.",
 }
 
 const CAL  = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true'
@@ -14,8 +14,8 @@ const trophyAssets = [
   { icon: '⚖️', title: 'Social Equity Designee', desc: 'Colorado Social Equity status adds strategic and regulatory value that cannot be replicated with a new license application.' },
   { icon: '✅', title: 'Zero MED Violations', desc: 'Clean compliance record with the Marijuana Enforcement Division. No disciplinary actions, no pending matters.' },
   { icon: '📁', title: 'Clean Disciplinary Record', desc: 'No regulatory incidents on file. The license transfers with a spotless history — a rare find in the Denver market.' },
-  { icon: '👥', title: 'Existing Customer Base', desc: 'Established patient relationships and brand presence in the Baker District neighborhood.' },
-  { icon: '📍', title: 'Prime Baker District Location', desc: '120 S. Kalamath St. — high foot traffic corridor, dense residential demand, established cannabis retail neighborhood.' },
+  { icon: '👥', title: 'Transferable Entity and SOPs', desc: 'The licensed Colorado entity and standard operating procedures transfer with the license, turnkey for a qualified buyer.' },
+  { icon: '📍', title: 'Baker District, Restricted Area', desc: '120 S. Kalamath St. — the Denver neighborhood where the license currently sits. Denver issues no new cannabis licenses here.' },
 ]
 
 const opportunities = [
@@ -25,7 +25,7 @@ const opportunities = [
   },
   {
     title: 'The Baker District Advantage',
-    desc: 'One of Denver\'s most established cannabis retail corridors. Dense residential population, strong foot traffic, and a customer base already accustomed to shopping the neighborhood.',
+    desc: 'One of Denver\'s most established cannabis retail corridors. A restricted licensing area, where acquiring the existing license is the only way to operate here.',
   },
   {
     title: 'Spotless Regulatory Standing',
@@ -81,15 +81,15 @@ export default function LetsBlaze() {
       {/* ── HERO ── */}
       <section className="l-hero">
         <div className="l-wrap">
-          <p className="l-eyebrow">Confidential · Business Sale · Baker District, Denver, CO</p>
+          <p className="l-eyebrow">Confidential · License Transfer · Baker District, Denver, CO</p>
           <h1 className="l-h1">
             Own a Rare,<br />
             Fully-Licensed<br />
             <span className="l-yellow">Denver</span><br />
-            Dispensary.
+            Dispensary License.
           </h1>
           <p className="l-hero-sub">
-            Active medical dispensary in a restricted licensing area of Denver&apos;s Baker District. No new cannabis stores are permitted to open in this neighborhood. The license is the asset.
+            An active, transferable medical dispensary license in a restricted licensing area of Denver&apos;s Baker District. No new cannabis stores are permitted to open in this neighborhood. The license is the asset.
           </p>
           <div className="l-cta-row">
             <a href="#contact" className="l-btn-yellow">Request Deal Parameters</a>
@@ -201,7 +201,7 @@ export default function LetsBlaze() {
           <p className="l-section-label">03 / The Asset</p>
           <div className="l-rule" />
           <h2>Six Reasons This Is a Trophy Acquisition.</h2>
-          <p>Every item below is verified, transferable, and already in place. This is not a startup — it is an established licensed operation with a clean record and a protected market position.</p>
+          <p>Every item below is verified, transferable, and already in place. This is not a startup application — it is an existing, transferable license with a clean record and a protected market position.</p>
 
           <div className="l-cred-grid">
             {trophyAssets.map((item) => (
