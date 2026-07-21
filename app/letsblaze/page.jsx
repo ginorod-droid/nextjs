@@ -147,7 +147,7 @@ export default function LetsBlaze() {
       {/* ── CONTACT ── */}
       <section className="l-section l-section-navy" id="contact">
         <div className="l-wrap">
-          <p className="l-section-label l-label-yellow">04 / Contact</p>
+          <p className="l-section-label l-label-yellow">06 / Contact</p>
           <div className="l-rule l-rule-yellow" />
           <h2 className="l-white">Request the Deal Package.</h2>
           <p className="l-muted-white">Pricing, financials, license documentation, and deal parameters are provided to qualified buyers after questionnaire submission. All inquiries are handled confidentially through Acoma Capital Partners.</p>
