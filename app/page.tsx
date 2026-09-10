@@ -36,7 +36,7 @@ export default function Home() {
     <main style={{ fontFamily: I, background: W, color: K, overflowX: "hidden" }}>
       <style>{`
         .hp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-        .hp-listings { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .hp-listings { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 560px; margin: 0 auto; }
         .hp-triple { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
         .hp-hardmoney { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; margin-top: 8px; }
         .hp-about { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
@@ -103,7 +103,6 @@ export default function Home() {
             <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
             <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
             <a href="/pueblo-parcel" onClick={() => setMobileMenu(false)}>Pueblo Parcel</a>
-            <a href="/letsblaze" onClick={() => setMobileMenu(false)}>Let&apos;s Blaze</a>
             <a href="/bridge-loans" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
           </div>
@@ -198,10 +197,8 @@ export default function Home() {
                 { text: "Investment Sales", color: YELLOW },
                 { text: "Business Opportunity Sales", color: BLUE },
                 { text: "Hard Money Financing", color: GREEN },
-                { text: "Baker District · Denver, CO", color: YELLOW },
                 { text: "Pueblo, CO · I-25 Exit 104", color: BLUE },
                 { text: "Nationwide", color: GREEN },
-                { text: "Cannabis Industry Transactions", color: YELLOW },
                 { text: "Capital Solutions", color: BLUE },
                 { text: "Direct Lender Brokerage", color: GREEN },
               ].map((item, i) => (
@@ -284,10 +281,10 @@ export default function Home() {
             </p>
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 72, flexWrap: "wrap", gap: 24 }}>
               <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 0 }}>
-                Two active opportunities<br/>available now.
+                One active opportunity<br/>available now.
               </h2>
               <p style={{ fontFamily: I, fontSize: 16, color: "#888", maxWidth: 320, lineHeight: 1.7 }}>
-                Commercial land in Pueblo and a Denver cannabis license.
+                Commercial land in Pueblo, Colorado.
               </p>
             </div>
           </FadeUp>
@@ -323,41 +320,6 @@ export default function Home() {
                     Adjacent to TravelCenters of America and Love&apos;s Travel Stop. Direct interstate access, B-3 zoning, no rezoning required. $114M CDOT interchange upgrade underway.
                   </p>
                   <a href="/pueblo-parcel" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
-                    View Listing →
-                  </a>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Card 2 — Let's Blaze */}
-            <FadeUp delay={0.18}>
-              <div style={{ background: W, boxShadow: "0 4px 32px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.1)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 32px rgba(0,0,0,0.07)"; }}>
-                <div style={{ background: NAVY, padding: "40px 40px 32px", borderBottom: `5px solid ${BLUE}` }}>
-                  <div style={{ marginBottom: 20 }}>
-                    <span style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: W, background: BLUE, padding: "5px 12px" }}>
-                      Medical License · Denver, CO
-                    </span>
-                  </div>
-                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: W, lineHeight: 1.1, marginBottom: 10 }}>
-                    Let&apos;s Blaze Medical<br />Dispensary
-                  </h3>
-                  <p style={{ fontFamily: I, fontSize: 13, color: "rgba(255,255,255,0.4)" }}>120 S. Kalamath St. · Baker District, Denver, CO</p>
-                </div>
-                <div style={{ padding: "36px 40px 40px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
-                  <div>
-                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>Call for Pricing</p>
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["Medical License","Social Equity","Zero Violations","Transferable"].map(t => (
-                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
-                    Active, transferable medical dispensary license in Denver&apos;s Baker District. Denver has stopped issuing new retail cannabis licenses — making this asset genuinely irreplaceable.
-                  </p>
-                  <a href="/letsblaze" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: BLUE, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
                     View Listing →
                   </a>
                 </div>
@@ -476,7 +438,7 @@ export default function Home() {
                 Acoma Capital Partners is a Colorado-based commercial real estate and business brokerage firm. We help business owners, investors, and operators buy, sell, finance, and optimize commercial assets and businesses.
               </p>
               <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#888", marginBottom: 56 }}>
-                With extensive experience in commercial real estate, cannabis industry transactions, capital solutions, and business intelligence, our team focuses on helping clients identify opportunities, reduce risk, and make better business decisions.
+                With extensive experience in commercial real estate, capital solutions, and business intelligence, our team focuses on helping clients identify opportunities, reduce risk, and make better business decisions.
               </p>
             </FadeUp>
           </div>
@@ -525,7 +487,6 @@ export default function Home() {
                 <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 12 }}>Currently Offering</p>
                 <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>
                   <a href="/pueblo-parcel" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>10-Acre Commercial Parcel · Pueblo, CO</a><br />
-                  Let&apos;s Blaze Medical Dispensary · Denver, CO<br />
                   <a href="/bridge-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a>
                 </p>
               </div>
