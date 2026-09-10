@@ -85,6 +85,7 @@ export default function Home() {
             {[["#opportunities","Listings"],["#services","Services"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
+            <a href="/broker-programs" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Broker Programs</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
               style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "12px 24px", textDecoration: "none" }}>
               Book a Call
@@ -103,6 +104,7 @@ export default function Home() {
             <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
             <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
             <a href="/pueblo-parcel" onClick={() => setMobileMenu(false)}>Pueblo Parcel</a>
+            <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Broker Programs</a>
             <a href="/bridge-loans" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
           </div>
@@ -487,6 +489,7 @@ export default function Home() {
                 <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 12 }}>Currently Offering</p>
                 <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>
                   <a href="/pueblo-parcel" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>10-Acre Commercial Parcel · Pueblo, CO</a><br />
+                  <a href="/broker-programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Broker Loan Programs · Nationwide</a><br />
                   <a href="/bridge-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a>
                 </p>
               </div>
