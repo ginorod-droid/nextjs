@@ -29,7 +29,6 @@ export default function BridgeLoans() {
           <div className="b-nav-links">
             <a href="/">Home</a>
             <a href="/pueblo-parcel">Pueblo Parcel</a>
-            <a href="/letsblaze">Let&apos;s Blaze</a>
             <a href="#qualify">Pre-Qualify</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="b-nav-cta">Book a Call</a>
           </div>
@@ -41,7 +40,6 @@ export default function BridgeLoans() {
         <div className="b-mobile-nav">
           <a href="/">Home</a>
           <a href="/pueblo-parcel">Pueblo Parcel</a>
-          <a href="/letsblaze">Let&apos;s Blaze Dispensary</a>
           <a href="#qualify">Pre-Qualify</a>
           <a href="#how-it-works">How It Works</a>
           <a href={EMAIL}>Contact</a>
