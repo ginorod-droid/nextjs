@@ -3,7 +3,7 @@ import { programs, bpStyles, BrokerNav, BrokerFooter, CAL } from './shared'
 
 export const metadata = {
   title: 'Broker Programs | Commercial Loan Solutions | Acoma Capital Partners',
-  description: 'Acoma broker programs: No Doc Streamline, Owner-Occupied Bank Statement, Multifamily, and DSCR commercial loan solutions. Fast reads on tough files.',
+  description: 'Acoma commercial broker programs: Owner-Occupied Bank Statement, Lite Doc, and No Doc. Fast reads on tough commercial files. Bring us the deal.',
 }
 
 export default function BrokerProgramsHub() {
@@ -20,9 +20,9 @@ export default function BrokerProgramsHub() {
 
       <section className="bp-hub-hero">
         <div className="bp-wrap">
-          <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Commercial Loan Solutions</p>
+          <p className="bp-eyebrow" style={{ color: '#F6D200' }}>For Brokers · Commercial Loan Solutions</p>
           <h1 className="bp-h1">Broker<br />Programs.</h1>
-          <p className="bp-hero-sub">Four ways to get a tough file done. When the tax returns, the DTI, or the bank box says no, one of these usually says yes.</p>
+          <p className="bp-hero-sub">Three ways to get a tough commercial file done. When the tax returns, the DTI, or the bank box says no, one of these usually says yes. Bring us the deal and we place it.</p>
           <div className="bp-cta-row">
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Discuss a Deal</a>
           </div>
@@ -37,10 +37,13 @@ export default function BrokerProgramsHub() {
           <div className="bp-hub-grid">
             {programs.map((p) => (
               <a key={p.slug} href={`/broker-programs/${p.slug}`} className="bp-prog-card" style={{ borderTopColor: p.accent }}>
-                <div className="bp-prog-eyebrow">{p.eyebrow}</div>
-                <div className="bp-prog-name">{p.name}</div>
-                <p className="bp-prog-tag">{p.tagline}</p>
-                <span className="bp-prog-link" style={{ color: p.accent }}>View Program →</span>
+                <img className="bp-prog-img" src={p.image} alt={`${p.name} commercial property`} loading="lazy" />
+                <div className="bp-prog-body">
+                  <div className="bp-prog-eyebrow">{p.eyebrow}</div>
+                  <div className="bp-prog-name">{p.name}</div>
+                  <p className="bp-prog-tag">{p.tagline}</p>
+                  <span className="bp-prog-link" style={{ color: p.accent }}>View Program →</span>
+                </div>
               </a>
             ))}
           </div>

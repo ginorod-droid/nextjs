@@ -1,114 +1,99 @@
 // app/broker-programs/shared.jsx
-// Shared data, styles, and building blocks for the Acoma broker program pages.
+// Shared data, styles, and building blocks for the Acoma commercial loan pages.
+// Program terms mirror the Silver Hill small-balance commercial sheets (commercial-only set).
 
 export const CAL   = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true'
 export const FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
 export const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
+export const PTYPES = 'Retail · Mixed-Use (commercial) · Warehouse & Self-Storage · Office · Light Industrial · Automotive · Mobile Home Park · Restaurants · Bars · Day Care'
+
 export const programs = [
-  {
-    slug: 'no-doc',
-    eyebrow: 'No Income Verification',
-    name: 'No Doc Streamline',
-    accent: '#1179EC',
-    tagline: 'Financing without tax returns, bank statements, or operating statements.',
-    intro: 'Strong borrowers get qualified on credit, equity, and the property itself, not on paperwork. When the tax returns do not tell the whole story, this program keeps the deal moving.',
-    when: [
-      'The borrower reports lower income for tax purposes.',
-      'Tax returns show uneven year-over-year growth.',
-      'The borrower needs more flexibility than a bank will allow.',
-    ],
-    specs: [
-      ['Loan Size', '$100K to $2.5M'],
-      ['Purpose', 'Purchase, Refinance, Cash-Out'],
-      ['Term', '5-Year ARM / 30-Year Fixed'],
-      ['Max LTV', '75% purchase, 70% refinance'],
-      ['Minimum FICO', '700'],
-      ['Amortization', 'Up to 30 years'],
-    ],
-    pillars: [
-      ['No income documents', 'No tax returns, bank statements, or operating statements needed to qualify.'],
-      ['Fast submission', 'An application and a credit report are enough to get a read on the deal.'],
-      ['Driven by equity', 'Decisions rest on FICO, LTV, and the strength of the property.'],
-    ],
-  },
   {
     slug: 'bank-statement',
     eyebrow: 'Owner-Occupied',
     name: 'Bank Statement',
     accent: '#2C9143',
-    tagline: 'A path to financing for self-employed owners who bank their income but do not show it on returns.',
-    intro: 'Qualify on twelve months of business bank statements instead of tax returns. Built for owner-occupied commercial property and the business owners inside it.',
+    image: '/program-bank-statement.jpg',
+    tagline: 'Qualify self-employed owners on twelve months of business bank statements instead of tax returns.',
+    clientTagline: 'You run the business and own the building. Twelve months of bank statements can qualify the loan, with cash-out available up to 80 percent.',
+    intro: 'Qualify on twelve months of business bank statements instead of tax returns. Built for owner-occupied commercial property and the business owners inside it, with cash-out available up to 80 percent.',
     when: [
-      'The borrower is self-employed.',
-      'The borrower cannot provide tax returns, pay stubs, or W-2s.',
-      'The borrower needs more flexibility than a traditional bank offers.',
+      'The owner occupies the property their business runs from.',
+      'Tax returns understate what the business actually earns.',
+      'The deal needs more flexibility than a bank will allow.',
     ],
     specs: [
-      ['Loan Size', 'Up to $2.5M'],
-      ['Purpose', 'Purchase, Refinance, Cash-Out'],
-      ['Term', '5-Year ARM / 30-Year Fixed'],
+      ['Loan Size', '$100K to $2M'],
       ['Max LTV', 'Up to 80%'],
-      ['Minimum FICO', '650'],
-      ['Amortization', 'Up to 30 years'],
+      ['Income', '12 months bank statements'],
+      ['Cash-Out', 'Available'],
+      ['Occupancy', 'Owner-occupied only'],
+      ['Purpose', 'Purchase, Refinance, Cash-Out'],
     ],
+    extra: 'Eligible property types: ' + PTYPES + '.',
     pillars: [
       ['Statements, not returns', 'Income is verified through twelve months of business bank statements.'],
-      ['Owner-occupied focus', 'Designed for the business owner who occupies the property.'],
-      ['Room to move', 'Flexibility for borrowers who fall outside rigid bank boxes.'],
+      ['Owner-occupied focus', 'Built for the business owner who occupies the property.'],
+      ['Cash-out to 80%', 'Pull equity out of the building to put back into the business.'],
     ],
   },
   {
-    slug: 'multifamily',
-    eyebrow: '5+ Units',
-    name: 'Multifamily',
+    slug: 'lite-doc',
+    eyebrow: 'Commercial Investors',
+    name: 'Lite Doc',
     accent: '#F6D200',
-    tagline: 'Purchase, refinance, and cash-out financing for stabilized multifamily assets.',
-    intro: 'Straightforward capital for 5+ unit multifamily, with flexible cash-out and reduced-documentation options for the right file.',
+    image: '/program-lite-doc.jpg',
+    tagline: 'Reduced documentation for commercial investors. No tax returns and no 4506-T.',
+    clientTagline: 'You have the credit and a property that performs. Skip the full tax package and finance up to 80 percent.',
+    intro: 'For the commercial investor with credit and a property that performs, without the full tax package. No tax returns and no 4506-T, with 80 percent leverage and a fixed or ARM structure out to thirty years.',
     when: [
-      'The borrower is buying or refinancing a 5+ unit property.',
-      'The borrower wants to pull equity through a cash-out refinance.',
-      'The file benefits from reduced-documentation flexibility.',
+      'The investor has strong credit but an incomplete tax picture.',
+      'The property performs and carries the debt.',
+      'The file needs reduced-documentation flexibility.',
     ],
     specs: [
-      ['Loan Size', '$100K to $2.5M and up'],
-      ['Purpose', 'Purchase, Refinance, Cash-Out'],
-      ['Max LTV', '80% purchase, 75% refinance'],
-      ['Property', '5+ unit multifamily'],
-      ['Documentation', 'Reduced-doc options available'],
+      ['Loan Size', '$100K to $2M'],
+      ['Max LTV', 'Up to 80%'],
+      ['Minimum FICO', '650'],
+      ['Term', '5-Yr ARM / 30-Yr Fixed'],
       ['Amortization', 'Up to 30 years'],
+      ['Documentation', 'No tax returns / 4506-T'],
     ],
+    extra: 'Eligible property types: ' + PTYPES + '.',
     pillars: [
-      ['Flexible cash-out', 'Pull equity to recapitalize or fund the next acquisition.'],
-      ['Reduced-doc options', 'Lighter documentation paths for qualifying files.'],
-      ['Built for operators', 'Terms that fit how multifamily owners actually run deals.'],
+      ['No tax returns', 'No returns and no 4506-T to qualify the file.'],
+      ['Leverage to 80%', 'Full leverage for investors who can show the property performs.'],
+      ['Fixed or ARM', 'A 5-year ARM or a 30-year fixed, amortized up to thirty years.'],
     ],
   },
   {
-    slug: 'dscr',
-    eyebrow: '1 to 4 Unit Investment',
-    name: 'DSCR',
+    slug: 'no-doc',
+    eyebrow: 'No Income Verification',
+    name: 'No Doc',
     accent: '#1179EC',
-    tagline: 'Qualify investment property on the cash flow it produces, not the borrower’s personal income.',
-    intro: 'For 1 to 4 unit residential investment property that services its own debt. A decline on personal income can become an approval on property performance.',
+    image: '/program-no-doc.jpg',
+    tagline: 'Financing without tax returns, bank statements, or operating statements.',
+    clientTagline: 'Strong credit and as little paperwork as possible. The property and the appraisal carry the deal.',
+    intro: 'The shortest path, for strong credit that wants to document as little as possible. No tax returns, bank statements, or operating statements. The property and the appraisal carry the deal.',
     when: [
-      'The borrower does not pass a standard DTI calculation.',
-      'The borrower does not want to produce tax returns or use personal income.',
-      'The borrower owns more properties than agency programs allow.',
+      'The borrower has strong credit and equity.',
+      'The borrower would rather not produce income documents.',
+      'Speed matters more than squeezing out maximum leverage.',
     ],
     specs: [
-      ['Loan Size', '$100K to $2.0M'],
-      ['Purpose', 'Purchase, Refinance, Cash-Out'],
-      ['Term', '30-Year Fixed'],
-      ['Max LTV', 'Up to 80%'],
-      ['Minimum FICO', 'SFR 660, 2 to 4 unit 680'],
-      ['DSCR', 'As low as 0.75x'],
+      ['Loan Size', '$100K to $1M'],
+      ['Max LTV', 'Up to 75%'],
+      ['Minimum FICO', '700'],
+      ['Term', '5-Yr ARM / 30-Yr Fixed'],
+      ['Amortization', 'Up to 30 years'],
+      ['Documentation', 'No income docs *'],
     ],
-    extra: 'Eligible property types: 1 to 4 unit attached or detached, short-term rentals, warrantable and non-warrantable condos, and PUDs. No tax returns required.',
+    extra: '* Property appraisers may request income documentation. Eligible property types: ' + PTYPES + '.',
     pillars: [
-      ['Cash flow qualifies', 'The property’s income carries the loan, not the borrower’s.'],
-      ['No tax returns', 'Personal income and DTI stay out of the file.'],
-      ['Investor scale', 'Room for borrowers who have outgrown agency limits.'],
+      ['No income documents', 'No tax returns, bank statements, or operating statements to qualify.'],
+      ['Driven by equity', 'Decisions rest on FICO, LTV, and the strength of the property.'],
+      ['Fast submission', 'An application and a credit report are enough to get a read.'],
     ],
   },
 ]
@@ -124,7 +109,8 @@ export function BrokerNav() {
         <a href="/" className="bp-logo">ACOMA <span>CAPITAL PARTNERS</span></a>
         <div className="bp-nav-links">
           <a href="/">Home</a>
-          <a href="/broker-programs">All Programs</a>
+          <a href="/commercial-loans">Commercial Loans</a>
+          <a href="/broker-programs">Broker Programs</a>
           <a href="/bridge-loans">Bridge Loans</a>
           <a href={CAL} target="_blank" rel="noreferrer" className="bp-nav-cta">Discuss Your Deal</a>
         </div>
@@ -135,11 +121,11 @@ export function BrokerNav() {
       <input type="checkbox" id="bp-menu-toggle" className="bp-menu-toggle" />
       <div className="bp-mobile-nav">
         <a href="/">Home</a>
-        <a href="/broker-programs">All Programs</a>
-        <a href="/broker-programs/no-doc">No Doc Streamline</a>
+        <a href="/commercial-loans">Commercial Loans</a>
+        <a href="/broker-programs">Broker Programs</a>
         <a href="/broker-programs/bank-statement">Bank Statement</a>
-        <a href="/broker-programs/multifamily">Multifamily</a>
-        <a href="/broker-programs/dscr">DSCR</a>
+        <a href="/broker-programs/lite-doc">Lite Doc</a>
+        <a href="/broker-programs/no-doc">No Doc</a>
         <a href="/bridge-loans">Bridge Loans</a>
         <a href={CAL} target="_blank" rel="noreferrer">Discuss Your Deal</a>
       </div>
@@ -164,9 +150,9 @@ export function BrokerFooter() {
             </div>
           </div>
           <div className="bp-footer-links">
-            <a href="/broker-programs">All Programs</a>
+            <a href="/commercial-loans">Commercial Loans</a>
+            <a href="/broker-programs">Broker Programs</a>
             <a href="/bridge-loans">Bridge Loans</a>
-            <a href="/pueblo-parcel">Pueblo Parcel</a>
             <a href={CAL} target="_blank" rel="noreferrer">Discuss Your Deal</a>
           </div>
         </div>
@@ -207,12 +193,18 @@ export function ProgramView({ program }) {
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* INTRO + IMAGE */}
       <section className="bp-section">
-        <div className="bp-wrap">
-          <p className="bp-section-label">The Program</p>
-          <div className="bp-rule" style={{ background: p.accent }} />
-          <p className="bp-lead">{p.intro}</p>
+        <div className="bp-wrap bp-intro-grid">
+          <div>
+            <p className="bp-section-label">The Program</p>
+            <div className="bp-rule" style={{ background: p.accent }} />
+            <p className="bp-lead">{p.intro}</p>
+          </div>
+          <div className="bp-intro-media">
+            <img src={p.image} alt={p.name + ' commercial property'} loading="lazy" />
+            <span className="bp-media-bar" style={{ background: p.accent }} />
+          </div>
         </div>
       </section>
 
@@ -254,7 +246,7 @@ export function ProgramView({ program }) {
       {/* PILLARS */}
       <section className="bp-section bp-section-off">
         <div className="bp-wrap">
-          <p className="bp-section-label">Why Brokers Bring Us These Deals</p>
+          <p className="bp-section-label">Why It Works</p>
           <div className="bp-rule" style={{ background: p.accent }} />
           <div className="bp-pillar-grid">
             {p.pillars.map(([title, body], i) => (
@@ -329,6 +321,8 @@ export const bpStyles = `
 .bp-btn-green:hover { opacity:0.85; }
 .bp-btn-ghost-white { display:inline-block; padding:15px 38px; border:2px solid rgba(255,255,255,0.32); color:#fff; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:border-color .2s; }
 .bp-btn-ghost-white:hover { border-color:#fff; }
+.bp-btn-navy { display:inline-block; padding:17px 38px; background:#202A54; color:#fff; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
+.bp-btn-navy:hover { opacity:0.88; }
 
 /* SECTIONS */
 .bp-section { padding:104px 0; border-top:1px solid #e8ecf0; }
@@ -343,6 +337,12 @@ export const bpStyles = `
 .bp-white { color:#fff !important; }
 .bp-lead { font-size:19px; line-height:1.8; color:#555; max-width:820px; }
 .bp-muted-white { color:rgba(255,255,255,0.65) !important; max-width:720px; font-size:17px; line-height:1.7; }
+
+/* INTRO MEDIA */
+.bp-intro-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:64px; align-items:center; }
+.bp-intro-media { position:relative; }
+.bp-intro-media img { width:100%; height:380px; object-fit:cover; display:block; }
+.bp-media-bar { position:absolute; left:0; right:0; bottom:0; height:5px; }
 
 /* WHEN GRID */
 .bp-when-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
@@ -371,13 +371,16 @@ export const bpStyles = `
 
 /* HUB */
 .bp-hub-hero { background:#202A54; padding:120px 0 90px; }
-.bp-hub-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:8px; }
-.bp-prog-card { display:flex; flex-direction:column; background:#fff; border:1px solid #e4e8f0; border-top:5px solid #1179EC; padding:40px 36px; text-decoration:none; transition:transform .2s, box-shadow .2s; }
+.bp-hub-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
+.bp-prog-card { display:flex; flex-direction:column; background:#fff; border:1px solid #e4e8f0; border-top:5px solid #1179EC; text-decoration:none; overflow:hidden; transition:transform .2s, box-shadow .2s; }
 .bp-prog-card:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,0.08); }
+.bp-prog-img { width:100%; height:188px; object-fit:cover; display:block; }
+.bp-prog-body { display:flex; flex-direction:column; padding:36px 32px; flex:1; }
 .bp-prog-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#aaa; margin-bottom:12px; }
 .bp-prog-name { font-size:30px; font-weight:900; letter-spacing:-0.02em; color:#202A54; margin-bottom:14px; line-height:1.05; }
-.bp-prog-tag { font-size:15px; color:#666; line-height:1.7; margin-bottom:24px; flex:1; }
-.bp-prog-link { font-size:11px; font-weight:900; letter-spacing:0.14em; text-transform:uppercase; color:#1179EC; }
+.bp-prog-tag { font-size:15px; color:#666; line-height:1.7; margin-bottom:20px; flex:1; }
+.bp-prog-types { font-size:12px; color:#9aa3b2; line-height:1.6; margin-bottom:22px; }
+.bp-prog-link { font-size:11px; font-weight:900; letter-spacing:0.14em; text-transform:uppercase; }
 
 /* FOOTER */
 .bp-footer { background:#202A54; padding:56px 0 0; }
@@ -402,7 +405,9 @@ export const bpStyles = `
   .bp-hero { padding:72px 0 60px; }
   .bp-hub-hero { padding:72px 0 56px; }
   .bp-section { padding:64px 0; }
-  .bp-when-grid, .bp-spec-grid, .bp-pillar-grid, .bp-hub-grid { grid-template-columns:1fr; }
+  .bp-intro-grid, .bp-when-grid, .bp-spec-grid, .bp-pillar-grid, .bp-hub-grid { grid-template-columns:1fr; }
+  .bp-intro-media { margin-top:36px; }
+  .bp-intro-media img { height:280px; }
   .bp-footer-row { grid-template-columns:1fr; padding-bottom:32px; }
   .bp-footer-links { align-items:flex-start; }
 }
