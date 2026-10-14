@@ -76,10 +76,8 @@ export default function Home() {
         transition: "all .3s",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 76, position: "relative" }}>
-          <a href="/" style={{ textDecoration: "none" }}>
-            <span style={{ fontFamily: P, fontWeight: 800, fontSize: 17, letterSpacing: "0.06em", textTransform: "uppercase", color: W }}>
-              ACOMA <span style={{ color: YELLOW }}>CAPITAL</span> PARTNERS
-            </span>
+          <a href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }} aria-label="Acoma Capital Partners home">
+            <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
             {[["#opportunities","Listings"],["#services","Services"],["#about","About"]].map(([h,l]) => (
@@ -512,9 +510,7 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 40, flexWrap: "wrap", gap: 24 }}>
             <div>
-              <p style={{ fontFamily: P, fontWeight: 800, fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: W, marginBottom: 4 }}>
-                ACOMA <span style={{ color: YELLOW }}>CAPITAL</span> PARTNERS
-              </p>
+              <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 32, width: "auto", display: "block", marginBottom: 8 }} />
               <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.35)" }}>Denver, Colorado</p>
             </div>
             <div style={{ display: "flex", gap: 36, flexWrap: "wrap" }}>

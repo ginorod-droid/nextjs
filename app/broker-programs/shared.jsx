@@ -17,6 +17,8 @@ export const programs = [
     name: 'Bank Statement',
     accent: '#2C9143',
     image: '/program-bank-statement.jpg',
+    flyer: '/flyer-bank-statement.pdf',
+    highlights: ['Up to 80% LTV', '$100K – $2M', '650+ FICO'],
     tagline: 'Qualify self-employed owners on twelve months of business bank statements instead of tax returns.',
     clientTagline: 'You run the business and own the building. Twelve months of bank statements can qualify the loan, with cash-out available up to 80 percent.',
     intro: 'Qualify on twelve months of business bank statements instead of tax returns. Built for owner-occupied commercial property and the business owners inside it, with cash-out available up to 80 percent.',
@@ -44,8 +46,10 @@ export const programs = [
     slug: 'lite-doc',
     eyebrow: 'Commercial Investors',
     name: 'Lite Doc',
-    accent: '#F6D200',
+    accent: '#1179EC',
     image: '/program-lite-doc.jpg',
+    flyer: '/flyer-lite-doc.pdf',
+    highlights: ['Up to 80% LTV', '$100K – $2M', 'No tax returns'],
     tagline: 'Reduced documentation for commercial investors. No tax returns and no 4506-T.',
     clientTagline: 'You have the credit and a property that performs. Skip the full tax package and finance up to 80 percent.',
     intro: 'For the commercial investor with credit and a property that performs, without the full tax package. No tax returns and no 4506-T, with 80 percent leverage and a fixed or ARM structure out to thirty years.',
@@ -73,8 +77,10 @@ export const programs = [
     slug: 'no-doc',
     eyebrow: 'No Income Verification',
     name: 'No Doc',
-    accent: '#1179EC',
+    accent: '#F6D200',
     image: '/program-no-doc.jpg',
+    flyer: '/flyer-no-doc.pdf',
+    highlights: ['Up to 75% LTV', '$100K – $1M', '700+ FICO'],
     tagline: 'Financing without tax returns, bank statements, or operating statements.',
     clientTagline: 'Strong credit and as little paperwork as possible. The property and the appraisal carry the deal.',
     intro: 'The shortest path, for strong credit that wants to document as little as possible. No tax returns, bank statements, or operating statements. The property and the appraisal carry the deal.',
@@ -104,11 +110,40 @@ export function getProgram(slug) {
   return programs.find((p) => p.slug === slug)
 }
 
+// JSON-LD structured data for search engines
+export function programsJsonLd(pageUrl) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FinancialService',
+    name: 'Acoma Capital Partners',
+    image: 'https://www.acomacapitalpartners.com/acoma-horizontal.png',
+    url: pageUrl,
+    telephone: '+1-720-772-1327',
+    email: 'ginorod@acomacapitalpartners.com',
+    areaServed: 'US',
+    address: { '@type': 'PostalAddress', addressLocality: 'Denver', addressRegion: 'CO', addressCountry: 'US' },
+    description: 'Commercial property financing for owners and investors: bank statement, lite doc, and no doc programs from $100K to $2M.',
+    makesOffer: programs.map((p) => ({
+      '@type': 'Offer',
+      name: p.name + ' Commercial Loan',
+      category: 'Commercial Mortgage',
+      url: 'https://www.acomacapitalpartners.com/broker-programs/' + p.slug,
+      description: p.tagline,
+    })),
+  }
+}
+
+export function JsonLd({ data }) {
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+}
+
 export function BrokerNav() {
   return (
     <nav className="bp-nav">
       <div className="bp-wrap bp-nav-row">
-        <a href="/" className="bp-logo">ACOMA <span>CAPITAL PARTNERS</span></a>
+        <a href="/" className="bp-logo" aria-label="Acoma Capital Partners home">
+          <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" />
+        </a>
         <div className="bp-nav-links">
           <a href="/">Home</a>
           <a href="/commercial-loans">Commercial Loans</a>
@@ -145,7 +180,7 @@ export function BrokerFooter() {
       <footer className="bp-footer">
         <div className="bp-wrap bp-footer-row">
           <div>
-            <div className="bp-footer-logo">ACOMA <span>CAPITAL</span> PARTNERS</div>
+            <img className="bp-footer-logo-img" src="/acoma-logo-white.png" alt="Acoma Capital Partners" />
             <div className="bp-footer-info">
               (720) 772-1327 &nbsp;·&nbsp; <a href={EMAIL}>ginorod@acomacapitalpartners.com</a><br />
               <a href="https://www.acomacapitalpartners.com" target="_blank" rel="noreferrer">www.acomacapitalpartners.com</a>
@@ -166,6 +201,34 @@ export function BrokerFooter() {
         <div className="bp-footer-bottom"><div className="bp-wrap">© 2026 Acoma Capital Partners, Inc.</div></div>
       </footer>
     </>
+  )
+}
+
+// Stacked, alternating program rows (editorial — image and copy down the page).
+export function ProgramRows({ variant = 'client' }) {
+  return (
+    <div className="bp-rows">
+      {programs.map((p, i) => (
+        <article key={p.slug} className={'bp-row' + (i % 2 ? ' bp-row-alt' : '')}>
+          <div className="bp-row-media">
+            <img src={p.image} alt={p.name + ' — commercial property financed by Acoma Capital Partners'} loading="lazy" />
+            <span className="bp-row-accent" style={{ background: p.accent }} />
+          </div>
+          <div className="bp-row-body">
+            <p className="bp-row-eyebrow" style={{ color: p.accent }}>{p.eyebrow}</p>
+            <h3 className="bp-row-name">{p.name}</h3>
+            <p className="bp-row-outline">{variant === 'client' ? p.clientTagline : p.tagline}</p>
+            <ul className="bp-row-facts">
+              {p.highlights.map((h) => <li key={h}>{h}</li>)}
+            </ul>
+            <div className="bp-row-links">
+              <a href={'/broker-programs/' + p.slug} className="bp-row-link" style={{ color: p.accent }}>See full terms →</a>
+              <a href={p.flyer} target="_blank" rel="noreferrer" className="bp-row-flyer">Program sheet (PDF) ↓</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
   )
 }
 
@@ -190,7 +253,7 @@ export function ProgramView({ program }) {
           <p className="bp-hero-sub">{p.tagline}</p>
           <div className="bp-cta-row">
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Discuss a Deal</a>
-            <a href="/broker-programs" className="bp-btn-ghost-white">See All Programs</a>
+            <a href={p.flyer} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Program Sheet (PDF) ↓</a>
           </div>
         </div>
       </section>
@@ -287,16 +350,17 @@ export const bpStyles = `
 #bp { font-family:'Poppins',sans-serif; background:#fff; color:#202A54; font-size:16px; line-height:1.6; }
 #bp *,#bp *::before,#bp *::after { box-sizing:border-box; }
 #bp h1,#bp h2,#bp h3,#bp p,#bp ul,#bp li { margin:0; padding:0; }
+#bp ul { list-style:none; }
 .bp-wrap { max-width:1200px; margin:0 auto; padding:0 40px; }
 
 .bp-colorbar { height:6px; display:flex; }
 .bp-colorbar span { flex:1; }
 
 /* NAV */
-.bp-nav { position:sticky; top:0; z-index:100; background:rgba(32,42,84,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.08); padding:20px 0; }
+.bp-nav { position:sticky; top:0; z-index:100; background:rgba(32,42,84,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.08); padding:16px 0; }
 .bp-nav-row { display:flex; align-items:center; justify-content:space-between; }
-.bp-logo { font-size:14px; font-weight:900; letter-spacing:0.12em; color:#fff; text-decoration:none; text-transform:uppercase; }
-.bp-logo span { color:#F6D200; }
+.bp-logo { display:inline-flex; align-items:center; }
+.bp-logo img { height:38px; width:auto; display:block; }
 .bp-nav-links { display:flex; gap:30px; align-items:center; }
 .bp-nav-links a { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .2s; }
 .bp-nav-links a:hover { color:#fff; }
@@ -309,13 +373,21 @@ export const bpStyles = `
 .bp-mobile-nav a:last-child { border-bottom:none; color:#F6D200; }
 .bp-menu-toggle:checked ~ .bp-mobile-nav { display:flex; }
 
-/* HERO */
+/* HERO (text only, used by detail pages) */
 .bp-hero { background:#202A54; padding:120px 0 100px; position:relative; }
 .bp-eyebrow { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:28px; display:block; }
-.bp-h1 { font-size:clamp(56px,9vw,110px); font-weight:900; line-height:0.9; letter-spacing:-0.04em; color:#fff; text-transform:uppercase; margin-bottom:32px; }
+.bp-h1 { font-size:clamp(52px,8vw,104px); font-weight:900; line-height:0.9; letter-spacing:-0.04em; color:#fff; text-transform:uppercase; margin-bottom:32px; }
 .bp-accent-dot { display:inline-block; width:16px; height:16px; margin-left:10px; vertical-align:baseline; }
 .bp-hero-sub { font-size:19px; color:rgba(255,255,255,0.68); max-width:640px; line-height:1.65; margin-bottom:48px; }
 .bp-cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+
+/* HERO SPLIT (hub pages — text + people photo) */
+.bp-hub-hero { background:#202A54; padding:96px 0; position:relative; overflow:hidden; }
+.bp-hero-split { display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; }
+.bp-hero-photo { position:relative; }
+.bp-hero-photo img { width:100%; height:440px; object-fit:cover; object-position:center; display:block; }
+.bp-hero-photo-bar { position:absolute; left:0; right:0; bottom:0; height:6px; background:#F6D200; }
+.bp-hero-photo-frame { position:absolute; top:-14px; left:-14px; width:84px; height:84px; border:3px solid #2C9143; z-index:0; }
 
 /* BUTTONS */
 .bp-btn-yellow { display:inline-block; padding:17px 38px; background:#F6D200; color:#202A54; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
@@ -324,11 +396,10 @@ export const bpStyles = `
 .bp-btn-green:hover { opacity:0.85; }
 .bp-btn-ghost-white { display:inline-block; padding:15px 38px; border:2px solid rgba(255,255,255,0.32); color:#fff; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:border-color .2s; }
 .bp-btn-ghost-white:hover { border-color:#fff; }
-.bp-btn-navy { display:inline-block; padding:17px 38px; background:#202A54; color:#fff; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; }
-.bp-btn-navy:hover { opacity:0.88; }
 
 /* SECTIONS */
 .bp-section { padding:104px 0; border-top:1px solid #e8ecf0; }
+.bp-section-tight { padding:72px 0; }
 .bp-section-off { background:#f4f6f9; }
 .bp-section-navy { background:#202A54; border-top:none; }
 .bp-section-label { font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#1179EC; margin-bottom:16px; }
@@ -347,13 +418,26 @@ export const bpStyles = `
 .bp-intro-media img { width:100%; height:380px; object-fit:cover; display:block; }
 .bp-media-bar { position:absolute; left:0; right:0; bottom:0; height:5px; }
 
-/* WHEN GRID */
-.bp-when-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
-.bp-when-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-top:4px solid #F6D200; padding:32px 28px; }
-.bp-when-num { display:block; font-size:24px; font-weight:900; letter-spacing:-0.02em; margin-bottom:14px; }
-.bp-when-card p { font-size:15px; color:rgba(255,255,255,0.82); line-height:1.7; }
+/* STACKED PROGRAM ROWS */
+.bp-rows { display:flex; flex-direction:column; border-top:1px solid #e4e8f0; }
+.bp-row { display:grid; grid-template-columns:1fr 1fr; align-items:stretch; border-bottom:1px solid #e4e8f0; }
+.bp-row-media { position:relative; min-height:380px; overflow:hidden; background:#eef1f5; }
+.bp-row-media img { width:100%; height:100%; object-fit:cover; display:block; }
+.bp-row-accent { position:absolute; top:0; bottom:0; left:0; width:6px; }
+.bp-row-alt .bp-row-media { order:2; }
+.bp-row-alt .bp-row-accent { left:auto; right:0; }
+.bp-row-body { padding:68px 60px; display:flex; flex-direction:column; justify-content:center; }
+.bp-row-eyebrow { font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:14px; }
+.bp-row-name { font-size:clamp(28px,3.4vw,46px); font-weight:900; color:#202A54; letter-spacing:-0.02em; line-height:1.0; margin-bottom:18px; }
+.bp-row-outline { font-size:17px; color:#555; line-height:1.75; max-width:46ch; margin-bottom:26px; }
+.bp-row-facts { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px; }
+.bp-row-facts li { font-size:12px; font-weight:700; letter-spacing:0.04em; color:#202A54; background:#f0f3f8; padding:9px 15px; }
+.bp-row-links { display:flex; gap:28px; align-items:center; flex-wrap:wrap; }
+.bp-row-link { font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; }
+.bp-row-flyer { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8a93a3; text-decoration:none; border-bottom:1px solid #d4d9e0; padding-bottom:3px; transition:color .2s, border-color .2s; }
+.bp-row-flyer:hover { color:#202A54; border-color:#202A54; }
 
-/* SPEC GRID */
+/* SPEC / EXTRA / CREDIT */
 .bp-spec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; background:#e4e8f0; margin-top:44px; }
 .bp-spec-cell { background:#fff; padding:34px 30px; border-top:4px solid #1179EC; }
 .bp-spec-label { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#aaa; margin-bottom:10px; }
@@ -361,6 +445,12 @@ export const bpStyles = `
 .bp-extra { margin-top:28px; font-size:14px; color:#777; line-height:1.7; max-width:820px; }
 .bp-credit { margin-top:18px; font-size:15px; color:#334; line-height:1.7; max-width:820px; border-left:4px solid #2C9143; padding:4px 0 4px 16px; }
 .bp-credit strong { color:#202A54; }
+
+/* WHEN GRID */
+.bp-when-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+.bp-when-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-top:4px solid #F6D200; padding:32px 28px; }
+.bp-when-num { display:block; font-size:24px; font-weight:900; letter-spacing:-0.02em; margin-bottom:14px; }
+.bp-when-card p { font-size:15px; color:rgba(255,255,255,0.82); line-height:1.7; }
 
 /* PILLARS */
 .bp-pillar-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
@@ -374,24 +464,10 @@ export const bpStyles = `
 .bp-cta-phone { margin-top:32px; font-size:14px; color:rgba(255,255,255,0.4); }
 .bp-cta-phone a { color:rgba(255,255,255,0.72); text-decoration:none; font-weight:700; }
 
-/* HUB */
-.bp-hub-hero { background:#202A54; padding:120px 0 90px; }
-.bp-hub-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
-.bp-prog-card { display:flex; flex-direction:column; background:#fff; border:1px solid #e4e8f0; border-top:5px solid #1179EC; text-decoration:none; overflow:hidden; transition:transform .2s, box-shadow .2s; }
-.bp-prog-card:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,0.08); }
-.bp-prog-img { width:100%; height:188px; object-fit:cover; display:block; }
-.bp-prog-body { display:flex; flex-direction:column; padding:36px 32px; flex:1; }
-.bp-prog-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#aaa; margin-bottom:12px; }
-.bp-prog-name { font-size:30px; font-weight:900; letter-spacing:-0.02em; color:#202A54; margin-bottom:14px; line-height:1.05; }
-.bp-prog-tag { font-size:15px; color:#666; line-height:1.7; margin-bottom:20px; flex:1; }
-.bp-prog-types { font-size:12px; color:#9aa3b2; line-height:1.6; margin-bottom:22px; }
-.bp-prog-link { font-size:11px; font-weight:900; letter-spacing:0.14em; text-transform:uppercase; }
-
 /* FOOTER */
 .bp-footer { background:#202A54; padding:56px 0 0; }
 .bp-footer-row { display:grid; grid-template-columns:1fr 1fr; gap:40px; padding-bottom:44px; }
-.bp-footer-logo { font-size:14px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px; }
-.bp-footer-logo span { color:#F6D200; }
+.bp-footer-logo-img { height:34px; width:auto; display:block; margin-bottom:18px; }
 .bp-footer-info { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.9; }
 .bp-footer-info a { color:rgba(255,255,255,0.6); text-decoration:none; }
 .bp-footer-links { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
@@ -408,11 +484,17 @@ export const bpStyles = `
   .bp-nav-links { display:none; }
   .bp-hamburger { display:flex; }
   .bp-hero { padding:72px 0 60px; }
-  .bp-hub-hero { padding:72px 0 56px; }
+  .bp-hub-hero { padding:56px 0; }
+  .bp-hero-split { grid-template-columns:1fr; gap:36px; }
+  .bp-hero-photo img { height:300px; }
   .bp-section { padding:64px 0; }
-  .bp-intro-grid, .bp-when-grid, .bp-spec-grid, .bp-pillar-grid, .bp-hub-grid { grid-template-columns:1fr; }
+  .bp-intro-grid, .bp-when-grid, .bp-spec-grid, .bp-pillar-grid { grid-template-columns:1fr; }
   .bp-intro-media { margin-top:36px; }
   .bp-intro-media img { height:280px; }
+  .bp-row { grid-template-columns:1fr; }
+  .bp-row-media { min-height:240px; order:0 !important; }
+  .bp-row-alt .bp-row-media { order:0; }
+  .bp-row-body { padding:40px 24px; }
   .bp-footer-row { grid-template-columns:1fr; padding-bottom:32px; }
   .bp-footer-links { align-items:flex-start; }
 }
