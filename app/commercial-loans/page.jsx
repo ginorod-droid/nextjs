@@ -1,5 +1,5 @@
 // app/commercial-loans/page.jsx
-import { programs, bpStyles, BrokerNav, BrokerFooter, CAL, FORM, EMAIL } from '../broker-programs/shared'
+import { programs, bpStyles, BrokerNav, BrokerFooter, CAL, FORM, EMAIL, CREDIT } from '../broker-programs/shared'
 
 export const metadata = {
   title: 'Commercial Loans | Owner-Occupied & Investor Financing | Acoma Capital Partners',
@@ -61,6 +61,7 @@ export default function CommercialLoans() {
             ))}
           </div>
           <p className="bp-extra">Eligible across retail, mixed-use, warehouse and self-storage, office, light industrial, automotive, mobile home parks, restaurants, bars, and day care. Terms are indicative and subject to underwriting.</p>
+          <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
         </div>
       </section>
 

@@ -8,6 +8,8 @@ export const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
 export const PTYPES = 'Retail · Mixed-Use (commercial) · Warehouse & Self-Storage · Office · Light Industrial · Automotive · Mobile Home Park · Restaurants · Bars · Day Care'
 
+export const CREDIT = 'A qualifying credit score is required, starting at 650. Both rate and terms improve as the score rises.'
+
 export const programs = [
   {
     slug: 'bank-statement',
@@ -26,10 +28,10 @@ export const programs = [
     specs: [
       ['Loan Size', '$100K to $2M'],
       ['Max LTV', 'Up to 80%'],
+      ['Minimum FICO', '650'],
       ['Income', '12 months bank statements'],
       ['Cash-Out', 'Available'],
       ['Occupancy', 'Owner-occupied only'],
-      ['Purpose', 'Purchase, Refinance, Cash-Out'],
     ],
     extra: 'Eligible property types: ' + PTYPES + '.',
     pillars: [
@@ -240,6 +242,7 @@ export function ProgramView({ program }) {
             ))}
           </div>
           {p.extra ? <p className="bp-extra">{p.extra}</p> : null}
+          <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
         </div>
       </section>
 
@@ -356,6 +359,8 @@ export const bpStyles = `
 .bp-spec-label { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#aaa; margin-bottom:10px; }
 .bp-spec-value { font-size:22px; font-weight:900; color:#202A54; letter-spacing:-0.01em; line-height:1.2; }
 .bp-extra { margin-top:28px; font-size:14px; color:#777; line-height:1.7; max-width:820px; }
+.bp-credit { margin-top:18px; font-size:15px; color:#334; line-height:1.7; max-width:820px; border-left:4px solid #2C9143; padding:4px 0 4px 16px; }
+.bp-credit strong { color:#202A54; }
 
 /* PILLARS */
 .bp-pillar-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }

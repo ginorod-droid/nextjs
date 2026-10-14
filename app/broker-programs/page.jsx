@@ -1,5 +1,5 @@
 // app/broker-programs/page.jsx
-import { programs, bpStyles, BrokerNav, BrokerFooter, CAL } from './shared'
+import { programs, bpStyles, BrokerNav, BrokerFooter, CAL, CREDIT } from './shared'
 
 export const metadata = {
   title: 'Broker Programs | Commercial Loan Solutions | Acoma Capital Partners',
@@ -47,6 +47,7 @@ export default function BrokerProgramsHub() {
               </a>
             ))}
           </div>
+          <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
         </div>
       </section>
 
