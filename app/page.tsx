@@ -232,12 +232,12 @@ export default function Home() {
                 {/* CTA under image */}
                 <div style={{ background: NAVY, padding: "28px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
                   <div>
-                    <p style={{ fontFamily: P, fontWeight: 700, fontSize: 15, color: W, marginBottom: 4, lineHeight: 1.4 }}>Need your property sold?<br />Need your business sold?</p>
-                    <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.5)" }}>Connect directly — no intake form required.</p>
+                    <p style={{ fontFamily: P, fontWeight: 700, fontSize: 15, color: W, marginBottom: 4, lineHeight: 1.4 }}>Need capital to close?<br />We finance the deal.</p>
+                    <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.5)" }}>Owner-occupied and investor loans, $100K to $2M.</p>
                   </div>
-                  <a href="mailto:ginorod@acomacapitalpartners.com"
+                  <a href="/commercial-loans"
                     style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "13px 24px", textDecoration: "none", whiteSpace: "nowrap" as const }}>
-                    Contact Us →
+                    View Commercial Loans →
                   </a>
                 </div>
               </div>
@@ -251,19 +251,24 @@ export default function Home() {
                   01 / Services
                 </p>
                 <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
-                  We help you find the right places to buy — and know when it&apos;s time to sell.
+                  The commercial loans we provide.
                 </h2>
                 <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 20 }}>
-                  Acoma handles commercial acquisitions, investment sales, and deal structuring for clients who need a team that understands both the asset and the capital side.
+                  Owner-occupied and investor financing for borrowers the bank turns away, alongside our active commercial listings. Bank statement, lite doc, and no doc, from $100K to $2M.
                 </p>
               </FadeUp>
               <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                {["Commercial Acquisitions","Investment Sales","Business Opportunity Sales","Site Selection","Development Opportunities","Portfolio Strategy"].map((s,i) => (
+                {([
+                  ["Bank Statement Loans","/broker-programs/bank-statement"],
+                  ["Lite Doc Loans","/broker-programs/lite-doc"],
+                  ["No Doc Commercial Loans","/broker-programs/no-doc"],
+                  ["Commercial Listings","#opportunities"],
+                ] as [string,string][]).map(([s,href],i) => (
                   <FadeUp key={i} delay={i*0.06}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 20px", background: i % 2 === 0 ? "#f4f6f9" : W, borderLeft: `4px solid ${GREEN}` }}>
+                    <a href={href} style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 20px", background: i % 2 === 0 ? "#f4f6f9" : W, borderLeft: `4px solid ${GREEN}`, textDecoration: "none" }}>
                       <span style={{ color: GREEN, fontWeight: 700, fontSize: 14, flexShrink: 0 }}>→</span>
                       <span style={{ fontFamily: P, fontWeight: 600, fontSize: 14, color: NAVY, letterSpacing: "0.02em" }}>{s}</span>
-                    </div>
+                    </a>
                   </FadeUp>
                 ))}
               </div>
