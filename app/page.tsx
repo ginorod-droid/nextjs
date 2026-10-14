@@ -488,8 +488,14 @@ export default function Home() {
               <div style={{ borderLeft: "1px solid rgba(255,255,255,0.1)", paddingLeft: 80 }}>
                 <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 20 }}>Direct Contact</p>
                 <p style={{ fontFamily: P, fontWeight: 700, fontSize: 22, color: W, marginBottom: 8 }}>Gino Rodrigues</p>
-                <p style={{ fontFamily: I, fontSize: 15, color: "rgba(255,255,255,0.55)", marginBottom: 4 }}>Founder, Acoma Capital Partners</p>
-                <p style={{ fontFamily: I, fontSize: 15, color: "rgba(255,255,255,0.55)", marginBottom: 4 }}>Denver, Colorado</p>
+                <p style={{ fontFamily: I, fontSize: 15, color: "rgba(255,255,255,0.55)", marginBottom: 4 }}>Principal &amp; Responsible Broker, Acoma Capital Partners</p>
+                <p style={{ fontFamily: I, fontSize: 15, color: "rgba(255,255,255,0.55)", marginBottom: 16 }}>Denver, Colorado</p>
+                <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.9 }}>
+                  <a href="tel:7207721327" style={{ color: W, textDecoration: "none", fontWeight: 600 }}>(720) 772-1327</a><br />
+                  <a href="mailto:ginorod@acomacapitalpartners.com" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", wordBreak: "break-word" as const }}>ginorod@acomacapitalpartners.com</a><br />
+                  <a href="https://www.acomacapitalpartners.com" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>www.acomacapitalpartners.com</a>
+                </p>
+                <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 10 }}>CO Real Estate License EC.100052724</p>
                 <div style={{ height: 1, background: "rgba(255,255,255,0.08)", margin: "28px 0" }} />
                 <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 12 }}>Currently Offering</p>
                 <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>
