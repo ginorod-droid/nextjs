@@ -23,9 +23,9 @@ export const programs = [
     clientTagline: 'You run the business and own the building. Twelve months of bank statements can qualify the loan, with cash-out available up to 80 percent.',
     intro: 'Qualify on twelve months of business bank statements instead of tax returns. Built for owner-occupied commercial property and the business owners inside it, with cash-out available up to 80 percent.',
     when: [
-      'The owner occupies the property their business runs from.',
-      'Tax returns understate what the business actually earns.',
-      'The deal needs more flexibility than a bank will allow.',
+      'You occupy the property your business runs from.',
+      'Your tax returns understate what the business actually earns.',
+      'You need more flexibility than a bank will allow.',
     ],
     specs: [
       ['Loan Size', '$100K to $2M'],
@@ -54,9 +54,9 @@ export const programs = [
     clientTagline: 'You have the credit and a property that performs. Skip the full tax package and finance up to 80 percent.',
     intro: 'For the commercial investor with credit and a property that performs, without the full tax package. No tax returns and no 4506-T, with 80 percent leverage and a fixed or ARM structure out to thirty years.',
     when: [
-      'The investor has strong credit but an incomplete tax picture.',
+      'You have strong credit but an incomplete tax picture.',
       'The property performs and carries the debt.',
-      'The file needs reduced-documentation flexibility.',
+      'You want a path with reduced documentation.',
     ],
     specs: [
       ['Loan Size', '$100K to $2M'],
@@ -82,12 +82,12 @@ export const programs = [
     flyer: '/flyer-no-doc.pdf',
     highlights: ['Up to 75% LTV', '$100K – $1M', '700+ FICO'],
     tagline: 'Financing without tax returns, bank statements, or operating statements.',
-    clientTagline: 'Strong credit and as little paperwork as possible. The property and the appraisal carry the deal.',
+    clientTagline: 'You have strong credit and want as little paperwork as possible. The property and the appraisal carry the deal.',
     intro: 'The shortest path, for strong credit that wants to document as little as possible. No tax returns, bank statements, or operating statements. The property and the appraisal carry the deal.',
     when: [
-      'The borrower has strong credit and equity.',
-      'The borrower would rather not produce income documents.',
-      'Speed matters more than squeezing out maximum leverage.',
+      'You have strong credit and equity.',
+      'You would rather not produce income documents.',
+      'Speed matters more to you than maximum leverage.',
     ],
     specs: [
       ['Loan Size', '$100K to $1M'],
@@ -250,7 +250,7 @@ export function ProgramView({ program }) {
         <div className="bp-wrap">
           <p className="bp-eyebrow" style={{ color: p.accent }}>{p.eyebrow}</p>
           <h1 className="bp-h1">{p.name}<span className="bp-accent-dot" style={{ background: p.accent }} /></h1>
-          <p className="bp-hero-sub">{p.tagline}</p>
+          <p className="bp-hero-sub">{p.clientTagline}</p>
           <div className="bp-cta-row">
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Discuss a Deal</a>
             <a href={p.flyer} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Program Sheet (PDF) ↓</a>
@@ -328,11 +328,11 @@ export function ProgramView({ program }) {
       {/* CTA */}
       <section className="bp-section bp-section-navy">
         <div className="bp-wrap bp-cta-block">
-          <h2 className="bp-white">Have a scenario? Let&apos;s talk.</h2>
+          <h2 className="bp-white">Have a deal? Let&apos;s talk.</h2>
           <p className="bp-muted-white">Send the basics and get a straight read on whether the deal fits, usually the same day.</p>
           <div className="bp-cta-row">
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
-            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Submit a Scenario</a>
+            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>
           <p className="bp-cta-phone"><a href="tel:7207721327">(720) 772-1327</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>
