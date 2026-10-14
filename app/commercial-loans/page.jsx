@@ -32,7 +32,7 @@ export default function CommercialLoans() {
           <div className="bp-hero-text">
             <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Commercial Financing · Nationwide</p>
             <h1 className="bp-h1">The Deals<br />We Get Done.</h1>
-            <p className="bp-hero-sub">Owner-occupied and investor financing for borrowers the bank turns away. When the tax returns do not tell the whole story, one of these programs still gets you to the closing table. $100K to $2M.</p>
+            <p className="bp-hero-sub">Owner-occupied and investor financing for the deals a bank turns down. When your tax returns do not tell the whole story, one of these programs still gets you to the closing table. $100K to $2M.</p>
             <div className="bp-cta-row">
               <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
               <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
@@ -51,8 +51,8 @@ export default function CommercialLoans() {
         <div className="bp-wrap">
           <p className="bp-section-label">How We Finance</p>
           <div className="bp-rule" />
-          <h2>Financing built around the borrower the bank cannot fit.</h2>
-          <p className="bp-lead">Self-employed owners, investors with strong credit, and operators who move faster than a bank committee. We qualify the deal on bank statements, on the property, or on nothing more than credit and equity, and we close on commercial property banks avoid.</p>
+          <h2>Financing built around your deal.</h2>
+          <p className="bp-lead">If you are self-employed and your tax returns do not show what the business really earns, or you have the credit and a property that performs, we have a way to finance it. We qualify your deal on your bank statements, on the property, or on your credit and equity, and we close on the commercial buildings a bank walks away from.</p>
         </div>
       </section>
 
