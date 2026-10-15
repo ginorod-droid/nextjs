@@ -143,7 +143,7 @@ export default function Partners() {
               <p>Send us the deal and we carry it all the way to close. You collect a smaller percentage for making the connection. No work on your end past the introduction.</p>
             </div>
           </div>
-          <p className="pp-pay-close">Either way, you only get paid when it closes.</p>
+          <p className="pp-pay-close">Either way, you get paid when it closes.</p>
         </div>
       </section>
 
