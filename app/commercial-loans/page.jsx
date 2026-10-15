@@ -58,19 +58,8 @@ export default function CommercialLoans() {
 
       {/* STACKED PROGRAM ROWS */}
       <section>
-        <div className="bp-wrap" style={{ paddingTop: 8, paddingBottom: 8 }}>
-          <p className="bp-section-label">The Programs</p>
-          <div className="bp-rule" />
-          <h2 style={{ marginBottom: 8 }}>Ways to finance your property.</h2>
-        </div>
-        <ProgramRows variant="client" />
-        <div className="bp-wrap" style={{ paddingTop: 36, paddingBottom: 8 }}>
-          <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
-          <p className="bp-extra">Eligible across retail, mixed-use, warehouse and self-storage, office, light industrial, automotive, mobile home parks, restaurants, bars, and day care. Terms are indicative and subject to underwriting.</p>
-        </div>
-
-        {/* BRIDGE / HARD MONEY — fourth way, under The Programs */}
-        <div className="bp-wrap" id="bridge" style={{ paddingTop: 64, paddingBottom: 8 }}>
+        {/* BRIDGE / HARD MONEY — above the programs */}
+        <div className="bp-wrap" id="bridge" style={{ paddingTop: 8, paddingBottom: 8 }}>
           <p className="bp-section-label">Bridge &amp; Hard Money</p>
           <div className="bp-rule" />
           <h2 style={{ marginBottom: 8 }}>Bridge financing for time-sensitive deals.</h2>
@@ -95,6 +84,17 @@ export default function CommercialLoans() {
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
           </div>
+        </div>
+
+        <div className="bp-wrap" style={{ paddingTop: 72, paddingBottom: 8 }}>
+          <p className="bp-section-label">The Programs</p>
+          <div className="bp-rule" />
+          <h2 style={{ marginBottom: 8 }}>Ways to finance your property.</h2>
+        </div>
+        <ProgramRows variant="client" />
+        <div className="bp-wrap" style={{ paddingTop: 36, paddingBottom: 8 }}>
+          <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
+          <p className="bp-extra">Eligible across retail, mixed-use, warehouse and self-storage, office, light industrial, automotive, mobile home parks, restaurants, bars, and day care. Terms are indicative and subject to underwriting.</p>
         </div>
       </section>
 
