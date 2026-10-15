@@ -149,6 +149,7 @@ export function BrokerNav() {
           <a href="/commercial-loans">Commercial Loans</a>
           <a href="/broker-programs">Broker Programs</a>
           <a href="/bridge-loans">Bridge Loans</a>
+          <a href="/partners">Partners</a>
           <a href={CAL} target="_blank" rel="noreferrer" className="bp-nav-cta">Discuss Your Deal</a>
         </div>
         <label htmlFor="bp-menu-toggle" className="bp-hamburger" aria-label="Menu">
@@ -164,6 +165,7 @@ export function BrokerNav() {
         <a href="/broker-programs/lite-doc">Lite Doc</a>
         <a href="/broker-programs/no-doc">No Doc</a>
         <a href="/bridge-loans">Bridge Loans</a>
+        <a href="/partners">Partners</a>
         <a href={CAL} target="_blank" rel="noreferrer">Discuss Your Deal</a>
       </div>
     </nav>
@@ -190,6 +192,7 @@ export function BrokerFooter() {
             <a href="/commercial-loans">Commercial Loans</a>
             <a href="/broker-programs">Broker Programs</a>
             <a href="/bridge-loans">Bridge Loans</a>
+            <a href="/partners">Partners</a>
             <a href={CAL} target="_blank" rel="noreferrer">Discuss Your Deal</a>
           </div>
         </div>
