@@ -137,7 +137,24 @@ export function JsonLd({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 }
 
-export function BrokerNav() {
+const NAV_ITEMS = {
+  home:       ['/', 'Home'],
+  commercial: ['/commercial-loans', 'Commercial Loans'],
+  programs:   ['/broker-programs', 'Broker Programs'],
+  partners:   ['/partners', 'Work With Us'],
+  listings:   ['/#opportunities', 'Listings'],
+  about:      ['/#about', 'About'],
+}
+
+// Each page shows links to the others, not itself.
+const NAV_SETS = {
+  'commercial-loans': ['home', 'partners', 'listings', 'about', 'programs'],
+  'broker-programs':  ['home', 'commercial', 'partners', 'listings', 'about'],
+  'partners':         ['home', 'commercial', 'listings', 'about'],
+}
+
+export function BrokerNav({ current }) {
+  const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners', 'listings', 'about']
   return (
     <nav className="bp-nav">
       <div className="bp-wrap bp-nav-row">
@@ -145,10 +162,7 @@ export function BrokerNav() {
           <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" />
         </a>
         <div className="bp-nav-links">
-          <a href="/">Home</a>
-          <a href="/commercial-loans">Commercial Loans</a>
-          <a href="/broker-programs">Broker Programs</a>
-          <a href="/partners">Work With Us</a>
+          {keys.map((k) => <a key={k} href={NAV_ITEMS[k][0]}>{NAV_ITEMS[k][1]}</a>)}
           <a href={CAL} target="_blank" rel="noreferrer" className="bp-nav-cta">Discuss Your Deal</a>
         </div>
         <label htmlFor="bp-menu-toggle" className="bp-hamburger" aria-label="Menu">
@@ -157,13 +171,7 @@ export function BrokerNav() {
       </div>
       <input type="checkbox" id="bp-menu-toggle" className="bp-menu-toggle" />
       <div className="bp-mobile-nav">
-        <a href="/">Home</a>
-        <a href="/commercial-loans">Commercial Loans</a>
-        <a href="/broker-programs">Broker Programs</a>
-        <a href="/broker-programs/bank-statement">Bank Statement</a>
-        <a href="/broker-programs/lite-doc">Lite Doc</a>
-        <a href="/broker-programs/no-doc">No Doc</a>
-        <a href="/partners">Work With Us</a>
+        {keys.map((k) => <a key={k} href={NAV_ITEMS[k][0]}>{NAV_ITEMS[k][1]}</a>)}
         <a href={CAL} target="_blank" rel="noreferrer">Discuss Your Deal</a>
       </div>
     </nav>
@@ -244,7 +252,7 @@ export function ProgramView({ program }) {
         <span style={{ background: '#1179EC' }} /><span style={{ background: '#F6D200' }} />
       </div>
 
-      <BrokerNav />
+      <BrokerNav current="broker-programs" />
 
       {/* HERO */}
       <section className="bp-hero">

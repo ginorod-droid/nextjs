@@ -80,12 +80,9 @@ export default function Home() {
             <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
-            {[["#opportunities","Listings"],["#services","Services"],["#about","About"]].map(([h,l]) => (
+            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
-            <a href="/commercial-loans" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Commercial Loans</a>
-            <a href="/broker-programs" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Broker Programs</a>
-            <a href="/partners" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Work With Us</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
               style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "12px 24px", textDecoration: "none" }}>
               Book a Call
@@ -99,15 +96,11 @@ export default function Home() {
         </div>
         {mobileMenu && (
           <div className="hp-mobile-menu">
-            <a href="#opportunities" onClick={() => setMobileMenu(false)}>Listings</a>
             <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
-            <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
-            <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
-            <a href="/pueblo-parcel" onClick={() => setMobileMenu(false)}>Pueblo Parcel</a>
-            <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Broker Programs</a>
-            <a href="/commercial-loans#bridge" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
+            <a href="#opportunities" onClick={() => setMobileMenu(false)}>Listings</a>
+            <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
           </div>
         )}

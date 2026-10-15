@@ -24,7 +24,7 @@ export default function BrokerProgramsHub() {
         <span style={{ background: '#1179EC' }} /><span style={{ background: '#F6D200' }} />
       </div>
 
-      <BrokerNav />
+      <BrokerNav current="broker-programs" />
 
       {/* HERO with people photo */}
       <section className="bp-hub-hero">

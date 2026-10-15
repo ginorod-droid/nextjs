@@ -75,7 +75,7 @@ export default function Partners() {
         <span style={{ background: '#1179EC' }} /><span style={{ background: '#F6D200' }} />
       </div>
 
-      <BrokerNav />
+      <BrokerNav current="partners" />
 
       {/* HERO — approved composed image on matching navy field */}
       <section className="pp-hero">
