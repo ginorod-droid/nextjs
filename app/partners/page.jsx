@@ -52,15 +52,15 @@ const partnersJsonLd = {
 const WANT = [
   {
     title: 'A business that needs money',
-    body: 'An owner who got turned down by the bank, needs to buy a building, or needs capital to grow. This is the easiest one, and the one we can pay you for the fastest.',
+    body: 'An owner who got turned down by the bank, needs to buy a building, or needs capital to grow. Work it alongside us, or refer it over. Your call.',
   },
   {
     title: 'A commercial property buyer or seller',
-    body: 'Someone looking to sell a building, or buy one. We are a licensed brokerage. We handle it from there.',
+    body: 'Someone looking to sell a building, or buy one. We are a licensed brokerage. Stay in and work it with us, or refer it over.',
   },
   {
     title: 'Someone ready to sell a home',
-    body: 'A neighbor, a friend, a family member who is selling. Often that is a parent getting older and moving on, which is work we do every day.',
+    body: 'A neighbor, a friend, a family member who is selling. Often that is a parent getting older and moving on. Work it with us, or send it our way.',
   },
 ]
 
@@ -98,8 +98,8 @@ export default function Partners() {
         <div className="bp-wrap pp-story">
           <p className="bp-section-label">You lived it</p>
           <div className="bp-rule" />
-          <p>You ran a region. You had a sales force under you. Then one day the company decided your number was too high and your birthday was too old, and you were out. You figured you would land somewhere in a month or two. You had the resume for it. Then the calls did not come back. At some point it stops being bad luck and starts being a message.</p>
-          <p>The job market does not want us. It wants to hire young and cheap. The deal market wants to know one thing: if this deal can close, we get paid.</p>
+          <p>You ran a region. You had a sales force under you. Then one day the company decided your number was too high and your birthday was too old, and you were out. You figured you would land somewhere in a month or two. You have the resume for it. Then the calls did not come back. At some point it stops being bad luck and starts being a message.</p>
+          <p>The job market does not want us. It wants to hire young and cheap. The deal market wants to know one thing: if this deal can close. And if it can, we get paid.</p>
           <p>You know the right people. You have known them for years and you have had dinner at their homes. They answer your calls. Those relationships have value.</p>
           <p className="pp-punch">You have value. Let no one tell you different.</p>
         </div>
@@ -110,8 +110,8 @@ export default function Partners() {
         <div className="bp-wrap">
           <p className="bp-section-label bp-label-yellow">What We Want From You</p>
           <div className="bp-rule bp-rule-yellow" />
-          <h2 className="bp-white">Three kinds of introductions.</h2>
-          <p className="bp-muted-white">If someone you know fits one of these, that is a deal. You make the introduction. We take it from there.</p>
+          <h2 className="bp-white">Three kinds of deals.</h2>
+          <p className="bp-muted-white">If you have a deal that fits one of these, let us get it closed. You can work it with us, or refer it over. Your choice, either way.</p>
           <div className="bp-when-grid">
             {WANT.map((w, i) => (
               <div key={i} className="bp-when-card">
