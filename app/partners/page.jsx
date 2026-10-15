@@ -2,12 +2,12 @@
 import { bpStyles, BrokerNav, BrokerFooter, JsonLd, CAL, FORM, EMAIL } from '../broker-programs/shared'
 
 export const metadata = {
-  title: 'Send Us Deals | For Experienced Brokers & Professionals | Acoma Capital Partners',
-  description: 'The market said you were done. It was wrong. If you know a business that needs capital, a commercial property, or a home seller, send us the deal. If it closes, you get paid.',
+  title: 'Work With Us | For Experienced Brokers & Professionals | Acoma Capital Partners',
+  description: 'The market overlooked you. We see the value. If you know a business that needs capital, a commercial property, or a home seller, send us the deal. If it closes, you get paid.',
   alternates: { canonical: 'https://www.acomacapitalpartners.com/partners' },
   openGraph: {
-    title: 'The market said you were done. It was wrong. | Acoma Capital Partners',
-    description: 'Send us a deal. If it closes, we pay. For the experienced broker or professional the job market cast aside.',
+    title: 'The market overlooked you. We see the value. | Acoma Capital Partners',
+    description: 'They saw your age. We see years of trust and relationships. Have a deal in mind? Let us talk.',
     url: 'https://www.acomacapitalpartners.com/partners',
     images: ['/partners-hero.jpg'],
   },
@@ -80,10 +80,10 @@ export default function Partners() {
       {/* HERO — approved composed image on matching navy field */}
       <section className="pp-hero">
         <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
-          The market said you were done. It was wrong. Send us a deal, and if it closes, we pay.
+          The market overlooked you. We see the value. Acoma Capital Partners, commercial sales and lending. Have a deal in mind? Let us talk.
         </h1>
         <div className="pp-hero-img-wrap">
-          <img src="/partners-hero.jpg" alt="Experienced brokers and professionals around a conference table. The market said you were done. It was wrong. Send your deal to us. If it closes, we pay." />
+          <img src="/partners-hero.jpg" alt="Five seasoned brokers and professionals at a conference table. The market overlooked you. We see the value. They saw your age; we see years of trust, experience, and relationships with people who sign checks. Have a deal in mind? Let's talk." />
         </div>
         <div className="bp-wrap pp-hero-cta">
           <div className="bp-cta-row">

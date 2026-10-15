@@ -424,11 +424,11 @@ export default function Home() {
           <FadeUp>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
               <p style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 32 }}>For Brokers &amp; Professionals</p>
-              <a href="/partners" style={{ display: "block", maxWidth: 440, width: "100%" }} aria-label="Acoma partners program — the market said you were done, it was wrong">
-                <img src="/partners-hero.jpg" alt="Experienced brokers and professionals. The market said you were done. It was wrong. Send your deal to us. If it closes, we pay." style={{ width: "100%", height: "auto", display: "block" }} />
+              <a href="/partners" style={{ display: "block", maxWidth: 440, width: "100%" }} aria-label="Work with Acoma — the market overlooked you, we see the value">
+                <img src="/partners-hero.jpg" alt="Five seasoned brokers and professionals at a conference table. The market overlooked you. We see the value. Have a deal in mind? Let's talk." style={{ width: "100%", height: "auto", display: "block" }} />
               </a>
               <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", maxWidth: 620, margin: "36px 0 32px" }}>
-                You spent years building relationships with people who sign checks. If you have a deal that fits, work it with us or refer it over. Either way, you get paid when it closes.
+                They saw your age. We see years of trust, hard-earned experience, and relationships with people who sign checks. If you have a deal that fits, work it with us or refer it over. Either way, you get paid when it closes.
               </p>
               <a href="/partners" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 44px", textDecoration: "none" }}>
                 Read Their Story →
