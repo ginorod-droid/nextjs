@@ -253,10 +253,13 @@ export default function Home() {
                   01 / Services
                 </p>
                 <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
-                  The commercial loans we provide.
+                  When the bank says no, bring the deal to us.
                 </h2>
                 <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 20 }}>
-                  Owner-occupied and investor financing for borrowers the bank turns away, alongside our active commercial listings. Bank statement, lite doc, and no doc, from $100K to $2M.
+                  A bank turns down a solid borrower over a tax return that doesn&apos;t show what the business really earns. That&apos;s the deal we close. We qualify you on your bank statements, on the property, or on your credit and equity, and we get you to the table on the commercial buildings a bank walks away from. $100K to $2M, owner-occupied or investor.
+                </p>
+                <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 20 }}>
+                  And when it&apos;s time to buy or sell instead of borrow, our active commercial listings are right here.
                 </p>
               </FadeUp>
               <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
