@@ -14,16 +14,11 @@ export const metadata = {
 }
 
 const ppStyles = `
-.pp-hero { background:#202A54; padding:76px 0 0; }
-.pp-hero-inner { text-align:center; }
-.pp-head { font-size:clamp(38px,6.5vw,76px); font-weight:900; line-height:1.0; letter-spacing:-0.03em; color:#fff; margin:0 0 26px; }
-.pp-head span { display:block; color:#F6D200; }
-.pp-hero-sub { font-size:clamp(17px,2.3vw,21px); line-height:1.6; color:rgba(255,255,255,0.82); max-width:720px; margin:0 auto 18px; }
-.pp-hero-live { font-size:clamp(16px,2vw,19px); line-height:1.6; color:rgba(255,255,255,0.6); max-width:720px; margin:0 auto 38px; }
-.pp-hero-inner .bp-cta-row { justify-content:center; }
-.pp-hero-photo { position:relative; max-width:1120px; margin:52px auto 0; }
-.pp-hero-photo img { width:100%; height:auto; display:block; }
-.pp-hero-photo-bar { position:absolute; left:0; right:0; bottom:0; height:6px; background:#F6D200; }
+.pp-hero { background:#202A54; padding:0 0 64px; }
+.pp-hero-img-wrap { display:flex; justify-content:center; background:#202A54; }
+.pp-hero-img-wrap img { width:100%; max-width:720px; height:auto; display:block; }
+.pp-hero-cta { text-align:center; margin-top:40px; }
+.pp-hero-cta .bp-cta-row { justify-content:center; }
 .pp-story p { font-size:20px; line-height:1.85; color:#444; max-width:760px; margin:0 0 24px; }
 .pp-story .pp-punch { font-size:clamp(24px,3vw,32px); font-weight:900; color:#202A54; line-height:1.3; letter-spacing:-0.015em; margin-top:8px; }
 .pp-pay-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px; }
@@ -35,7 +30,7 @@ const ppStyles = `
 .pp-pay-card p { font-size:16px; line-height:1.75; color:#555; }
 .pp-pay-close { margin-top:40px; font-size:clamp(22px,2.6vw,30px); font-weight:900; color:#202A54; letter-spacing:-0.015em; }
 @media(max-width:820px){
-  .pp-hero { padding:52px 0 0; }
+  .pp-hero-img-wrap img { max-width:100%; }
   .pp-story p { font-size:18px; }
   .pp-pay-grid { grid-template-columns:1fr; }
 }
@@ -82,20 +77,19 @@ export default function Partners() {
 
       <BrokerNav current="partners" />
 
-      {/* HERO — live text over the people photo */}
+      {/* HERO — approved composed image on matching navy field */}
       <section className="pp-hero">
-        <div className="bp-wrap pp-hero-inner">
-          <h1 className="pp-head">The market said you were done.<span>The market is wrong.</span></h1>
-          <p className="pp-hero-sub">You spent years building relationships, honing your craft. They won&apos;t hire you. They aged you out of the system. They want cheaper and younger.</p>
-          <p className="pp-hero-live">You know how this goes, because you live it.</p>
+        <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
+          The market said you were done. It was wrong. Send us a deal, and if it closes, we pay.
+        </h1>
+        <div className="pp-hero-img-wrap">
+          <img src="/partners-hero.jpg" alt="Experienced brokers and professionals around a conference table. The market said you were done. It was wrong. Send your deal to us. If it closes, we pay." />
+        </div>
+        <div className="bp-wrap pp-hero-cta">
           <div className="bp-cta-row">
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us a Deal</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
           </div>
-        </div>
-        <div className="pp-hero-photo">
-          <img src="/partners-people.jpg" alt="Five seasoned brokers and professionals seated together at a conference table" />
-          <span className="pp-hero-photo-bar" />
         </div>
       </section>
 
