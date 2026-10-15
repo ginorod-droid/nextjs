@@ -85,7 +85,7 @@ export default function Home() {
             ))}
             <a href="/commercial-loans" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Commercial Loans</a>
             <a href="/broker-programs" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Broker Programs</a>
-            <a href="/partners" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Partners</a>
+            <a href="/partners" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>Work With Us</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
               style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "12px 24px", textDecoration: "none" }}>
               Book a Call
@@ -107,7 +107,7 @@ export default function Home() {
             <a href="/pueblo-parcel" onClick={() => setMobileMenu(false)}>Pueblo Parcel</a>
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Broker Programs</a>
             <a href="/commercial-loans#bridge" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
-            <a href="/partners" onClick={() => setMobileMenu(false)}>Partners</a>
+            <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
           </div>
         )}
@@ -528,7 +528,7 @@ export default function Home() {
                   <a href="/commercial-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Commercial Loans · Owners &amp; Investors</a><br />
                   <a href="/broker-programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Broker Loan Programs · Nationwide</a><br />
                   <a href="/commercial-loans#bridge" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a><br />
-                  <a href="/partners" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>For Brokers &amp; Professionals · Send Us Deals</a>
+                  <a href="/partners" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Work With Us · For Brokers &amp; Professionals</a>
                 </p>
               </div>
             </FadeUp>
