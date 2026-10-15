@@ -106,7 +106,7 @@ export default function Home() {
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
             <a href="/pueblo-parcel" onClick={() => setMobileMenu(false)}>Pueblo Parcel</a>
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Broker Programs</a>
-            <a href="/bridge-loans" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
+            <a href="/commercial-loans#bridge" onClick={() => setMobileMenu(false)}>Bridge Loans</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Partners</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
           </div>
@@ -398,7 +398,7 @@ export default function Home() {
                 Capital that moves at the speed of a deal — not the speed of a committee.
               </p>
               <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 24 }}>
-                <a href="/bridge-loans" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
+                <a href="/commercial-loans#bridge" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
                   Explore Bridge Loans →
                 </a>
                 <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.4)", color: W, padding: "18px 40px", textDecoration: "none" }}>
@@ -419,6 +419,26 @@ export default function Home() {
               </div>
             </FadeUp>
           </div>
+        </div>
+      </section>
+
+      {/* ── PARTNERS ── */}
+      <section id="partners" style={{ padding: "110px 0", background: NAVY, borderTop: `6px solid ${YELLOW}` }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <FadeUp>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 32 }}>For Brokers &amp; Professionals</p>
+              <a href="/partners" style={{ display: "block", maxWidth: 440, width: "100%" }} aria-label="Acoma partners program — the market said you were done, it was wrong">
+                <img src="/partners-hero.jpg" alt="Experienced brokers and professionals. The market said you were done. It was wrong. Send your deal to us. If it closes, we pay." style={{ width: "100%", height: "auto", display: "block" }} />
+              </a>
+              <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", maxWidth: 620, margin: "36px 0 32px" }}>
+                You spent years building relationships with people who sign checks. If you have a deal that fits, work it with us or refer it over. Either way, you get paid when it closes.
+              </p>
+              <a href="/partners" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 44px", textDecoration: "none" }}>
+                Read Their Story →
+              </a>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -504,7 +524,7 @@ export default function Home() {
                   <a href="/pueblo-parcel" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>10-Acre Commercial Parcel · Pueblo, CO</a><br />
                   <a href="/commercial-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Commercial Loans · Owners &amp; Investors</a><br />
                   <a href="/broker-programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Broker Loan Programs · Nationwide</a><br />
-                  <a href="/bridge-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a><br />
+                  <a href="/commercial-loans#bridge" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a><br />
                   <a href="/partners" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>For Brokers &amp; Professionals · Send Us Deals</a>
                 </p>
               </div>

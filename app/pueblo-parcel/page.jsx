@@ -53,7 +53,7 @@ export default function PuebloParcel() {
         <div className="p-mobile-nav">
           <a href="/">Home</a>
           <a href="/#opportunities">All Listings</a>
-          <a href="/bridge-loans">Bridge Loans</a>
+          <a href="/commercial-loans#bridge">Bridge Loans</a>
           <a href="#project-info">The Property</a>
           <a href="#contact">Contact</a>
           <a href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
@@ -216,7 +216,7 @@ export default function PuebloParcel() {
           </div>
           <div className="p-footer-links">
             <a href="/">Home</a>
-            <a href="/bridge-loans">Bridge Loans</a>
+            <a href="/commercial-loans#bridge">Bridge Loans</a>
             <a href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
             <a href={FORM} target="_blank" rel="noreferrer">Buyer Questionnaire</a>
           </div>

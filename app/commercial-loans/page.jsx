@@ -70,6 +70,36 @@ export default function CommercialLoans() {
         </div>
       </section>
 
+      {/* BRIDGE / HARD MONEY */}
+      <section className="bp-section bp-section-off" id="bridge">
+        <div className="bp-wrap">
+          <p className="bp-section-label">Bridge &amp; Hard Money</p>
+          <div className="bp-rule" />
+          <h2>Bridge financing for time-sensitive deals.</h2>
+          <p className="bp-lead">When a deal cannot wait for a bank&apos;s timeline, a bridge loan qualifies on the property and the exit, not your tax returns. We arrange bridge and hard money financing from $100K to $20M across most commercial property types, for acquisitions and situations where conventional financing is not an option.</p>
+          <div className="bp-spec-grid" style={{ marginTop: 44 }}>
+            {[
+              ['Loan Size', '$100K to $20M'],
+              ['Secured By', 'The property'],
+              ['Used For', 'Acquisitions & time-sensitive closings'],
+              ['Property Types', 'Residential to commercial'],
+              ['Structure', 'Direct-lender brokerage'],
+              ['Terms', 'Based on the deal'],
+            ].map(([label, value]) => (
+              <div key={label} className="bp-spec-cell">
+                <p className="bp-spec-label">{label}</p>
+                <p className="bp-spec-value">{value}</p>
+              </div>
+            ))}
+          </div>
+          <p className="bp-extra">Rate, term, and timeline depend on the property, the exit, and the file. Send us the deal and you will get a straight read on whether a bridge loan fits and roughly where it lands.</p>
+          <div className="bp-cta-row" style={{ marginTop: 36 }}>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
+            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bp-section bp-section-navy">
         <div className="bp-wrap bp-cta-block">
