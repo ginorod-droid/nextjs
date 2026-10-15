@@ -61,21 +61,19 @@ export default function CommercialLoans() {
         <div className="bp-wrap" style={{ paddingTop: 8, paddingBottom: 8 }}>
           <p className="bp-section-label">The Programs</p>
           <div className="bp-rule" />
-          <h2 style={{ marginBottom: 8 }}>Three ways to finance your property.</h2>
+          <h2 style={{ marginBottom: 8 }}>Ways to finance your property.</h2>
         </div>
         <ProgramRows variant="client" />
         <div className="bp-wrap" style={{ paddingTop: 36, paddingBottom: 8 }}>
           <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
           <p className="bp-extra">Eligible across retail, mixed-use, warehouse and self-storage, office, light industrial, automotive, mobile home parks, restaurants, bars, and day care. Terms are indicative and subject to underwriting.</p>
         </div>
-      </section>
 
-      {/* BRIDGE / HARD MONEY */}
-      <section className="bp-section bp-section-off" id="bridge">
-        <div className="bp-wrap">
+        {/* BRIDGE / HARD MONEY — fourth way, under The Programs */}
+        <div className="bp-wrap" id="bridge" style={{ paddingTop: 64, paddingBottom: 8 }}>
           <p className="bp-section-label">Bridge &amp; Hard Money</p>
           <div className="bp-rule" />
-          <h2>Bridge financing for time-sensitive deals.</h2>
+          <h2 style={{ marginBottom: 8 }}>Bridge financing for time-sensitive deals.</h2>
           <p className="bp-lead">When a deal cannot wait for a bank&apos;s timeline, a bridge loan qualifies on the property and the exit, not your tax returns. We arrange bridge and hard money financing from $100K to $20M across most commercial property types, for acquisitions and situations where conventional financing is not an option.</p>
           <div className="bp-spec-grid" style={{ marginTop: 44 }}>
             {[
