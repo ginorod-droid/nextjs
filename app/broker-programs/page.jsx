@@ -1,5 +1,5 @@
 // app/broker-programs/page.jsx  (route stays /broker-programs; page is "Deal Desk")
-import { bpStyles, BrokerNav, BrokerFooter, ProgramRows, JsonLd, programsJsonLd, CAL, FORM, EMAIL, CREDIT } from './shared'
+import { bpStyles, BrokerNav, BrokerFooter, programs, JsonLd, programsJsonLd, CAL, FORM, EMAIL, CREDIT } from './shared'
 
 export const metadata = {
   title: 'Deal Desk | Bring Us the Commercial Deal | Acoma Capital Partners',
@@ -24,6 +24,19 @@ const ddStyles = `
 .dd-aud-body { font-size:15px; color:#555; line-height:1.7; margin-bottom:20px; flex:1; }
 .dd-aud-link { font-size:12px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:#1179EC; text-decoration:none; align-self:flex-start; }
 .dd-aud-link:hover { text-decoration:underline; }
+.dd-prog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+.dd-prog { background:#fff; border:1px solid #e4e8f0; padding:0 0 30px; display:flex; flex-direction:column; }
+.dd-prog-top { height:6px; }
+.dd-prog-pad { padding:30px 28px 0; display:flex; flex-direction:column; flex:1; }
+.dd-prog-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:12px; }
+.dd-prog-name { font-size:26px; font-weight:900; color:#202A54; letter-spacing:-0.02em; line-height:1; margin-bottom:16px; }
+.dd-prog-tag { font-size:14px; color:#555; line-height:1.65; margin-bottom:20px; flex:1; }
+.dd-prog-facts { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+.dd-prog-facts li { font-size:11px; font-weight:700; letter-spacing:0.03em; color:#202A54; background:#f0f3f8; padding:7px 12px; }
+.dd-prog-links { display:flex; flex-direction:column; gap:10px; }
+.dd-prog-link { font-size:12px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; }
+.dd-prog-flyer { font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8a93a3; text-decoration:none; }
+.dd-prog-flyer:hover { color:#202A54; }
 .dd-step-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:44px; }
 .dd-step { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-top:4px solid #F6D200; padding:30px 26px; }
 .dd-step-num { display:block; font-size:24px; font-weight:900; color:#F6D200; letter-spacing:-0.02em; margin-bottom:14px; }
@@ -143,8 +156,26 @@ export default function DealDesk() {
           <div className="bp-rule" />
           <h2 style={{ marginBottom: 8 }}>The programs behind the desk.</h2>
           <p className="bp-lead">When the deal needs capital, these are the ways we get it done. $100K to $2M on the programs, up to $20M on a bridge. Start at the top for the most leverage, and drop a tier only when the documentation is not there.</p>
+          <div className="dd-prog-grid">
+            {programs.map((p) => (
+              <article key={p.slug} className="dd-prog">
+                <div className="dd-prog-top" style={{ background: p.accent }} />
+                <div className="dd-prog-pad">
+                  <p className="dd-prog-eyebrow" style={{ color: p.accent }}>{p.eyebrow}</p>
+                  <h3 className="dd-prog-name">{p.name}</h3>
+                  <p className="dd-prog-tag">{p.tagline}</p>
+                  <ul className="dd-prog-facts">
+                    {p.highlights.map((h) => <li key={h}>{h}</li>)}
+                  </ul>
+                  <div className="dd-prog-links">
+                    <a href={'/broker-programs/' + p.slug} className="dd-prog-link" style={{ color: p.accent }}>See full terms →</a>
+                    <a href={p.flyer} target="_blank" rel="noreferrer" className="dd-prog-flyer">Program sheet (PDF) ↓</a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-        <ProgramRows variant="broker" />
         <div className="bp-wrap" style={{ paddingTop: 36, paddingBottom: 8 }}>
           <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
           <p className="bp-extra">Need speed instead of maximum leverage? A <a href="/commercial-loans#bridge" style={{ color: '#1179EC', fontWeight: 700, textDecoration: 'none' }}>bridge or hard money loan</a> qualifies on the property and the exit, from $100K to $20M.</p>
