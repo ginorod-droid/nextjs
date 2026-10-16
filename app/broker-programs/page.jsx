@@ -137,7 +137,7 @@ export default function DealDesk() {
         <span style={{ background: '#1179EC' }} /><span style={{ background: '#F6D200' }} />
       </div>
 
-      <BrokerNav current="broker-programs" />
+      <BrokerNav current="broker-programs" hideLogo />
 
       {/* HERO — banner */}
       <section className="dd-hero">

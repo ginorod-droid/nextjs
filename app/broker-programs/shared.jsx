@@ -153,14 +153,18 @@ const NAV_SETS = {
   'partners':         ['home', 'commercial', 'listings', 'about'],
 }
 
-export function BrokerNav({ current }) {
+export function BrokerNav({ current, hideLogo }) {
   const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners', 'listings', 'about']
   return (
     <nav className="bp-nav">
       <div className="bp-wrap bp-nav-row">
-        <a href="/" className="bp-logo" aria-label="Acoma Capital Partners home">
-          <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" />
-        </a>
+        {hideLogo ? (
+          <span aria-hidden="true" />
+        ) : (
+          <a href="/" className="bp-logo" aria-label="Acoma Capital Partners home">
+            <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" />
+          </a>
+        )}
         <div className="bp-nav-links">
           {keys.map((k) => <a key={k} href={NAV_ITEMS[k][0]}>{NAV_ITEMS[k][1]}</a>)}
           <a href={CAL} target="_blank" rel="noreferrer" className="bp-nav-cta">Discuss Your Deal</a>

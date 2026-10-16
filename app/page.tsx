@@ -80,7 +80,7 @@ export default function Home() {
             <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
-            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
+            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
@@ -98,6 +98,7 @@ export default function Home() {
           <div className="hp-mobile-menu">
             <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
+            <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Deal Desk</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
             <a href="#opportunities" onClick={() => setMobileMenu(false)}>Listings</a>
             <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
@@ -426,10 +427,10 @@ export default function Home() {
                 Bridge Loans for Operators Who Move Fast.
               </h2>
               <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.85, color: "rgba(255,255,255,0.82)", marginBottom: 20 }}>
-                Hard money loans backed by the property — not your credit score. When the bank takes too long, we close in 5 days. $100K to $20M. Approved in 24 hours.
+                Hard money loans qualified on the property and the exit, not your tax returns. When the bank takes too long, a bridge loan gets the deal to the closing table. $100K to $20M.
               </p>
               <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.85, color: "rgba(255,255,255,0.55)", marginBottom: 48 }}>
-                Capital that moves at the speed of a deal — not the speed of a committee.
+                Rate, term, and timeline depend on the property, the exit, and the file. Send us the deal and you get a straight read on whether a bridge fits.
               </p>
               <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 24 }}>
                 <a href="/commercial-loans#bridge" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
