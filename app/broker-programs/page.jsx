@@ -1,5 +1,5 @@
 // app/broker-programs/page.jsx  (route stays /broker-programs; page is "Deal Desk")
-import { bpStyles, BrokerNav, BrokerFooter, programs, JsonLd, programsJsonLd, CAL, FORM, EMAIL, CREDIT } from './shared'
+import { bpStyles, BrokerNav, BrokerFooter, programs, JsonLd, programsJsonLd, CAL, EMAIL, CREDIT } from './shared'
 
 export const metadata = {
   title: 'Deal Desk | Bring Us the Commercial Deal | Acoma Capital Partners',
@@ -14,10 +14,25 @@ export const metadata = {
 }
 
 const ddStyles = `
-.dd-hero { background:#202A54; padding:0 0 56px; }
+.dd-hero { background:#202A54; padding:0; }
 .dd-hero-banner img { width:100%; height:auto; display:block; }
 .dd-hero-cta { text-align:center; margin-top:40px; }
 .dd-hero-cta .bp-cta-row { justify-content:center; }
+.dd-stats { background:#2C9143; display:flex; margin-top:48px; }
+.dd-stat { flex:1; padding:26px 18px; text-align:center; border-right:1px solid rgba(255,255,255,0.18); }
+.dd-stat:last-child { border-right:0; }
+.dd-stat-n { display:block; font-size:22px; font-weight:900; color:#fff; letter-spacing:-0.02em; line-height:1.1; }
+.dd-stat-l { display:block; font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-top:7px; }
+.dd-proc { margin:40px 0 0; border-left:3px solid rgba(255,255,255,0.14); max-width:820px; }
+.dd-proc-step { position:relative; padding:0 0 26px 32px; }
+.dd-proc-step:last-child { padding-bottom:0; }
+.dd-proc-dot { position:absolute; left:-12px; top:0; width:22px; height:22px; border-radius:50%; background:#1179EC; color:#fff; font-size:11px; font-weight:900; display:flex; align-items:center; justify-content:center; }
+.dd-proc-step.g .dd-proc-dot { background:#2C9143; }
+.dd-proc-step.y .dd-proc-dot { background:#F6D200; color:#202A54; }
+.dd-proc-t { font-size:16px; font-weight:700; color:#fff; margin:0 0 3px; line-height:1.3; }
+.dd-proc-d { font-size:14px; color:rgba(255,255,255,0.72); line-height:1.6; margin:0; }
+.dd-portal-btn { display:inline-block; margin-top:40px; background:#F6D200; color:#202A54; padding:18px 38px; font-size:12px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; }
+.dd-portal-btn:hover { opacity:0.88; }
 .dd-prog-head { display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center; }
 .dd-prog-photo { position:relative; }
 .dd-prog-photo img { width:100%; height:340px; object-fit:cover; display:block; }
@@ -61,8 +76,9 @@ const ddStyles = `
   .dd-prog-photo img { height:260px; }
   .dd-prog-grid { grid-template-columns:1fr; }
   .dd-aud-grid { grid-template-columns:1fr; }
-  .dd-step-grid { grid-template-columns:1fr 1fr; }
   .dd-trust-grid { grid-template-columns:1fr; }
+  .dd-stats { flex-wrap:wrap; }
+  .dd-stat { min-width:50%; flex:none; border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
 }
 `
 
@@ -71,7 +87,7 @@ const AUDIENCES = [
     icon: '🏦',
     title: 'A banker with a turndown',
     body: 'Your file was solid and the box still said no. Hand it over. We qualify on bank statements, on the property, or on credit and equity, and we close the ones the bank walked away from.',
-    cta: ['Send the scenario', FORM, true],
+    cta: ['Send the scenario', '/broker-portal', false],
   },
   {
     icon: '🔑',
@@ -93,11 +109,15 @@ const AUDIENCES = [
   },
 ]
 
-const STEPS = [
-  ['01', 'Send the scenario', 'Give us the property, the ask, and a rough credit picture. One short form or a call.'],
-  ['02', 'Get a straight read', 'Usually the same day. We tell you whether it fits, which path, and roughly where it lands.'],
-  ['03', 'We place or sell it', 'We arrange the financing through our lender relationships, or list and sell the property.'],
-  ['04', 'It closes', 'Your borrower funds, your client closes, and referral partners get paid.'],
+const PROCESS = [
+  ['1', 'Intake application', 'You submit the deal through the Broker Portal with the basics on the borrower and the property.', ''],
+  ['2', 'Authorization to pull credit', 'The borrower signs an authorization so we can pull the credit report and read the file accurately.', ''],
+  ['3', 'LOI and rate issued', 'We issue a letter of intent with the rate, term, and structure we can get done.', ''],
+  ['4', 'List of conditions', 'A clear checklist of what the file needs to reach closing. No surprises later.', ''],
+  ['5', 'Appraisal ordered', 'We order the appraisal and third-party reports the property requires.', ''],
+  ['6', 'Submission', 'The complete file goes to the capital source for underwriting.', ''],
+  ['7', 'Conditions cleared', 'We work the conditions down to zero and move the file to the closing table.', 'g'],
+  ['8', 'Funded', 'The loan closes and funds. Your borrower is done, and you get paid.', 'y'],
 ]
 
 const TRUST = [
@@ -129,9 +149,15 @@ export default function DealDesk() {
         </div>
         <div className="bp-wrap dd-hero-cta">
           <div className="bp-cta-row">
-            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us the Deal</a>
+            <a href="/broker-portal" className="bp-btn-yellow">Submit a Deal</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
           </div>
+        </div>
+        <div className="dd-stats">
+          <div className="dd-stat"><span className="dd-stat-n">Since the &rsquo;90s</span><span className="dd-stat-l">In commercial real estate</span></div>
+          <div className="dd-stat"><span className="dd-stat-n">$100K&ndash;$20M</span><span className="dd-stat-l">Loan range</span></div>
+          <div className="dd-stat"><span className="dd-stat-n">Same day</span><span className="dd-stat-l">Straight read on your deal</span></div>
+          <div className="dd-stat"><span className="dd-stat-n">Commercial</span><span className="dd-stat-l">Only, never consumer</span></div>
         </div>
       </section>
 
@@ -155,6 +181,26 @@ export default function DealDesk() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* OUR LOAN PROCESS */}
+      <section className="bp-section bp-section-navy">
+        <div className="bp-wrap">
+          <p className="bp-section-label bp-label-yellow">Our Loan Process</p>
+          <div className="bp-rule bp-rule-yellow" />
+          <h2 className="bp-white">How it works, start to funded.</h2>
+          <p className="bp-muted-white">Every deal runs the same clear path. You submit it through the Broker Portal, and from there you always know where it stands.</p>
+          <div className="dd-proc">
+            {PROCESS.map(([n, t, d, cls]) => (
+              <div key={n} className={'dd-proc-step' + (cls ? ' ' + cls : '')}>
+                <span className="dd-proc-dot">{n}</span>
+                <p className="dd-proc-t">{t}</p>
+                <p className="dd-proc-d">{d}</p>
+              </div>
+            ))}
+          </div>
+          <a href="/broker-portal" className="dd-portal-btn">Open the Broker Portal →</a>
         </div>
       </section>
 
@@ -200,24 +246,6 @@ export default function DealDesk() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="bp-section bp-section-navy">
-        <div className="bp-wrap">
-          <p className="bp-section-label bp-label-yellow">How It Works</p>
-          <div className="bp-rule bp-rule-yellow" />
-          <h2 className="bp-white">From scenario to closing.</h2>
-          <div className="dd-step-grid">
-            {STEPS.map(([n, t, d]) => (
-              <div key={n} className="dd-step">
-                <span className="dd-step-num">{n}</span>
-                <p className="dd-step-title">{t}</p>
-                <p>{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* WHY ACOMA */}
       <section className="bp-section">
         <div className="bp-wrap">
@@ -241,7 +269,7 @@ export default function DealDesk() {
           <h2 className="bp-white">Have a deal in mind? Let&apos;s talk.</h2>
           <p className="bp-muted-white">Send the scenario and get a straight read, usually the same day. Property type, the ask, and a rough credit picture is enough to start.</p>
           <div className="bp-cta-row">
-            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us the Deal</a>
+            <a href="/broker-portal" className="bp-btn-yellow">Submit a Deal</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Book a Call</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>
