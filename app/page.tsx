@@ -36,7 +36,7 @@ export default function Home() {
     <main style={{ fontFamily: I, background: W, color: K, overflowX: "hidden" }}>
       <style>{`
         .hp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-        .hp-listings { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 560px; margin: 0 auto; }
+        .hp-listings { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
         .hp-triple { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
         .hp-hardmoney { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; margin-top: 8px; }
         .hp-about { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
@@ -286,10 +286,10 @@ export default function Home() {
             </p>
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 72, flexWrap: "wrap", gap: 24 }}>
               <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 0 }}>
-                One active opportunity<br/>available now.
+                Active opportunities<br/>available now.
               </h2>
               <p style={{ fontFamily: I, fontSize: 16, color: "#888", maxWidth: 320, lineHeight: 1.7 }}>
-                Commercial land in Pueblo, Colorado.
+                Commercial land in Pueblo and a commercial condo in Evergreen, Colorado.
               </p>
             </div>
           </FadeUp>
@@ -325,6 +325,44 @@ export default function Home() {
                     Adjacent to TravelCenters of America and Love&apos;s Travel Stop. Direct interstate access, B-3 zoning, no rezoning required. $114M CDOT interchange upgrade underway.
                   </p>
                   <a href="/pueblo-parcel" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
+                    View Listing →
+                  </a>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Card 2 — Floyd Hill / Evergreen */}
+            <FadeUp delay={0.2}>
+              <div style={{ background: W, boxShadow: "0 4px 32px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.1)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 32px rgba(0,0,0,0.07)"; }}>
+                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
+                  <Image src="/listings/floyd-hill.jpg" alt="Floyd Hill Business Park building, 35715 U.S. Highway 40, Evergreen, Colorado" fill style={{ objectFit: "cover" }} />
+                  <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, boxShadow: `inset 0 -5px 0 ${GREEN}` }} />
+                  <span style={{ position: "absolute", top: 16, left: 16, fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: W, background: GREEN, padding: "5px 12px" }}>
+                    Commercial Condo · Evergreen, CO
+                  </span>
+                </div>
+                <div style={{ padding: "32px 40px 40px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
+                  <div>
+                    <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: NAVY, lineHeight: 1.1, marginBottom: 6 }}>
+                      Floyd Hill Business Park<br />Unit D-106
+                    </h3>
+                    <p style={{ fontFamily: I, fontSize: 13, color: "#999" }}>35715 U.S. Highway 40, Building D · Evergreen, Colorado</p>
+                  </div>
+                  <div>
+                    <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#bbb", marginBottom: 6 }}>Asking Price</p>
+                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>$250,000</p>
+                  </div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {["1,662 SF","Commercial Condo","MIP License Included","I-70 Corridor"].map(t => (
+                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
+                    ))}
+                  </div>
+                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
+                    A 1,662 SF commercial condominium in Building D of Floyd Hill Business Park, on the U.S. Highway 40 / I-70 mountain corridor. The sale includes the MIP license.
+                  </p>
+                  <a href="/floyd-hill" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
                     View Listing →
                   </a>
                 </div>
