@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   const p = getProgram(slug)
   if (!p) return {}
   return {
-    title: `${p.name} | Broker Programs | Acoma Capital Partners`,
+    title: `${p.name} | Deal Desk | Acoma Capital Partners`,
     description: `${p.name}: ${p.tagline}`,
   }
 }

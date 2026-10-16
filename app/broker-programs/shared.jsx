@@ -140,7 +140,7 @@ export function JsonLd({ data }) {
 const NAV_ITEMS = {
   home:       ['/', 'Home'],
   commercial: ['/commercial-loans', 'Commercial Loans'],
-  programs:   ['/broker-programs', 'Broker Programs'],
+  programs:   ['/broker-programs', 'Deal Desk'],
   partners:   ['/partners', 'Work With Us'],
   listings:   ['/#opportunities', 'Listings'],
   about:      ['/#about', 'About'],
@@ -196,7 +196,7 @@ export function BrokerFooter() {
           </div>
           <div className="bp-footer-links">
             <a href="/commercial-loans">Commercial Loans</a>
-            <a href="/broker-programs">Broker Programs</a>
+            <a href="/broker-programs">Deal Desk</a>
             <a href="/commercial-loans#bridge">Bridge Loans</a>
             <a href="/partners">Work With Us</a>
             <a href={CAL} target="_blank" rel="noreferrer">Discuss Your Deal</a>

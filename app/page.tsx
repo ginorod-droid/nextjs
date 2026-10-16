@@ -519,7 +519,7 @@ export default function Home() {
                 <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>
                   <a href="/pueblo-parcel" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>10-Acre Commercial Parcel · Pueblo, CO</a><br />
                   <a href="/commercial-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Commercial Loans · Owners &amp; Investors</a><br />
-                  <a href="/broker-programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Broker Loan Programs · Nationwide</a><br />
+                  <a href="/broker-programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Deal Desk · Bring Us the Deal</a><br />
                   <a href="/commercial-loans#bridge" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a><br />
                   <a href="/partners" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Work With Us · For Brokers &amp; Professionals</a>
                 </p>
