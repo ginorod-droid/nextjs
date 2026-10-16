@@ -97,7 +97,7 @@ export default function BrokerPortal() {
   }, [])
 
   // Calculator
-  const [calc, setCalc] = useState({ amt: 500000, rate: 9.5, yrs: 25 })
+  const [calc, setCalc] = useState({ amt: 500000, rate: 9.25, yrs: 25 })
   const payment = (() => {
     const P = parseFloat(calc.amt) || 0
     const r = (parseFloat(calc.rate) || 0) / 100 / 12
