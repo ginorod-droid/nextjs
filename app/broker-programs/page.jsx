@@ -14,6 +14,15 @@ export const metadata = {
 }
 
 const ddStyles = `
+.dd-hero { background:#202A54; padding:0 0 56px; }
+.dd-hero-banner img { width:100%; height:auto; display:block; }
+.dd-hero-cta { text-align:center; margin-top:40px; }
+.dd-hero-cta .bp-cta-row { justify-content:center; }
+.dd-prog-head { display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center; }
+.dd-prog-photo { position:relative; }
+.dd-prog-photo img { width:100%; height:340px; object-fit:cover; display:block; }
+.dd-prog-photo-frame { position:absolute; top:-14px; left:-14px; width:84px; height:84px; border:3px solid #2C9143; z-index:0; }
+.dd-prog-photo-bar { position:absolute; left:0; right:0; bottom:0; height:5px; background:#F6D200; }
 .dd-aud-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:44px; }
 .dd-aud-card { background:#fff; border:1px solid #e4e8f0; border-top:4px solid #1179EC; padding:34px 32px; display:flex; flex-direction:column; }
 .dd-aud-card:nth-child(2){ border-top-color:#2C9143; }
@@ -47,6 +56,10 @@ const ddStyles = `
 .dd-trust-title { font-size:13px; font-weight:900; letter-spacing:0.06em; text-transform:uppercase; color:#202A54; margin-bottom:10px; }
 .dd-trust p { font-size:14px; color:#666; line-height:1.7; margin:0; }
 @media(max-width:820px){
+  .dd-prog-head { grid-template-columns:1fr; gap:36px; }
+  .dd-prog-photo { margin-top:12px; }
+  .dd-prog-photo img { height:260px; }
+  .dd-prog-grid { grid-template-columns:1fr; }
   .dd-aud-grid { grid-template-columns:1fr; }
   .dd-step-grid { grid-template-columns:1fr 1fr; }
   .dd-trust-grid { grid-template-columns:1fr; }
@@ -106,22 +119,18 @@ export default function DealDesk() {
 
       <BrokerNav current="broker-programs" />
 
-      {/* HERO */}
-      <section className="bp-hub-hero">
-        <div className="bp-wrap bp-hero-split">
-          <div className="bp-hero-text">
-            <p className="bp-eyebrow" style={{ color: '#F6D200' }}>The Acoma Deal Desk</p>
-            <h1 className="bp-h1">Bring Us<br />the Deal.</h1>
-            <p className="bp-hero-sub">A banker with a turndown. A wholesaler who needs financing. A placement agent with a senior&apos;s building. A family selling or refinancing. One desk, and someone on the other end who has closed it before.</p>
-            <div className="bp-cta-row">
-              <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us the Deal</a>
-              <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
-            </div>
-          </div>
-          <div className="bp-hero-photo">
-            <span className="bp-hero-photo-frame" />
-            <img src="/deal-closing.jpg" alt="Acoma Capital Partners working a commercial deal with a partner" />
-            <span className="bp-hero-photo-bar" />
+      {/* HERO — banner */}
+      <section className="dd-hero">
+        <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
+          Deal turned down? Send it to us. When a deal does not fit traditional guidelines, Acoma Capital Partners has the programs and capital to get it done. Send your declined, stalled, or hard-to-place commercial loans and you get paid.
+        </h1>
+        <div className="dd-hero-banner">
+          <img src="/deal-desk-hero.jpg" alt="Acoma Capital Partners. Deal turned down? Send it to us. When a deal doesn't fit traditional guidelines, we have the programs and capital to get it done. Send your declined, stalled, or hard-to-place commercial loans, and you get paid." />
+        </div>
+        <div className="bp-wrap dd-hero-cta">
+          <div className="bp-cta-row">
+            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us the Deal</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
           </div>
         </div>
       </section>
@@ -149,13 +158,22 @@ export default function DealDesk() {
         </div>
       </section>
 
-      {/* HOW WE FINANCE IT */}
-      <section>
-        <div className="bp-wrap" style={{ paddingTop: 8, paddingBottom: 8 }}>
-          <p className="bp-section-label">How We Finance It</p>
-          <div className="bp-rule" />
-          <h2 style={{ marginBottom: 8 }}>The programs behind the desk.</h2>
-          <p className="bp-lead">When the deal needs capital, these are the ways we get it done. $100K to $2M on the programs, up to $20M on a bridge. Start at the top for the most leverage, and drop a tier only when the documentation is not there.</p>
+      {/* OUR LOAN PROGRAMS */}
+      <section className="bp-section bp-section-tight">
+        <div className="bp-wrap">
+          <div className="dd-prog-head">
+            <div>
+              <p className="bp-section-label">How We Finance It</p>
+              <div className="bp-rule" />
+              <h2 style={{ marginBottom: 20 }}>Our Loan Programs.</h2>
+              <p className="bp-lead">When the deal needs capital, these are the ways we get it done. $100K to $2M on the programs, up to $20M on a bridge. Start at the top for the most leverage, and drop a tier only when the documentation is not there.</p>
+            </div>
+            <div className="dd-prog-photo">
+              <span className="dd-prog-photo-frame" />
+              <img src="/deal-closing.jpg" alt="Acoma Capital Partners working a commercial deal with a partner" />
+              <span className="dd-prog-photo-bar" />
+            </div>
+          </div>
           <div className="dd-prog-grid">
             {programs.map((p) => (
               <article key={p.slug} className="dd-prog">
