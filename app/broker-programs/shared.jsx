@@ -6,9 +6,9 @@ export const CAL   = 'https://calendar.google.com/calendar/u/0/appointments/sche
 export const FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
 export const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
-export const PTYPES = 'Retail · Mixed-Use (commercial) · Warehouse & Self-Storage · Office · Light Industrial · Automotive · Mobile Home Park · Restaurants · Bars · Day Care'
+export const PTYPES = 'Restaurants · Bars · Automotive · Retail · Office · Light Industrial · Warehouse & Self-Storage · Mixed-Use (commercial) · Mobile Home Park · Day Care'
 
-export const CREDIT = 'A qualifying credit score is required, starting at 650. Both rate and terms improve as the score rises.'
+export const CREDIT = 'Credit matters here. 650 gets you in the door. The file really works at 700 and up, and that is where the rate and the terms get good. Under 700 we can still take a look, it just has to be a clean deal.'
 
 export const programs = [
   {
