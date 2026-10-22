@@ -80,7 +80,7 @@ export default function Home() {
             <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
-            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
+            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/dscr","Rental Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
@@ -98,6 +98,7 @@ export default function Home() {
           <div className="hp-mobile-menu">
             <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
+            <a href="/dscr" onClick={() => setMobileMenu(false)}>Rental Loans</a>
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Deal Desk</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
             <a href="#opportunities" onClick={() => setMobileMenu(false)}>Listings</a>
@@ -261,6 +262,7 @@ export default function Home() {
                   ["Bank Statement Loans","/broker-programs/bank-statement"],
                   ["Lite Doc Loans","/broker-programs/lite-doc"],
                   ["No Doc Commercial Loans","/broker-programs/no-doc"],
+                  ["Rental Loans · DSCR (1-4 Unit)","/dscr"],
                   ["Commercial Listings","#opportunities"],
                 ] as [string,string][]).map(([s,href],i) => (
                   <FadeUp key={i} delay={i*0.06}>
