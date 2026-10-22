@@ -56,21 +56,35 @@ export default function CommercialLoans() {
         </div>
       </section>
 
+      {/* CASH-OUT */}
+      <section className="bp-section bp-section-tight bp-section-off">
+        <div className="bp-wrap">
+          <p className="bp-section-label">Cash-Out</p>
+          <div className="bp-rule" />
+          <h2>Pull the equity out of a building you already own.</h2>
+          <p className="bp-lead">Here is the one the banks will not touch. You own a commercial property free and clear, or you owe very little on it, and you need that money working in the business instead of sitting in the walls. We qualify you on twelve months of bank statements instead of tax returns and put the equity back in your hands. It is the most common deal we do, and it is the one your bank keeps saying no to.</p>
+          <div className="bp-cta-row" style={{ marginTop: 32 }}>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
+            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
+          </div>
+        </div>
+      </section>
+
       {/* STACKED PROGRAM ROWS */}
       <section>
         {/* BRIDGE / HARD MONEY — above the programs */}
         <div className="bp-wrap" id="bridge" style={{ paddingTop: 8, paddingBottom: 8 }}>
           <p className="bp-section-label">Bridge &amp; Hard Money</p>
           <div className="bp-rule" />
-          <h2 style={{ marginBottom: 8 }}>Bridge financing for time-sensitive deals.</h2>
-          <p className="bp-lead">When a deal cannot wait for a bank&apos;s timeline, a bridge loan qualifies on the property and the exit, not your tax returns. We arrange bridge and hard money financing from $100K to $20M across most commercial property types, for acquisitions and situations where conventional financing is not an option.</p>
+          <h2 style={{ marginBottom: 8 }}>Bridge in now. Refinance into permanent later.</h2>
+          <p className="bp-lead">This is the play most people miss. When a deal cannot wait for a bank, we bridge you in on the property and the exit, not your tax returns. Then once the property is stabilized, we refinance you out of that short-term money and into one of our permanent programs. One relationship, both ends of the deal, and the exit is mapped out before you ever fund the bridge. That is the difference between a bridge that works and a bridge that traps you.</p>
           <div className="bp-spec-grid" style={{ marginTop: 44 }}>
             {[
-              ['Loan Size', '$100K to $20M'],
-              ['Secured By', 'The property'],
-              ['Used For', 'Acquisitions & time-sensitive closings'],
-              ['Property Types', 'Residential to commercial'],
-              ['Structure', 'Direct-lender brokerage'],
+              ['Bridge Size', '$100K to $20M'],
+              ['Permanent Takeout', '$100K to $2.5M'],
+              ['Secured By', 'The property and the exit'],
+              ['Used For', 'Acquisitions, value-add, time-sensitive closings'],
+              ['The Exit', 'Refinance into one of our programs'],
               ['Terms', 'Based on the deal'],
             ].map(([label, value]) => (
               <div key={label} className="bp-spec-cell">
@@ -79,7 +93,7 @@ export default function CommercialLoans() {
               </div>
             ))}
           </div>
-          <p className="bp-extra">Rate, term, and timeline depend on the property, the exit, and the file. Send us the deal and you will get a straight read on whether a bridge loan fits and roughly where it lands.</p>
+          <p className="bp-extra">Rate, term, and timeline depend on the property, the exit, and the file. Send us the deal and you get a straight read on whether the bridge fits, where it lands, and how the permanent takeout looks on the other side.</p>
           <div className="bp-cta-row" style={{ marginTop: 36 }}>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
@@ -90,11 +104,12 @@ export default function CommercialLoans() {
           <p className="bp-section-label">The Programs</p>
           <div className="bp-rule" />
           <h2 style={{ marginBottom: 8 }}>Ways to finance your property.</h2>
+          <p className="bp-lead" style={{ marginTop: 8 }}>Four ways in. If you can document the income the normal way, full-doc gets you the best rate and the most leverage. If your tax returns do not tell the real story, the three below qualify you on your bank statements, on the property, or on your credit and equity instead.</p>
         </div>
         <ProgramRows variant="client" />
         <div className="bp-wrap" style={{ paddingTop: 36, paddingBottom: 8 }}>
           <p className="bp-credit"><strong>Credit required.</strong> {CREDIT}</p>
-          <p className="bp-extra">Eligible across retail, mixed-use, warehouse and self-storage, office, light industrial, automotive, mobile home parks, restaurants, bars, and day care. Terms are indicative and subject to underwriting.</p>
+          <p className="bp-extra">We finance the property types a lot of lenders avoid. Restaurants, bars, and automotive, right alongside retail, office, light industrial, warehouse and self-storage, mixed-use, mobile home parks, and day care. If it is commercial and it is stabilized, bring it. Terms are indicative and subject to underwriting.</p>
         </div>
       </section>
 

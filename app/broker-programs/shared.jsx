@@ -6,9 +6,9 @@ export const CAL   = 'https://calendar.google.com/calendar/u/0/appointments/sche
 export const FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
 export const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
-export const PTYPES = 'Retail · Mixed-Use (commercial) · Warehouse & Self-Storage · Office · Light Industrial · Automotive · Mobile Home Park · Restaurants · Bars · Day Care'
+export const PTYPES = 'Restaurants · Bars · Automotive · Retail · Office · Light Industrial · Warehouse & Self-Storage · Multifamily · Mixed-Use (commercial) · Mobile Home Park · Day Care'
 
-export const CREDIT = 'A qualifying credit score is required, starting at 650. Both rate and terms improve as the score rises.'
+export const CREDIT = 'Credit matters here. 650 gets you in the door. The file really works at 700 and up, and that is where the rate and the terms get good. Under 700 we can still take a look, it just has to be a clean deal.'
 
 export const programs = [
   {
@@ -140,6 +140,7 @@ export function JsonLd({ data }) {
 const NAV_ITEMS = {
   home:       ['/', 'Home'],
   commercial: ['/commercial-loans', 'Commercial Loans'],
+  dscr:       ['/dscr', 'Rental Loans'],
   programs:   ['/broker-programs', 'Deal Desk'],
   partners:   ['/partners', 'Work With Us'],
   listings:   ['/#opportunities', 'Listings'],
@@ -148,13 +149,14 @@ const NAV_ITEMS = {
 
 // Each page shows links to the others, not itself.
 const NAV_SETS = {
-  'commercial-loans': ['home', 'partners', 'listings', 'about', 'programs'],
-  'broker-programs':  ['home', 'commercial', 'partners', 'listings', 'about'],
-  'partners':         ['home', 'commercial', 'listings', 'about'],
+  'commercial-loans': ['home', 'dscr', 'programs', 'partners', 'about'],
+  'dscr':             ['home', 'commercial', 'programs', 'partners', 'about'],
+  'broker-programs':  ['home', 'commercial', 'dscr', 'partners', 'about'],
+  'partners':         ['home', 'commercial', 'dscr', 'listings', 'about'],
 }
 
 export function BrokerNav({ current, hideLogo }) {
-  const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners', 'listings', 'about']
+  const keys = NAV_SETS[current] || ['home', 'commercial', 'dscr', 'programs', 'partners', 'listings', 'about']
   return (
     <nav className="bp-nav">
       <div className="bp-wrap bp-nav-row">
@@ -200,6 +202,7 @@ export function BrokerFooter() {
           </div>
           <div className="bp-footer-links">
             <a href="/commercial-loans">Commercial Loans</a>
+            <a href="/dscr">Rental Loans</a>
             <a href="/broker-programs">Deal Desk</a>
             <a href="/commercial-loans#bridge">Bridge Loans</a>
             <a href="/partners">Work With Us</a>
