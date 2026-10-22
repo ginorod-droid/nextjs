@@ -41,6 +41,10 @@ export default function Home() {
         .hp-hardmoney { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; margin-top: 8px; }
         .hp-about { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
         .hp-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+        .hp-router { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+        .hp-router > div { display: flex; }
+        .hp-router > div > a { flex: 1; transition: transform .2s, box-shadow .2s; }
+        .hp-router > div > a:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -24px rgba(32,42,84,0.38) !important; }
         .hp-nav-links { display: flex; gap: 36px; align-items: center; }
         .hp-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
         .hp-mobile-menu { display: none; }
@@ -51,6 +55,7 @@ export default function Home() {
           .hp-hardmoney { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hp-about { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hp-contact { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .hp-router { grid-template-columns: 1fr !important; gap: 12px !important; }
           .hp-nav-links { display: none; }
           .hp-hamburger { display: block; }
           .hp-mobile-menu { display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: #202A54; border-top: 1px solid rgba(255,255,255,0.1); padding: 8px 0; z-index: 99; }
@@ -80,7 +85,7 @@ export default function Home() {
             <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
-            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/dscr","Rental Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
+            {[["/commercial-loans","Commercial Loans"],["/dscr","Rental Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
@@ -96,7 +101,6 @@ export default function Home() {
         </div>
         {mobileMenu && (
           <div className="hp-mobile-menu">
-            <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
             <a href="/dscr" onClick={() => setMobileMenu(false)}>Rental Loans</a>
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Deal Desk</a>
@@ -109,58 +113,69 @@ export default function Home() {
       </nav>
 
       {/* ── HERO ── */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", background: NAVY, overflow: "hidden", paddingTop: 81 }}>
+      <section style={{ position: "relative", minHeight: "76vh", display: "flex", alignItems: "flex-end", background: NAVY, overflow: "hidden", paddingTop: 81 }}>
         <div style={{ position: "absolute", inset: 0 }}>
           <Image src="/hero.jpeg" alt="" fill style={{ objectFit: "cover", objectPosition: "center 25%", opacity: 0.35 }} priority />
         </div>
         {/* Yellow vertical accent */}
         <div style={{ position: "absolute", left: 40, top: "20%", bottom: "20%", width: 3, background: YELLOW, opacity: 0.8 }} />
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "80px 40px 100px", width: "100%" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "110px 40px 84px", width: "100%" }}>
           <FadeUp>
-            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.25em", textTransform: "uppercase", color: W, marginBottom: 32 }}>
-              Acoma Capital Partners · Nationwide
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: W, marginBottom: 26 }}>
+              Commercial &amp; Rental Lending · Real Estate Brokerage
             </p>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <h1 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(56px,9vw,110px)", lineHeight: 0.95, color: W, marginBottom: 48, letterSpacing: "-0.02em" }}>
-              Capital<br />
-              <span style={{ color: "transparent", WebkitTextStroke: `2px rgba(255,255,255,0.45)` } as React.CSSProperties}>That</span>{" "}
-              Moves.<br />
-              Deals{" "}
-              <span style={{ color: YELLOW }}>That</span><br />
-              Close.
+            <h1 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(44px,7vw,92px)", lineHeight: 0.98, color: W, marginBottom: 32, letterSpacing: "-0.02em", maxWidth: 980 }}>
+              We finance the deals<br />
+              the bank <span style={{ color: YELLOW }}>turned down.</span>
             </h1>
           </FadeUp>
           <FadeUp delay={0.2}>
-            <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.65)", maxWidth: 480, marginBottom: 52 }}>
-              Real estate acquisitions, investment sales, and hard money financing for operators and investors across the Nation.
+            <p style={{ fontFamily: I, fontSize: 19, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 640, marginBottom: 40 }}>
+              Commercial and rental loans for owners and investors, and a deal desk for the brokers who send us their turndowns. If it can close, we close it.
             </p>
           </FadeUp>
           <FadeUp delay={0.3}>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center" }}>
               <a
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true"
                 target="_blank" rel="noopener"
-                style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
+                style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 42px", textDecoration: "none" }}>
                 Book a Call →
               </a>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform"
-                target="_blank" rel="noopener"
-                style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: GREEN, color: W, padding: "18px 40px", textDecoration: "none" }}>
-                Buyer Questionnaire →
-              </a>
-              <a href="#opportunities" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "18px 40px", textDecoration: "none" }}>
-                View Listings
+              <a href="tel:7207721327" style={{ fontFamily: P, fontWeight: 600, fontSize: 14, letterSpacing: "0.03em", color: "rgba(255,255,255,0.82)", textDecoration: "none" }}>
+                or call (720) 772-1327
               </a>
             </div>
           </FadeUp>
         </div>
+      </section>
 
-        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.3)" }} />
-          <span style={{ fontFamily: P, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>Scroll</span>
+      {/* ── PATH ROUTER ── */}
+      <section style={{ background: W, padding: "60px 0 56px", borderBottom: "1px solid #eef1f5" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <FadeUp>
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase", color: BLUE, marginBottom: 26 }}>Start Here · Pick Your Lane</p>
+          </FadeUp>
+          <div className="hp-router">
+            {[
+              { tag: "Need a loan", title: "Commercial financing", body: "Buy, refinance, or pull cash out of a commercial property.", href: "/commercial-loans", color: GREEN },
+              { tag: "Own a rental", title: "Rental loans, 1-4 unit", body: "Finance or cash out a rental. Qualify on the rent, not your returns.", href: "/dscr", color: BLUE },
+              { tag: "Got a deal", title: "Send us the deal", body: "Banker, wholesaler, or broker with a turndown. You get paid when it closes.", href: "/broker-programs", color: YELLOW },
+              { tag: "Buy or sell", title: "Our listings", body: "Commercial property for sale, or you are looking to buy. See what is available.", href: "#opportunities", color: NAVY },
+            ].map((c, i) => (
+              <FadeUp key={i} delay={i * 0.06}>
+                <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, border: "1px solid #e4e8f0", borderTop: `4px solid ${c.color}`, padding: "30px 28px", textDecoration: "none", boxShadow: "0 18px 40px -26px rgba(32,42,84,0.30)" }}>
+                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: c.color, marginBottom: 14 }}>{c.tag}</span>
+                  <span style={{ fontFamily: P, fontWeight: 900, fontSize: 21, color: NAVY, letterSpacing: "-0.01em", marginBottom: 10, lineHeight: 1.15 }}>{c.title}</span>
+                  <span style={{ fontFamily: I, fontSize: 14, color: "#555", lineHeight: 1.6, marginBottom: 22, flex: 1 }}>{c.body}</span>
+                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY }}>Go →</span>
+                </a>
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </section>
 
