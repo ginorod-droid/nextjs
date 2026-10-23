@@ -20,7 +20,7 @@ const krStyles = `
 .kr-list { list-style:none; margin:18px 0 0; padding:0; }
 #bp .kr-list li { position:relative; padding:0 0 12px 28px; font-size:16px; color:#555; line-height:1.6; }
 #bp .kr-list li::before { content:''; position:absolute; left:0; top:9px; width:9px; height:9px; background:#2C9143; }
-.kr-comp { width:100%; border-collapse:collapse; margin-top:28px; font-size:15px; }
+.kr-comp { width:100%; border-collapse:collapse; margin-top:28px; font-size:16px; }
 .kr-comp th, .kr-comp td { text-align:left; padding:14px 16px; border-bottom:1px solid #e4e8f0; }
 .kr-comp th { font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8a93a3; }
 .kr-comp td:first-child { font-weight:700; color:#202A54; }
@@ -28,12 +28,12 @@ const krStyles = `
 .kr-comp td.pr { font-weight:900; color:#202A54; white-space:nowrap; }
 .kr-comp td.ctx { color:#8a93a3; font-weight:400; }
 .kr-comp tr.subj td { background:#f4f6f9; }
-.kr-tag { display:inline-block; font-size:10px; font-weight:800; letter-spacing:0.04em; padding:3px 9px; color:#fff; }
+.kr-tag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:0.04em; padding:4px 10px; color:#fff; }
 .kr-sold { background:#2C9143; }
 .kr-listed { background:#9aa2bd; }
 #bp .kr-cap { position:relative; margin-top:32px; padding:20px 0 0; font-size:16px; color:#334; line-height:1.7; max-width:820px; }
 #bp .kr-cap::before { content:''; position:absolute; top:0; left:0; width:48px; height:4px; background:#1179EC; }
-.kr-disc { margin-top:24px; font-size:12px; color:#999; line-height:1.7; max-width:900px; }
+.kr-disc { margin-top:24px; font-size:13px; color:#999; line-height:1.7; max-width:900px; }
 
 .kr-hero { position:relative; overflow:hidden; background:#202A54; }
 .kr-hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%; }
