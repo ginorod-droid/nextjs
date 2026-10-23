@@ -118,8 +118,20 @@ export default function Krameria() {
         </div>
       </section>
 
-      {/* KEY FACTS */}
+      {/* OVERVIEW + HIGHLIGHTS */}
       <section className="bp-section bp-section-tight">
+        <div className="bp-wrap">
+          <p className="bp-section-label">Property Overview</p>
+          <div className="bp-rule" />
+          <p className="bp-lead">A brick side-by-side duplex on a quiet North Park Hill block. At the list price it works as a whole-building buy. The value-add is subdivision. Neighboring duplexes are being sold by the side, and on that basis the two units support a combined value well above the list price.</p>
+          <ul className="kr-list">
+            {HIGHLIGHTS.map((h) => <li key={h}>{h}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      {/* KEY FACTS */}
+      <section className="bp-section bp-section-off">
         <div className="bp-wrap">
           <p className="bp-section-label">The Offering</p>
           <div className="bp-rule" />
@@ -132,18 +144,6 @@ export default function Krameria() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* OVERVIEW + HIGHLIGHTS */}
-      <section className="bp-section bp-section-off">
-        <div className="bp-wrap">
-          <p className="bp-section-label">Property Overview</p>
-          <div className="bp-rule" />
-          <p className="bp-lead">A brick side-by-side duplex on a quiet North Park Hill block. At the list price it works as a whole-building buy. The value-add is subdivision. Neighboring duplexes are being sold by the side, and on that basis the two units support a combined value well above the list price.</p>
-          <ul className="kr-list">
-            {HIGHLIGHTS.map((h) => <li key={h}>{h}</li>)}
-          </ul>
         </div>
       </section>
 
