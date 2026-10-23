@@ -31,7 +31,8 @@ const krStyles = `
 .kr-tag { display:inline-block; font-size:10px; font-weight:800; letter-spacing:0.04em; padding:3px 9px; color:#fff; }
 .kr-sold { background:#2C9143; }
 .kr-listed { background:#9aa2bd; }
-.kr-cap { margin-top:22px; font-size:16px; color:#334; line-height:1.7; max-width:820px; border-left:4px solid #1179EC; padding:4px 0 4px 16px; }
+#bp .kr-cap { position:relative; margin-top:32px; padding:20px 0 0; font-size:16px; color:#334; line-height:1.7; max-width:820px; }
+#bp .kr-cap::before { content:''; position:absolute; top:0; left:0; width:48px; height:4px; background:#1179EC; }
 .kr-disc { margin-top:24px; font-size:12px; color:#999; line-height:1.7; max-width:900px; }
 
 .kr-hero { position:relative; overflow:hidden; background:#202A54; }
