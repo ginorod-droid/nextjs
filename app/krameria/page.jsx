@@ -105,7 +105,6 @@ export default function Krameria() {
         <div className="bp-wrap kr-hero-inner">
           <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Value-Add Duplex · North Park Hill, Denver</p>
           <h1 className="kr-hero-h1">Buy one duplex.<br />Sell two homes.</h1>
-          <p className="kr-hero-sub">3343-3345 N Krameria St, North Park Hill. A brick side-by-side duplex. The large unit is vacant now; the front unit opens up January 2027.</p>
           <div className="kr-figs">
             <div><span className="kf-l">List Price</span><span className="kf-v">$579,000</span></div>
             <div><span className="kf-l">Subdivided, est.</span><span className="kf-v">$980,000</span></div>
