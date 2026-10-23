@@ -5,11 +5,11 @@ const FLYER = '/listings/krameria-flyer.pdf'
 
 export const metadata = {
   title: '3343-3345 N Krameria St, North Park Hill Duplex | For Sale $579,000 | Acoma Capital Partners',
-  description: 'Brick side-by-side duplex at 3343-3345 N Krameria St, Denver, CO 80207. $579,000. 6 bed, 3 bath, 1,960 SF, two units. One side vacant, the leased side delivers vacant 1/15/27. Value-add subdivision play.',
+  description: 'Brick side-by-side duplex at 3343-3345 N Krameria St, Denver, CO 80207. $579,000. 6 bed, 3 bath, 1,960 SF, two units. The larger unit is vacant now; the front unit delivers vacant January 2027. Value-add subdivision play.',
   alternates: { canonical: 'https://www.acomacapitalpartners.com/krameria' },
   openGraph: {
     title: '3343-3345 N Krameria St, North Park Hill Duplex | Acoma Capital Partners',
-    description: 'Brick duplex in North Park Hill, Denver. $579,000. Value-add, full vacant possession by 1/15/27.',
+    description: 'Brick duplex in North Park Hill, Denver. $579,000. Value-add; large unit vacant now, front unit vacant January 2027.',
     url: 'https://www.acomacapitalpartners.com/krameria',
     images: ['/listings/krameria.jpg'],
   },
@@ -41,7 +41,7 @@ const KEY_FACTS = [
   ['Building Size', '1,960 SF'],
   ['Units', '2 · side-by-side'],
   ['Lot', '6,250 SF (~0.14 ac)'],
-  ['Possession', 'Vacant by 1/15/27'],
+  ['Possession', 'Large unit now; front 1/15/27'],
 ]
 
 const NUMBERS = [
@@ -52,7 +52,7 @@ const NUMBERS = [
 
 const HIGHLIGHTS = [
   'Brick side-by-side duplex, two units on one parcel',
-  'One unit delivers vacant; the leased unit has a signed move-out dated 1/15/27',
+  'The larger unit is vacant now; the front unit has a signed move-out for January 15, 2027',
   '2BR/1BA side leased at $1,600/mo, 4BR/2BA side with finished basement',
   'Value-add: subdivide and sell each side separately, the way the block already does it',
   'North Park Hill, close to City Park and the Park Hill commercial strip',
@@ -86,7 +86,7 @@ export default function Krameria() {
         <div className="bp-wrap">
           <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Value-Add Duplex · North Park Hill, Denver</p>
           <h1 className="bp-h1" style={{ fontSize: 'clamp(40px,6vw,76px)' }}>North Park Hill<br />Duplex.</h1>
-          <p className="bp-hero-sub">3343-3345 N Krameria St, Denver, CO 80207. A brick side-by-side duplex, 6 bed and 3 bath across 1,960 SF on a 6,250 SF lot. One side is vacant and the leased side has a signed move-out dated 1/15/27, so a buyer takes full vacant possession. $579,000.</p>
+          <p className="bp-hero-sub">3343-3345 N Krameria St, Denver, CO 80207. A brick side-by-side duplex, 6 bed and 3 bath across 1,960 SF on a 6,250 SF lot. The larger unit is vacant now, and the front unit has a signed move-out for January 15, 2027, so both convey to a buyer. $579,000.</p>
           <div className="bp-cta-row">
             <a href={FLYER} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Flyer (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
@@ -102,7 +102,7 @@ export default function Krameria() {
         <div className="bp-wrap">
           <p className="bp-section-label">The Offering</p>
           <div className="bp-rule" />
-          <h2>Brick duplex, two units, full vacant possession by 1/15/27.</h2>
+          <h2>Brick duplex. The large unit is vacant now, and the front unit vacates January 2027.</h2>
           <div className="bp-spec-grid" style={{ marginTop: 40 }}>
             {KEY_FACTS.map(([label, value]) => (
               <div key={label} className="bp-spec-cell">
@@ -176,7 +176,7 @@ export default function Krameria() {
       <section className="bp-section bp-section-navy">
         <div className="bp-wrap bp-cta-block">
           <h2 className="bp-white">Interested in 3343-3345 N Krameria?</h2>
-          <p className="bp-muted-white">Read the full flyer or get Gino on the phone. $579,000, two units, full vacant possession by 1/15/27.</p>
+          <p className="bp-muted-white">Read the full flyer or get Gino on the phone. $579,000, two units, the large side vacant now and the front side vacant January 2027.</p>
           <div className="bp-cta-row">
             <a href={FLYER} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Flyer (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Book a Call</a>

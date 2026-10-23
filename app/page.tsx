@@ -394,12 +394,12 @@ export default function Home() {
                     <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>$579,000</p>
                   </div>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["6 BD / 3 BA","2 Units","Vacant 1/15/27","Subdivide Upside"].map(t => (
+                    {["6 BD / 3 BA","2 Units","Vacant Now + Jan '27","Subdivide Upside"].map(t => (
                       <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
                     ))}
                   </div>
                   <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
-                    A brick side-by-side duplex in North Park Hill. One side vacant, the leased side with a signed move-out dated 1/15/27. Nearby duplexes are selling by the side, which is where the upside lives.
+                    A brick side-by-side duplex in North Park Hill. The large unit is vacant now; the front unit vacates January 2027. Nearby duplexes are selling by the side, which is where the upside lives.
                   </p>
                   <a href="/krameria" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
                     View Listing →
