@@ -33,6 +33,23 @@ const krStyles = `
 .kr-listed { background:#9aa2bd; }
 .kr-cap { margin-top:22px; font-size:16px; color:#334; line-height:1.7; max-width:820px; border-left:4px solid #1179EC; padding:4px 0 4px 16px; }
 .kr-disc { margin-top:24px; font-size:12px; color:#999; line-height:1.7; max-width:900px; }
+
+.kr-hero { position:relative; overflow:hidden; background:#202A54; }
+.kr-hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+.kr-hero-shade { position:absolute; inset:0; background:linear-gradient(95deg, rgba(14,18,38,0.96) 0%, rgba(14,18,38,0.88) 44%, rgba(14,18,38,0.55) 72%, rgba(14,18,38,0.30) 100%); }
+.kr-hero-inner { position:relative; padding:112px 40px 92px; }
+.kr-hero-h1 { font-weight:900; font-size:clamp(44px,7vw,92px); line-height:0.92; letter-spacing:-0.035em; color:#fff; text-transform:uppercase; margin:26px 0 24px; }
+.kr-hero-sub { font-size:19px; color:rgba(255,255,255,0.82); max-width:600px; line-height:1.6; margin-bottom:38px; }
+.kr-figs { display:flex; gap:48px; margin-bottom:42px; flex-wrap:wrap; }
+.kr-figs > div { display:flex; flex-direction:column; }
+.kf-l { font-weight:600; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:10px; }
+.kf-v { font-weight:900; font-size:clamp(30px,3.6vw,42px); color:#fff; line-height:1; letter-spacing:-0.02em; }
+.kf-gold { color:#F6D200; }
+@media(max-width:820px){
+  .kr-hero-inner { padding:64px 20px 56px; }
+  .kr-hero-shade { background:linear-gradient(180deg, rgba(14,18,38,0.72) 0%, rgba(14,18,38,0.90) 100%); }
+  .kr-figs { gap:28px; }
+}
 `
 
 const KEY_FACTS = [
@@ -82,20 +99,24 @@ export default function Krameria() {
       <BrokerNav />
 
       {/* HERO */}
-      <section className="bp-hero">
-        <div className="bp-wrap">
+      <section className="kr-hero">
+        <img className="kr-hero-bg" src="/listings/krameria.jpg" alt="Brick duplex at 3343-3345 N Krameria Street, North Park Hill, Denver, Colorado" />
+        <div className="kr-hero-shade" />
+        <div className="bp-wrap kr-hero-inner">
           <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Value-Add Duplex · North Park Hill, Denver</p>
-          <h1 className="bp-h1" style={{ fontSize: 'clamp(40px,6vw,76px)' }}>North Park Hill<br />Duplex.</h1>
-          <p className="bp-hero-sub">3343-3345 N Krameria St, Denver, CO 80207. A brick side-by-side duplex, 6 bed and 3 bath across 1,960 SF on a 6,250 SF lot. The larger unit is vacant now, and the front unit has a signed move-out for January 15, 2027, so both convey to a buyer. $579,000.</p>
+          <h1 className="kr-hero-h1">Buy one duplex.<br />Sell two homes.</h1>
+          <p className="kr-hero-sub">3343-3345 N Krameria St. A brick side-by-side duplex that lists at $579,000 and pencils near $980,000 sold by the side. The large unit is vacant now; the front unit opens up January 2027.</p>
+          <div className="kr-figs">
+            <div><span className="kf-l">List Price</span><span className="kf-v">$579,000</span></div>
+            <div><span className="kf-l">Subdivided, est.</span><span className="kf-v">$980,000</span></div>
+            <div><span className="kf-l">Upside, est.</span><span className="kf-v kf-gold">$329,700</span></div>
+          </div>
           <div className="bp-cta-row">
             <a href={FLYER} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Flyer (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
           </div>
         </div>
       </section>
-
-      {/* PHOTO */}
-      <img className="kr-photo" src="/listings/krameria.jpg" alt="Brick duplex at 3343-3345 N Krameria Street, North Park Hill, Denver, Colorado" />
 
       {/* KEY FACTS */}
       <section className="bp-section bp-section-tight">
