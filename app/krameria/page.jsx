@@ -17,7 +17,8 @@ export const metadata = {
 
 const krStyles = `
 .kr-photo { width:100%; height:clamp(260px,42vw,520px); object-fit:cover; object-position:center 42%; display:block; }
-.kr-list { list-style:none; margin:18px 0 0; padding:0; }
+#bp .kr-lead { font-size:16px; color:#555; line-height:1.7; max-width:820px; }
+#bp .kr-list { list-style:none; margin:28px 0 0; padding:0; }
 #bp .kr-list li { position:relative; padding:0 0 12px 28px; font-size:16px; color:#555; line-height:1.6; }
 #bp .kr-list li::before { content:''; position:absolute; left:0; top:9px; width:9px; height:9px; background:#2C9143; }
 .kr-comp { width:100%; border-collapse:collapse; margin-top:28px; font-size:16px; }
@@ -123,7 +124,7 @@ export default function Krameria() {
         <div className="bp-wrap">
           <p className="bp-section-label">Property Overview</p>
           <div className="bp-rule" />
-          <p className="bp-lead">A brick side-by-side duplex on a quiet North Park Hill block. At the list price it works as a whole-building buy. The value-add is subdivision. Neighboring duplexes are being sold by the side, and on that basis the two units support a combined value well above the list price.</p>
+          <p className="kr-lead">A brick side-by-side duplex on a quiet North Park Hill block. At the list price it works as a whole-building buy. The value-add is subdivision. Neighboring duplexes are being sold by the side, and on that basis the two units support a combined value well above the list price.</p>
           <ul className="kr-list">
             {HIGHLIGHTS.map((h) => <li key={h}>{h}</li>)}
           </ul>
