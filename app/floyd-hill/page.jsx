@@ -5,11 +5,11 @@ const BROCHURE = '/listings/floyd-hill-brochure.pdf'
 
 export const metadata = {
   title: 'Floyd Hill Business Park, Unit D-106 | For Sale $250,000 | Acoma Capital Partners',
-  description: '1,662 SF commercial condominium for sale at 35715 U.S. Highway 40, Building D, Unit D-106, Evergreen, CO. $250,000, MIP license included. On the I-70 mountain corridor.',
+  description: '1,662 SF MIP-ready commercial condominium for sale at 35715 U.S. Highway 40, Unit D-106, Evergreen, CO. $250,000, with an associated Colorado MIP manufacturing license. On the I-70 mountain corridor. Equipment not included.',
   alternates: { canonical: 'https://www.acomacapitalpartners.com/floyd-hill' },
   openGraph: {
     title: 'Floyd Hill Business Park, Unit D-106 | Acoma Capital Partners',
-    description: '1,662 SF commercial condo in Evergreen, CO. $250,000, MIP license included.',
+    description: '1,662 SF MIP-ready commercial condo in Evergreen, CO. $250,000, associated MIP license. Equipment not included.',
     url: 'https://www.acomacapitalpartners.com/floyd-hill',
     images: ['/listings/floyd-hill.jpg'],
   },
@@ -47,12 +47,12 @@ const BUILDING = [
 ]
 
 const HIGHLIGHTS = [
-  '1,662 SF — Unit D-106, Building D',
-  'MIP license included with the sale',
-  'Located in Floyd Hill Business Park',
-  'PD zoning — Clear Creek County',
-  'Ample on-site parking',
-  'On the U.S. Highway 40 / I-70 mountain corridor',
+  'Offered at $250,000, about $150 per SF',
+  'Associated Colorado MIP manufacturing license (subject to regulatory approval)',
+  'Production suite built out, powered, and wired for MIP extraction and processing equipment (equipment not included)',
+  'Direct I-70 mountain-corridor access between Exits 247 and 248',
+  'Secured, paved outdoor yard immediately behind the unit',
+  'Affluent trade area, average household income above $200K within one mile',
 ]
 
 const DEMO = [
@@ -80,7 +80,7 @@ export default function FloydHill() {
         <div className="bp-wrap">
           <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Commercial Condo For Sale · Evergreen, CO</p>
           <h1 className="bp-h1" style={{ fontSize: 'clamp(40px,6vw,76px)' }}>Floyd Hill<br />Business Park.</h1>
-          <p className="bp-hero-sub">35715 U.S. Highway 40, Building D, Unit D-106, Evergreen, CO 80439. A 1,662 SF commercial condominium on the I-70 mountain corridor. The sale includes the MIP license. $250,000.</p>
+          <p className="bp-hero-sub">35715 U.S. Highway 40, Building D, Unit D-106, Evergreen, CO 80439. A 1,662 SF commercial condominium on the I-70 mountain corridor, built out and MIP-ready, offered with an associated Colorado MIP manufacturing license. Equipment is not included. $250,000.</p>
           <div className="bp-cta-row">
             <a href={BROCHURE} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Brochure (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
@@ -96,7 +96,7 @@ export default function FloydHill() {
         <div className="bp-wrap">
           <p className="bp-section-label">The Offering</p>
           <div className="bp-rule" />
-          <h2>1,662 SF commercial condo, MIP license included.</h2>
+          <h2>1,662 SF MIP-ready condo with an associated MIP license.</h2>
           <div className="bp-spec-grid" style={{ marginTop: 40 }}>
             {KEY_FACTS.map(([label, value]) => (
               <div key={label} className="bp-spec-cell">
@@ -113,7 +113,7 @@ export default function FloydHill() {
         <div className="bp-wrap">
           <p className="bp-section-label">Property Overview</p>
           <div className="bp-rule" />
-          <p className="bp-lead">A 1,662 SF commercial condominium in Floyd Hill Business Park. The offering includes the MIP license and is located in Building D along the U.S. Highway 40 / I-70 mountain corridor, with access to Evergreen, Floyd Hill, and the western Denver mountain corridor.</p>
+          <p className="bp-lead">A 1,662 SF commercial condominium in Floyd Hill Business Park, just off U.S. Highway 40 between I-70 Exits 247 and 248. The offering combines the real estate, an existing MIP-ready production buildout, and an associated Colorado MIP manufacturing license. The suite is built out, powered, and wired for MIP extraction and processing equipment. Equipment shown in the brochure is not included in the sale.</p>
           <ul className="fh-list">
             {HIGHLIGHTS.map((h) => <li key={h}>{h}</li>)}
           </ul>
@@ -154,7 +154,7 @@ export default function FloydHill() {
               ))}
             </tbody>
           </table>
-          <p className="fh-disc">Demographic figures reproduced from the supplied 2026 American Community Survey (ACS) marketing material. Buyer should independently verify property, licensing, zoning, association, and other material information.</p>
+          <p className="fh-disc">Equipment and personal property shown in the brochure are not included in the sale unless specifically agreed in writing. Any associated MIP manufacturing license is subject to applicable state and local approval and transfer requirements. Demographic figures reproduced from the supplied 2026 American Community Survey (ACS) marketing material. Buyer should independently verify property, licensing, zoning, association, and other material information.</p>
         </div>
       </section>
 
@@ -162,7 +162,7 @@ export default function FloydHill() {
       <section className="bp-section bp-section-navy">
         <div className="bp-wrap bp-cta-block">
           <h2 className="bp-white">Interested in Unit D-106?</h2>
-          <p className="bp-muted-white">Read the full brochure or get Gino on the phone. $250,000, 1,662 SF, MIP license included.</p>
+          <p className="bp-muted-white">Read the full brochure or get Gino on the phone. $250,000, 1,662 SF, MIP-ready, with an associated MIP license. Equipment not included.</p>
           <div className="bp-cta-row">
             <a href={BROCHURE} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Brochure (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Book a Call</a>
