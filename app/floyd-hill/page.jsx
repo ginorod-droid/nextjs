@@ -26,6 +26,10 @@ const fhStyles = `
 .fh-demo td:first-child { font-weight:700; color:#202A54; }
 .fh-demo td { color:#555; }
 .fh-disc { margin-top:24px; font-size:12px; color:#999; line-height:1.7; max-width:900px; }
+.fh-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:40px; }
+.fh-gallery figure { margin:0; }
+.fh-gallery img { width:100%; height:230px; object-fit:cover; display:block; border-radius:4px; }
+.fh-gallery figcaption { font-size:12px; color:#8a93a3; margin-top:9px; line-height:1.5; }
 `
 
 const KEY_FACTS = [
@@ -61,6 +65,17 @@ const DEMO = [
   ['Average age', '47', '46', '47'],
   ['Average HH income', '$204,050', '$227,946', '$217,213'],
   ['Average home value', '$961,654', '$1,151,302', '$1,132,836'],
+]
+
+const GALLERY = [
+  ['/listings/fh-production-suite.jpg', 'Production suite, built out for MIP (equipment not included)'],
+  ['/listings/fh-stainless.jpg', 'Stainless production area (equipment not included)'],
+  ['/listings/fh-extraction.jpg', 'Built-out production space (equipment not included)'],
+  ['/listings/fh-office-views.jpg', 'Office with corridor and mountain views'],
+  ['/listings/fh-break-room.jpg', 'Break room'],
+  ['/listings/fh-yard.jpg', 'Secured outdoor yard and mountain setting'],
+  ['/listings/fh-compliant.jpg', 'Compliant buildout'],
+  ['/listings/fh-front-office.jpg', 'Front office'],
 ]
 
 export default function FloydHill() {
@@ -117,6 +132,24 @@ export default function FloydHill() {
           <ul className="fh-list">
             {HIGHLIGHTS.map((h) => <li key={h}>{h}</li>)}
           </ul>
+        </div>
+      </section>
+
+      {/* PHOTOS */}
+      <section className="bp-section">
+        <div className="bp-wrap">
+          <p className="bp-section-label">Photos</p>
+          <div className="bp-rule" />
+          <h2>Inside Unit D-106.</h2>
+          <div className="fh-gallery">
+            {GALLERY.map(([src, cap]) => (
+              <figure key={src}>
+                <img src={src} alt={cap} loading="lazy" />
+                <figcaption>{cap}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="fh-disc" style={{ marginTop: 20 }}>Equipment shown in these photographs is not included in the sale.</p>
         </div>
       </section>
 
