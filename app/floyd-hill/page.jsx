@@ -2,6 +2,7 @@
 import { CAL, EMAIL } from '../broker-programs/shared'
 
 const BROCHURE = '/listings/floyd-hill-brochure.pdf'
+const PRINT = '/listings/floyd-hill-brochure-print.pdf'
 
 export const metadata = {
   title: 'Floyd Hill Business Park, Unit D-106 | Turnkey Production & Lab Condo | $250,000 | Acoma Capital Partners',
@@ -172,6 +173,7 @@ export default function FloydHill() {
           <p className="hero-sub">A finished production and lab condominium with heavy power, a stainless prep area, and a secured yard. Unit D-106, 35715 U.S. Highway 40.</p>
           <div className="cta-row">
             <a className="btn btn-gold" href={BROCHURE} target="_blank" rel="noreferrer">View Brochure (PDF)</a>
+            <a className="btn btn-ghost" href={PRINT} target="_blank" rel="noreferrer">Print Version (PDF)</a>
             <a className="btn btn-ghost" href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
           </div>
           <div className="stats">
@@ -198,7 +200,7 @@ export default function FloydHill() {
             <div className="ph"><img src="/listings/fh-office-views.jpg" alt="Office with mountain view" /><span className="cap">Office with mountain view</span></div>
             <div className="ph"><img src="/listings/fh-break-room.jpg" alt="Break room" /><span className="cap">Break room</span></div>
           </div>
-          <p className="callout">An associated Colorado MIP manufacturing license is available to a qualified cannabis buyer, subject to state and local approval. Equipment is not included.</p>
+          <p className="callout">An associated Colorado MIP manufacturing license is available to a qualified cannabis buyer, subject to state and local approval. Yard use rights are subject to the condominium association documents. Equipment is not included.</p>
         </div>
       </section>
 
@@ -208,7 +210,7 @@ export default function FloydHill() {
           <p className="snum">02</p>
           <h2>Built for these operators</h2>
           <div className="accent" />
-          <p className="lead">The buildout suits specialized production and lab users. The images below are representative of each use, not photographs of this unit.</p>
+          <p className="lead">The buildout could suit a range of specialized production and lab users. Treat the categories below as potential applications to evaluate, subject to zoning, association, utility, and permit confirmation, not as verified permitted uses. The images are representative of each use, not photographs of this unit.</p>
           <div className="ops">
             {OPERATORS.map(([src, t, d]) => (
               <div className="op" key={t}>
@@ -268,6 +270,7 @@ export default function FloydHill() {
           </div>
           <div className="f-cta">
             <a className="btn btn-gold" href={BROCHURE} target="_blank" rel="noreferrer">View Brochure (PDF)</a>
+            <a className="btn btn-ghost" href={PRINT} target="_blank" rel="noreferrer">Print Version (PDF)</a>
             <a className="btn btn-green" href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
           </div>
           <div className="fine">
