@@ -2,7 +2,6 @@
 import { CAL, EMAIL } from '../broker-programs/shared'
 
 const BROCHURE = '/listings/floyd-hill-brochure.pdf'
-const PRINT = '/listings/floyd-hill-brochure-print.pdf'
 
 export const metadata = {
   title: 'Floyd Hill Business Park, Unit D-106 | Turnkey Production & Lab Condo | $250,000 | Acoma Capital Partners',
@@ -173,7 +172,6 @@ export default function FloydHill() {
           <p className="hero-sub">A finished production and lab condominium with heavy power, a stainless prep area, and a secured yard. Unit D-106, 35715 U.S. Highway 40.</p>
           <div className="cta-row">
             <a className="btn btn-gold" href={BROCHURE} target="_blank" rel="noreferrer">View Brochure (PDF)</a>
-            <a className="btn btn-ghost" href={PRINT} target="_blank" rel="noreferrer">Print Version (PDF)</a>
             <a className="btn btn-ghost" href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
           </div>
           <div className="stats">
@@ -270,7 +268,6 @@ export default function FloydHill() {
           </div>
           <div className="f-cta">
             <a className="btn btn-gold" href={BROCHURE} target="_blank" rel="noreferrer">View Brochure (PDF)</a>
-            <a className="btn btn-ghost" href={PRINT} target="_blank" rel="noreferrer">Print Version (PDF)</a>
             <a className="btn btn-green" href={CAL} target="_blank" rel="noreferrer">Book a Call</a>
           </div>
           <div className="fine">
