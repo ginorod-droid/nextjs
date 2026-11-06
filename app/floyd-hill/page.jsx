@@ -1,15 +1,15 @@
-// app/floyd-hill/page.jsx — Floyd Hill Business Park listing detail
+// app/floyd-hill/page.jsx — Floyd Hill Business Park listing detail (repositioned)
 import { bpStyles, BrokerNav, BrokerFooter, CAL, EMAIL } from '../broker-programs/shared'
 
 const BROCHURE = '/listings/floyd-hill-brochure.pdf'
 
 export const metadata = {
-  title: 'Floyd Hill Business Park, Unit D-106 | For Sale $250,000 | Acoma Capital Partners',
-  description: '1,662 SF MIP-ready commercial condominium for sale at 35715 U.S. Highway 40, Unit D-106, Evergreen, CO. $250,000, with an associated Colorado MIP manufacturing license. On the I-70 mountain corridor. Equipment not included.',
+  title: 'Floyd Hill Business Park, Unit D-106 | Built-Out Production & Lab Condo | $250,000 | Acoma Capital Partners',
+  description: '1,662 SF built-out production and lab condominium for sale at 35715 U.S. Highway 40, Unit D-106, Evergreen, CO. $250,000 on the I-70 mountain corridor. Suited to botanical extraction, testing labs, cosmetics compounding, and small-scale distilling or roasting. Equipment not included.',
   alternates: { canonical: 'https://www.acomacapitalpartners.com/floyd-hill' },
   openGraph: {
     title: 'Floyd Hill Business Park, Unit D-106 | Acoma Capital Partners',
-    description: '1,662 SF MIP-ready commercial condo in Evergreen, CO. $250,000, associated MIP license. Equipment not included.',
+    description: '1,662 SF built-out production and lab condo in Evergreen, CO. $250,000. Equipment not included.',
     url: 'https://www.acomacapitalpartners.com/floyd-hill',
     images: ['/listings/floyd-hill.jpg'],
   },
@@ -30,14 +30,23 @@ const fhStyles = `
 .fh-gallery figure { margin:0; }
 .fh-gallery img { width:100%; height:230px; object-fit:cover; display:block; border-radius:4px; }
 .fh-gallery figcaption { font-size:12px; color:#8a93a3; margin-top:9px; line-height:1.5; }
+.fh-ops { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:40px; }
+.fh-op { border:1px solid #e4e8f0; border-top:4px solid #F6D200; border-radius:6px; overflow:hidden; background:#fff; }
+.fh-op .imgwrap { position:relative; }
+.fh-op img { width:100%; height:180px; object-fit:cover; display:block; }
+.fh-op .tag { position:absolute; top:10px; left:10px; background:#fff; color:#202A54; font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:4px 8px; }
+.fh-op .body { padding:16px 18px; }
+.fh-op h3 { font-size:17px; color:#202A54; margin-bottom:6px; }
+.fh-op p { font-size:13.5px; color:#555; line-height:1.55; }
+.fh-note { margin-top:22px; background:#f0f3f8; border-left:3px solid #F6D200; padding:12px 16px; font-size:13.5px; color:#44506a; line-height:1.55; }
 `
 
 const KEY_FACTS = [
   ['Asking Price', '$250,000'],
   ['Unit Size', '1,662 SF'],
+  ['Price / SF', '$150'],
   ['Property Type', 'Commercial Condo'],
-  ['Location', 'Evergreen, CO'],
-  ['Included', 'MIP License'],
+  ['Clear Height', '12 ft'],
   ['Zoning', 'PD · Clear Creek County'],
 ]
 
@@ -51,12 +60,19 @@ const BUILDING = [
 ]
 
 const HIGHLIGHTS = [
-  'Offered at $250,000, about $150 per SF',
-  'Associated Colorado MIP manufacturing license (subject to regulatory approval)',
-  'Production suite built out, powered, and wired for MIP extraction and processing equipment (equipment not included)',
+  'Built-out production and lab space, powered for heavy extraction and processing equipment (specifications available on verification)',
+  'Stainless prep area and 12-foot clear height',
+  'Secured, paved outdoor yard behind the unit (rights to be verified)',
   'Direct I-70 mountain-corridor access between Exits 247 and 248',
-  'Secured, paved outdoor yard immediately behind the unit',
   'Affluent trade area, average household income above $200K within one mile',
+  'An associated Colorado MIP manufacturing license is available to a qualified cannabis buyer, subject to state and local approval',
+]
+
+const OPERATORS = [
+  ['/listings/fh-use-botanical.jpg', 'Botanical & nutraceutical extraction', 'Essential oils, herbal and adaptogen tinctures, functional-mushroom extracts.'],
+  ['/listings/fh-use-lab.jpg', 'Analytical & testing lab', 'Environmental, water, soil, and materials testing.'],
+  ['/listings/fh-use-cosmetics.jpg', 'Cosmetics, fragrance & personal care', 'Small-batch compounding and private-label manufacturing.'],
+  ['/listings/fh-use-distillery.jpg', 'Craft distilling or coffee roasting', 'Wholesale production. Public tasting or cafe would need a separate zoning review.'],
 ]
 
 const DEMO = [
@@ -68,14 +84,10 @@ const DEMO = [
 ]
 
 const GALLERY = [
-  ['/listings/fh-production-suite.jpg', 'Production suite, built out for MIP (equipment not included)'],
-  ['/listings/fh-stainless.jpg', 'Stainless production area (equipment not included)'],
-  ['/listings/fh-extraction.jpg', 'Built-out production space (equipment not included)'],
   ['/listings/fh-office-views.jpg', 'Office with corridor and mountain views'],
   ['/listings/fh-break-room.jpg', 'Break room'],
-  ['/listings/fh-yard.jpg', 'Secured outdoor yard and mountain setting'],
-  ['/listings/fh-compliant.jpg', 'Compliant buildout'],
   ['/listings/fh-front-office.jpg', 'Front office'],
+  ['/listings/fh-yard.jpg', 'Secured outdoor yard and mountain setting'],
 ]
 
 export default function FloydHill() {
@@ -93,9 +105,9 @@ export default function FloydHill() {
       {/* HERO */}
       <section className="bp-hero">
         <div className="bp-wrap">
-          <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Commercial Condo For Sale · Evergreen, CO</p>
+          <p className="bp-eyebrow" style={{ color: '#F6D200' }}>Built-Out Production &amp; Lab Condo For Sale · Evergreen, CO</p>
           <h1 className="bp-h1" style={{ fontSize: 'clamp(40px,6vw,76px)' }}>Floyd Hill<br />Business Park.</h1>
-          <p className="bp-hero-sub">35715 U.S. Highway 40, Building D, Unit D-106, Evergreen, CO 80439. A 1,662 SF commercial condominium on the I-70 mountain corridor, built out and MIP-ready, offered with an associated Colorado MIP manufacturing license. Equipment is not included. $250,000.</p>
+          <p className="bp-hero-sub">35715 U.S. Highway 40, Building D, Unit D-106, Evergreen, CO 80439. A 1,662 SF built-out production and lab condominium on the I-70 mountain corridor, powered for heavy extraction and processing equipment. $250,000. Equipment is not included.</p>
           <div className="bp-cta-row">
             <a href={BROCHURE} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Brochure (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
@@ -111,7 +123,7 @@ export default function FloydHill() {
         <div className="bp-wrap">
           <p className="bp-section-label">The Offering</p>
           <div className="bp-rule" />
-          <h2>1,662 SF MIP-ready condo with an associated MIP license.</h2>
+          <h2>A built-out production and lab condo for specialized operators.</h2>
           <div className="bp-spec-grid" style={{ marginTop: 40 }}>
             {KEY_FACTS.map(([label, value]) => (
               <div key={label} className="bp-spec-cell">
@@ -128,15 +140,40 @@ export default function FloydHill() {
         <div className="bp-wrap">
           <p className="bp-section-label">Property Overview</p>
           <div className="bp-rule" />
-          <p className="bp-lead">A 1,662 SF commercial condominium in Floyd Hill Business Park, just off U.S. Highway 40 between I-70 Exits 247 and 248. The offering combines the real estate, an existing MIP-ready production buildout, and an associated Colorado MIP manufacturing license. The suite is built out, powered, and wired for MIP extraction and processing equipment. Equipment shown in the brochure is not included in the sale.</p>
+          <p className="bp-lead">A 1,662 SF commercial condominium in Floyd Hill Business Park, just off U.S. Highway 40 between I-70 Exits 247 and 248. Move into a space already built out for production and lab work, with a stainless prep area, 12-foot clear height, and a secured paved yard, instead of starting from raw commercial space. An associated Colorado MIP manufacturing license is available to a qualified cannabis buyer, subject to state and local approval. Equipment shown in the brochure is not included in the sale.</p>
           <ul className="fh-list">
             {HIGHLIGHTS.map((h) => <li key={h}>{h}</li>)}
           </ul>
         </div>
       </section>
 
-      {/* PHOTOS */}
+      {/* BUILT FOR THESE OPERATORS */}
       <section className="bp-section">
+        <div className="bp-wrap">
+          <p className="bp-section-label">Built For These Operators</p>
+          <div className="bp-rule" />
+          <h2>Who this space fits.</h2>
+          <p className="bp-lead" style={{ marginTop: 18 }}>The buildout suits specialized production and lab users. The images below are representative of each use, not photographs of this unit.</p>
+          <div className="fh-ops">
+            {OPERATORS.map(([src, title, desc]) => (
+              <div key={title} className="fh-op">
+                <div className="imgwrap">
+                  <img src={src} alt={title + ' (representative)'} loading="lazy" />
+                  <span className="tag">Representative</span>
+                </div>
+                <div className="body">
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="fh-note">Buyers should confirm their intended use with Clear Creek County and the condominium association before relying on it. Nothing here guarantees that any use is permitted.</p>
+        </div>
+      </section>
+
+      {/* PHOTOS */}
+      <section className="bp-section bp-section-off">
         <div className="bp-wrap">
           <p className="bp-section-label">Photos</p>
           <div className="bp-rule" />
@@ -149,7 +186,6 @@ export default function FloydHill() {
               </figure>
             ))}
           </div>
-          <p className="fh-disc" style={{ marginTop: 20 }}>Equipment shown in these photographs is not included in the sale.</p>
         </div>
       </section>
 
@@ -187,7 +223,8 @@ export default function FloydHill() {
               ))}
             </tbody>
           </table>
-          <p className="fh-disc">Equipment and personal property shown in the brochure are not included in the sale unless specifically agreed in writing. Any associated MIP manufacturing license is subject to applicable state and local approval and transfer requirements. Demographic figures reproduced from the supplied 2026 American Community Survey (ACS) marketing material. Buyer should independently verify property, licensing, zoning, association, and other material information.</p>
+          <p className="fh-disc">Equipment and personal property shown in the brochure are not included in the sale unless specifically agreed in writing. Any associated MIP manufacturing license is subject to applicable state and local approval and transfer requirements. Demographic figures reproduced from the supplied 2026 American Community Survey (ACS) marketing material. Buyer should independently verify property, electrical capacity, yard rights, licensing, zoning, association, and other material information.</p>
+          <p className="fh-disc"><strong style={{ color: '#666' }}>Use of Automated Tools.</strong> Acoma Capital Partners, Inc. may use automated tools, including artificial intelligence, to assist in processing, evaluating, underwriting, marketing, wholesaling real estate properties and lending applications. These tools support but do not replace human review. Any outputs are preliminary only. Final decisions rest solely with Acoma Capital Partners. The four operator images above are AI-generated representative examples and do not depict the unit.</p>
         </div>
       </section>
 
@@ -195,7 +232,7 @@ export default function FloydHill() {
       <section className="bp-section bp-section-navy">
         <div className="bp-wrap bp-cta-block">
           <h2 className="bp-white">Interested in Unit D-106?</h2>
-          <p className="bp-muted-white">Read the full brochure or get Gino on the phone. $250,000, 1,662 SF, MIP-ready, with an associated MIP license. Equipment not included.</p>
+          <p className="bp-muted-white">Read the full brochure or get Gino on the phone. $250,000, 1,662 SF, built out for production and lab use on the I-70 corridor. Equipment not included.</p>
           <div className="bp-cta-row">
             <a href={BROCHURE} target="_blank" rel="noreferrer" className="bp-btn-yellow">View Brochure (PDF)</a>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Book a Call</a>
