@@ -356,12 +356,12 @@ export default function Home() {
                     <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>$250,000</p>
                   </div>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["1,662 SF","Commercial Condo","MIP License Included","I-70 Corridor"].map(t => (
+                    {["1,662 SF","Production & Lab Condo","Built-Out","I-70 Corridor"].map(t => (
                       <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
                     ))}
                   </div>
                   <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
-                    A 1,662 SF commercial condominium in Building D of Floyd Hill Business Park, on the U.S. Highway 40 / I-70 mountain corridor. The sale includes the MIP license.
+                    A 1,662 SF built-out production and lab condominium in Building D of Floyd Hill Business Park, on the U.S. Highway 40 / I-70 mountain corridor. An associated Colorado MIP manufacturing license is available to a qualified cannabis buyer, subject to approval. Equipment not included.
                   </p>
                   <a href="/floyd-hill" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
                     View Listing →
