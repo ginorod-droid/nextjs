@@ -111,10 +111,10 @@ export default function LeadCapture() {
               Acoma Capital Partners
             </p>
             <h3 style={{ fontFamily: P, fontWeight: 800, fontSize: 26, lineHeight: 1.2, color: W, marginBottom: 12 }}>
-              See new listings first.
+              See new deals first.
             </h3>
             <p style={{ fontFamily: I, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", marginBottom: 24 }}>
-              New listings and financing opportunities go to our list before they&apos;re
+              New financing programs and opportunities go to our list before they&apos;re
               marketed broadly. Leave your email and you&apos;ll see them first.
             </p>
             <form onSubmit={submit}>

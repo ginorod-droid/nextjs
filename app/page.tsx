@@ -36,7 +36,7 @@ export default function Home() {
     <main style={{ fontFamily: I, background: W, color: K, overflowX: "hidden" }}>
       <style>{`
         .hp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-        .hp-listings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+        .hp-listings { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
         .hp-triple { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
         .hp-hardmoney { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; margin-top: 8px; }
         .hp-about { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
@@ -80,7 +80,7 @@ export default function Home() {
             <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
-            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#opportunities","Listings"],["#about","About"]].map(([h,l]) => (
+            {[["#services","Services"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
@@ -100,7 +100,6 @@ export default function Home() {
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Deal Desk</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
-            <a href="#opportunities" onClick={() => setMobileMenu(false)}>Listings</a>
             <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
           </div>
@@ -149,9 +148,6 @@ export default function Home() {
                 target="_blank" rel="noopener"
                 style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: GREEN, color: W, padding: "18px 40px", textDecoration: "none" }}>
                 Buyer Questionnaire →
-              </a>
-              <a href="#opportunities" style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "18px 40px", textDecoration: "none" }}>
-                View Listings
               </a>
             </div>
           </FadeUp>
@@ -253,7 +249,7 @@ export default function Home() {
                   You are a solid borrower, and a bank turned you down over a tax return that doesn&apos;t show what the business really earns. That&apos;s the deal we close. We qualify you on your bank statements, on the property, or on your credit and equity, and we get you to the table on the commercial buildings a bank walks away from. $100K to $2M, owner-occupied or investor.
                 </p>
                 <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#666", marginBottom: 20 }}>
-                  And when it&apos;s time to buy or sell instead of borrow, our active commercial listings are right here.
+                  And when it&apos;s time to buy or sell instead of borrow, we broker that too.
                 </p>
               </FadeUp>
               <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
@@ -261,7 +257,6 @@ export default function Home() {
                   ["Bank Statement Loans","/broker-programs/bank-statement"],
                   ["Lite Doc Loans","/broker-programs/lite-doc"],
                   ["No Doc Commercial Loans","/broker-programs/no-doc"],
-                  ["Commercial Listings","#opportunities"],
                 ] as [string,string][]).map(([s,href],i) => (
                   <FadeUp key={i} delay={i*0.06}>
                     <a href={href} style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 20px", background: i % 2 === 0 ? "#f4f6f9" : W, borderLeft: `4px solid ${GREEN}`, textDecoration: "none" }}>
@@ -272,141 +267,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── OPPORTUNITIES ── */}
-      <section id="opportunities" style={{ padding: "120px 0", background: "#f4f6f9", borderTop: "1px solid #e8ecf0" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <FadeUp>
-            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
-              02 / Active Listings
-            </p>
-            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 72, flexWrap: "wrap", gap: 24 }}>
-              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 0 }}>
-                Active opportunities<br/>available now.
-              </h2>
-              <p style={{ fontFamily: I, fontSize: 16, color: "#888", maxWidth: 320, lineHeight: 1.7 }}>
-                Commercial land in Pueblo, a commercial condo in Evergreen, and a value-add duplex in Denver.
-              </p>
-            </div>
-          </FadeUp>
-          <div className="hp-listings">
-
-            {/* Card 1 — Pueblo */}
-            <FadeUp delay={0.1}>
-              <div style={{ background: W, boxShadow: "0 4px 32px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.1)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 32px rgba(0,0,0,0.07)"; }}>
-                <div style={{ background: NAVY, padding: "40px 40px 32px", borderBottom: `5px solid ${GREEN}` }}>
-                  <div style={{ marginBottom: 20 }}>
-                    <span style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: W, background: GREEN, padding: "5px 12px" }}>
-                      Commercial Land · Pueblo, CO
-                    </span>
-                  </div>
-                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: W, lineHeight: 1.1, marginBottom: 10 }}>
-                    10-Acre Parcel<br />I-25 Exit 104
-                  </h3>
-                  <p style={{ fontFamily: I, fontSize: 13, color: "rgba(255,255,255,0.4)" }}>Pinon Ridge Commercial Center · Pueblo, Colorado</p>
-                </div>
-                <div style={{ padding: "36px 40px 40px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
-                  <div>
-                    <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#bbb", marginBottom: 6 }}>Asking Price</p>
-                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>$2,500,000</p>
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["10 Acres","B-3 Zoning","I-25 Access","$250K/Acre"].map(t => (
-                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
-                    Adjacent to TravelCenters of America and Love&apos;s Travel Stop. Direct interstate access, B-3 zoning, no rezoning required. $114M CDOT interchange upgrade underway.
-                  </p>
-                  <a href="/pueblo-parcel" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
-                    View Listing →
-                  </a>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Card 2 — Floyd Hill / Evergreen */}
-            <FadeUp delay={0.2}>
-              <div style={{ background: W, boxShadow: "0 4px 32px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.1)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 32px rgba(0,0,0,0.07)"; }}>
-                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
-                  <Image src="/listings/floyd-hill.jpg" alt="Floyd Hill Business Park building, 35715 U.S. Highway 40, Evergreen, Colorado" fill style={{ objectFit: "cover" }} />
-                  <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, boxShadow: `inset 0 -5px 0 ${GREEN}` }} />
-                  <span style={{ position: "absolute", top: 16, left: 16, fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: W, background: GREEN, padding: "5px 12px" }}>
-                    Commercial Condo · Evergreen, CO
-                  </span>
-                </div>
-                <div style={{ padding: "32px 40px 40px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
-                  <div>
-                    <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: NAVY, lineHeight: 1.1, marginBottom: 6 }}>
-                      Floyd Hill Business Park<br />Unit D-106
-                    </h3>
-                    <p style={{ fontFamily: I, fontSize: 13, color: "#999" }}>35715 U.S. Highway 40, Building D · Evergreen, Colorado</p>
-                  </div>
-                  <div>
-                    <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#bbb", marginBottom: 6 }}>Asking Price</p>
-                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>$250,000</p>
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["1,662 SF","Production & Lab Condo","Built-Out","I-70 Corridor"].map(t => (
-                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
-                    A 1,662 SF built-out production and lab condominium in Building D of Floyd Hill Business Park, on the U.S. Highway 40 / I-70 mountain corridor. An associated Colorado MIP manufacturing license is available to a qualified cannabis buyer, subject to approval. Equipment not included.
-                  </p>
-                  <a href="/floyd-hill" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
-                    View Listing →
-                  </a>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Card 3 — Krameria / North Park Hill */}
-            <FadeUp delay={0.3}>
-              <div style={{ background: W, boxShadow: "0 4px 32px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", transition: "transform .2s, box-shadow .2s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 60px rgba(0,0,0,0.1)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "none"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 32px rgba(0,0,0,0.07)"; }}>
-                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
-                  <Image src="/listings/krameria.jpg" alt="Brick duplex at 3343-3345 N Krameria Street, North Park Hill, Denver, Colorado" fill style={{ objectFit: "cover", objectPosition: "center 42%" }} />
-                  <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, boxShadow: `inset 0 -5px 0 ${GREEN}` }} />
-                  <span style={{ position: "absolute", top: 16, left: 16, fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: W, background: GREEN, padding: "5px 12px" }}>
-                    Value-Add Duplex · Denver, CO
-                  </span>
-                </div>
-                <div style={{ padding: "32px 40px 40px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
-                  <div>
-                    <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 28, color: NAVY, lineHeight: 1.1, marginBottom: 6 }}>
-                      North Park Hill<br />Brick Duplex
-                    </h3>
-                    <p style={{ fontFamily: I, fontSize: 13, color: "#999" }}>3343-3345 N Krameria St · Denver, Colorado 80207</p>
-                  </div>
-                  <div>
-                    <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#bbb", marginBottom: 6 }}>Asking Price</p>
-                    <p style={{ fontFamily: P, fontWeight: 900, fontSize: 44, color: NAVY, lineHeight: 1, letterSpacing: "-0.02em" }}>$579,000</p>
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["6 BD / 3 BA","2 Units","Vacant Now + Jan '27","Subdivide Upside"].map(t => (
-                      <span key={t} style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, background: "#f0f3f8", padding: "6px 12px" }}>{t}</span>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: I, fontSize: 14, color: "#777", lineHeight: 1.75 }}>
-                    A brick side-by-side duplex in North Park Hill. The large unit is vacant now; the front unit vacates January 2027. Nearby duplexes are selling by the side, which is where the upside lives.
-                  </p>
-                  <a href="/krameria" style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", background: GREEN, color: W, padding: "16px 28px", textDecoration: "none", alignSelf: "flex-start", marginTop: "auto" }}>
-                    View Listing →
-                  </a>
-                </div>
-              </div>
-            </FadeUp>
 
           </div>
         </div>
@@ -454,7 +314,7 @@ export default function Home() {
           <FadeUp>
             <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
-              03 / Capital Services
+              02 / Capital Services
             </p>
           </FadeUp>
 
@@ -531,7 +391,7 @@ export default function Home() {
             <FadeUp>
               <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
-                04 / About
+                03 / About
               </p>
               <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
                 Acoma Capital Partners
@@ -594,7 +454,6 @@ export default function Home() {
                 <div style={{ height: 1, background: "rgba(255,255,255,0.08)", margin: "28px 0" }} />
                 <p style={{ fontFamily: P, fontWeight: 600, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 12 }}>Currently Offering</p>
                 <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>
-                  <a href="/pueblo-parcel" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>10-Acre Commercial Parcel · Pueblo, CO</a><br />
                   <a href="/commercial-loans" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Commercial Loans · Owners &amp; Investors</a><br />
                   <a href="/broker-programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>Deal Desk · Bring Us the Deal</a><br />
                   <a href="/commercial-loans#bridge" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>CRE Hard Money Loans · Nationwide</a><br />
@@ -621,7 +480,7 @@ export default function Home() {
               <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.35)" }}>Denver, Colorado</p>
             </div>
             <div style={{ display: "flex", gap: 36, flexWrap: "wrap" }}>
-              {[["#opportunities","Listings"],["#services","Services"],["#about","About"],["#contact","Contact"]].map(([h,l]) => (
+              {[["#services","Services"],["#about","About"],["#contact","Contact"]].map(([h,l]) => (
                 <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.06em", color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>{l}</a>
               ))}
             </div>
@@ -632,9 +491,6 @@ export default function Home() {
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
             <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.2)" }}>© 2026 Acoma Capital Partners, Inc.</p>
-            <p style={{ fontFamily: I, fontSize: 11, color: "rgba(255,255,255,0.25)", maxWidth: 900, textAlign: "left", lineHeight: 1.7 }}>
-              The business opportunities presented on this page are official listings offered pursuant to Acoma Capital Partners, Inc.’s Colorado real estate license. This is not a solicitation. All business opportunity sales are conducted in compliance with applicable Colorado real estate statutes and regulations governing the sale of business opportunities. All information is drawn from sources believed to be reliable and is provided without warranty. Prospective buyers are responsible for conducting independent due diligence, including review of all applicable licenses, financial records, lease terms, and regulatory standing prior to entering any transaction. This business opportunity sale is not an invitation to invest in any security or investment contract. Pricing and deal terms are available to qualified buyers upon request. Acoma Capital Partners, Inc. — A Colorado Real Estate Company | License # EC.100052724
-            </p>
           </div>
         </div>
       </footer>

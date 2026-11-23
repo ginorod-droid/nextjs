@@ -142,19 +142,18 @@ const NAV_ITEMS = {
   commercial: ['/commercial-loans', 'Commercial Loans'],
   programs:   ['/broker-programs', 'Deal Desk'],
   partners:   ['/partners', 'Work With Us'],
-  listings:   ['/#opportunities', 'Listings'],
   about:      ['/#about', 'About'],
 }
 
 // Each page shows links to the others, not itself.
 const NAV_SETS = {
-  'commercial-loans': ['home', 'partners', 'listings', 'about', 'programs'],
-  'broker-programs':  ['home', 'commercial', 'partners', 'listings', 'about'],
-  'partners':         ['home', 'commercial', 'listings', 'about'],
+  'commercial-loans': ['home', 'partners', 'about', 'programs'],
+  'broker-programs':  ['home', 'commercial', 'partners', 'about'],
+  'partners':         ['home', 'commercial', 'about'],
 }
 
 export function BrokerNav({ current, hideLogo }) {
-  const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners', 'listings', 'about']
+  const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners', 'about']
   return (
     <nav className="bp-nav">
       <div className="bp-wrap bp-nav-row">
