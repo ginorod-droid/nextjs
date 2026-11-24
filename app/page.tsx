@@ -57,6 +57,7 @@ export default function Home() {
         .hp-mobile-menu { display: none; }
         .hp-banner { height: 380px; }
         .hp-sweet-img { height: 240px; }
+        .hp-prog-img { height: 190px; }
         .hp-lanes { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 80px; }
         .hp-programs { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .hp-sweet { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
@@ -301,7 +302,6 @@ export default function Home() {
       {/* ── LOAN PROGRAMS ── */}
       <section id="programs" style={{ padding: "120px 0", background: "#f4f6f9" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <Banner src="/program-no-doc.jpg" alt="Commercial warehouse and distribution building" pos="center 60%" bar={GREEN} />
           <FadeUp>
             <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
@@ -316,15 +316,19 @@ export default function Home() {
           </FadeUp>
           <div className="hp-programs">
             {([
-              { color: GREEN, who: "Business owners", name: "Bank Statement", body: "Twelve months of business bank statements take the place of tax returns. Built for the owner who occupies the building.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Cash-out","Available"]], href: "/broker-programs/bank-statement" },
-              { color: BLUE, who: "Commercial investors", name: "Lite Doc", body: "Reduced paperwork for investors with good credit and a property that performs. No tax returns and no 4506-T.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/lite-doc" },
-              { color: YELLOW, who: "Strong credit, little paperwork", name: "No Doc", body: "No tax returns, bank statements or operating statements. Credit, equity and the appraisal carry the file.", specs: [["Loan size","$100K to $1M"],["Leverage","Up to 75% LTV"],["Credit","700+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/no-doc" },
-              { color: GREEN, who: "Rental investors", name: "Rental Property", body: "Thirty-year fixed financing on one to four unit rentals, qualified on the property and your credit.", specs: [["Property","1 to 4 unit rentals"],["Leverage","Up to 75% LTV"],["Income docs","None required"],["Option","Interest-only available"]], href: "#sweet-investor" },
-              { color: BLUE, who: "Apartment and mixed-use owners", name: "Multifamily & Mixed-Use", body: "Long-term fixed money for buildings of five units or more and for mixed-use property, with no balloon payment.", specs: [["Loan size","From $100K"],["Leverage","Up to 75% LTV"],["Structure","30-year fixed, fully amortizing"],["Income docs","No tax returns"]], href: "#sweet-investor" },
-              { color: YELLOW, who: "Time-sensitive deals", name: "Bridge & Private Lending", body: "Short-term money for acquisitions that cannot wait on a bank. Qualified on the property and your plan to pay the loan off.", specs: [["Loan size","$100K to $20M"],["Basis","Property and exit"],["Use","Purchase or refinance"],["Property","Most commercial types"]], href: "/commercial-loans#bridge" },
-            ] as { color: string; who: string; name: string; body: string; specs: string[][]; href: string }[]).map((c, i) => (
+              { color: GREEN, img: "/program-bank-statement.jpg", who: "Business owners", name: "Bank Statement", body: "Twelve months of business bank statements take the place of tax returns. Built for the owner who occupies the building.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Cash-out","Available"]], href: "/broker-programs/bank-statement" },
+              { color: BLUE, img: "/program-lite-doc.jpg", who: "Commercial investors", name: "Lite Doc", body: "Reduced paperwork for investors with good credit and a property that performs. No tax returns and no 4506-T.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/lite-doc" },
+              { color: YELLOW, img: "/program-no-doc.jpg", who: "Strong credit, little paperwork", name: "No Doc", body: "No tax returns, bank statements or operating statements. Credit, equity and the appraisal carry the file.", specs: [["Loan size","$100K to $1M"],["Leverage","Up to 75% LTV"],["Credit","700+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/no-doc" },
+              { color: GREEN, img: "/program-rental.jpg", who: "Rental investors", name: "Rental Property", body: "Thirty-year fixed financing on one to four unit rentals, qualified on the property and your credit.", specs: [["Property","1 to 4 unit rentals"],["Leverage","Up to 75% LTV"],["Income docs","None required"],["Option","Interest-only available"]], href: "#sweet-investor" },
+              { color: BLUE, img: "/program-multifamily.jpg", who: "Apartment and mixed-use owners", name: "Multifamily & Mixed-Use", body: "Long-term fixed money for buildings of five units or more and for mixed-use property, with no balloon payment.", specs: [["Loan size","From $100K"],["Leverage","Up to 75% LTV"],["Structure","30-year fixed, fully amortizing"],["Income docs","No tax returns"]], href: "#sweet-investor" },
+              { color: YELLOW, img: "/program-bridge.jpg", who: "Time-sensitive deals", name: "Bridge & Private Lending", body: "Short-term money for acquisitions that cannot wait on a bank. Qualified on the property and your plan to pay the loan off.", specs: [["Loan size","$100K to $20M"],["Basis","Property and exit"],["Use","Purchase or refinance"],["Property","Most commercial types"]], href: "/commercial-loans#bridge" },
+            ] as { color: string; img: string; who: string; name: string; body: string; specs: string[][]; href: string }[]).map((c, i) => (
               <FadeUp key={i} delay={(i % 3) * 0.08}>
-                <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, borderLeft: `5px solid ${c.color}`, padding: "32px 28px", textDecoration: "none", boxShadow: "0 1px 3px rgba(32,42,84,0.08)" }}>
+                <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, borderTop: `6px solid ${c.color}`, textDecoration: "none", boxShadow: "0 1px 3px rgba(32,42,84,0.08)" }}>
+                  <div className="hp-prog-img" style={{ position: "relative", overflow: "hidden", flexShrink: 0 }}>
+                    <Image src={c.img} alt={c.name + " financing"} fill sizes="(max-width: 768px) 100vw, 380px" style={{ objectFit: "cover" }} />
+                  </div>
+                  <div style={{ padding: "28px 28px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
                   <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#7a8499", marginBottom: 10 }}>{c.who}</p>
                   <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 24, lineHeight: 1.15, color: NAVY, marginBottom: 12 }}>{c.name}</h3>
                   <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.7, color: "#555", marginBottom: 20, flex: 1 }}>{c.body}</p>
@@ -337,6 +341,7 @@ export default function Home() {
                     ))}
                   </div>
                   <span style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY }}>Learn more →</span>
+                  </div>
                 </a>
               </FadeUp>
             ))}
