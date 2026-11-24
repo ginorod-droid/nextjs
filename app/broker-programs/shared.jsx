@@ -1,6 +1,6 @@
 // app/broker-programs/shared.jsx
 // Shared data, styles, and building blocks for the Acoma commercial loan pages.
-// Program terms mirror the Silver Hill small-balance commercial sheets (commercial-only set).
+// Program terms for the commercial-only set.
 
 export const CAL   = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true'
 export const FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'

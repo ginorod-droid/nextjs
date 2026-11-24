@@ -23,17 +23,17 @@ const SITE = "https://www.acomacapitalpartners.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: "Acoma Capital Partners | Real Estate Acquisitions & Investment Sales",
+  title: "Acoma Capital Partners | Commercial Real Estate Financing & Brokerage",
   description:
-    "Real estate acquisitions, investment sales, and hard money financing for operators and investors across the Nation.",
+    "When the bank turns you down, Acoma is your answer. Bank statement, lite doc, no doc, rental and bridge financing arranged nationwide for business owners and investors, plus commercial property sales.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: SITE,
     siteName: "Acoma Capital Partners",
-    title: "Acoma Capital Partners | Real Estate Acquisitions & Investment Sales",
+    title: "Acoma Capital Partners | Commercial Real Estate Financing & Brokerage",
     description:
-      "Real estate acquisitions, investment sales, and hard money financing for operators and investors across the Nation.",
+      "When the bank turns you down, Acoma is your answer. Bank statement, lite doc, no doc, rental and bridge financing arranged nationwide for business owners and investors, plus commercial property sales.",
   },
 };
 
