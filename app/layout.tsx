@@ -86,6 +86,7 @@ const ORG_JSONLD = {
   sameAs: [
     "https://www.linkedin.com/company/acomacapitalpartners",
     "https://www.linkedin.com/in/acomacapitalpartners",
+    "https://www.facebook.com/profile.php?id=61595509478266",
   ],
 };
 
