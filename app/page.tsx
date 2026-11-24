@@ -22,6 +22,17 @@ function FadeUp({ children, delay = 0, style = {} }: { children: React.ReactNode
   return <div ref={ref} style={style}>{children}</div>;
 }
 
+function Banner({ src, alt, pos = "center", bar }: { src: string; alt: string; pos?: string; bar: string }) {
+  return (
+    <FadeUp>
+      <div className="hp-banner" style={{ position: "relative", overflow: "hidden", marginBottom: 64 }}>
+        <Image src={src} alt={alt} fill sizes="(max-width: 1200px) 100vw, 1120px" style={{ objectFit: "cover", objectPosition: pos }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 6, background: bar }} />
+      </div>
+    </FadeUp>
+  );
+}
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -44,6 +55,8 @@ export default function Home() {
         .hp-nav-links { display: flex; gap: 28px; align-items: center; }
         .hp-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
         .hp-mobile-menu { display: none; }
+        .hp-banner { height: 380px; }
+        .hp-sweet-img { height: 240px; }
         .hp-lanes { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 80px; }
         .hp-programs { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .hp-sweet { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
@@ -56,6 +69,8 @@ export default function Home() {
         @media (max-width: 768px) {
           .hp-lanes, .hp-programs, .hp-sweet, .hp-steps { grid-template-columns: 1fr !important; }
           .hp-stats { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+          .hp-banner { height: 220px !important; margin-bottom: 40px !important; }
+          .hp-sweet-img { height: 190px !important; }
           .hp-two-col { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hp-listings { grid-template-columns: 1fr !important; gap: 24px !important; }
           .hp-triple { grid-template-columns: 1fr !important; }
@@ -286,6 +301,7 @@ export default function Home() {
       {/* ── LOAN PROGRAMS ── */}
       <section id="programs" style={{ padding: "120px 0", background: "#f4f6f9" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <Banner src="/program-no-doc.jpg" alt="Commercial warehouse and distribution building" pos="center 60%" bar={GREEN} />
           <FadeUp>
             <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
@@ -346,7 +362,7 @@ export default function Home() {
           <div className="hp-sweet">
             {([
               {
-                id: "sweet-owner", color: GREEN, tag: "Sweet Spot 01 · The Owner's Building",
+                id: "sweet-owner", img: "/program-bank-statement.jpg", imgAlt: "Owner-occupied commercial building", color: GREEN, tag: "Sweet Spot 01 · The Owner's Building",
                 title: "You run the business and want to own the building.",
                 body: "A self-employed owner buying or refinancing the property the business operates from. The tax returns show less than the business earns, so the bank passed. This loan is qualified on twelve months of business bank statements.",
                 specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650 and up"],["Income","12 months of business bank statements"],["Use","Purchase, refinance, cash-out"],["Occupancy","Owner-occupied"]],
@@ -356,7 +372,7 @@ export default function Home() {
                 href: "/broker-programs/bank-statement", cta: "See the Bank Statement Program", external: false,
               },
               {
-                id: "sweet-investor", color: YELLOW, tag: "Sweet Spot 02 · The Investor's Property",
+                id: "sweet-investor", img: "/program-lite-doc.jpg", imgAlt: "Investment property", color: YELLOW, tag: "Sweet Spot 02 · The Investor's Property",
                 title: "You buy property for the income it produces.",
                 body: "An investor buying, refinancing or taking cash out of a rental or a small income property. The loan is qualified on the property and your credit. No personal income documents and no tax returns are required.",
                 specs: [["Loan size","$100K to $5M"],["Leverage","Up to 75% LTV, 70% on commercial"],["Structure","30-year fixed, fully amortizing"],["Balloon","None"],["Use","Purchase, refinance, cash-out"],["Occupancy","Investment property"]],
@@ -365,9 +381,13 @@ export default function Home() {
                 know: "These are business-purpose loans, so a property you live in does not qualify. They carry a prepayment schedule, and we lay it out for you before you commit.",
                 href: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true", cta: "Book a Call About Your Property", external: true,
               },
-            ] as { id: string; color: string; tag: string; title: string; body: string; specs: string[][]; property: string; fit: string; know: string; href: string; cta: string; external: boolean }[]).map((s, i) => (
+            ] as { id: string; img: string; imgAlt: string; color: string; tag: string; title: string; body: string; specs: string[][]; property: string; fit: string; know: string; href: string; cta: string; external: boolean }[]).map((s, i) => (
               <FadeUp key={i} delay={i * 0.1} style={{ height: "100%" }}>
-                <div id={s.id} style={{ background: W, borderTop: `8px solid ${s.color}`, padding: "44px 40px", height: "100%", display: "flex", flexDirection: "column", scrollMarginTop: 100 }}>
+                <div id={s.id} style={{ background: W, borderTop: `8px solid ${s.color}`, height: "100%", display: "flex", flexDirection: "column", scrollMarginTop: 100 }}>
+                  <div className="hp-sweet-img" style={{ position: "relative", overflow: "hidden", flexShrink: 0 }}>
+                    <Image src={s.img} alt={s.imgAlt} fill sizes="(max-width: 768px) 100vw, 560px" style={{ objectFit: "cover" }} />
+                  </div>
+                  <div style={{ padding: "40px 40px 44px", display: "flex", flexDirection: "column", flex: 1 }}>
                   <p style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", color: "#5b667d", marginBottom: 16 }}>{s.tag}</p>
                   <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(24px,2.6vw,32px)", lineHeight: 1.15, color: NAVY, marginBottom: 16 }}>{s.title}</h3>
                   <p style={{ fontFamily: I, fontSize: 16, lineHeight: 1.75, color: "#555", marginBottom: 28 }}>{s.body}</p>
@@ -391,6 +411,7 @@ export default function Home() {
                     style={{ alignSelf: "flex-start", marginTop: 12, fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", background: NAVY, color: W, padding: "16px 28px", textDecoration: "none" }}>
                     {s.cta} →
                   </a>
+                  </div>
                 </div>
               </FadeUp>
             ))}
@@ -406,6 +427,7 @@ export default function Home() {
       {/* ── HOW IT WORKS ── */}
       <section id="process" style={{ padding: "120px 0", background: W }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <Banner src="/hero.jpeg" alt="Handshake over signed loan documents" pos="center 70%" bar={YELLOW} />
           <FadeUp>
             <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
@@ -539,8 +561,11 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" style={{ padding: "120px 0", background: NAVY }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+      <section id="contact" style={{ padding: "120px 0", background: NAVY, position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+          <Image src="/about.jpeg" alt="" fill sizes="100vw" style={{ objectFit: "cover", objectPosition: "center 40%", opacity: 0.16 }} />
+        </div>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", position: "relative", zIndex: 1 }}>
           <div className="hp-contact">
             <FadeUp>
               <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: 16 }}>Let&apos;s Work Together</p>
