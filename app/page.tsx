@@ -33,6 +33,91 @@ function Banner({ src, alt, pos = "center", bar }: { src: string; alt: string; p
   );
 }
 
+const DEAL_ENDPOINT = "https://script.google.com/macros/s/AKfycbze_jrkesBUQyu4rVUFko2EGoXDhOGw1WiNJ4iGaOuwW7rczi3EjG-F4uIxXYV93Gy4/exec";
+
+function DealForm() {
+  const [f, setF] = useState({ name: "", email: "", phone: "", address: "", ptype: "", value: "", loan: "", purpose: "", website: "" });
+  const [status, setStatus] = useState<"idle"|"sending"|"done"|"error">("idle");
+  const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement|HTMLSelectElement>) => setF({ ...f, [k]: e.target.value });
+  const lbl: React.CSSProperties = { fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "#5b667d", marginBottom: 6, display: "block" };
+  const inp: React.CSSProperties = { width: "100%", fontFamily: "'Inter',sans-serif", fontSize: 15, color: "#0a0a0a", background: "#ffffff", border: "1px solid #d5dbe6", padding: "12px 14px", outline: "none", boxSizing: "border-box" };
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === "sending") return;
+    if (!f.name || !f.email) { setStatus("error"); return; }
+    setStatus("sending");
+    try {
+      const res = await fetch(DEAL_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+          type: "deal-submission", name: f.name, email: f.email, phone: f.phone,
+          propertyType: f.ptype, address: f.address, propertyValue: f.value,
+          loanAmount: f.loan, purpose: f.purpose, website: f.website,
+          page: typeof window !== "undefined" ? window.location.pathname : "/",
+        }),
+      });
+      const out = await res.json();
+      if (!out.ok) throw new Error("failed");
+      setStatus("done");
+    } catch { setStatus("error"); }
+  };
+  if (status === "done") {
+    return (
+      <div style={{ textAlign: "center", padding: "32px 8px" }}>
+        <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 900, fontSize: 24, color: "#202A54", marginBottom: 10 }}>Got it. Thank you.</div>
+        <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, lineHeight: 1.7, color: "#555" }}>Your deal is on our desk. We will come back to you with a read, usually the same day. If it is time-sensitive, call <a href="tel:7207721327" style={{ color: "#202A54", fontWeight: 600, textDecoration: "none" }}>(720) 772-1327</a>.</p>
+      </div>
+    );
+  }
+  return (
+    <form onSubmit={submit}>
+      <input type="text" tabIndex={-1} autoComplete="off" value={f.website} onChange={set("website")} style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }} aria-hidden="true" />
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+        <div><label style={lbl}>Name *</label><input style={inp} value={f.name} onChange={set("name")} required /></div>
+        <div><label style={lbl}>Phone</label><input style={inp} value={f.phone} onChange={set("phone")} /></div>
+      </div>
+      <div style={{ marginTop: 14 }}><label style={lbl}>Email *</label><input type="email" style={inp} value={f.email} onChange={set("email")} required /></div>
+      <div style={{ marginTop: 14 }}><label style={lbl}>Property address</label><input style={inp} value={f.address} onChange={set("address")} placeholder="Street, city, state" /></div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 14 }}>
+        <div>
+          <label style={lbl}>Property type</label>
+          <select style={inp} value={f.ptype} onChange={set("ptype")}>
+            <option value="">Select</option>
+            <option>Owner-occupied commercial</option>
+            <option>Investment / rental</option>
+            <option>Multifamily (5+)</option>
+            <option>Mixed-use</option>
+            <option>Office / retail / warehouse</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label style={lbl}>Purpose</label>
+          <select style={inp} value={f.purpose} onChange={set("purpose")}>
+            <option value="">Select</option>
+            <option>Purchase</option>
+            <option>Refinance</option>
+            <option>Cash-out</option>
+            <option>Bridge</option>
+          </select>
+        </div>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 14 }}>
+        <div><label style={lbl}>Property value</label><input style={inp} value={f.value} onChange={set("value")} placeholder="$" /></div>
+        <div><label style={lbl}>Loan amount</label><input style={inp} value={f.loan} onChange={set("loan")} placeholder="$" /></div>
+      </div>
+      {status === "error" && <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 13, color: "#c0392b", marginTop: 14 }}>Name and email are required. If it keeps failing, call (720) 772-1327.</p>}
+      <button type="submit" disabled={status === "sending"} style={{ width: "100%", marginTop: 20, fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", background: status === "sending" ? "#8a93a3" : "#2C9143", color: "#ffffff", border: "none", padding: "17px", cursor: status === "sending" ? "default" : "pointer" }}>
+        {status === "sending" ? "Sending…" : "Submit Deal →"}
+      </button>
+      <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 12, lineHeight: 1.6, color: "#8a93a3", marginTop: 14 }}>
+        By submitting you agree we may contact you about your deal. Acoma arranges financing through its network and is not a lender.
+      </p>
+    </form>
+  );
+}
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -58,6 +143,8 @@ export default function Home() {
         .hp-banner { height: 380px; }
         .hp-sweet-img { height: 240px; }
         .hp-prog-img { height: 190px; }
+        .hp-fast { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+        .hp-submit { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
         .hp-lanes { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 80px; }
         .hp-programs { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .hp-sweet { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
@@ -71,6 +158,7 @@ export default function Home() {
           .hp-lanes, .hp-programs, .hp-sweet, .hp-steps { grid-template-columns: 1fr !important; }
           .hp-stats { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
           .hp-banner { height: 220px !important; margin-bottom: 40px !important; }
+          .hp-fast, .hp-submit { grid-template-columns: 1fr !important; gap: 40px !important; }
           .hp-sweet-img { height: 190px !important; }
           .hp-two-col { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hp-listings { grid-template-columns: 1fr !important; gap: 24px !important; }
@@ -165,6 +253,11 @@ export default function Home() {
                 target="_blank" rel="noopener"
                 style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
                 Schedule A Call →
+              </a>
+              <a
+                href="#submit-deal"
+                style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: GREEN, color: W, padding: "18px 40px", textDecoration: "none" }}>
+                Submit a Deal →
               </a>
               <a
                 href="#programs"
@@ -299,56 +392,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── LOAN PROGRAMS ── */}
-      <section id="programs" style={{ padding: "120px 0", background: "#f4f6f9" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <FadeUp>
-            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
-              02 / Loan Programs
-            </p>
-            <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20, maxWidth: 820 }}>
-              Six ways to get a commercial deal financed.
-            </h2>
-            <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 56, maxWidth: 760 }}>
-              Every program below covers purchases and refinances, and most allow cash-out. Find the one that sounds like your situation, or send us the deal and we will tell you where it fits.
-            </p>
-          </FadeUp>
-          <div className="hp-programs">
-            {([
-              { color: GREEN, img: "/program-bank-statement.jpg", who: "Business owners", name: "Bank Statement", body: "Twelve months of business bank statements take the place of tax returns. Built for the owner who occupies the building.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Cash-out","Available"]], href: "/broker-programs/bank-statement" },
-              { color: BLUE, img: "/program-lite-doc.jpg", who: "Commercial investors", name: "Lite Doc", body: "Reduced paperwork for investors with good credit and a property that performs. No tax returns and no 4506-T.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/lite-doc" },
-              { color: YELLOW, img: "/program-no-doc.jpg", who: "Strong credit, little paperwork", name: "No Doc", body: "No tax returns, bank statements or operating statements. Credit, equity and the appraisal carry the file.", specs: [["Loan size","$100K to $1M"],["Leverage","Up to 75% LTV"],["Credit","700+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/no-doc" },
-              { color: GREEN, img: "/program-rental.jpg", who: "Rental investors", name: "Rental Property", body: "Thirty-year fixed financing on one to four unit rentals, qualified on the property and your credit.", specs: [["Property","1 to 4 unit rentals"],["Leverage","Up to 75% LTV"],["Income docs","None required"],["Option","Interest-only available"]], href: "#sweet-investor" },
-              { color: BLUE, img: "/program-multifamily.jpg", who: "Apartment and mixed-use owners", name: "Multifamily & Mixed-Use", body: "Long-term fixed money for buildings of five units or more and for mixed-use property, with no balloon payment.", specs: [["Loan size","From $100K"],["Leverage","Up to 75% LTV"],["Structure","30-year fixed, fully amortizing"],["Income docs","No tax returns"]], href: "#sweet-investor" },
-              { color: YELLOW, img: "/program-bridge.jpg", who: "Time-sensitive deals", name: "Bridge & Private Lending", body: "Short-term money for acquisitions that cannot wait on a bank. Qualified on the property and your plan to pay the loan off.", specs: [["Loan size","$100K to $20M"],["Basis","Property and exit"],["Use","Purchase or refinance"],["Property","Most commercial types"]], href: "/commercial-loans#bridge" },
-            ] as { color: string; img: string; who: string; name: string; body: string; specs: string[][]; href: string }[]).map((c, i) => (
-              <FadeUp key={i} delay={(i % 3) * 0.08}>
-                <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, borderTop: `6px solid ${c.color}`, textDecoration: "none", boxShadow: "0 1px 3px rgba(32,42,84,0.08)" }}>
-                  <div className="hp-prog-img" style={{ position: "relative", overflow: "hidden", flexShrink: 0 }}>
-                    <Image src={c.img} alt={c.name + " financing"} fill sizes="(max-width: 768px) 100vw, 380px" style={{ objectFit: "cover" }} />
-                  </div>
-                  <div style={{ padding: "28px 28px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
-                  <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#7a8499", marginBottom: 10 }}>{c.who}</p>
-                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 24, lineHeight: 1.15, color: NAVY, marginBottom: 12 }}>{c.name}</h3>
-                  <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.7, color: "#555", marginBottom: 20, flex: 1 }}>{c.body}</p>
-                  <div style={{ borderTop: "1px solid #e3e7ee", marginBottom: 20 }}>
-                    {c.specs.map(([k, v], j) => (
-                      <div key={j} style={{ display: "flex", justifyContent: "space-between", gap: 16, padding: "10px 0", borderBottom: "1px solid #e3e7ee" }}>
-                        <span style={{ fontFamily: I, fontSize: 13, color: "#7a8499" }}>{k}</span>
-                        <span style={{ fontFamily: P, fontWeight: 700, fontSize: 13, color: NAVY, textAlign: "right" }}>{v}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY }}>Learn more →</span>
-                  </div>
-                </a>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── SWEET SPOTS ── */}
       <section id="sweet-spots" style={{ padding: "120px 0", background: NAVY, borderTop: `6px solid ${YELLOW}` }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
@@ -426,6 +469,150 @@ export default function Home() {
               Deal doesn&apos;t look like either one? Send it anyway. Bridge and private lending cover a lot of ground between these two, and a five minute call will tell you where you stand.
             </p>
           </FadeUp>
+        </div>
+      </section>
+
+      {/* ── FAST50 ── */}
+      <section id="fast50" style={{ padding: "110px 0", background: GREEN }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div className="hp-fast">
+            <FadeUp>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
+                Featured Program · Fast50
+              </p>
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4.4vw,56px)", lineHeight: 1.04, color: W, marginBottom: 20, letterSpacing: "-0.02em" }}>
+                Strong equity, bruised credit, no time to wait?
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.9)", marginBottom: 20 }}>
+                Fast50 is the program for the borrower a bank won&apos;t touch but who has real equity in the property. It qualifies on the equity, not a clean credit file, and it is built to close fast. One day of title seasoning and one day past a bankruptcy or notice of default is enough to be eligible.
+              </p>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 36 }}>
+                If you have the equity and you need to move, this is the one to ask about.
+              </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <a href="#submit-deal" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 38px", textDecoration: "none" }}>
+                  Submit a Deal →
+                </a>
+                <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "16px 38px", textDecoration: "none" }}>
+                  Schedule A Call →
+                </a>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.12}>
+              <div style={{ background: W, padding: "40px 40px 44px" }}>
+                <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#5b667d", marginBottom: 8 }}>At a glance</p>
+                <div style={{ borderTop: `2px solid ${NAVY}` }}>
+                  {([
+                    ["Max LTV", "Up to 50%"],
+                    ["Credit", "Flexible — low scores considered"],
+                    ["Seasoning", "1-day title, 1-day past BK / NOD"],
+                    ["Structure", "30-year fixed, fully amortizing"],
+                    ["Use", "Purchase, refinance, cash-out"],
+                    ["Occupancy", "Investment property"],
+                  ] as [string,string][]).map(([k,v],j)=>(
+                    <div key={j} style={{ display: "flex", justifyContent: "space-between", gap: 20, padding: "13px 0", borderBottom: "1px solid #e3e7ee" }}>
+                      <span style={{ fontFamily: I, fontSize: 14, color: "#7a8499", flexShrink: 0 }}>{k}</span>
+                      <span style={{ fontFamily: P, fontWeight: 700, fontSize: 14, color: NAVY, textAlign: "right" }}>{v}</span>
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontFamily: I, fontSize: 13, lineHeight: 1.6, color: "#8a93a3", marginTop: 16 }}>
+                  Business-purpose financing on investment property. Terms depend on the property, the equity and the file.
+                </p>
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LOAN PROGRAMS ── */}
+      <section id="programs" style={{ padding: "120px 0", background: "#f4f6f9" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <FadeUp>
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
+              02 / Loan Programs
+            </p>
+            <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20, maxWidth: 820 }}>
+              Six ways to get a commercial deal financed.
+            </h2>
+            <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 56, maxWidth: 760 }}>
+              Every program below covers purchases and refinances, and most allow cash-out. Find the one that sounds like your situation, or send us the deal and we will tell you where it fits.
+            </p>
+          </FadeUp>
+          <div className="hp-programs">
+            {([
+              { color: GREEN, img: "/program-bank-statement.jpg", who: "Business owners", name: "Bank Statement", body: "Twelve months of business bank statements take the place of tax returns. Built for the owner who occupies the building.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Cash-out","Available"]], href: "/broker-programs/bank-statement" },
+              { color: BLUE, img: "/program-lite-doc.jpg", who: "Commercial investors", name: "Lite Doc", body: "Reduced paperwork for investors with good credit and a property that performs. No tax returns and no 4506-T.", specs: [["Loan size","$100K to $2M"],["Leverage","Up to 80% LTV"],["Credit","650+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/lite-doc" },
+              { color: YELLOW, img: "/program-no-doc.jpg", who: "Strong credit, little paperwork", name: "No Doc", body: "No tax returns, bank statements or operating statements. Credit, equity and the appraisal carry the file.", specs: [["Loan size","$100K to $1M"],["Leverage","Up to 75% LTV"],["Credit","700+"],["Terms","5-year ARM or 30-year fixed"]], href: "/broker-programs/no-doc" },
+              { color: GREEN, img: "/program-rental.jpg", who: "Rental investors", name: "Rental Property", body: "Thirty-year fixed financing on one to four unit rentals, qualified on the property and your credit.", specs: [["Property","1 to 4 unit rentals"],["Leverage","Up to 75% LTV"],["Income docs","None required"],["Option","Interest-only available"]], href: "#sweet-investor" },
+              { color: BLUE, img: "/program-multifamily.jpg", who: "Apartment and mixed-use owners", name: "Multifamily & Mixed-Use", body: "Long-term fixed money for buildings of five units or more and for mixed-use property, with no balloon payment.", specs: [["Loan size","From $100K"],["Leverage","Up to 75% LTV"],["Structure","30-year fixed, fully amortizing"],["Income docs","No tax returns"]], href: "#sweet-investor" },
+              { color: YELLOW, img: "/program-bridge.jpg", who: "Time-sensitive deals", name: "Bridge & Private Lending", body: "Short-term money for acquisitions that cannot wait on a bank. Qualified on the property and your plan to pay the loan off.", specs: [["Loan size","$100K to $20M"],["Basis","Property and exit"],["Use","Purchase or refinance"],["Property","Most commercial types"]], href: "/commercial-loans#bridge" },
+            ] as { color: string; img: string; who: string; name: string; body: string; specs: string[][]; href: string }[]).map((c, i) => (
+              <FadeUp key={i} delay={(i % 3) * 0.08}>
+                <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, borderTop: `6px solid ${c.color}`, textDecoration: "none", boxShadow: "0 1px 3px rgba(32,42,84,0.08)" }}>
+                  <div className="hp-prog-img" style={{ position: "relative", overflow: "hidden", flexShrink: 0 }}>
+                    <Image src={c.img} alt={c.name + " financing"} fill sizes="(max-width: 768px) 100vw, 380px" style={{ objectFit: "cover" }} />
+                  </div>
+                  <div style={{ padding: "28px 28px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#7a8499", marginBottom: 10 }}>{c.who}</p>
+                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 24, lineHeight: 1.15, color: NAVY, marginBottom: 12 }}>{c.name}</h3>
+                  <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.7, color: "#555", marginBottom: 20, flex: 1 }}>{c.body}</p>
+                  <div style={{ borderTop: "1px solid #e3e7ee", marginBottom: 20 }}>
+                    {c.specs.map(([k, v], j) => (
+                      <div key={j} style={{ display: "flex", justifyContent: "space-between", gap: 16, padding: "10px 0", borderBottom: "1px solid #e3e7ee" }}>
+                        <span style={{ fontFamily: I, fontSize: 13, color: "#7a8499" }}>{k}</span>
+                        <span style={{ fontFamily: P, fontWeight: 700, fontSize: 13, color: NAVY, textAlign: "right" }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <span style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY }}>Learn more →</span>
+                  </div>
+                </a>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SUBMIT A DEAL ── */}
+      <section id="submit-deal" style={{ padding: "120px 0", background: W, scrollMarginTop: 80 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div className="hp-submit">
+            <FadeUp>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
+                Submit a Deal
+              </p>
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
+                Have a deal? Send it over.
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 28 }}>
+                Drop the basics and we come back with a straight read on whether it fits and roughly where it lands. No account to set up, no appointment to book. If you would rather talk it through first, book a call instead.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                {([
+                  ["Fast", "Most submissions get a first read the same day."],
+                  ["Direct", "It goes straight to our desk, not a call center."],
+                  ["Private", "We don&apos;t share what you send. Ever."],
+                ] as [string,string][]).map(([t,b],i)=>(
+                  <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                    <span style={{ width: 10, height: 10, marginTop: 6, background: i===0?GREEN:i===1?BLUE:YELLOW, flexShrink: 0 }} />
+                    <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.6, color: "#555" }}><b style={{ color: NAVY, fontFamily: P }}>{t}.</b> <span dangerouslySetInnerHTML={{ __html: b }} /></p>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontFamily: I, fontSize: 14, color: "#8a93a3", marginTop: 28 }}>
+                Prefer the phone? <a href="tel:7207721327" style={{ color: NAVY, fontWeight: 600, textDecoration: "none" }}>(720) 772-1327</a>
+              </p>
+            </FadeUp>
+            <FadeUp delay={0.12}>
+              <div style={{ background: "#f4f6f9", borderTop: `6px solid ${GREEN}`, padding: "36px 32px" }}>
+                <DealForm />
+              </div>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
