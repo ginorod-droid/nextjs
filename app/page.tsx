@@ -513,7 +513,7 @@ export default function Home() {
               02 / Loan Programs
             </p>
             <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20, maxWidth: 820 }}>
-              Six ways to get a commercial deal financed.
+              Seven ways to get a commercial deal financed.
             </h2>
             <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 56, maxWidth: 760 }}>
               Every program below covers purchases and refinances, and most allow cash-out. Find the one that sounds like your situation, or send us the deal and we will tell you where it fits.
@@ -527,6 +527,7 @@ export default function Home() {
               { color: GREEN, img: "/program-rental.jpg", who: "Rental investors", name: "Rental Property", body: "Thirty-year fixed financing on one to four unit rentals, qualified on the property and your credit.", specs: [["Property","1 to 4 unit rentals"],["Leverage","Up to 75% LTV"],["Income docs","None required"],["Option","Interest-only available"]], href: "#sweet-investor" },
               { color: BLUE, img: "/program-multifamily.jpg", who: "Apartment and mixed-use owners", name: "Multifamily & Mixed-Use", body: "Long-term fixed money for buildings of five units or more and for mixed-use property, with no balloon payment.", specs: [["Loan size","From $100K"],["Leverage","Up to 75% LTV"],["Structure","30-year fixed, fully amortizing"],["Income docs","No tax returns"]], href: "#sweet-investor" },
               { color: YELLOW, img: "/program-bridge.jpg", who: "Time-sensitive deals", name: "Bridge & Private Lending", body: "Short-term money for acquisitions that cannot wait on a bank. Qualified on the property and your plan to pay the loan off.", specs: [["Loan size","$100K to $20M"],["Basis","Property and exit"],["Use","Purchase or refinance"],["Property","Most commercial types"]], href: "/commercial-loans#bridge" },
+              { color: BLUE, img: "/program-arv.jpg", who: "Fix-and-flip investors", name: "ARV Fix & Flip", body: "Short-term money to buy and renovate, sized against the after-repair value and the rehab budget. The loan funds the improvements.", specs: [["Leverage","Up to 75% of ARV"],["Loan size","$75K to $2M"],["Structure","12-month, interest-only"],["Use","Purchase + rehab"]], href: "#submit-deal" },
             ] as { color: string; img: string; who: string; name: string; body: string; specs: string[][]; href: string }[]).map((c, i) => (
               <FadeUp key={i} delay={(i % 3) * 0.08}>
                 <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, borderTop: `6px solid ${c.color}`, textDecoration: "none", boxShadow: "0 1px 3px rgba(32,42,84,0.08)" }}>
