@@ -143,6 +143,7 @@ export default function Home() {
         .hp-banner { height: 380px; }
         .hp-sweet-img { height: 240px; }
         .hp-prog-img { height: 190px; }
+        .hp-arv { display: grid; grid-template-columns: 420px 1fr; align-items: stretch; }
         .hp-fast { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
         .hp-submit { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
         .hp-lanes { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 80px; }
@@ -159,6 +160,8 @@ export default function Home() {
           .hp-stats { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
           .hp-banner { height: 220px !important; margin-bottom: 40px !important; }
           .hp-fast, .hp-submit { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .hp-arv { grid-template-columns: 1fr !important; }
+          .hp-arv-img { min-height: 200px !important; }
           .hp-sweet-img { height: 190px !important; }
           .hp-two-col { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hp-listings { grid-template-columns: 1fr !important; gap: 24px !important; }
@@ -513,11 +516,34 @@ export default function Home() {
               02 / Loan Programs
             </p>
             <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20, maxWidth: 820 }}>
-              Seven ways to get a commercial deal financed.
+              Six ways to get a commercial deal financed.
             </h2>
             <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 56, maxWidth: 760 }}>
               Every program below covers purchases and refinances, and most allow cash-out. Find the one that sounds like your situation, or send us the deal and we will tell you where it fits.
             </p>
+          </FadeUp>
+          <FadeUp>
+            <div className="hp-arv" style={{ background: NAVY, marginBottom: 32, overflow: "hidden" }}>
+              <div className="hp-arv-img" style={{ position: "relative", minHeight: 260 }}>
+                <Image src="/program-arv.jpg" alt="Home mid-renovation financed with an ARV fix-and-flip loan" fill sizes="(max-width: 860px) 100vw, 480px" style={{ objectFit: "cover" }} />
+              </div>
+              <div style={{ padding: "40px 44px" }}>
+                <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: YELLOW, marginBottom: 12 }}>Featured · ARV Fix &amp; Flip</p>
+                <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(24px,2.6vw,32px)", lineHeight: 1.15, color: W, marginBottom: 14 }}>Buying to renovate? We lend on the after-repair value.</h3>
+                <p style={{ fontFamily: I, fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", marginBottom: 22 }}>
+                  Short-term money to buy and rehab, sized against what the property will be worth finished, not just what it costs today. The loan funds the improvements.
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 28px", marginBottom: 26 }}>
+                  {([["Leverage","Up to 75% of ARV"],["Loan size","$75K to $2M"],["Structure","12-mo interest-only"],["Use","Purchase + rehab"]] as [string,string][]).map(([k,v],i)=>(
+                    <div key={i}>
+                      <div style={{ fontFamily: I, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>{k}</div>
+                      <div style={{ fontFamily: P, fontWeight: 700, fontSize: 15, color: W }}>{v}</div>
+                    </div>
+                  ))}
+                </div>
+                <a href="#submit-deal" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "15px 32px", textDecoration: "none", display: "inline-block" }}>Submit a Deal →</a>
+              </div>
+            </div>
           </FadeUp>
           <div className="hp-programs">
             {([
@@ -527,7 +553,6 @@ export default function Home() {
               { color: GREEN, img: "/program-rental.jpg", who: "Rental investors", name: "Rental Property", body: "Thirty-year fixed financing on one to four unit rentals, qualified on the property and your credit.", specs: [["Property","1 to 4 unit rentals"],["Leverage","Up to 75% LTV"],["Income docs","None required"],["Option","Interest-only available"]], href: "#sweet-investor" },
               { color: BLUE, img: "/program-multifamily.jpg", who: "Apartment and mixed-use owners", name: "Multifamily & Mixed-Use", body: "Long-term fixed money for buildings of five units or more and for mixed-use property, with no balloon payment.", specs: [["Loan size","From $100K"],["Leverage","Up to 75% LTV"],["Structure","30-year fixed, fully amortizing"],["Income docs","No tax returns"]], href: "#sweet-investor" },
               { color: YELLOW, img: "/program-bridge.jpg", who: "Time-sensitive deals", name: "Bridge & Private Lending", body: "Short-term money for acquisitions that cannot wait on a bank. Qualified on the property and your plan to pay the loan off.", specs: [["Loan size","$100K to $20M"],["Basis","Property and exit"],["Use","Purchase or refinance"],["Property","Most commercial types"]], href: "/commercial-loans#bridge" },
-              { color: BLUE, img: "/program-arv.jpg", who: "Fix-and-flip investors", name: "ARV Fix & Flip", body: "Short-term money to buy and renovate, sized against the after-repair value and the rehab budget. The loan funds the improvements.", specs: [["Leverage","Up to 75% of ARV"],["Loan size","$75K to $2M"],["Structure","12-month, interest-only"],["Use","Purchase + rehab"]], href: "#submit-deal" },
             ] as { color: string; img: string; who: string; name: string; body: string; specs: string[][]; href: string }[]).map((c, i) => (
               <FadeUp key={i} delay={(i % 3) * 0.08}>
                 <a href={c.href} style={{ display: "flex", flexDirection: "column", height: "100%", background: W, borderTop: `6px solid ${c.color}`, textDecoration: "none", boxShadow: "0 1px 3px rgba(32,42,84,0.08)" }}>
