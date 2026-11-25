@@ -474,55 +474,33 @@ export default function Home() {
 
       {/* ── FAST50 ── */}
       <section id="fast50" style={{ padding: "110px 0", background: GREEN }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <div className="hp-fast">
-            <FadeUp>
-              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
-                Featured Program · Fast50
-              </p>
-              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4.4vw,56px)", lineHeight: 1.04, color: W, marginBottom: 20, letterSpacing: "-0.02em" }}>
-                Strong equity, bruised credit, no time to wait?
-              </h2>
-              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.9)", marginBottom: 20 }}>
-                Fast50 is the program for the borrower a bank won&apos;t touch but who has real equity in the property. It qualifies on the equity, not a clean credit file, and it is built to close fast. One day of title seasoning and one day past a bankruptcy or notice of default is enough to be eligible.
-              </p>
-              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 36 }}>
-                If you have the equity and you need to move, this is the one to ask about.
-              </p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="#submit-deal" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 38px", textDecoration: "none" }}>
-                  Submit a Deal →
-                </a>
-                <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "16px 38px", textDecoration: "none" }}>
-                  Schedule A Call →
-                </a>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.12}>
-              <div style={{ background: W, padding: "40px 40px 44px" }}>
-                <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#5b667d", marginBottom: 8 }}>At a glance</p>
-                <div style={{ borderTop: `2px solid ${NAVY}` }}>
-                  {([
-                    ["Max LTV", "Up to 50%"],
-                    ["Credit", "Flexible — low scores considered"],
-                    ["Seasoning", "1-day title, 1-day past BK / NOD"],
-                    ["Structure", "30-year fixed, fully amortizing"],
-                    ["Use", "Purchase, refinance, cash-out"],
-                    ["Occupancy", "Investment property"],
-                  ] as [string,string][]).map(([k,v],j)=>(
-                    <div key={j} style={{ display: "flex", justifyContent: "space-between", gap: 20, padding: "13px 0", borderBottom: "1px solid #e3e7ee" }}>
-                      <span style={{ fontFamily: I, fontSize: 14, color: "#7a8499", flexShrink: 0 }}>{k}</span>
-                      <span style={{ fontFamily: P, fontWeight: 700, fontSize: 14, color: NAVY, textAlign: "right" }}>{v}</span>
-                    </div>
-                  ))}
-                </div>
-                <p style={{ fontFamily: I, fontSize: 13, lineHeight: 1.6, color: "#8a93a3", marginTop: 16 }}>
-                  Business-purpose financing on investment property. Terms depend on the property, the equity and the file.
-                </p>
-              </div>
-            </FadeUp>
-          </div>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 40px", textAlign: "center" }}>
+          <FadeUp>
+            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 20, display: "inline-flex", alignItems: "center", gap: 12 }}>
+              <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
+              Featured Program · Fast50
+            </p>
+            <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(34px,4.8vw,60px)", lineHeight: 1.04, color: W, marginBottom: 24, letterSpacing: "-0.02em" }}>
+              Equity in the property? Fast50 can close it.
+            </h2>
+            <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.92)", marginBottom: 20, maxWidth: 760, marginLeft: "auto", marginRight: "auto" }}>
+              Fast50 is for the borrower a bank won&apos;t touch. It qualifies on the equity in the property, not on your credit, and it is built to close fast. A day of title seasoning and a day past a bankruptcy or a notice of default is enough to be eligible.
+            </p>
+            <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.7)", marginBottom: 40, maxWidth: 760, marginLeft: "auto", marginRight: "auto" }}>
+              No credit check to get a read. If you have the equity and you need to move, this is the one to ask about.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginBottom: 20 }}>
+              <a href="#submit-deal" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
+                Submit a Deal →
+              </a>
+              <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "16px 40px", textDecoration: "none" }}>
+                Schedule A Call →
+              </a>
+            </div>
+            <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)" }}>
+              Business-purpose financing on investment property.
+            </p>
+          </FadeUp>
         </div>
       </section>
 
