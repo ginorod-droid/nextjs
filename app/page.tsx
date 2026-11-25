@@ -110,9 +110,9 @@ export default function Home() {
             {[["#programs","Programs"],["#sweet-spots","Sweet Spots"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#about","About"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
+            <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener"
               style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "12px 24px", textDecoration: "none" }}>
-              Book a Call
+              Schedule A Call
             </a>
           </div>
           <button className="hp-hamburger" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Menu">
@@ -129,7 +129,7 @@ export default function Home() {
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Deal Desk</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
             <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener">Book a Call</a>
+            <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener">Schedule A Call</a>
           </div>
         )}
       </nav>
@@ -161,10 +161,10 @@ export default function Home() {
           <FadeUp delay={0.3}>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 64 }}>
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true"
+                href="https://calendly.com/acomacapitalpartners/new-meeting"
                 target="_blank" rel="noopener"
                 style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
-                Book a Call →
+                Schedule A Call →
               </a>
               <a
                 href="#programs"
@@ -384,7 +384,7 @@ export default function Home() {
                 property: "One to four unit rentals, apartment buildings of five units or more, mixed-use, office, retail, warehouse, self-storage and automotive.",
                 fit: "A long-term hold with 25 percent or more in equity and an owner who wants the same payment for thirty years.",
                 know: "These are business-purpose loans, so a property you live in does not qualify. They carry a prepayment schedule, and we lay it out for you before you commit.",
-                href: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true", cta: "Book a Call About Your Property", external: true,
+                href: "https://calendly.com/acomacapitalpartners/new-meeting", cta: "Schedule A Call About Your Property", external: true,
               },
             ] as { id: string; img: string; imgAlt: string; color: string; tag: string; title: string; body: string; specs: string[][]; property: string; fit: string; know: string; href: string; cta: string; external: boolean }[]).map((s, i) => (
               <FadeUp key={i} delay={i * 0.1} style={{ height: "100%" }}>
@@ -464,9 +464,9 @@ export default function Home() {
                 <p style={{ fontFamily: P, fontWeight: 900, fontSize: 24, color: W, marginBottom: 6 }}>No upfront fees.</p>
                 <p style={{ fontFamily: I, fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,0.9)", maxWidth: 620 }}>Acoma is paid when your loan closes. You will see our fee in writing before you commit to anything.</p>
               </div>
-              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
+              <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener"
                 style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 36px", textDecoration: "none", whiteSpace: "nowrap" as const }}>
-                Book a Call →
+                Schedule A Call →
               </a>
             </div>
           </FadeUp>
@@ -486,7 +486,7 @@ export default function Home() {
           </FadeUp>
           <div className="hp-triple">
             {([
-              { href: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true", bg: GREEN, titleColor: W, bodyColor: "rgba(255,255,255,0.75)", labelColor: "rgba(255,255,255,0.55)", icon: "📅", micro: "Schedule", title: "Book a Call", body: "Get on the calendar with Gino directly. No middlemen.", external: true },
+              { href: "https://calendly.com/acomacapitalpartners/new-meeting", bg: GREEN, titleColor: W, bodyColor: "rgba(255,255,255,0.75)", labelColor: "rgba(255,255,255,0.55)", icon: "📅", micro: "Schedule", title: "Schedule A Call", body: "Get on the calendar with Gino directly. No middlemen.", external: true },
               { href: "https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform", bg: YELLOW, titleColor: NAVY, bodyColor: "rgba(32,42,84,0.65)", labelColor: "rgba(32,42,84,0.5)", icon: "📋", micro: "Buyers", title: "Buyer Questionnaire", body: "Tell us what you're looking for and we'll match you to the right opportunity.", external: true },
               { href: "mailto:ginorod@acomacapitalpartners.com", bg: BLUE, titleColor: W, bodyColor: "rgba(255,255,255,0.75)", labelColor: "rgba(255,255,255,0.55)", icon: "✉️", micro: "Direct", title: "Send a Message", body: "Email Gino directly at ginorod@acomacapitalpartners.com", external: false },
             ] as { href: string; bg: string; titleColor: string; bodyColor: string; labelColor: string; icon: string; micro: string; title: string; body: string; external: boolean }[]).map((c, i) => (
@@ -581,9 +581,9 @@ export default function Home() {
                 Buying, selling or borrowing, bring it to us and you will hear back from Gino.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
-                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true" target="_blank" rel="noopener"
+                <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener"
                   style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 36px", textDecoration: "none" }}>
-                  Book a Call →
+                  Schedule A Call →
                 </a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform" target="_blank" rel="noopener"
                   style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: GREEN, color: W, padding: "18px 36px", textDecoration: "none" }}>

@@ -34,7 +34,7 @@ export default function CommercialLoans() {
             <h1 className="bp-h1">The Deals<br />We Get Done.</h1>
             <p className="bp-hero-sub">Owner-occupied and investor financing for the deals a bank turns down. When your tax returns do not tell the whole story, one of these programs still gets you to the closing table. $100K to $2M.</p>
             <div className="bp-cta-row">
-              <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
+              <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
               <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function CommercialLoans() {
           </div>
           <p className="bp-extra">Rate, term, and timeline depend on the property, the exit, and the file. Send us the deal and you will get a straight read on whether a bridge loan fits and roughly where it lands.</p>
           <div className="bp-cta-row" style={{ marginTop: 36 }}>
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function CommercialLoans() {
           <h2 className="bp-white">Tell us about your property.</h2>
           <p className="bp-muted-white">Send the address, the loan you need, and a rough credit picture. You will get a straight read on which program fits and where it prices, usually the same day.</p>
           <div className="bp-cta-row">
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>

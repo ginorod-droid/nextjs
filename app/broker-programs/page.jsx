@@ -150,7 +150,7 @@ export default function DealDesk() {
         <div className="bp-wrap dd-hero-cta">
           <div className="bp-cta-row">
             <a href="/broker-portal" className="bp-btn-yellow">Submit a Deal</a>
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Schedule A Call</a>
           </div>
         </div>
         <div className="dd-stats">
@@ -270,7 +270,7 @@ export default function DealDesk() {
           <p className="bp-muted-white">Send the scenario and get a straight read, usually the same day. Property type, the ask, and a rough credit picture is enough to start.</p>
           <div className="bp-cta-row">
             <a href="/broker-portal" className="bp-btn-yellow">Submit a Deal</a>
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Schedule A Call</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>
           <p className="bp-cta-phone"><a href="tel:7207721327">(720) 772-1327</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>

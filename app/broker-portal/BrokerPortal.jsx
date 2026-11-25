@@ -254,7 +254,7 @@ export default function BrokerPortal() {
           <p className="pp-hero-sub">Declined, stalled, or hard to place. Bring us the commercial file a bank walked away from and we find the capital to close it. You get paid.</p>
           <div className="bp-cta-row">
             <a href="#portal-form" className="bp-btn-yellow">Submit a Deal</a>
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Schedule A Call</a>
           </div>
         </div>
         <div className="pp-stats">

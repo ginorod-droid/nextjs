@@ -88,7 +88,7 @@ export default function Partners() {
         <div className="bp-wrap pp-hero-cta">
           <div className="bp-cta-row">
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us a Deal</a>
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-ghost-white">Schedule A Call</a>
           </div>
         </div>
       </section>
@@ -164,7 +164,7 @@ export default function Partners() {
           <p className="bp-muted-white">Send us a deal, or book a call and we will talk it through. No desk, no quota, no boss.</p>
           <div className="bp-cta-row">
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-yellow">Send Us a Deal</a>
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-green">Schedule A Call</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>
           <p className="bp-cta-phone"><a href="tel:7207721327">(720) 772-1327</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>

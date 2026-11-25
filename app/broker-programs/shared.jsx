@@ -2,7 +2,7 @@
 // Shared data, styles, and building blocks for the Acoma commercial loan pages.
 // Program terms for the commercial-only set.
 
-export const CAL   = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09rs3O9rwu5VlkCzoqHWgwKnPa1cAivEx_mCwHugssbgmq6Kgc8NjBPUSvFlW-u82tAyBpePoI?gv=true'
+export const CAL   = 'https://calendly.com/acomacapitalpartners/new-meeting'
 export const FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
 export const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
@@ -343,7 +343,7 @@ export function ProgramView({ program }) {
           <h2 className="bp-white">Have a deal? Let&apos;s talk.</h2>
           <p className="bp-muted-white">Send the basics and get a straight read on whether the deal fits, usually the same day.</p>
           <div className="bp-cta-row">
-            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Book a Call</a>
+            <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
             <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>
