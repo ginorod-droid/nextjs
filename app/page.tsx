@@ -330,44 +330,26 @@ export default function Home() {
       {/* ── WHAT WE DO ── */}
       <section id="services" style={{ padding: "120px 0", background: W }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <div className="hp-two-col">
+          <div style={{ maxWidth: 820 }}>
             <FadeUp>
-              <div style={{ position: "relative" }}>
-                <div style={{ position: "relative", height: 520, overflow: "hidden" }}>
-                  <Image src="/services.jpeg" alt="Commercial real estate financing and brokerage" fill style={{ objectFit: "cover" }} />
-                </div>
-                <div style={{ position: "absolute", top: -16, left: -16, width: 80, height: 80, border: `2px solid ${GREEN}`, zIndex: -1 }} />
-                <div style={{ position: "absolute", bottom: 60, right: -16, width: 80, height: 80, background: YELLOW, zIndex: -1 }} />
-                <div style={{ background: NAVY, padding: "28px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
-                  <div>
-                    <p style={{ fontFamily: P, fontWeight: 700, fontSize: 15, color: W, marginBottom: 4, lineHeight: 1.4 }}>Need capital to close?<br />We arrange the financing.</p>
-                    <p style={{ fontFamily: I, fontSize: 12, color: "rgba(255,255,255,0.5)" }}>Owner-occupied and investor loans, starting at $100K.</p>
-                  </div>
-                  <a href="/commercial-loans"
-                    style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "13px 24px", textDecoration: "none", whiteSpace: "nowrap" as const }}>
-                    View Commercial Loans →
-                  </a>
-                </div>
-              </div>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
+                01 / What We Do
+              </p>
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
+                The deal we work on every day.
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 20 }}>
+                You are a solid borrower, and a bank turned you down over a tax return that doesn&apos;t show what the business really earns. That is the deal we work on every day. We get your loan qualified on your bank statements, on the property, or on your credit and equity, and we take it to lenders who say yes to the commercial buildings a bank walks away from.
+              </p>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 28 }}>
+                Acoma works as your broker from the first call to the closing table. You deal with one person who knows your file, and you pay nothing until the loan closes.
+              </p>
+              <a href="/commercial-loans"
+                style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "14px 26px", textDecoration: "none", display: "inline-block" }}>
+                View Commercial Loans →
+              </a>
             </FadeUp>
-
-            <div>
-              <FadeUp>
-                <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
-                  <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
-                  01 / What We Do
-                </p>
-                <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
-                  When the bank says no, bring the deal to us.
-                </h2>
-                <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 20 }}>
-                  You are a solid borrower, and a bank turned you down over a tax return that doesn&apos;t show what the business really earns. That is the deal we work on every day. We get your loan qualified on your bank statements, on the property, or on your credit and equity, and we take it to lenders who say yes to the commercial buildings a bank walks away from.
-                </p>
-                <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 20 }}>
-                  Acoma works as your broker from the first call to the closing table. You deal with one person who knows your file, and you pay nothing until the loan closes.
-                </p>
-              </FadeUp>
-            </div>
           </div>
 
           <div className="hp-lanes">
@@ -398,7 +380,7 @@ export default function Home() {
           <FadeUp>
             <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
-              03 / Our Sweet Spots
+              02 / Our Sweet Spots
             </p>
             <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(34px,4.6vw,60px)", lineHeight: 1.03, color: W, marginBottom: 20, letterSpacing: "-0.02em", maxWidth: 860 }}>
               Two kinds of deals we close again and again.
@@ -510,7 +492,7 @@ export default function Home() {
           <FadeUp>
             <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
-              02 / Loan Programs
+              03 / Loan Programs
             </p>
             <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20, maxWidth: 820 }}>
               Six ways to get a commercial deal financed.
@@ -550,46 +532,6 @@ export default function Home() {
                 </a>
               </FadeUp>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SUBMIT A DEAL ── */}
-      <section id="submit-deal" style={{ padding: "120px 0", background: W, scrollMarginTop: 80 }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <div className="hp-submit">
-            <FadeUp>
-              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
-                Submit a Deal
-              </p>
-              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
-                Have a deal? Send it over.
-              </h2>
-              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 28 }}>
-                Drop the basics and we come back with a straight read on whether it fits and roughly where it lands. No account to set up, no appointment to book. If you would rather talk it through first, book a call instead.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {([
-                  ["Fast", "Most submissions get a first read the same day."],
-                  ["Direct", "It goes straight to our desk, not a call center."],
-                  ["Private", "We don&apos;t share what you send. Ever."],
-                ] as [string,string][]).map(([t,b],i)=>(
-                  <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                    <span style={{ width: 10, height: 10, marginTop: 6, background: i===0?GREEN:i===1?BLUE:YELLOW, flexShrink: 0 }} />
-                    <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.6, color: "#555" }}><b style={{ color: NAVY, fontFamily: P }}>{t}.</b> <span dangerouslySetInnerHTML={{ __html: b }} /></p>
-                  </div>
-                ))}
-              </div>
-              <p style={{ fontFamily: I, fontSize: 14, color: "#8a93a3", marginTop: 28 }}>
-                Prefer the phone? <a href="tel:7207721327" style={{ color: NAVY, fontWeight: 600, textDecoration: "none" }}>(720) 772-1327</a>
-              </p>
-            </FadeUp>
-            <FadeUp delay={0.12}>
-              <div style={{ background: "#f4f6f9", borderTop: `6px solid ${GREEN}`, padding: "36px 32px" }}>
-                <DealForm />
-              </div>
-            </FadeUp>
           </div>
         </div>
       </section>
@@ -638,6 +580,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SUBMIT A DEAL ── */}
+      <section id="submit-deal" style={{ padding: "120px 0", background: W, scrollMarginTop: 80 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div className="hp-submit">
+            <FadeUp>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: BLUE, marginBottom: 16, display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ display: "inline-block", width: 32, height: 3, background: BLUE, flexShrink: 0 }} />
+                Submit a Deal
+              </p>
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.05, color: NAVY, marginBottom: 20 }}>
+                Have a deal? Send it over.
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 28 }}>
+                Drop the basics and we come back with a straight read on whether it fits and roughly where it lands. No account to set up, no appointment to book. If you would rather talk it through first, book a call instead.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                {([
+                  ["Fast", "Most submissions get a first read the same day."],
+                  ["Direct", "It goes straight to our desk, not a call center."],
+                  ["Private", "We don&apos;t share what you send. Ever."],
+                ] as [string,string][]).map(([t,b],i)=>(
+                  <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                    <span style={{ width: 10, height: 10, marginTop: 6, background: i===0?GREEN:i===1?BLUE:YELLOW, flexShrink: 0 }} />
+                    <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.6, color: "#555" }}><b style={{ color: NAVY, fontFamily: P }}>{t}.</b> <span dangerouslySetInnerHTML={{ __html: b }} /></p>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontFamily: I, fontSize: 14, color: "#8a93a3", marginTop: 28 }}>
+                Prefer the phone? <a href="tel:7207721327" style={{ color: NAVY, fontWeight: 600, textDecoration: "none" }}>(720) 772-1327</a>
+              </p>
+            </FadeUp>
+            <FadeUp delay={0.12}>
+              <div style={{ background: "#f4f6f9", borderTop: `6px solid ${GREEN}`, padding: "36px 32px" }}>
+                <DealForm />
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
       {/* ── TRIPLE CTA ── */}
       <section style={{ background: NAVY, padding: "80px 0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
@@ -669,27 +651,6 @@ export default function Home() {
               </FadeUp>
             ))}
           </div>
-        </div>
-      </section>
-
-
-      {/* ── PARTNERS ── */}
-      <section id="partners" style={{ padding: "110px 0", background: NAVY, borderTop: `6px solid ${YELLOW}` }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
-          <FadeUp>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 32 }}>For Brokers &amp; Professionals</p>
-              <a href="/partners" style={{ display: "block", maxWidth: 440, width: "100%" }} aria-label="Work with Acoma — the market overlooked you, we see the value">
-                <img src="/partners-hero.jpg" alt="Five seasoned brokers and professionals at a conference table. The market overlooked you. We see the value. Have a deal in mind? Let's talk." style={{ width: "100%", height: "auto", display: "block" }} />
-              </a>
-              <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", maxWidth: 620, margin: "36px 0 32px" }}>
-                They saw your age. We see years of trust, hard-earned experience, and relationships with people who sign checks. If you have a deal that fits, work it with us or refer it over. Either way, you get paid when it closes.
-              </p>
-              <a href="/partners" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 44px", textDecoration: "none" }}>
-                Read Their Story →
-              </a>
-            </div>
-          </FadeUp>
         </div>
       </section>
 
