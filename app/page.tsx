@@ -456,32 +456,62 @@ export default function Home() {
 
       {/* ── FAST50 ── */}
       <section id="fast50" style={{ padding: "110px 0", background: GREEN }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 40px", textAlign: "center" }}>
+        <div style={{ maxWidth: 1040, margin: "0 auto", padding: "0 40px" }}>
           <FadeUp>
-            <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 20, display: "inline-flex", alignItems: "center", gap: 12 }}>
-              <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
-              Featured Program · Fast50
-            </p>
-            <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(34px,4.8vw,60px)", lineHeight: 1.04, color: W, marginBottom: 24, letterSpacing: "-0.02em" }}>
-              Equity in the property? Fast50 can close it.
-            </h2>
-            <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.92)", marginBottom: 20, maxWidth: 760, marginLeft: "auto", marginRight: "auto" }}>
-              Fast50 is for the borrower a bank won&apos;t touch. It qualifies on the equity in the property, not on your credit, and it is built to close fast. A day of title seasoning and a day past a bankruptcy or a notice of default is enough to be eligible.
-            </p>
-            <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.7)", marginBottom: 40, maxWidth: 760, marginLeft: "auto", marginRight: "auto" }}>
-              No credit check to get a read. If you have the equity and you need to move, this is the one to ask about.
-            </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginBottom: 20 }}>
-              <a href="#submit-deal" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
-                Submit a Deal →
-              </a>
-              <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "16px 40px", textDecoration: "none" }}>
-                Schedule A Call →
-              </a>
+            <div style={{ textAlign: "center", maxWidth: 820, margin: "0 auto" }}>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 13, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 20, display: "inline-flex", alignItems: "center", gap: 12 }}>
+                <span style={{ display: "inline-block", width: 32, height: 3, background: YELLOW, flexShrink: 0 }} />
+                Featured Program · Fast50
+              </p>
+              <h2 style={{ fontFamily: P, fontWeight: 900, fontSize: "clamp(34px,4.8vw,60px)", lineHeight: 1.04, color: W, marginBottom: 24, letterSpacing: "-0.02em" }}>
+                Wholesalers,<br />This One Is For You
+              </h2>
+              <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.92)", marginBottom: 20 }}>
+                Buy the property. Get your capital back out. Move on to the next deal. Fast50 goes up to 50 percent of the property&apos;s value on single-family and 1&ndash;4 unit investment properties, with just one day of title seasoning.
+              </p>
+              <p style={{ fontFamily: I, fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.92)", marginBottom: 0 }}>
+                Close on a property this week, and you could borrow against it one day after closing. Why leave your cash tied up in one property when you could be working on your next deal? There is no minimum credit score requirement either. The deal carries the loan.
+              </p>
             </div>
-            <p style={{ fontFamily: I, fontSize: 14, color: "rgba(255,255,255,0.6)" }}>
-              Business-purpose financing on investment property.
-            </p>
+
+            <div style={{ background: "rgba(0,0,0,0.13)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: 4, padding: "30px 36px", margin: "40px 0 36px" }}>
+              <p style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase", color: YELLOW, marginBottom: 20 }}>Fast50 Program Highlights</p>
+              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "13px 36px" }}>
+                {[
+                  "Up to 50% LTV",
+                  "Single-family and 1–4 unit investment properties: $75K–$2MM",
+                  "Multifamily, mixed-use and commercial properties: $100K–$5MM",
+                  "30-year loan options",
+                  "No minimum credit score",
+                  "One-day title seasoning",
+                  "Simple documentation",
+                  "Bankruptcy eligible one day after discharge",
+                  "Notice of default considered",
+                  "Late mortgage payments accepted",
+                  "Nationwide lending in eligible states",
+                ].map((item, i) => (
+                  <li key={i} style={{ fontFamily: I, fontSize: 15, lineHeight: 1.5, color: W, display: "flex", gap: 10, alignItems: "flex-start" }}>
+                    <span style={{ color: YELLOW, fontWeight: 900, flexShrink: 0, lineHeight: 1.4 }}>›</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto" }}>
+              <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 24, color: W, marginBottom: 12 }}>Keep your capital working.</h3>
+              <p style={{ fontFamily: I, fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", marginBottom: 32 }}>
+                Whether you&apos;re a wholesaler, cash buyer, fix-and-flip investor or building a rental portfolio, access to capital can be the difference between buying your next property and watching someone else buy it.
+              </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+                <a href="#submit-deal" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 40px", textDecoration: "none" }}>
+                  Submit a Deal →
+                </a>
+                <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener" style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,0.5)", color: W, padding: "16px 40px", textDecoration: "none" }}>
+                  Schedule A Call →
+                </a>
+              </div>
+            </div>
           </FadeUp>
         </div>
       </section>
