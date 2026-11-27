@@ -3,7 +3,7 @@
 // Program terms for the commercial-only set.
 
 export const CAL   = 'https://calendly.com/acomacapitalpartners/new-meeting'
-export const FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform'
+export const FORM  = '/broker-portal'
 export const EMAIL = 'mailto:ginorod@acomacapitalpartners.com'
 
 export const PTYPES = 'Retail · Mixed-Use (commercial) · Warehouse & Self-Storage · Office · Light Industrial · Automotive · Mobile Home Park · Restaurants · Bars · Day Care'

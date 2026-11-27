@@ -351,26 +351,6 @@ export default function Home() {
               </a>
             </FadeUp>
           </div>
-
-          <div className="hp-lanes">
-            {([
-              { color: GREEN, label: "Lending", title: "Commercial Real Estate Lending", body: "The center of our work. We arrange purchase, refinance and cash-out loans on commercial and investment property for borrowers who are self-employed, short on paperwork or short on time.", href: "#programs", cta: "See the programs" },
-              { color: BLUE, label: "Sales", title: "Commercial Real Estate Sales", body: "Listings and buyer representation on commercial property. Colorado deals are handled in house. Out-of-state deals are co-brokered with a locally licensed agent, so you keep one point of contact.", href: "https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform", cta: "Buyer questionnaire" },
-              { color: YELLOW, label: "Wholesale", title: "Off-Market Opportunities", body: "Some property never reaches the open market. We connect owners who want a quiet sale with buyers in our network who are ready to move. Tell us what you have or what you are looking for.", href: "#contact", cta: "Talk to us" },
-            ] as { color: string; label: string; title: string; body: string; href: string; cta: string }[]).map((c, i) => (
-              <FadeUp key={i} delay={i * 0.08}>
-                <div style={{ background: "#f4f6f9", borderTop: `5px solid ${c.color}`, padding: "36px 32px", height: "100%", display: "flex", flexDirection: "column" }}>
-                  <p style={{ fontFamily: P, fontWeight: 700, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#7a8499", marginBottom: 12 }}>{c.label}</p>
-                  <h3 style={{ fontFamily: P, fontWeight: 900, fontSize: 22, lineHeight: 1.2, color: NAVY, marginBottom: 14 }}>{c.title}</h3>
-                  <p style={{ fontFamily: I, fontSize: 15, lineHeight: 1.75, color: "#555", marginBottom: 24, flex: 1 }}>{c.body}</p>
-                  <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: NAVY, textDecoration: "none" }}>
-                    {c.cta} →
-                  </a>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -664,7 +644,7 @@ export default function Home() {
           <div className="hp-triple">
             {([
               { href: "https://calendly.com/acomacapitalpartners/new-meeting", bg: GREEN, titleColor: W, bodyColor: "rgba(255,255,255,0.75)", labelColor: "rgba(255,255,255,0.55)", icon: "📅", micro: "Schedule", title: "Schedule A Call", body: "Get on the calendar with Gino directly. No middlemen.", external: true },
-              { href: "https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform", bg: YELLOW, titleColor: NAVY, bodyColor: "rgba(32,42,84,0.65)", labelColor: "rgba(32,42,84,0.5)", icon: "📋", micro: "Buyers", title: "Buyer Questionnaire", body: "Tell us what you're looking for and we'll match you to the right opportunity.", external: true },
+              { href: "/buyer-questionnaire", bg: YELLOW, titleColor: NAVY, bodyColor: "rgba(32,42,84,0.65)", labelColor: "rgba(32,42,84,0.5)", icon: "📋", micro: "Buyers", title: "Buyer Questionnaire", body: "Tell us what you're looking for and we'll match you to the right opportunity.", external: false },
               { href: "mailto:ginorod@acomacapitalpartners.com", bg: BLUE, titleColor: W, bodyColor: "rgba(255,255,255,0.75)", labelColor: "rgba(255,255,255,0.55)", icon: "✉️", micro: "Direct", title: "Send a Message", body: "Email Gino directly at ginorod@acomacapitalpartners.com", external: false },
             ] as { href: string; bg: string; titleColor: string; bodyColor: string; labelColor: string; icon: string; micro: string; title: string; body: string; external: boolean }[]).map((c, i) => (
               <FadeUp key={i} delay={i * 0.1}>
@@ -741,7 +721,7 @@ export default function Home() {
                   style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: YELLOW, color: NAVY, padding: "18px 36px", textDecoration: "none" }}>
                   Schedule A Call →
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUr1haWoLdK6vN8P_3KTRhNlZxv2bkWz6XV36KgusKnot1w/viewform" target="_blank" rel="noopener"
+                <a href="/buyer-questionnaire"
                   style={{ fontFamily: P, fontWeight: 700, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", background: GREEN, color: W, padding: "18px 36px", textDecoration: "none" }}>
                   Buyer Questionnaire →
                 </a>

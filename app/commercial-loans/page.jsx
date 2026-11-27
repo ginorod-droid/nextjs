@@ -1,5 +1,5 @@
 // app/commercial-loans/page.jsx
-import { bpStyles, BrokerNav, BrokerFooter, ProgramRows, JsonLd, programsJsonLd, CAL, FORM, EMAIL, CREDIT } from '../broker-programs/shared'
+import { bpStyles, BrokerNav, BrokerFooter, ProgramRows, JsonLd, programsJsonLd, CAL, EMAIL, CREDIT } from '../broker-programs/shared'
 
 export const metadata = {
   title: 'Commercial Loans | Owner-Occupied & Investor Financing | Acoma Capital Partners',
@@ -35,7 +35,7 @@ export default function CommercialLoans() {
             <p className="bp-hero-sub">Owner-occupied and investor financing for the deals a bank turns down. When your tax returns do not tell the whole story, one of these programs still gets you to the closing table. $100K to $2M.</p>
             <div className="bp-cta-row">
               <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
-              <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
+              <a href="/#submit-deal" target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
             </div>
           </div>
           <div className="bp-hero-photo">
@@ -82,7 +82,7 @@ export default function CommercialLoans() {
           <p className="bp-extra">Rate, term, and timeline depend on the property, the exit, and the file. Send us the deal and you will get a straight read on whether a bridge loan fits and roughly where it lands.</p>
           <div className="bp-cta-row" style={{ marginTop: 36 }}>
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
-            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
+            <a href="/#submit-deal" target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ export default function CommercialLoans() {
           <p className="bp-muted-white">Send the address, the loan you need, and a rough credit picture. You will get a straight read on which program fits and where it prices, usually the same day.</p>
           <div className="bp-cta-row">
             <a href={CAL} target="_blank" rel="noreferrer" className="bp-btn-yellow">Schedule A Call</a>
-            <a href={FORM} target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
+            <a href="/#submit-deal" target="_blank" rel="noreferrer" className="bp-btn-green">Start Your File</a>
             <a href={EMAIL} className="bp-btn-ghost-white">Email Gino</a>
           </div>
           <p className="bp-cta-phone"><a href="tel:7207721327">(720) 772-1327</a> &nbsp;·&nbsp; Gino Rodrigues &nbsp;·&nbsp; Acoma Capital Partners</p>
