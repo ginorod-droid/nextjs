@@ -195,7 +195,7 @@ export default function Home() {
             <img src="/acoma-logo-white.png" alt="Acoma Capital Partners" style={{ height: 38, width: "auto", display: "block" }} />
           </a>
           <div className="hp-nav-links">
-            {[["#programs","Programs"],["#sweet-spots","Sweet Spots"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"],["#about","About"]].map(([h,l]) => (
+            {[["#programs","Programs"],["#sweet-spots","Sweet Spots"],["/commercial-loans","Commercial Loans"],["/broker-programs","Deal Desk"],["/partners","Work With Us"]].map(([h,l]) => (
               <a key={h} href={h} style={{ fontFamily: P, fontWeight: 600, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", textDecoration: "none" }}>{l}</a>
             ))}
             <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener"
@@ -216,7 +216,6 @@ export default function Home() {
             <a href="/commercial-loans" onClick={() => setMobileMenu(false)}>Commercial Loans</a>
             <a href="/broker-programs" onClick={() => setMobileMenu(false)}>Deal Desk</a>
             <a href="/partners" onClick={() => setMobileMenu(false)}>Work With Us</a>
-            <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
             <a href="https://calendly.com/acomacapitalpartners/new-meeting" target="_blank" rel="noopener">Schedule A Call</a>
           </div>
         )}

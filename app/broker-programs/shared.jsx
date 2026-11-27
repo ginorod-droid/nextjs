@@ -147,13 +147,13 @@ const NAV_ITEMS = {
 
 // Each page shows links to the others, not itself.
 const NAV_SETS = {
-  'commercial-loans': ['home', 'partners', 'about', 'programs'],
-  'broker-programs':  ['home', 'commercial', 'partners', 'about'],
-  'partners':         ['home', 'commercial', 'about'],
+  'commercial-loans': ['home', 'partners', 'programs'],
+  'broker-programs':  ['home', 'commercial', 'partners'],
+  'partners':         ['home', 'commercial'],
 }
 
 export function BrokerNav({ current, hideLogo }) {
-  const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners', 'about']
+  const keys = NAV_SETS[current] || ['home', 'commercial', 'programs', 'partners']
   return (
     <nav className="bp-nav">
       <div className="bp-wrap bp-nav-row">
