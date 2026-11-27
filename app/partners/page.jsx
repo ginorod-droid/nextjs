@@ -15,8 +15,8 @@ export const metadata = {
 
 const ppStyles = `
 .pp-hero { background:#202A54; padding:0 0 64px; }
-.pp-hero-img-wrap { display:flex; justify-content:center; background:#202A54; }
-.pp-hero-img-wrap img { width:100%; max-width:720px; height:auto; display:block; }
+.pp-hero-img-wrap { display:flex; justify-content:center; background:#202A54; padding:0 20px; }
+.pp-hero-img-wrap img { width:100%; max-width:1120px; height:auto; display:block; }
 .pp-hero-cta { text-align:center; margin-top:40px; }
 .pp-hero-cta .bp-cta-row { justify-content:center; }
 .pp-story p { font-size:20px; line-height:1.85; color:#444; max-width:760px; margin:0 0 24px; }
